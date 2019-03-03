@@ -1,26 +1,23 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-- -----BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
-
-As of Feb 2nd, 2019, the Forecast Foundation has not been contacted by any agency anywhere in the world in a way which requires that contact not to be disclosed. 
+As of Mar 3rd, 2019, the Forecast Foundation has not been contacted by any agency anywhere in the world in a way which requires that contact not to be disclosed. 
 
 The Forecast Foundation will publicly disclose any sort of inquiry from government agencies that falls outside the scope of regular business operations.
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE6zArx1tmT3TS8On2Qk4PTUq7u+AFAlxV+60ACgkQQk4PTUq7
-u+D69A/6Ax2m+qdqVWmw+5DhOlGXTTunHqO78gOPMO96/tsd1Z7EAnKEB3PQqNXy
-0ZFt8+Oep2f2jRcLe0oL7FX7wV7FAWX6YGhzyKlAbll8BlrtzuwhPR+RucLQ7vo+
-KR/e0lORqHOzVNya9TE3qRya2TFA1155gVH4bvVW4Zqm3QiNDUiRJuxPbidskwjz
-4z2eML1WUg63w+cOcTHZ/MbArMhUE2Qb7sFfERi+rDvH49/gGZck2a5ms6IEWqVn
-HFRDFNaM4P6u+LfS10LMONLMRA6DdsLuZ9NPNs9pita32GQ+ShfkYqyFRUpaXGgy
-NpisFp43qLYVz89lFrRjGCFeUfwE4DRM3tN2NNhy5NgRhcPCUA9Rdwn/4hALGKMP
-vFbqdJmikGGXg2C+qzkORyt8GMqpCcO14eZwXxldxPllx3JAYcBXBBkymYQBfGxp
-SrtgZAcSyi7Um+rP0Lba6ugB81YfIwMsrD3BOe+NU2hZy1Nsr53mgTRRc3YPp5Mk
-ROJSEzB2Fn2G+othPzUnAZ9lOUjKS49/8o0vSz92R3jyYXu1on6y2k0ApCZkU7JC
-f7hN4QjCBU9i4dlyqGr4FA94memcjjoL46Smu8eOLlkBE7g6TYqKkXcoPREyaEiy
-Y0qjTowxZvQ2HH/DLyBx49ImqmyotsLurlvpJf4f4eLa3MyOUJY=
-=avtu
+iQIzBAEBCAAdFiEE6zArx1tmT3TS8On2Qk4PTUq7u+AFAlx8XyYACgkQQk4PTUq7
+u+B8LxAAogu4vP8tV5JET3fiHEt0aBPXmOPBwiTTLlyx4w+zeg5kov+UNB+u4I+D
+dHG5Ur7IRXvLFx77Jkq3T66jVkg7Jh+DA4UXazPWFqZduy7apo6UtI6bTEBCffoa
+PCaZU0ETIljQ0AFmDvwN1qbVQyMb19KF6LCOfdnUU1fv1fMc+DoQzp0/+6L7eGtM
+yvzjwreHfhEIHgAzmzeWU33Avi6R+AMc22M7zBcet2AzPNIlVx7CdqLxHYdf7JBi
+7T5HPNZfhBR5vax8eVu0FlNgZjbTJ2VGqrHxk3szRGXgwfD6zS+FtFlzyROrX22o
+eZkWyNqAE+o946Xjh8FinA0u8KdOU7nu5ml2fwBrItfmZRt45107L00BIqAC6SAk
+SGOy1044HHbReEOgMR6J80u0fUsN4Dd1ig2Nd2me6M18dVQuzie2YZqR/zLrc+NN
+DGeDIFL3Ewspb58PDPpW1vAw/ty+oHSv4WPx8Wu8IGiZ53xImVqjfaRmk0Zq+s+k
+FiJ4+bMVXzWbYX6m/8GEkP+IVo3cstg93lsuRKI3yDN6fLBF2qT2K7+7Oo+PJ/ff
+q6PqIcEVEBGItGQ/g44MikbuEqNkD2EdfoKJWoQ7J+el8jcrNXcD6TtxMiVy6EOZ
+rhpR4lMzx/4Ak7qpzPinMZVKm17xOizkm+J4ruBb/s3wWPqoMBY=
+=FDBj
 -----END PGP SIGNATURE-----
