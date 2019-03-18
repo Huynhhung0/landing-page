@@ -545,6 +545,16 @@ ul {
   line-height: 2.5rem;
   padding: 0 2rem; }
 
+.cta-download-link {
+  clear: both;
+  float: left;
+  margin: 1.3em 1em 0 3.14em;
+  text-decoration: underline; }
+
+.cta-primary {
+  float: left;
+  font-size: 2rem; }
+
 .CTA {
   background-color: #553580;
   color: #fff;
@@ -725,7 +735,7 @@ ul {
 .Hero, .Hero--wide {
   overflow: hidden;
   padding-bottom: 15rem;
-  padding-top: 5rem; }
+  padding-top: 3rem; }
 
 .Hero__wrap {
   display: -ms-flexbox;
@@ -735,8 +745,8 @@ ul {
     width: 51%; }
     .Hero__wrap > div:first-child > h4 {
       color: #553580;
-      line-height: 2.75rem;
-      margin-bottom: 2.625rem; }
+      line-height: 2.2rem;
+      margin-bottom: 1.325rem; }
   .Hero__wrap > div:last-child {
     position: relative;
     width: 49%; }
@@ -1359,7 +1369,7 @@ ul {
   -ms-flex-flow: row wrap;
       flex-flow: row wrap; }
 
-.download-links > a, .get-started-links > a {
+.download-links > a {
   text-align: center;
   margin-bottom: 1rem;
   margin-right: 1rem; }
@@ -1750,7 +1760,7 @@ ul {
       justify-content: space-between; }
 
 .GetStartedSteps {
-  background-color: #F5F5F5;
+  background-color: #fff;
   padding: 6.5rem 0; }
 
 .GetStartedSteps__steps {

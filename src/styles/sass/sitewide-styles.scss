@@ -188,11 +188,24 @@ ul {
   padding: 0 2rem;
 }
 
+.cta-download-link {
+  clear: both;
+  float: left;
+  margin: 1.3em 1em 0 3.14em;
+  text-decoration: underline;
+}
+
+.cta-primary {
+  float: left;
+  font-size: 2rem;
+}
+
 .CTA {
   background-color: $purple;
   color: $white;
   padding: 5.375rem 0;
 }
+
 
 .CTA__wrap {
   align-items: center;
@@ -429,7 +442,7 @@ ul {
 .Hero {
   overflow: hidden;
   padding-bottom: 15rem;
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 
 .Hero__wrap {
@@ -443,8 +456,8 @@ ul {
 
     > h4 {
       color: $purple;
-      line-height: 2.75rem;
-      margin-bottom: 2.625rem;
+      line-height: 2.2rem;
+      margin-bottom: 1.325rem;
     }
   }
 
