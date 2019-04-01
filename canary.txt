@@ -1,23 +1,23 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of Mar 3rd, 2019, the Forecast Foundation has not been contacted by any agency anywhere in the world in a way which requires that contact not to be disclosed. 
+As of Apr 1st, 2019, the Forecast Foundation has not been contacted by any agency anywhere in the world in a way which requires that contact not to be disclosed. 
 
 The Forecast Foundation will publicly disclose any sort of inquiry from government agencies that falls outside the scope of regular business operations.
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE6zArx1tmT3TS8On2Qk4PTUq7u+AFAlx8XyYACgkQQk4PTUq7
-u+B8LxAAogu4vP8tV5JET3fiHEt0aBPXmOPBwiTTLlyx4w+zeg5kov+UNB+u4I+D
-dHG5Ur7IRXvLFx77Jkq3T66jVkg7Jh+DA4UXazPWFqZduy7apo6UtI6bTEBCffoa
-PCaZU0ETIljQ0AFmDvwN1qbVQyMb19KF6LCOfdnUU1fv1fMc+DoQzp0/+6L7eGtM
-yvzjwreHfhEIHgAzmzeWU33Avi6R+AMc22M7zBcet2AzPNIlVx7CdqLxHYdf7JBi
-7T5HPNZfhBR5vax8eVu0FlNgZjbTJ2VGqrHxk3szRGXgwfD6zS+FtFlzyROrX22o
-eZkWyNqAE+o946Xjh8FinA0u8KdOU7nu5ml2fwBrItfmZRt45107L00BIqAC6SAk
-SGOy1044HHbReEOgMR6J80u0fUsN4Dd1ig2Nd2me6M18dVQuzie2YZqR/zLrc+NN
-DGeDIFL3Ewspb58PDPpW1vAw/ty+oHSv4WPx8Wu8IGiZ53xImVqjfaRmk0Zq+s+k
-FiJ4+bMVXzWbYX6m/8GEkP+IVo3cstg93lsuRKI3yDN6fLBF2qT2K7+7Oo+PJ/ff
-q6PqIcEVEBGItGQ/g44MikbuEqNkD2EdfoKJWoQ7J+el8jcrNXcD6TtxMiVy6EOZ
-rhpR4lMzx/4Ak7qpzPinMZVKm17xOizkm+J4ruBb/s3wWPqoMBY=
-=FDBj
+iQIzBAEBCAAdFiEE6zArx1tmT3TS8On2Qk4PTUq7u+AFAlyiedgACgkQQk4PTUq7
+u+CZsA/9EDaZQQ9eGSFi5hg/fS9bYB4Dgez8VdBGlYHwukgSwCArsZOuCz4DthFl
+4AK07YGmAfYxFNkQ60wRoZFmzGB7HliPscXElz7XxahgjYZtXu+rXyxFuvex+wvi
+6uqVfzBa7dybUtp7KsepBwbqCcxPM9W3+x6UoL1g8itIuuxdpIPO0QuXPoe9S0XA
+EBlkLmXkorcvsYSn6TziRoY9KxwHZ5/DZOVwYKWruMDRpUMXayHuUBXzUkQuXa/Z
++K3IpcjGcLgqhNuH2AADLEi8hd9bjeMHwDcyS1kqc1/NSzsO2j9G7P8o1Jfa7XFK
+7DD/tQ6dY+ulLJNX5gwAI5M+VECJU7X6T5g9qfZx9rhOZhn68PfswmdxVRurReU/
+zVBVnla4JBKJgCQ/9S0ySjk/skzer4HDSrhlPJJYJz9zr7v4nBwg31a8JBGMY6Qr
+q6vVfGnZSBMBD9JTG0vhCjoH46KabF7ckPTKrOsVijAqn3SWugJzgunQiXb9drh1
+ly0fG/eFrZRRb6RIIQTDThFPxkGIKb6PJ5fXDi6tlF5KX37QcCf1ecc/UPAW9eBC
+68koGOoPkutgVg9Oce8vKmMalOoqZDM5fCcTs0bRj2SHkHSmG6u6XCvIDtRsuZ54
+HJLN0Rx+TlSnMcGX+Bg2fgMtpEMT/yo2oBjmu7H6zu0X2mibmJE=
+=Z4F1
 -----END PGP SIGNATURE-----
