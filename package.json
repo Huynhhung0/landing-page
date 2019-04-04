@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "![Travis CI Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "natives": "^1.1.6"
+  },
   "devDependencies": {
     "browser-sync": "^2.7.1",
     "del": "*",
