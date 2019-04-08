@@ -63,6 +63,17 @@
   </script>
 </head>
 
+<style> 
+  .BountiesFAQ__question>h5::after, 
+  .with-line::after{
+  background-color: #FFF;}
+
+  .BountiesFAQ__question>p>a{
+    color:#FFF !important;
+    font-weight:bold !important;}
+
+</style>
+
 <body>
   <header class="Header">
     <div class="Header__wrap">
@@ -71,9 +82,10 @@
       </a>
       <div class="Header__nav">
         <ul>
+          <li><a href="/blog">Blog</a></li>
           <li><a href="/bounty/">Bug Bounty</a></li>
           <li><a href="/faq/">FAQ</a></li>
-          <li><a href="https://medium.com/@AugurProject" target="_blank">Blog</a></li>
+          <li><a href="https://medium.com/@AugurProject" target="_blank">Weekly Reports</a></li>
         </ul>
         <img alt="Augur Bug Bounty" class="Header__nav-mobile-close" src="/dist/images/icon--times.svg">
       </div>
@@ -133,18 +145,7 @@
       </div>
     </div>
   </section>
-  <section class="References">
-    <div class="max-width">
-        <h2>Helpful References</h2>
-        <div class="References__references">
-            <h4><a href="https://github.com/AugurProject/whitepaper" target="_blank">Whitepaper</a></h4>
-            <h4><a href="https://docs.augur.net" target="_blank">Documentation</a></h4>
-            <h4><a href="https://github.com/AugurProject/augur-audits" target="_blank">Audit Reports</a></h4>
-            <h4><a href="https://github.com/AugurProject/augur.js/blob/master/src/contracts/addresses.json#L2" target="_blank">Contracts on Ethereum Mainnet</a></h4>
-        </div>
-    </div>
-  </section>
-  <section class="BountiesFAQ">
+  <section class="BountiesFAQ" style="background-color:#44415a;color:white;">
     <div class="max-width">
       <h2>Frequently Asked Questions</h2>
       <div class="BountiesFAQ__questions">
@@ -171,39 +172,23 @@
       </div>
     </div>
   </section>
-  <section class="CTA">
-    <div class="max-width">
-      <div class="CTA__wrap">
-        <div>
-          <h3>Submit a Vulnerability or Bug Report</h3>
-          <p class="CTA__sub-para">Determination of eligibility, score, and all related terms of a bounty payout are at the sole and final discretion of the Forecast Foundation.</p>
-        </div>
-        <a class="button--white" href="https://hackerone.com/augurproject" target="_blank">Submit a Bug</a>
-      </div>
-    </div>
-  </section>
-  <section class="OtherBounties">
+  <section class="OtherBounties" style="margin-top:-1em;">
     <div class="max-width">
       <h2>Other Bounties</h2>
     </div>
     <div class="OtherBounties__wrap">
       <div class="OtherBounties__bounties">
-        <div class="OtherBounties__bounty">
+        <div class="OtherBounties__bounty" style="border: 1px solid #553580;">
           <h5>EIP-758 Implementation for Geth and Parity</h5>
           <p>1,250 REP will be awarded for the 1st implementation (either Geth or Parity) submitted and merged. 750 REP will be awarded for the second implementation submitted and merged.</p>
           <a class="link--arrow" href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-758.md" target="_blank">See the Full Spec</a>
         </div>
-        <div class="OtherBounties__bounty">
+        <div class="OtherBounties__bounty" style="border: 1px solid #553580;">
           <h5>EIP-234 Implementation for Geth and Parity</h5>
           <p>250 REP will be awarded for a Geth implementation. 250 REP will be awarded for a Parity implementation.</p>
           <a class="link--arrow" href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-234.md" target="_blank">See the Full Spec</a>
         </div>
-        <div class="OtherBounties__bounty">
-          <h5>Gitcoin Bounties</h5>
-          <p>The Forecast Foundation regularly open bounties on <a class="link--mono" href="https://gitcoin.co/profile/tomkysar" target="_blank">Gitcoin.com</a>. Please check there to see a list of open bounties and corresponding rewards.</p>
-          <a class="link--arrow" href="https://gitcoin.co/profile/tomkysar" target="_blank">Gitcoin Bounties</a>
-        </div>
-        <div class="OtherBounties__bounty">
+        <div class="OtherBounties__bounty" style="background-color:white;">
           <h5>Let's Talk #Bounties</h5>
           <p>Please join us in the #bounties channel in the <a class="link--mono" href="https://discord.gg/faud6Fx" target="_blank">Augur Discord</a> to discuss bounty requirements and implementation.</p>
           <a class="link--arrow" href="https://discord.gg/faud6Fx" target="_blank">Join us in Discord</a>
@@ -217,9 +202,10 @@
         <a href="/"><img alt="Augur Bug Bounty" src="/dist/images/augur-logo--white.svg"></a>
         <div class="Footer__nav-wrap">
           <ul>
+            <li><a href="/blog">Blog</a></li>
             <li><a href="/bounty/">Bug Bounty</a></li>
             <li><a href="/faq/" target="_blank">FAQ</a></li>
-            <li><a href="https://medium.com/@AugurProject" target="_blank">Blog</a></li>
+            <li><a href="https://medium.com/@AugurProject" target="_blank">Weekly Reports</a></li>
           </ul>
           <ul>
             <li><a href="https://docs.augur.net/" target="_blank">Documentation</a></li>
