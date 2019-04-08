@@ -118,8 +118,26 @@
                     </p>
                 </div>
 
+                  <div class="FaqAnswer" id="invalid-tradeable">
+                    <h5>Invalid As A Tradeable Outcome:</h5>
+                    <p>
+                        In V2, we address another major pain point for Augur users: the risk of invalid markets.
+                    </p>
+                    <p>
+                        In V1, a market resolves as “Invalid” when reporters deem its outcome ambiguous or unverifiable. Shares in such markets can be turned in for an equal amount of money. For example, a three outcome market with outcomes A, B, and C that resolves Invalid will give .33 ETH for a share of each outcome. Bad actors have capitalized on this by, for instance, creating markets that end before the event outcome is known and buying cheap shares that earn a profit once the market resolves Invalid.
+                    </p>
+
+                    <p>In V2, Invalid will be a tradeable outcome like any other, enabling traders to hedge the risk of Invalid outcomes and gauge their likelihood via market forces. For example, if a market’s order book consistently has BUY orders for Invalid above .2, that suggests there is a greater than 20% chance the market is Invalid. For conservative users, this should be a warning to not trade the market.
+                    </p>
+                    <p>We thank the Augur community whose feedback and intellectual contributions facilitated this improvement like many others here.
+                    </p>
+                </div>
+
                 <div class="FaqAnswer" id="use-it-or-lose-it">
                     <h5>Use It Or Lose It Forking:</h5>
+                    <p> 
+                        TL;DR: If you don't participate in a v2 Augur fork as a REP token holder, <b>you lose all your REP</b>.
+                    </p>
                     <p>
                         In V1 Augur, if a fork occurs, REP holders are given 60 days to participate in the resolution by migrating to a Universe correlated with the forking market’s outcomes. For example, if a market for the 2016 U.S. presidential election forked, there would be a Universe where Trump won and a universe where Hillary won. The Universe with the most REP by the end of the 60 day period or which reaches 50% of all REP, wins. In order to incentivize people to migrate their REP before the fork resolves, anyone in V1 who does so receives a 5% bonus to their migrated REP in their new universe. </p>
 
@@ -139,21 +157,6 @@
                         In order to combat this, the V2 contracts will not allow migration to children universes after the 60 day window has ended. This is the most effective way to motivate participation in a fork, which is the crux of the Augur security model. Thanks to the community for its input in developing this solution.
                     </p>
 
-                </div>
-
-                <div class="FaqAnswer" id="invalid-tradeable">
-                    <h5>Invalid As A Tradeable Outcome:</h5>
-                    <p>
-                        In V2, we address another major pain point for Augur users: the risk of invalid markets.
-                    </p>
-                    <p>
-                        In V1, a market resolves as “Invalid” when reporters deem its outcome ambiguous or unverifiable. Shares in such markets can be turned in for an equal amount of money. For example, a three outcome market with outcomes A, B, and C that resolves Invalid will give .33 ETH for a share of each outcome. Bad actors have capitalized on this by, for instance, creating markets that end before the event outcome is known and buying cheap shares that earn a profit once the market resolves Invalid.
-                    </p>
-
-                    <p>In V2, Invalid will be a tradeable outcome like any other, enabling traders to hedge the risk of Invalid outcomes and gauge their likelihood via market forces. For example, if a market’s order book consistently has BUY orders for Invalid above .2, that suggests there is a greater than 20% chance the market is Invalid. For conservative users, this should be a warning to not trade the market.
-                    </p>
-                    <p>We thank the Augur community whose feedback and intellectual contributions facilitated this improvement like many others here.
-                    </p>
                 </div>
 
                 <div class="FaqAnswer" id="rep-price-auction">
@@ -308,10 +311,10 @@
                     <a href="#dai">&nbsp;&nbsp;&nbsp;DAI Denomination Token</a>
                 </div>
                 <div class="FaqIndex__question">
-                    <a href="#use-it-or-lose-it">&nbsp;&nbsp;&nbsp;Use It Or Lose It Forking</a>
+                    <a href="#invalid-tradeable">&nbsp;&nbsp;&nbsp;Invalid As A Tradeable Outcome</a>
                 </div>
                 <div class="FaqIndex__question">
-                    <a href="#invalid-tradeable">&nbsp;&nbsp;&nbsp;Invalid As A Tradeable Outcome</a>
+                    <a href="#use-it-or-lose-it">&nbsp;&nbsp;&nbsp;Use It Or Lose It Forking</a>
                 </div>
                 <div class="FaqIndex__question">
                     <a href="#rep-price-auction">&nbsp;&nbsp;&nbsp;REP Price Auction</a>
