@@ -237,9 +237,6 @@
                     <p>
                         An important way that Augur encourages creating valid markets is via the validity bond. In V1 Augur, this bond rate changes over time and responds to the number of invalid markets being created. While the V1 bonds are moving and the formulas are generally working, the way they are tuned means that the bond rate being stable depends on the overall rate of invalidity not to be performing particularly well.
                     </p>
-                    <p>
-                        An important way that Augur encourages creating valid markets is via the validity bond. In V1 Augur, this bond rate changes over time and responds to the number of invalid markets being created. While the V1 bonds are moving and the formulas are generally working, the way they are tuned means that the bond rate being stable depends on the overall rate of invalidity not to be performing particularly well.
-                    </p>
                     <p>For example, the system targets a 1% rate for Invalid markets. It may take several weeks of an increased rate of Invalid markets for the bond to double, and a single week with a 0% Invalid rate will halve it. In effect, when a level is reached that discourages creating Invalid markets, the bond will immediately halve, undoing the multiple weeks of increases.
                     </p>
                     <p>In another community-proposed solution, the floating bond formula in V2 is altered such that the maximum increase is still 100%, but the maximum decrease for one period is only 10%. This should allow bonds to stay at the appropriate level longer but also allow them to decrease if platform behavior changes. This change will also apply to the no show bond and the initial reporter bond amounts.
