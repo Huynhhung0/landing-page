@@ -108,6 +108,7 @@
                     <p>
 
                         We look forward to soon publishing more in-depth write-ups on some of the new features. If you want more specifics on anything mentioned here, feel free to check out our code on <a href="https://github.com/AugurProject">Github</a> or contact us on <a href="https://discordapp.com/invite/faud6Fx">Discord</a>. To get started on Augur, visit <a href="https://augur.net">augur.net</a>.</p>
+                    <p> <b>Please note that in V2, REP holders will be required to participate in the event of a fork in order to maintain their REP.<b> See more in <a href="#use-it-or-lose-it">Use It or Lose It Forking</a>.</p>
                 </div>
 
                 <div class="FaqAnswer" id="dai">
@@ -134,7 +135,17 @@
                     </p>
                 </div>
 
-                <div class="FaqAnswer" id="use-it-or-lose-it">
+                <div class="FaqAnswer" id="rep-price-auction">
+                    <h5>REP Price Auction:</h5>
+                    <p>
+                        Adjusting fees paid to reporters by traders is one of the main mechanisms that keeps Augur secure. The fee is adjusted based on the total open interest (OI) on the platform and the price of REP. To determine the price of REP in V1, a centralized price feed was put in place. Shortly after launch, a bug was discovered that rendered this price feed pointless, as the fees did not adjust in relation to the centralized feed. Because of this bug, the key needed to update this price feed was discarded.
+                    </p>
+
+                    <p> We have resolved the aforementioned bug in V2, and furthermore, we are making the platform fully decentralized by introducing a built-in double auction that will act as the price feed. Two double auctions will take place each week where a pot of DAI and REP are sold for one another, and a REP price is calculated from the sale prices. The platform will mint a small amount of REP weekly to compensate for any losses from the auction. This will introduce a small amount of inflation to REP in exchange for a decentralized price feed used to maintain platform security.</p>
+
+                </div>
+
+                 <div class="FaqAnswer" id="use-it-or-lose-it">
                     <h5>Use It Or Lose It Forking:</h5>
                     <p> 
                         TL;DR: If you don't participate in a v2 Augur fork as a REP token holder, <b>you lose all your REP</b>.
@@ -157,16 +168,6 @@
                     <p>
                         In order to combat this, the V2 contracts will not allow migration to children universes after the 60 day window has ended. This is the most effective way to motivate participation in a fork, which is the crux of the Augur security model. Thanks to the community for its input in developing this solution.
                     </p>
-
-                </div>
-
-                <div class="FaqAnswer" id="rep-price-auction">
-                    <h5>REP Price Auction:</h5>
-                    <p>
-                        Adjusting fees paid to reporters by traders is one of the main mechanisms that keeps Augur secure. The fee is adjusted based on the total open interest (OI) on the platform and the price of REP. To determine the price of REP in V1, a centralized price feed was put in place. Shortly after launch, a bug was discovered that rendered this price feed pointless, as the fees did not adjust in relation to the centralized feed. Because of this bug, the key needed to update this price feed was discarded.
-                    </p>
-
-                    <p> We have resolved the aforementioned bug in V2, and furthermore, we are making the platform fully decentralized by introducing a built-in double auction that will act as the price feed. Two double auctions will take place each week where a pot of DAI and REP are sold for one another, and a REP price is calculated from the sale prices. The platform will mint a small amount of REP weekly to compensate for any losses from the auction. This will introduce a small amount of inflation to REP in exchange for a decentralized price feed used to maintain platform security.</p>
 
                 </div>
 
@@ -315,10 +316,10 @@
                     <a href="#invalid-tradeable">&nbsp;&nbsp;&nbsp;Invalid As A Tradeable Outcome</a>
                 </div>
                 <div class="FaqIndex__question">
-                    <a href="#use-it-or-lose-it">&nbsp;&nbsp;&nbsp;Use It Or Lose It Forking</a>
+                    <a href="#rep-price-auction">&nbsp;&nbsp;&nbsp;REP Price Auction</a>
                 </div>
                 <div class="FaqIndex__question">
-                    <a href="#rep-price-auction">&nbsp;&nbsp;&nbsp;REP Price Auction</a>
+                    <a href="#use-it-or-lose-it">&nbsp;&nbsp;&nbsp;Use It Or Lose It Forking</a>
                 </div>
                 <div class="FaqIndex__question">
                     <a href="#immediate-dispute-rounds">&nbsp;&nbsp;&nbsp;Immediate Dispute Rounds Up To A &nbsp;&nbsp;&nbsp;Threshold</a>
