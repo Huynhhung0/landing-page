@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -553,7 +554,27 @@ ul {
 
 .cta-primary {
   float: left;
-  font-size: 1.4rem; }
+  font-size: 1.6rem;
+  line-height: 4.2rem;
+  background-image: -webkit-linear-gradient(top, #7E4FBD, #5D398C);
+     background-image: -moz-linear-gradient(top, #7E4FBD, #5D398C);
+     background-image: -ms-linear-gradient(top, #7E4FBD, #5D398C);
+     background-image: -o-linear-gradient(top, #7E4FBD, #5D398C);
+     background-image: linear-gradient(to bottom, #7E4FBD, #5D398C); }
+
+.cta-primary:hover {
+     background-image: -webkit-linear-gradient(top, #7247AB, #5A3687);
+     background-image: -moz-linear-gradient(top, #7247AB, #5A3687);
+     background-image: -ms-linear-gradient(top, #7247AB, #5A3687);
+     background-image: -o-linear-gradient(top, #7247AB, #5A3687);
+     background-image: linear-gradient(to bottom, #7247AB, #5A3687); }
+
+.cta-blog {
+  font-size: 1.3rem;
+  line-height: 3.4rem; }
+
+.cta-in-text {
+  color: #553580; }
 
 .CTA {
   background-color: #553580;
@@ -1701,7 +1722,6 @@ ul {
     width: 100%; } }
 
 .Faq {
-  background-color: #F5F5F5;
   padding-top: 6.5rem; }
   .Faq > .max-width, .Faq > .max-width--wide, .Faq > .AugurCycle__steps-wrapper, .Faq > .Header__wrap, .Faq > .Hero__wrap, .Faq > .Uses__wrap, .Faq > .Currencies__wrap, .Faq > .Technology__wrap, .Faq > .Connect__wrap, .Faq > .Scope__wrap, .Faq > .OtherBounties__bounties, .Faq > .Wallets__wrap, .Faq > .Developers__wrap, .Faq > .SubmitToFAQ__wrap {
     display: -ms-flexbox;

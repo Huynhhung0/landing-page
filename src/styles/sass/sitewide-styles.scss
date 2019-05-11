@@ -197,7 +197,30 @@ ul {
 
 .cta-primary {
   float: left;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  line-height: 4.2rem;
+  background-image: -webkit-linear-gradient(top, #7E4FBD, #5D398C);
+   background-image: -moz-linear-gradient(top, #7E4FBD, #5D398C);
+   background-image: -ms-linear-gradient(top, #7E4FBD, #5D398C);
+   background-image: -o-linear-gradient(top, #7E4FBD, #5D398C);
+   background-image: linear-gradient(to bottom, #7E4FBD, #5D398C);
+}
+
+.cta-primary:hover {
+   background-image: -webkit-linear-gradient(top, #7247AB, #5A3687);
+   background-image: -moz-linear-gradient(top, #7247AB, #5A3687);
+   background-image: -ms-linear-gradient(top, #7247AB, #5A3687);
+   background-image: -o-linear-gradient(top, #7247AB, #5A3687);
+   background-image: linear-gradient(to bottom, #7247AB, #5A3687);
+}
+
+.cta-blog {
+  font-size: 1.3rem;
+  line-height: 3.4rem;
+}
+
+.cta-in-text {
+  color: $purple;
 }
 
 .CTA {
