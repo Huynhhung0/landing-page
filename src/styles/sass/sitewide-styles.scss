@@ -194,11 +194,6 @@ ul {
   text-decoration: underline;
 }
 
-.cta-primary {
-  float: left;
-  font-size: 1.6rem;
-  line-height: 4.2rem;
-}
 
 .cta-button {
   color: #fff;
@@ -215,6 +210,18 @@ ul {
   background-image: -ms-linear-gradient(top, #7247AB, #5A3687);
   background-image: -o-linear-gradient(top, #7247AB, #5A3687);
   background-image: linear-gradient(to bottom, #7247AB, #5A3687);
+}
+
+
+.cta-primary {
+  float: left;
+  font-size: 1.6rem;
+  line-height: 4.2rem;
+  background: #f96060;
+}
+
+.cta-primary:hover {
+  background: #e65757;
 }
 
 .cta-secondary {
@@ -480,7 +487,7 @@ ul {
     width: 51%;
 
     > h4 {
-      color: $purple;
+      color: #4a4a4a;
       line-height: 2.2rem;
       margin-bottom: .5rem;
     }

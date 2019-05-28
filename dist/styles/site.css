@@ -554,17 +554,21 @@ ul {
   margin: 1.3em 1em 0 3.14em;
   text-decoration: underline; }
 
-.cta-primary {
-  float: left;
-  font-size: 1.6rem;
-  line-height: 4.2rem; }
-
 .cta-button {
   color: #fff;
   background-image: linear-gradient(to bottom, #7E4FBD, #5D398C); }
 
 .cta-button:hover {
   background-image: linear-gradient(to bottom, #7247AB, #5A3687); }
+
+.cta-primary {
+  float: left;
+  font-size: 1.6rem;
+  line-height: 4.2rem;
+  background: #f96060; }
+
+.cta-primary:hover {
+  background: #e65757; }
 
 .cta-secondary {
   background-color: #553580;
@@ -764,7 +768,7 @@ ul {
     padding-right: 1.875rem;
     width: 51%; }
     .Hero__wrap > div:first-child > h4 {
-      color: #553580;
+      color: #4a4a4a;
       line-height: 2.2rem;
       margin-bottom: .5rem; }
   .Hero__wrap > div:last-child {
@@ -1096,13 +1100,14 @@ ul {
   text-align: center;
   background: rgba(255, 255, 255, 0.77);
   color: #48abdc;
-  padding: 15px 0 50px 0;
+  padding: 23px 0 40px 0;
   margin-bottom: 75px; }
 
 .uses-intro-header {
   font-size: 1.7rem;
-  font-weight: 500;
-  letter-spacing: 1px; }
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #40a8ca; }
 
 .uses-intro-sub {
   font-size: 1.4rem;
@@ -1347,7 +1352,7 @@ ul {
 
 .Benefits {
   background-color: #fff;
-  padding-top: 6.875rem; }
+  padding-top: 4.875rem; }
 
 .projects-header {
   text-align: center; }
