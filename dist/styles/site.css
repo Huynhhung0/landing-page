@@ -1062,12 +1062,15 @@ ul {
   font-size: 1.43rem;
   line-height: 1.9rem; }
 
+.landing-top {
+  margin-bottom: 7rem; }
+
 @media only screen and (max-width: 700px) {
   .value-prop {
     letter-spacing: 0; } }
 
 .Uses {
-  margin-top: 80px; }
+  margin-top: 8em; }
 
 .uses-overview {
   background: #000;
@@ -1173,7 +1176,6 @@ ul {
 
 .cycle-header {
   text-align: center;
-  border-top: 10px dotted #ebe8fd;
   padding-top: 4em; }
 
 .AugurCycle {
@@ -1352,7 +1354,8 @@ ul {
 
 .Benefits {
   background-color: #fff;
-  padding-top: 4.875rem; }
+  padding-top: 4.875rem;
+  border-top: 10px dotted #ebe8fd; }
 
 .projects-header {
   text-align: center; }
