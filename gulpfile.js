@@ -72,15 +72,23 @@ gulp.task('images', function() {
     .pipe(notify({ message: 'Images task complete' }));
 });
 
+// fonts 
+gulp.task('fonts', function() {
+    return gulp.src('./src/fonts/**/*')
+    .pipe(gulp.dest('./dist/fonts'))
+    .pipe(livereload())
+    .pipe(notify({ message: 'Fonts task complete' }));
+}); 
+
 // Clean
 gulp.task('clean', function() {
-    return gulp.src(['./dist/styles', './dist/scripts', './dist/images'], {read: false})
+    return gulp.src(['./dist/styles', './dist/scripts', './dist/images', './dist/fonts'], {read: false})
     .pipe(clean());
 });
 
 // Default task
 gulp.task('default', ['clean'], function() {
-    gulp.start('styles', 'scripts', 'images');
+    gulp.start('styles', 'scripts', 'images', 'fonts');
 });
 
 // Watch
@@ -91,6 +99,7 @@ gulp.task('watch', function() {
     gulp.watch('src/styles/**/*.scss', ['styles']);
     gulp.watch('src/scripts/**/*.js', ['scripts']);
     gulp.watch('src/images/**/*', ['images']);
+    gulp.watch('src/fonts/**/*', ['fonts']);
     gulp.src(__filename).pipe(open({
       uri: 'http://localhost:3000'
     }))

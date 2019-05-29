@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -396,6 +395,10 @@ th {
   font-weight: 400;
   font-style: normal; }
 
+@font-face {
+  font-family: MuseoSans;
+  src: url("../fonts/MuseoSans_500.otf") format("opentype"); }
+
 html {
   font-size: 16px;
   line-height: 32px;
@@ -403,7 +406,7 @@ html {
   -moz-osx-font-smoothing: grayscale; }
 
 body {
-  font-family: "Apercu", "sans-serif";
+  font-family: MuseoSans, "Apercu", "sans-serif";
   font-weight: 400;
   font-style: normal;
   color: #000; }
@@ -427,26 +430,25 @@ p {
 h1 {
   font-size: 4rem;
   font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: .5px;
   line-height: 4.625rem; }
 
 h2 {
   font-size: 3rem;
   font-weight: 500;
-  letter-spacing: -1px;
+  letter-spacing: .5px;
   line-height: 3.5rem;
   margin-bottom: 4.375rem; }
 
 h3 {
   font-size: 2.25rem;
   font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: .5px;
   margin-bottom: 1.5rem; }
 
 h4 {
-  font-family: "Apercu Mono", "sans-serif";
+  font-family: MuseoSans, "Apercu Mono", "sans-serif";
   font-size: 1.5rem;
-  letter-spacing: -0.8px;
   line-height: 2rem; }
   h4 > a {
     text-decoration: underline; }
@@ -475,7 +477,7 @@ p {
     line-height: 3.125rem;
     margin-bottom: 0.5rem; }
   p.p--mono {
-    font-family: "Apercu Mono", "sans-serif";
+    font-family: MuseoSans, "Apercu Mono", "sans-serif";
     font-size: 1.5rem;
     letter-spacing: -0.8px;
     line-height: 2.75rem;
@@ -552,26 +554,33 @@ ul {
   margin: 1.3em 1em 0 3.14em;
   text-decoration: underline; }
 
+.cta-button {
+  color: #fff;
+  background-image: linear-gradient(to bottom, #7E4FBD, #5D398C); }
+
+.cta-button:hover {
+  background-image: linear-gradient(to bottom, #7247AB, #5A3687); }
+
 .cta-primary {
   float: left;
   font-size: 1.6rem;
   line-height: 4.2rem;
-  background-image: -webkit-linear-gradient(top, #7E4FBD, #5D398C);
-     background-image: -moz-linear-gradient(top, #7E4FBD, #5D398C);
-     background-image: -ms-linear-gradient(top, #7E4FBD, #5D398C);
-     background-image: -o-linear-gradient(top, #7E4FBD, #5D398C);
-     background-image: linear-gradient(to bottom, #7E4FBD, #5D398C); }
+  background: #f96060; }
 
 .cta-primary:hover {
-     background-image: -webkit-linear-gradient(top, #7247AB, #5A3687);
-     background-image: -moz-linear-gradient(top, #7247AB, #5A3687);
-     background-image: -ms-linear-gradient(top, #7247AB, #5A3687);
-     background-image: -o-linear-gradient(top, #7247AB, #5A3687);
-     background-image: linear-gradient(to bottom, #7247AB, #5A3687); }
+  background: #e65757; }
+
+.cta-secondary {
+  background-color: #553580;
+  color: #FFF;
+  margin: 0 auto 3.5em auto;
+  display: block;
+  width: 30%; }
 
 .cta-blog {
   font-size: 1.3rem;
-  line-height: 3.4rem; }
+  line-height: 3.4rem;
+  width: 70%; }
 
 .cta-in-text {
   color: #553580; }
@@ -605,12 +614,12 @@ ul {
       align-items: start; }
 
 .link--mono, .Content a, .Scope__block-wrap > div > p > a, .GetStartedSteps__step > p > a, .GetStartedSteps__steps-conclusion > p > a, .Developers__repos-intro > p > a {
-  font-family: "Apercu Mono", "sans-serif";
+  font-family: MuseoSans, "Apercu Mono", "sans-serif";
   text-decoration: underline; }
 
 .link--disclaimer {
   color: #553580;
-  font-family: "Apercu Mono", "sans-serif";
+  font-family: MuseoSans, "Apercu Mono", "sans-serif";
   font-weight: 700; }
 
 .link--arrow {
@@ -628,7 +637,7 @@ ul {
     width: 1.5rem; }
 
 .list--dark, .list--links, .Scope__block-wrap .Scope__links-list, .Scope__block-wrap .Scope__rewards-list {
-  font-family: "Apercu Mono", "sans-serif";
+  font-family: MuseoSans, "Apercu Mono", "sans-serif";
   font-size: 1.25rem;
   line-height: 3.25rem; }
   .list--dark > li, .list--links > li, .Scope__block-wrap .Scope__links-list > li, .Scope__block-wrap .Scope__rewards-list > li {
@@ -668,10 +677,10 @@ ul {
   border-radius: 4px;
   box-shadow: 0 10px 64px 0 rgba(0, 0, 0, 0.09); }
 
-.with-line, .Uses__use-case > h6, .Currencies__currency-heading-wrap > div:first-child > h4, .Technology__block > h4, .Benefits__benefit > h5, .Scope__block-wrap > div > h3, .BountiesFAQ__question > h5, .OtherBounties__bounty > h5, .TeamMember > h6, .Advisor__info > h6, .FaqAnswer > h5, .GetStartedSteps__steps-conclusion, .Developers__repos-intro > h5, .CareerDetail > h5 {
+.with-line, .quarter-tile > h5, .Uses__use-case > h6, .Currencies__currency-heading-wrap > div:first-child > h4, .Technology__block > h4, .Scope__block-wrap > div > h3, .BountiesFAQ__question > h5, .OtherBounties__bounty > h5, .TeamMember > h6, .Advisor__info > h6, .FaqAnswer > h5, .GetStartedSteps__steps-conclusion, .Developers__repos-intro > h5, .CareerDetail > h5 {
   margin-bottom: 0.75em;
   position: relative; }
-  .with-line::after, .Uses__use-case > h6::after, .Currencies__currency-heading-wrap > div:first-child > h4::after, .Technology__block > h4::after, .Benefits__benefit > h5::after, .Scope__block-wrap > div > h3::after, .BountiesFAQ__question > h5::after, .OtherBounties__bounty > h5::after, .TeamMember > h6::after, .Advisor__info > h6::after, .FaqAnswer > h5::after, .GetStartedSteps__steps-conclusion::after, .Developers__repos-intro > h5::after, .CareerDetail > h5::after {
+  .with-line::after, .quarter-tile > h5::after, .Uses__use-case > h6::after, .Currencies__currency-heading-wrap > div:first-child > h4::after, .Technology__block > h4::after, .Scope__block-wrap > div > h3::after, .BountiesFAQ__question > h5::after, .OtherBounties__bounty > h5::after, .TeamMember > h6::after, .Advisor__info > h6::after, .FaqAnswer > h5::after, .GetStartedSteps__steps-conclusion::after, .Developers__repos-intro > h5::after, .CareerDetail > h5::after {
     content: '';
     background-color: #553580;
     bottom: -0.375em;
@@ -717,12 +726,6 @@ ul {
     top: -5.5rem;
     left: -2.1rem; }
 
-@media only screen and (max-width: 900px) {
-  .CTA__wrap {
-    display: block; }
-    .CTA__wrap > div:first-child {
-      margin: 0 0 2rem; } }
-
 .Header__nav > ul {
   -ms-flex-align: center;
       align-items: center;
@@ -765,9 +768,9 @@ ul {
     padding-right: 1.875rem;
     width: 51%; }
     .Hero__wrap > div:first-child > h4 {
-      color: #553580;
+      color: #4a4a4a;
       line-height: 2.2rem;
-      margin-bottom: 1.325rem; }
+      margin-bottom: .5rem; }
   .Hero__wrap > div:last-child {
     position: relative;
     width: 49%; }
@@ -852,6 +855,24 @@ ul {
     .Footer__sub-wrap > ul > li:last-child {
       margin-right: 0; }
 
+.quarter-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin-bottom: 3em; }
+
+.quarter-tile {
+  width: 22.8%; }
+  .quarter-tile > img {
+    height: 2.375rem;
+    margin-bottom: 1rem; }
+  .quarter-tile > h5 {
+    font-weight: 500;
+    margin-bottom: 2.125rem; }
+    .quarter-tile > h5::after {
+      bottom: -1.0625rem; }
+
 @media only screen and (max-width: 1080px) {
   .Footer__main-wrap {
     -ms-flex-wrap: wrap-reverse;
@@ -871,6 +892,10 @@ ul {
     border-top: 1px solid #8d8f92; } }
 
 @media only screen and (max-width: 900px) {
+  .CTA__wrap {
+    display: block; }
+    .CTA__wrap > div:first-child {
+      margin: 0 0 2rem; }
   h2 {
     margin-bottom: 3rem; }
   .Hero, .Hero--wide {
@@ -963,6 +988,8 @@ ul {
   .button, .button--white, .download-links > a.download-link.inverse-button, .download-links.inverse-button > a.download-link, .button--outline, .download-links > a.download-link {
     font-size: 1.25rem;
     line-height: 4rem; }
+  .cta-secondary {
+    width: 70%; }
   .with-number::before, .AugurCycle__step .step--text > h3::before, .AugurCycle__step--left .step--text > h3::before, .AugurCycle__step--right .step--text > h3::before, .GetStartedSteps__step::before {
     font-size: 6rem;
     left: -1.5rem;
@@ -970,7 +997,10 @@ ul {
   .SubpageIntro {
     padding: 3.25rem 0; }
   .Header__nav-mobile-close {
-    right: 2.5rem; } }
+    right: 2.5rem; }
+  .quarter-tile {
+    margin-bottom: 2rem;
+    width: 100%; } }
 
 @media only screen and (max-width: 680px) {
   .Footer__sub-wrap {
@@ -990,6 +1020,14 @@ ul {
   .Footer__nav-wrap {
     margin-bottom: 2rem; } }
 
+@media only screen and (max-width: 900px) {
+  .quarter-wrap {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .quarter-tile {
+    margin-bottom: 4rem;
+    width: 48%; } }
+
 @media only screen and (max-width: 400px) {
   .max-width, .max-width--wide, .AugurCycle__steps-wrapper, .Header__wrap, .Hero__wrap, .Uses__wrap, .Currencies__wrap, .Technology__wrap, .Connect__wrap, .Scope__wrap, .OtherBounties__bounties, .Wallets__wrap, .Developers__wrap, .SubmitToFAQ__wrap {
     padding-left: 1.5rem;
@@ -1008,26 +1046,80 @@ ul {
       .Footer__sub-wrap > ul > li > a > img {
         width: 1.25rem; } }
 
+.value-prop {
+  line-height: 5rem;
+  font-weight: bold;
+  letter-spacing: .5px; }
+
+.main-grab {
+  font-size: 2.75rem;
+  font-family: MuseoSans;
+  letter-spacing: .5px;
+  color: #232323;
+  margin-bottom: 14px; }
+
+.sub-grab {
+  font-size: 1.43rem;
+  line-height: 1.9rem; }
+
+.landing-top {
+  margin-bottom: 7rem; }
+
+@media only screen and (max-width: 700px) {
+  .value-prop {
+    letter-spacing: 0; } }
+
 .Uses {
-  background-color: #F5F5F5; }
+  margin-top: 8em; }
+
+.uses-overview {
+  background: #000;
+  background-image: url("../images/augur_future.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  padding: 60px 0 0 0; }
+
+.uses-header {
+  color: #fff;
+  font-size: 2.3rem;
+  margin-bottom: 2.4rem; }
+
+.uses-grab {
+  padding: 10px;
+  text-align: center;
+  color: #000;
+  letter-spacing: 0px;
+  margin-bottom: 14.375rem; }
 
 .Uses__wrap {
-  position: relative; }
+  background: #000;
+  padding-top: 30px;
+  max-width: unset; }
 
-.Uses__intro {
-  font-size: 3.625rem;
-  letter-spacing: -1px;
+.uses-intro {
   line-height: 4.75rem;
-  margin-bottom: 0;
-  position: absolute;
-  right: 0;
-  top: -7.5rem;
-  max-width: 49rem; }
+  text-align: center;
+  background: rgba(255, 255, 255, 0.77);
+  color: #48abdc;
+  padding: 23px 0 40px 0;
+  margin-bottom: 75px; }
+
+.uses-intro-header {
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #40a8ca; }
+
+.uses-intro-sub {
+  font-size: 1.4rem;
+  color: #464646;
+  padding-top: 7px;
+  font-weight: normal; }
 
 .Uses__use-cases {
-  padding-top: 8.125rem;
-  position: relative;
-  top: 5rem; }
+  position: relative; }
 
 .Uses__use-cases-wrapper {
   display: -ms-flexbox;
@@ -1082,13 +1174,17 @@ ul {
       left: 2rem;
       top: 2rem; } }
 
+.cycle-header {
+  text-align: center;
+  padding-top: 4em; }
+
 .AugurCycle {
   padding-top: 11.5rem; }
 
 .AugurCycle__step, .AugurCycle__step--left, .AugurCycle__step--right {
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 7.5rem; }
+  margin-bottom: 3rem; }
   .AugurCycle__step > .step--image, .AugurCycle__step--left > .step--image, .AugurCycle__step--right > .step--image {
     width: 48%; }
     .AugurCycle__step > .step--image > img, .AugurCycle__step--left > .step--image > img, .AugurCycle__step--right > .step--image > img {
@@ -1143,13 +1239,12 @@ ul {
       padding-left: 2rem; } }
 
 .Currencies {
-  background-color: #383B41;
-  color: #fff;
-  padding-top: 1.5rem; }
+  background-color: #fff; }
 
 .Currencies__wrap {
   position: relative;
-  top: 5rem; }
+  top: 5rem;
+  margin-bottom: 6rem; }
 
 .Currencies__currency-wrap {
   display: -ms-flexbox;
@@ -1258,42 +1353,17 @@ ul {
       margin-bottom: 10rem; } }
 
 .Benefits {
-  background-color: #F0EFF6;
-  padding-bottom: 6.875rem;
-  padding-top: 11.875rem; }
+  background-color: #fff;
+  padding-top: 4.875rem;
+  border-top: 10px dotted #ebe8fd; }
 
-.Benefits__benefits-wrap {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between; }
-
-.Benefits__benefit {
-  width: 22.8%; }
-  .Benefits__benefit > img {
-    height: 2.375rem;
-    margin-bottom: 1rem; }
-  .Benefits__benefit > h5 {
-    font-weight: 500;
-    margin-bottom: 2.125rem; }
-    .Benefits__benefit > h5::after {
-      bottom: -1.0625rem; }
+.projects-header {
+  text-align: center; }
 
 @media only screen and (max-width: 900px) {
   .Benefits {
     padding-top: 6rem;
-    padding-bottom: 2rem; }
-  .Benefits__benefits-wrap {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
-  .Benefits__benefit {
-    margin-bottom: 4rem;
-    width: 48%; } }
-
-@media only screen and (max-width: 700px) {
-  .Benefits__benefit {
-    margin-bottom: 2rem;
-    width: 100%; } }
+    padding-bottom: 2rem; } }
 
 .Connect {
   padding: 6.5rem 0; }
@@ -1578,6 +1648,9 @@ ul {
       position: absolute;
       right: 2rem;
       width: 6.875rem; }
+
+.bounty-button {
+  margin-top: 23px; }
 
 @media only screen and (max-width: 1200px) {
   .OtherBounties__bounty {

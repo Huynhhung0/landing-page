@@ -1,30 +1,96 @@
+// Main
+
+.value-prop {
+  line-height: 5rem;
+  font-weight: bold;
+  letter-spacing: .5px;
+}
+
+.main-grab {
+  font-size: 2.75rem;
+  font-family: MuseoSans;
+  letter-spacing: .5px;
+  color: #232323;
+  margin-bottom: 14px;
+}
+
+.sub-grab {
+  font-size: 1.43rem;
+  line-height: 1.9rem;
+}
+
+.landing-top {
+  margin-bottom: 7rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .value-prop {
+    letter-spacing: 0;
+  }
+}
+
 // Use Cases
 
 .Uses {
-  background-color: $gray;
+  margin-top: 8em;
+}
+
+.uses-overview {
+  background: #000;
+  background-image: url("../images/augur_future.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  padding: 60px 0 0 0;
+}
+
+.uses-header {
+  color: #fff;
+  font-size: 2.3rem;
+  margin-bottom: 2.4rem;
+}
+
+.uses-grab {
+    padding: 10px;
+    text-align: center;
+    color: #000;
+    letter-spacing: 0px;
+    margin-bottom: 14.375rem;
 }
 
 .Uses__wrap {
   @extend .max-width;
-
-  position: relative;
+  background: #000;
+  padding-top: 30px;
+  max-width: unset;
 }
 
-.Uses__intro {
-  font-size: 3.625rem;
-  letter-spacing: -1px;
+.uses-intro {
   line-height: 4.75rem;
-  margin-bottom: 0;
-  position: absolute;
-  right: 0;
-  top: -7.5rem;
-  max-width: 49rem;
+  text-align: center;
+  background: rgba(255,255,255,.77);
+  color: #48abdc;
+  padding: 23px 0 40px 0;
+  margin-bottom: 75px;
+}
+
+.uses-intro-header {
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #40a8ca;
+}
+
+.uses-intro-sub {
+  font-size: 1.4rem;
+  color: #464646;
+  padding-top: 7px;
+  font-weight: normal;
 }
 
 .Uses__use-cases {
-  padding-top: 8.125rem;
   position: relative;
-  top: 5rem;
 }
 
 .Uses__use-cases-wrapper {
@@ -108,6 +174,11 @@
 
 // The Augur Cycle
 
+.cycle-header {
+  text-align: center;
+  padding-top: 4em;
+}
+
 .AugurCycle {
   padding-top: 11.5rem;
 }
@@ -118,7 +189,7 @@
 
 .AugurCycle__step {
   display: flex;
-  margin-bottom: 7.5rem;
+  margin-bottom:3rem;
 
   > .step--image {
     width: 48%;
@@ -199,16 +270,17 @@
 // Currencies
 
 .Currencies {
-  background-color: $gray--dark;
-  color: $white;
-  padding-top: 1.5rem;
+  background-color: #fff;
+}
+
+.currencies-header {
 }
 
 .Currencies__wrap {
   @extend .max-width;
-
   position: relative;
   top: 5rem;
+  margin-bottom: 6rem;
 }
 
 .Currencies__currency-wrap {
@@ -374,56 +446,22 @@
 // Benefits
 
 .Benefits {
-  background-color: $purple--light;
-  padding-bottom: 6.875rem;
-  padding-top: 11.875rem;
+  background-color: #fff;
+  padding-top: 4.875rem;
+  border-top: 10px dotted #ebe8fd;
 }
 
-.Benefits__benefits-wrap {
-  display: flex;
-  justify-content: space-between;
+// Projects 
+
+.projects-header {
+  text-align: center;
 }
 
-.Benefits__benefit {
-  width: 22.8%;
-
-  > img {
-    height: 2.375rem;
-    margin-bottom: 1rem;
-  }
-
-  > h5 {
-    @extend .with-line;
-
-    font-weight: 500;
-    margin-bottom: 2.125rem;
-
-    &::after {
-      bottom: -1.0625rem;
-    }
-  }
-}
 
 @media only screen and (max-width: 900px) {
   .Benefits {
     padding-top: 6rem;
     padding-bottom: 2rem;
-  }
-
-  .Benefits__benefits-wrap {
-    flex-wrap: wrap;
-  }
-
-  .Benefits__benefit {
-    margin-bottom: 4rem;
-    width: 48%;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .Benefits__benefit {
-    margin-bottom: 2rem;
-    width: 100%;
   }
 }
 
