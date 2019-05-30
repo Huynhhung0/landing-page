@@ -15,7 +15,8 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     livereload = require('gulp-livereload'),
     serve = require('gulp-serve'),
-    open = require('gulp-open');
+    open = require('gulp-open'),
+    modernizr = require('gulp-modernizr');
 
 // HTML
 gulp.task('html', function() {
@@ -61,6 +62,12 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('./dist/scripts'))
     .pipe(livereload())
     .pipe(notify({ message: 'Scripts task complete' }))
+});
+
+gulp.task('modernizr', function() {
+  return gulp.src('./js/*.js')
+    .pipe(modernizr())
+    .pipe(gulp.dest('dist/'))
 });
 
 // Images
