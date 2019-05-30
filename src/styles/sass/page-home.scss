@@ -37,13 +37,22 @@
 
 .uses-overview {
   background: #000;
-  background-image: url("../images/augur_future.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   color: #fff;
   padding: 60px 0 0 0;
 }
+
+/* if browser does not support webp, use jpg*/
+.no-webp .uses-overview {
+  background-image: url("..images/augur_future.jpg");
+}
+
+.webp .uses-overview {
+  background-image: url("../images/augur_future.webp");
+}
+
 
 .uses-header {
   color: #fff;

@@ -71,7 +71,7 @@ if (document.readyState === 'loading') {
   window.addEventListener('load', fn)
 } else {
   fn()
-}
+}  
 
 // Show and Hide Mobile Nav
 
@@ -86,6 +86,7 @@ function showMobileNav () {
 function hideMobileNav () {
   headerNav.classList.remove('nav--open')
 }
+
 
 mobileBars.onclick = showMobileNav
 mobileTimes.onclick = hideMobileNav
