@@ -1082,7 +1082,7 @@ ul {
 
 /* if browser does not support webp, use jpg*/
 .no-webp .uses-overview {
-  background-image: url("..images/augur_future.jpg"); }
+  background-image: url("../images/augur_future.jpg"); }
 
 .webp .uses-overview {
   background-image: url("../images/augur_future.webp"); }
