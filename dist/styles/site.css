@@ -430,7 +430,7 @@ p {
 h1 {
   font-size: 4rem;
   font-weight: 700;
-  letter-spacing: .5px;
+  letter-spacing: .75px;
   line-height: 4.625rem; }
 
 h2 {
@@ -872,6 +872,10 @@ ul {
     margin-bottom: 2.125rem; }
     .quarter-tile > h5::after {
       bottom: -1.0625rem; }
+
+.author-byline {
+  color: #05aad4;
+  letter-spacing: 1.15px; }
 
 @media only screen and (max-width: 1080px) {
   .Footer__main-wrap {
@@ -1810,6 +1814,8 @@ ul {
     -ms-flex-pack: justify;
         justify-content: space-between;
     padding-bottom: 6.5rem; }
+  .Faq p a {
+    color: #05aad4; }
 
 .FaqAnswers {
   width: 41.75rem;

@@ -37,7 +37,7 @@ p {
 h1 {
   font-size: 4rem;
   font-weight: 700;
-  letter-spacing: .5px;
+  letter-spacing: .75px;
   line-height: 4.625rem;
 }
 h2 {
@@ -643,6 +643,11 @@ ul {
       bottom: -1.0625rem;
     }
   }
+}
+
+.author-byline {
+  color: #05aad4;
+  letter-spacing: 1.15px;
 }
 
 
