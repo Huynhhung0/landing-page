@@ -199,13 +199,13 @@
                     </p>
 
                     <p>
-                        Imagine buying the cheapest 15% of asks from an order book and then selling them back into the market right away. If you recoup a high percentage of what you paid, say 90%, the market is more liquid than if you recoup a small percentage, say 50%. If there’s a wide spread or a narrow spread but with a bunch of dust orders, you only recoup a small amount. 
+                        Imagine buying the cheapest 15% of asks from an order book and then selling them back into the market right away. If you recoup a high percentage of what you paid, say 85%, the market is more liquid than if you recoup a small percentage, say 50%. If there’s a wide spread or a narrow spread but with a bunch of dust orders, you only recoup a small amount. 
                     </p>
 
                     <center><img src="https://augur.net/src/images/reliable-markets-two.png" alt="Defeating Augur's Largest Attack" style="width:25em;margin-top:2em;"><p style="font-style:italic; font-size:.8em;margin-top:1em;" ><i>An example of an order book with a relatively narrow and deep spread, by present Augur standards</i><p></center>
 
                     <p>
-                        The new liquidity sort essentially codifies this scenario. Markets are sorted based on the amount of shares you could buy and sell while still meeting a liquidity threshold, which defaults to 15%. So a market where you could buy 100 ETH worth of shares, sell them, and recoup 90% (1–15%) of what you paid, would rank higher than a market where you could only buy and sell 10 ETH while recouping the same percentage. It also filters out markets with spreads greater than 15%. This feature alone may not filter out all Invalid markets, but it greatly diminishes the damage.</p>
+                        The new liquidity sort essentially codifies this scenario. Markets are sorted based on the amount of shares you could buy and sell while still meeting a liquidity threshold, which defaults to 15%. So a market where you could buy 100 ETH worth of shares, sell them, and recoup 85% (1–15%) of what you paid, would rank higher than a market where you could only buy and sell 10 ETH while recouping the same percentage. It also filters out markets with spreads greater than 15%. This feature alone may not filter out all Invalid markets, but it greatly diminishes the damage.</p>
 
                     <p><b>The sort rewards liquid markets with tight, deep spreads. In other words, it makes the markets that are the most useful to traders, the most visible.</b> Before, traders could wash trade their way to the top of the markets page,
                         since the sort was based purely on open interest, the amount of money currently at stake in the market. Invalid markets benefited from perverse network effects where they appeared to have good offers, so people traded in them,
