@@ -3,39 +3,40 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-74080255-11', { 'anonymize_ip': true });
-  </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-74080255-11', { 'anonymize_ip': true });
+    </script>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>The Augur Report - Blog From The Augur Project | Augur Prediction Markets</title>
-    <meta content="The Augur Report - Blog From The Augur Project | Augur Prediction Markets" property="og:title">
-    <meta content="The Augur Report - Blog From The Augur Project | Augur Prediction Markets" property="og:site_name">
-    <meta content="The Augur Report - Blog From The Augur Project | Augur Prediction Markets" name="twitter:card">
-    <meta content="The Augur Report - Blog From The Augur Project | Augur Prediction Markets" name="twitter:title">
-    <meta content="The Augur Report - Blog From The Augur Project | Augur Prediction Markets" name="twitter:domain">
+    <title>Upgrading Augur's Market Validity Filter</title>
+    <meta content="Upgrading the Market Validity Filter | Augur Prediction Markets" property="og:title">
+    <meta content="Upgrading the Market Validity Filter | Augur Prediction Markets" property="og:site_name">
 
-    <meta content="The Augur Report - Blog From The Augur Project | Augur Prediction Markets. News, updates, and post related to Augur's decentrazlied prediction market protocol will make up the Augur Report." name="description">
-    <meta content="The Augur Report - Blog From The Augur Project | Augur Prediction Markets. News, updates, and post related to Augur's decentrazlied prediction market protocol will make up the Augur Report." property="og:description">
-    <meta content="The Augur Report - Blog From The Augur Project | Augur Prediction Markets. News, updates, and post related to Augur's decentrazlied prediction market protocol will make up the Augur Report." name="twitter:description">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AugurProject" />
+    <meta name="twitter:creator" content="@AugurProject">
+    <meta name="twitter:title" content="Upgrading Augur's Market Validity Filter" />
+    <meta name="twitter:description" content="Upgrading Augur's Market Validity Filter" />
+    <meta name="twitter:image" content="https://augur.net/dist/images/meta_logo.png" />
 
-    <meta content="https://www.augur.net/blog/" property="og:url">
+    <meta content="An Update on Augur's Validity Filter" name="description">
+    <meta content="An Update on Augur's Validity Filter>
+
+    <meta content="https://www.augur.net/blog/filter-upgrade" property="og:url">
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.augur.net/blog/" />
+    <link rel="canonical" href="https://www.augur.net/blog/filter-upgrade" />
 
     <meta content="https://augur.net/dist/images/meta_logo.png" property="og:image">
-    <meta content="https://augur.net/dist/images/meta_logo.png" name="twitter:image">
-    <meta content="https://augur.net/dist/images/meta_logo.png" name="twitter:image:src">
 
     <link rel="stylesheet" type="text/css" href="/dist/styles/site.min.css" defer>
     <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
@@ -73,13 +74,14 @@
             })
         });
     </script>
+
 </head>
 
 <body>
     <header class="Header">
         <div class="Header__wrap">
             <a href="/">
-                <img alt="The Augur Report - Blog From The Augur Project" src="/dist/images/augur-logo.svg">
+                <img alt="Upgrading Augur's Market Validity Filter" src="/dist/images/augur-logo.svg">
             </a>
             <div class="Header__nav">
                 <ul>
@@ -94,27 +96,53 @@
         </div>
     </header>
 
-    <section class="Hero--wide">
+    <section class="Hero--wide blog-header">
         <div class="Hero__wrap">
-            <div style="max-width: 100%;">
-                <h1 class="with-line">The Augur Report:</h1>
-                                <br>
-                <h4><a href="https://augur.net/blog/filter-upgrade">Upgrading our Invalid Filter</a></h4>
-                <br>
-                <h4><a href="https://augur.net/blog/reliable-markets">Defeating Augur’s Largest Attack</a></h4>
-                <br>
-                <h4><a href="https://augur.net/blog/v1-cutoff">The Augur v1 Cutoff: What It Means for Traders, Market Creators & Reporters</a></h4>
-                <br>
-                <h4><a href="https://augur.net/blog/wikipedia-markets">Augur as Wikipedia for Markets</a></h4>
-                <br>
-                  <h4><a href="https://augur.net/blog/prediction-markets">The Ultimate Guide to Decentralized Prediction Markets</a></h4>
-                <br>
-                <h4><a href="https://augur.net/blog/augur-v2">Augur v2 - A Tour of the Prediction Protocol’s First Major Upgrade</a></h4>
-                <br>
-                <h4><a href="https://medium.com/@AugurProject/augur-launches-794fa7f88c6a">Augur Launches</a></h4>
-                <br>
-                <h4> <a href="https://medium.com/@AugurProject/hackerone-bug-bounty-program-469dd3d1f677">Announcing the HackerOne Bug Bounty Program</a></h4>
+            <div>
+                <h1 class="with-line">Shoring up Augur's Validity Filter</h1>
+                <p style="font-style:italic;font-size:.8em;">author: <a class="author-byline" href="https://twitter.com/Ben_davidow"><b><u>Ben Davidow</u></b></a></p>
+            </div>
+        </div>
+    </section>
 
+    <section class="Faq">
+        <div class="max-width">
+            <div class="FaqAnswers">
+                    <p>
+                        Earlier this week, <a href="https://www.augur.net/blog/reliable-markets/" target="_blank">we released</a> new changes on Augur App to promote more liquid markets and counter Invalid market attacks. These changes have already worked in incentivizing more liquid markets and removing most Invalid markets from the default view. Yesterday, we pushed a follow-up release to further shore up the Invalid Filter by adding in accounting for the Time Value of Money (TVM).
+                    </p>
+                    <p>
+                        TVM is the idea that money is worth more now than later due to its earning capacity and ability to accrue interest. For instance, $100 now is worth more than $100 in a year. Phrased in reverse, there is an opportunity cost to locking up capital over a period of time.
+                    </p>
+                    <p>
+                        If, let's say, the annual "risk-free" rate of return from U.S. Treasury bills is 3%, then locking up funds for a year to net a 2% return may be an irrational trade. Whenever traders enter new positions in Augur markets, they are locking up funds for some duration of time, so TVM should be accounted for.
+                    </p>
+                    <p>
+                        The Invalid filter excludes any markets where neither the highest bid nor the lowest ask would net a profit for the order taker in the case of Invalid resolution. The idea is that such orders would have already been filled by some rational actor if the market were Invalid, so the presence of any such orders on the book is a signal that the market is <em>valid</em>.
+                    </p>
+                    <p>
+                        After Wednesday's release, at least one Invalid market squeezed through the filter. While someone filled its bid at a small profit and a loss for the market creator, which effectively disqualified it from passing the filter, it may have not been a profitable trade for the taker when factoring in TVM.
+                    </p>
+                    <p>
+                        We decided to make the filter more robust by accounting for TVM. The improved formula assumes an annualized rate of return of 10% and a lockup duration starting at the time of order fill and ending two weeks after market expiry. As before, it also factors in market and gas fees.
+                    </p>
+                    <p>
+                        This may present an opportunity for rational market actors. If a known Invalid market shows up while the filter is selected, then, at least in theory, it must contain at least one bid or ask that can be taken at a profit.
+                    </p>
+                    <p>
+                        As we wrote in our last post,
+                    </p>
+                    <blockquote>
+                        Invalid market scammers will face a choice: seek a new exploit, leave Augur, or start creating valid markets and contributing productive liquidity…Either way, it's a win. If they find a new exploit, we can counteract it before Augur hits primetime. If they redirect their skills at making valid markets, even better.
+                    </blockquote>
+                    <p>
+                        This improvement takes us a step closer toward full incentive compatibility where the interests of individual market actors align with broader utility of Augur as a whole. We believe that if we're not their yet, it will soon be a no-brainer for rational actors to create and play in valid markets on Augur.
+                    </p>
+                    <p>
+                        For any questions, feel free to jump on <a href="https://discordapp.com/invite/faud6Fx" target="_blank">Augur Discord</a>, a community of Augur users, developers and enthusiasts.
+                    </p>
+
+                     <a class="button cta-primary cta-blog" href="https://augur.net/ipfs-redirect.html" style="text-align:center;margin-top:-.5em;">Start Trading on Augur</a> <br><br><br>
             </div>
         </div>
     </section>
