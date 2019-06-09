@@ -556,26 +556,25 @@ ul {
 
 .cta-button {
   color: #fff;
-  background-image: linear-gradient(to bottom, #7E4FBD, #5D398C); }
+  background: #f96060;
+  text-align: center; }
 
 .cta-button:hover {
-  background-image: linear-gradient(to bottom, #7247AB, #5A3687); }
+  background: #e65757; }
 
 .cta-primary {
   float: left;
   font-size: 1.6rem;
-  line-height: 4.2rem;
-  background: #f96060; }
+  line-height: 4.2rem; }
 
 .cta-primary:hover {
   background: #e65757; }
 
 .cta-secondary {
-  background-color: #553580;
   color: #FFF;
-  margin: 0 auto 3.5em auto;
+  margin: 0 auto 3em auto;
   display: block;
-  width: 30%; }
+  width: 25%; }
 
 .cta-in-text {
   color: #553580; }
@@ -1064,6 +1063,9 @@ ul {
 .landing-top {
   margin-bottom: 7rem; }
 
+.intro-vid {
+  margin-top: 1.8em; }
+
 @media only screen and (max-width: 700px) {
   .value-prop {
     letter-spacing: 0; } }
@@ -1211,6 +1213,9 @@ ul {
   -ms-flex-pack: end;
       justify-content: flex-end; }
 
+.final-step {
+  margin-bottom: 6em; }
+
 @media only screen and (max-width: 900px) {
   .AugurCycle {
     padding-top: 6rem; }
@@ -1255,7 +1260,8 @@ ul {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between; }
+      justify-content: space-between;
+  padding-bottom: 3rem; }
 
 .Currencies__currency {
   color: #000;
@@ -2123,4 +2129,4 @@ ul {
 
 @media only screen and (max-width: 680px) {
   .cta-blog {
-    width: 70%; } }
+    width: 90%; } }

@@ -197,19 +197,12 @@ ul {
 
 .cta-button {
   color: #fff;
-  background-image: -webkit-linear-gradient(top, #7E4FBD, #5D398C);
-  background-image: -moz-linear-gradient(top, #7E4FBD, #5D398C);
-  background-image: -ms-linear-gradient(top, #7E4FBD, #5D398C);
-  background-image: -o-linear-gradient(top, #7E4FBD, #5D398C);
-  background-image: linear-gradient(to bottom, #7E4FBD, #5D398C);
+  background: #f96060;
+  text-align: center;
 }
 
 .cta-button:hover {
-  background-image: -webkit-linear-gradient(top, #7247AB, #5A3687);
-  background-image: -moz-linear-gradient(top, #7247AB, #5A3687);
-  background-image: -ms-linear-gradient(top, #7247AB, #5A3687);
-  background-image: -o-linear-gradient(top, #7247AB, #5A3687);
-  background-image: linear-gradient(to bottom, #7247AB, #5A3687);
+  background: #e65757;
 }
 
 
@@ -217,7 +210,6 @@ ul {
   float: left;
   font-size: 1.6rem;
   line-height: 4.2rem;
-  background: #f96060;
 }
 
 .cta-primary:hover {
@@ -225,11 +217,10 @@ ul {
 }
 
 .cta-secondary {
-  background-color: #553580;
   color: #FFF;
-  margin: 0 auto 3.5em auto;
+  margin: 0 auto 3em auto;
   display: block;
-  width: 30%;
+  width: 25%;
 }
 
 .cta-in-text {
