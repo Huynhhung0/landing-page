@@ -23,6 +23,11 @@
   margin-bottom: 7rem;
 }
 
+
+.intro-vid {
+  margin-top: 1.8em;
+}
+
 @media only screen and (max-width: 700px) {
   .value-prop {
     letter-spacing: 0;
@@ -236,6 +241,10 @@
   justify-content: flex-end;
 }
 
+.final-step {
+  margin-bottom: 6em;
+}
+
 @media only screen and (max-width: 900px) {
   .AugurCycle {
     padding-top: 6rem;
@@ -295,6 +304,7 @@
 .Currencies__currency-wrap {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 3rem;
 }
 
 .Currencies__currency {
