@@ -28,9 +28,14 @@
   margin-top: 1.8em;
 }
 
+
 @media only screen and (max-width: 700px) {
   .value-prop {
     letter-spacing: 0;
+  }
+
+  .intro-vid-iframe {
+    width: 100%;
   }
 }
 
