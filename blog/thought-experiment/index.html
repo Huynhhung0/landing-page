@@ -18,23 +18,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shoring up Augur's Validity Filter | Augur Prediction Markets</title>
-    <meta content="Shoring up Augur's Validity Filter | Augur Prediction Markets" property="og:title">
-    <meta content="Shoring up Augur's Validity Filter | Augur Prediction Markets" property="og:site_name">
+    <title>A Simple Thought Experiment to Understand Prediction Markets | Augur Prediction Markets</title>
+    <meta content="A Simple Thought Experiment to Understand Prediction Markets | Augur Prediction Markets" property="og:title">
+    <meta content="A Simple Thought Experiment to Understand Prediction Markets | Augur Prediction Markets" property="og:site_name">
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@AugurProject" />
     <meta name="twitter:creator" content="@AugurProject">
-    <meta name="twitter:title" content="Shoring up Augur's Validity Filter | Augur Prediction Markets" />
+    <meta name="twitter:title" content="A Simple Thought Experiment to Understand Prediction Markets | Augur Prediction Markets" />
     <meta name="twitter:description" content="A follow-up release further incentivizing liquid and legitimate markets." />
     <meta name="twitter:image" content="https://augur.net/dist/images/meta_logo.png" />
 
     <meta content="A follow-up release further incentivizing liquid and legitimate markets." name="description">
     <meta content="A follow-up release further incentivizing liquid and legitimate markets.">
 
-    <meta content="https://www.augur.net/blog/filter-upgrade" property="og:url">
+    <meta content="https://www.augur.net/blog/thought-experiment" property="og:url">
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.augur.net/blog/filter-upgrade" />
+    <link rel="canonical" href="https://www.augur.net/blog/thought-experiment" />
 
     <meta content="https://augur.net/dist/images/meta_logo.png" property="og:image">
 
@@ -81,7 +81,7 @@
     <header class="Header">
         <div class="Header__wrap">
             <a href="/">
-                <img alt="Shoring up Augur's Validity Filter | Augur Prediction Markets" src="/dist/images/augur-logo.svg">
+                <img alt="A Simple Thought Experiment to Understand Prediction Markets | Augur Prediction Markets" src="/dist/images/augur-logo.svg">
             </a>
             <div class="Header__nav">
                 <ul>
@@ -99,8 +99,7 @@
     <section class="Hero--wide blog-header">
         <div class="Hero__wrap">
             <div>
-                <h1 class="with-line">Shoring up Augur's Validity Filter</h1>
-                <h4>A follow-up release further incentivizing liquid and legitimate markets</h4>
+                <h1 class="with-line blog-headline">A Simple Thought Experiment to Understand Prediction Markets</h1>
                 <p style="font-style:italic;font-size:.8em;">author: <a class="author-byline" href="https://twitter.com/Ben_davidow"><b><u>Ben Davidow</u></b></a></p>
             </div>
         </div>
@@ -109,44 +108,66 @@
     <section class="Faq">
         <div class="max-width">
             <div class="FaqAnswers">
-                    <p>
-                        Earlier this week, <a href="https://www.augur.net/blog/reliable-markets/" target="_blank">we released</a> new changes on Augur App to promote more liquid markets and counter Invalid market attacks. These changes have already worked in incentivizing more liquid markets and removing most Invalid markets from the default view. Yesterday, we pushed a follow-up release to further shore up the Invalid Filter by adding in accounting for the Time Value of Money (TVM).
-                    </p>
-                    <p>
-                        TVM is the idea that money is worth more now than later due to its earning capacity and ability to accrue interest. For instance, $100 now is worth more than $100 in a year. Phrased in reverse, there is an opportunity cost to locking up capital over a period of time.
-                    </p>
-                    <p>
-                        If, let's say, the annual "risk-free" rate of return from U.S. Treasury bills is 3%, then locking up funds for a year to net a 2% return may be an irrational trade. Whenever traders enter new positions in Augur markets, they are locking up funds for some duration of time, so TVM should be accounted for.
-                    </p>
-                    <p>
-                        The Invalid filter excludes any markets where neither the highest bid nor the lowest ask would net a profit for the order taker in the case of Invalid resolution. The idea is that such orders would have already been filled by some rational actor if the market were Invalid, so the presence of any such orders on the book is a signal that the market is <em>valid</em>.
-                    </p>
-                    <p>
-                        After Wednesday's release, at least one Invalid market squeezed through the filter. While someone filled its bid at a small profit and a loss for the market creator, which effectively disqualified it from passing the filter, it may have not been a profitable trade for the taker when factoring in TVM.
-                    </p>
-                    <p>
-                        We decided to make the filter more robust by accounting for TVM. The improved formula assumes an annualized rate of return of 10% and a lockup duration starting at the time of order fill and ending two weeks after market expiry. As before, it also factors in market and gas fees.
-                    </p>
-                    <p>
-                        This may present an opportunity for rational market actors. If a known Invalid market shows up while the filter is selected, then, at least in theory, it must contain at least one bid or ask that can be taken at a profit.
-                    </p>
-                    <p>
-                        As we wrote in our last post,
-                    </p>
-                    <blockquote>
-                        Invalid market scammers will face a choice: seek a new exploit, leave Augur, or start creating valid markets and contributing productive liquidity…Either way, it's a win. If they find a new exploit, we can counteract it before Augur hits primetime. If they redirect their skills at making valid markets, even better.
-                    </blockquote>
-                    <br>
-                    <p>
-                        This improvement takes us a step closer toward full incentive compatibility where the interests of individual market actors align with broader utility of Augur as a whole. We believe that if we're not their yet, it will soon be a no-brainer for rational actors to create and play in valid markets on Augur.
-                    </p>
-                    <p>
-                        For any questions, feel free to jump on <a href="https://discordapp.com/invite/faud6Fx" target="_blank">Augur Discord</a>, a community of Augur users, developers and enthusiasts.
-                    </p>
-                
-                    <p>
-                        <em>More info on this release for market creators <a href="https://github.com/AugurProject/augur-app/releases/tag/v1.14.2">here</a></em>
-                    </p>
+
+                        <p>To get a feel for how and why prediction markets like<a href="https://augur.net" > Augur</a> work, let’s build one…from scratch. We’ll mentally construct a prediction market from the ground up with a simple thought experiment. </p>
+
+                        <p>Let’s say our goal is to make the best prediction possible on some future event. It could be a political election, tomorrow’s weather or when the next iPhone will ship. Let’s call it Outcome X.</p>
+
+                        <p>Since we have no idea about the likelihood of X, we need some way to extract all the knowledge and information out there or “the wisdom of the crowd.” This includes experts with predictive models, “superforecasters” with strong intuition, insiders with unique information…basically anyone with insight.</p>
+
+                        <p>So we need some way to collect, aggregate, and weigh all this insight, so at any point in time we can predict there’s a Y percent chance of X occurring.</p>
+
+                        <p>A bit daunting…so let’s start simple. We set up a voting booth and invite anyone to write down “YES” if they think X will occur and “NO” if they don’t. We then tally up the YESes and the NOs. If there are 60 YESes and 40 NOs, we’ll call it a 60% chance.</p>
+
+                        <p>Okay good start, but we didn’t get a lot of votes. Most folks have something better to do than stand in a line to write “YES” or “NO” on a piece of paper. So let’s add an incentive: anyone who makes a prediction earns a dollar.</p>
+
+                        <p>Okay, we get more votes now…but not necessarily good ones. How do we ensure that people are being honest and predicting to the best of their ability?</p>
+
+                        <p>Let’s tweak it so that that each person gets a dollar if they make a correct prediction but no payout if they are wrong. This will incentivize better predictions.</p>
+
+                        <p>We achieve this by handing out vouchers. We give a YES voucher to each person who predicts that X will occur and a NO voucher to each person who predicts that it will not. If X occurs, anyone who has a YES voucher can redeem it for a dollar. If it doesn’t, anyone who has a NO voucher can do the same.</p>
+
+                        <p>Okay, we’re starting to get somewhere, but this is still a bit crude…</p>
+
+                        <p>First, there’s no cost to making a bad prediction. Predictors will either come out neutral or ahead, so everyone is motivated to make a prediction, even if it’s completely random and they have no idea what they’re talking about.</p>
+
+                        <p>Second, Jeff and Mary might both pick YES, but Jeff may think there’s a 92% chance X will occur and Mary, just a 52% chance. That’s a big difference! How can we account for varying conviction levels?</p>
+
+                        <p>Finally, who’s going to come up with all the funds to reward predictors? You probably don’t have a gazillion dollars lying around to hand out to random strangers!</p>
+
+                        <p>We can fix these issues in one fell swoop by requiring predictors to…put some skin in the game.</p>
+
+                        <p>To issue each new pair of vouchers (one YES voucher and one NO voucher) we find two people who are willing to pay a total of a dollar. That dollar will get paid out to whichever one of them ends up being right.</p>
+
+                        <p>Say Jeff thinks there’s at least a 75% chance X will happen and Mary thinks there’s less than a 75% chance it will happen, or in other words, a greater than 25% chance that it will not happen. Jeff pays 75 cents for a YES voucher and Mary pays 25 cents for a NO voucher.</p>
+
+                        <p>Remember, a YES voucher is worth a dollar if X occurs and a NO voucher is worth a dollar if it does not occur. Since the payout is always the same for being right, the amount of risk one is willing to take to get the payout should be proportional to how convinced they are of being right.</p>
+
+                        <p>We take everyone who’s interested in buying a YES voucher and line them up by the amount they’re willing to pay. On the far left you have someone willing to pay 40 cents and at the other end, the rightmost person is offering, say, 65 cents.</p>
+
+                        <p>Starting from the opposite end of the room, we do the same for folks interested in buying NO vouchers. Let’s say on the far right we have someone willing to pay just 15 cents and at the other end, the leftmost person is offering 35 cents.</p>
+
+                        <p>Whenever the offer of the rightmost person in the first line (YES buyers) and the offer of the leftmost person in the second line (NO buyers) adds up to a dollar, we have a deal and give a YES voucher to the YES buyer and a NO voucher to the NO buyer.</p>
+
+                        <p>We now average out the price people paid for all the YES vouchers for our new and improved prediction. We have solved the funding issue since predictors essentially subsidize one another, while making predictions more precise — and reliable, since they now require participants to take on risk and put their money where their mouth is.</p>
+
+                        <p>We’re moving along now but a couple final issues…</p>
+
+                        <p>First, there’s no way for predictors to update their views. What if there’s some major news update or someone gains more knowledge and needs to update his prediction?</p>
+
+                        <p>And, there’s no real weighing of different conviction levels since each person can only buy one voucher. What if someone is, like, really confident in her prediction? Shouldn’t she be free to buy more vouchers in order to sufficiently express her conviction?</p>
+
+                        <p>We can patch up these issues by…creating a market.</p>
+
+                        <p>Once vouchers are issued they are put on an open market, meaning anyone can buy and sell them at whatever price they agree on. Anyone can buy as many vouchers as they want.</p>
+
+                        <p>With this tweak, the price paid for YES vouchers at any point in time will, more or less, be the collective perceived probability of X occurring and a sort of ultimate prediction that absorbs all the crowd’s knowledge. It represents the meeting point of all buyers and sellers, the point at which no buyer is willing to pay more and no seller is willing to accept less.</p>
+
+                        <p>If there’s some news that makes X more likely or an actor with unique knowledge enters the market, the meeting point shifts to reflect this new information and the market finds a new equilibrium.</p>
+
+                        <p>Replace our physical vouchers with digital shares, our voting booth with an online exchange and our physical line with an order book…and you have a modern prediction market: a group of traders (humans and bots) buying and selling shares whose payout depends on the outcome of future events.</p>
+
+                        <p>In future posts, we’ll dive into how<a href="https://www.augur.net/blog/prediction-markets/" > decentralized prediction markets</a> work. In the meantime, perhaps the best way to get a feel for how they workis to use one! To get started on Augur, visit<a href="http://augur.net" > augur.net</a></p>
 
                     <a class="button cta-button cta-blog" href="https://augur.net/ipfs-redirect.html" style="text-align:center;margin-top:-.5em;">Start Trading on Augur</a> <br><br><br>
                 
