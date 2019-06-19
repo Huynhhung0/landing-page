@@ -2123,6 +2123,10 @@ ul {
 .blog-header {
   padding-bottom: 0; }
 
+.blog-header-img {
+  margin-bottom: 4em;
+  border: 1px solid #aaa; }
+
 .blog-headline {
   font-size: 3rem;
   line-height: 4rem; }
