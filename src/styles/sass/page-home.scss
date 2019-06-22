@@ -1,9 +1,15 @@
 // Main
 
-.value-prop {
-  line-height: 5rem;
-  font-weight: bold;
-  letter-spacing: .5px;
+.cta-download-link {
+  font-size: 13px;
+}
+
+.intro-vid {
+  margin-top: 1.8em;
+}
+
+.landing-top {
+  margin-bottom: 7rem;
 }
 
 .main-grab {
@@ -17,27 +23,20 @@
 .sub-grab {
   font-size: 1.43rem;
   line-height: 1.9rem;
+  display: inline-block;
+  margin-bottom: .68em;
 }
 
-.landing-top {
-  margin-bottom: 7rem;
+.sub-grab-head {
+  width: 82%;
+  margin-bottom: 2rem !important;
 }
 
-
-.intro-vid {
-  margin-top: 1.8em;
+.value-prop {
+  font-weight: bold;
+  letter-spacing: .5px;
 }
 
-
-@media only screen and (max-width: 700px) {
-  .value-prop {
-    letter-spacing: 0;
-  }
-
-  .intro-vid-iframe {
-    width: 100%;
-  }
-}
 
 // Use Cases
 
@@ -47,22 +46,9 @@
 
 .uses-overview {
   background: #000;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  padding: 4rem 0 4rem 0;
   color: #fff;
-  padding: 60px 0 0 0;
 }
-
-/* if browser does not support webp, use jpg*/
-.no-webp .uses-overview {
-  background-image: url("../images/augur_future.jpg");
-}
-
-.webp .uses-overview {
-  background-image: url("../images/augur_future.webp");
-}
-
 
 .uses-header {
   color: #fff;
@@ -70,12 +56,20 @@
   margin-bottom: 2.4rem;
 }
 
+.use-case-img {
+  display: inline-block;
+  margin: 0 .8rem -1.3rem 0;
+}
+
+.use-case-item {
+  display: inline-block;
+  font-size: 1.75rem;
+}
+
 .uses-grab {
-    padding: 10px;
-    text-align: center;
-    color: #000;
-    letter-spacing: 0px;
-    margin-bottom: 14.375rem;
+    text-align: center;  
+    letter-spacing: 1.3px;
+    margin-bottom: 2.3rem;
 }
 
 .Uses__wrap {
@@ -85,28 +79,6 @@
   max-width: unset;
 }
 
-.uses-intro {
-  line-height: 4.75rem;
-  text-align: center;
-  background: rgba(255,255,255,.77);
-  color: #48abdc;
-  padding: 23px 0 40px 0;
-  margin-bottom: 75px;
-}
-
-.uses-intro-header {
-  font-size: 1.7rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: #40a8ca;
-}
-
-.uses-intro-sub {
-  font-size: 1.4rem;
-  color: #464646;
-  padding-top: 7px;
-  font-weight: normal;
-}
 
 .Uses__use-cases {
   position: relative;
@@ -472,7 +444,6 @@
 .Benefits {
   background-color: #fff;
   padding-top: 4.875rem;
-  border-top: 10px dotted #ebe8fd;
 }
 
 // Projects 
@@ -485,7 +456,7 @@
 @media only screen and (max-width: 900px) {
   .Benefits {
     padding-top: 6rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
   }
 }
 
@@ -639,6 +610,86 @@
   text-align: center;
   margin-bottom: 1rem;
   margin-right: 1rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .AugurCycle__steps-wrapper {
+    margin-top: 0 !important;
+  }
+
+  .Benefits {
+    padding-top: 3rem;
+  }
+
+  .Currencies__currency-wrap {
+    padding-bottom: 0;
+  }
+
+  .Currencies__wrap {
+    margin-bottom: 0;
+  }
+
+  .cycle-header {
+    display: none;
+  }
+
+  .half-tile {
+    width: 50%;
+    text-align: center;
+  }
+
+  .landing-top {
+    margin-bottom: 3rem;
+    padding-top: 2.1rem;
+  }
+
+  .main-grab {
+    margin-bottom: .7em;
+  }
+
+  .quarter-tile {
+    width: 46%;
+  }
+
+  .quarter-wrap {
+    margin-bottom: 0;
+  }
+
+  .sub-grab {
+    margin-bottom: .8em;
+  }
+
+  .sub-grab-head {
+    width: 100%;
+  }
+
+  .Uses {
+    margin-top: 0;
+  }
+
+  .use-case-img {
+    margin: 0 .8rem -.4rem 0;
+  }
+
+  .uses-grab { 
+    line-height: 2.6rem;
+  }
+
+  .uses-intro {
+    margin-bottom: 0;
+  }
+
+  .uses-overview {
+    padding: 4rem .4rem 4rem .4rem;
+  }
+
+  .value-prop {
+    letter-spacing: 0;
+  }
+
+  .vid-container, .cta-download-link {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 1100px) {

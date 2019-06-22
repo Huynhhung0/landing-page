@@ -220,7 +220,18 @@ ul {
   color: #FFF;
   margin: 0 auto 3em auto;
   display: block;
-  width: 25%;
+  width: 30%;
+}
+
+.cta-white {
+    background: #fff;
+    color: #000;
+    font-size: 1.7rem;
+  }
+
+.cta-white:hover {
+    background: #fff;
+    color: #0091dc;
 }
 
 .cta-in-text {
@@ -603,6 +614,20 @@ ul {
 }
 
 // tiles 
+
+.half-tile {
+  width: 40%;
+  display: inline-block;
+  margin-right: 4em;
+  margin-top: 2.75rem;
+  text-align: left;
+}
+
+.half-wrap {
+  padding-left: 14%;
+  margin-bottom: 4rem;
+  text-align: center;
+}
 
 .quarter-wrap {
   display: flex;
