@@ -1065,10 +1065,14 @@ ul {
       .Footer__sub-wrap > ul > li > a > img {
         width: 1.25rem; } }
 
-.value-prop {
-  line-height: 5rem;
-  font-weight: bold;
-  letter-spacing: .5px; }
+.cta-download-link {
+  font-size: 13px; }
+
+.intro-vid {
+  margin-top: 1.8em; }
+
+.landing-top {
+  margin-bottom: 7rem; }
 
 .main-grab {
   font-size: 2.75rem;
@@ -1079,34 +1083,17 @@ ul {
 
 .sub-grab {
   font-size: 1.43rem;
-  line-height: 1.9rem; }
+  line-height: 1.9rem;
+  display: inline-block;
+  margin-bottom: .68em; }
 
-.landing-top {
-  margin-bottom: 7rem; }
+.sub-grab-head {
+  width: 82%;
+  margin-bottom: 2rem !important; }
 
-.intro-vid {
-  margin-top: 1.8em; }
-
-@media only screen and (max-width: 700px) {
-  .AugurCycle__steps-wrapper {
-    margin-top: 0 !important; }
-  .Benefits {
-    padding-top: 3rem; }
-  .value-prop {
-    letter-spacing: 0; }
-  .vid-container, .cta-download-link {
-    display: none; }
-  .landing-top {
-    margin-bottom: 2rem;
-    padding-top: 1.1rem; }
-  .quarter-tile {
-    width: 46%; }
-  .quarter-wrap {
-    margin-bottom: 0; }
-  .uses-intro {
-    margin-bottom: 0 !important; }
-  .Uses {
-    margin-top: 0 !important; } }
+.value-prop {
+  font-weight: bold;
+  letter-spacing: .5px; }
 
 .Uses {
   margin-top: 8em; }
@@ -1387,7 +1374,7 @@ ul {
 @media only screen and (max-width: 900px) {
   .Benefits {
     padding-top: 6rem;
-    padding-bottom: 2rem; } }
+    padding-bottom: 0; } }
 
 .Connect {
   padding: 6.5rem 0; }
@@ -1488,6 +1475,48 @@ ul {
   text-align: center;
   margin-bottom: 1rem;
   margin-right: 1rem; }
+
+@media only screen and (max-width: 700px) {
+  .AugurCycle__steps-wrapper {
+    margin-top: 0 !important; }
+  .Benefits {
+    padding-top: 3rem; }
+  .Currencies__currency-wrap {
+    padding-bottom: 0; }
+  .Currencies__wrap {
+    margin-bottom: 0; }
+  .cycle-header {
+    display: none; }
+  .half-tile {
+    width: 50%;
+    text-align: center; }
+  .landing-top {
+    margin-bottom: 3rem;
+    padding-top: 2.1rem; }
+  .main-grab {
+    margin-bottom: .7em; }
+  .quarter-tile {
+    width: 46%; }
+  .quarter-wrap {
+    margin-bottom: 0; }
+  .sub-grab {
+    margin-bottom: .8em; }
+  .sub-grab-head {
+    width: 100%; }
+  .Uses {
+    margin-top: 0; }
+  .use-case-img {
+    margin: 0 .8rem -.4rem 0; }
+  .uses-grab {
+    line-height: 2.6rem; }
+  .uses-intro {
+    margin-bottom: 0; }
+  .uses-overview {
+    padding: 4rem .4rem 4rem .4rem; }
+  .value-prop {
+    letter-spacing: 0; }
+  .vid-container, .cta-download-link {
+    display: none; } }
 
 @media only screen and (min-width: 1100px) {
   .download-links {
@@ -2149,6 +2178,8 @@ ul {
   width: 50%; }
 
 @media only screen and (max-width: 680px) {
+  .blog-header {
+    padding-top: 0; }
   .cta-blog {
     width: 70%; }
   .blog-headline {
