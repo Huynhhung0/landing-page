@@ -226,11 +226,12 @@ ul {
 .cta-white {
     background: #fff;
     color: #000;
+    font-size: 1.7rem;
   }
 
 .cta-white:hover {
     background: #fff;
-    color: orange;
+    color: #0091dc;
 }
 
 .cta-in-text {
@@ -619,11 +620,13 @@ ul {
   display: inline-block;
   margin-right: 4em;
   margin-top: 2.75rem;
+  text-align: left;
 }
 
 .half-wrap {
   padding-left: 14%;
   margin-bottom: 4rem;
+  text-align: center;
 }
 
 .quarter-wrap {

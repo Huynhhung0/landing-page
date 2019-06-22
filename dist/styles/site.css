@@ -578,11 +578,12 @@ ul {
 
 .cta-white {
   background: #fff;
-  color: #000; }
+  color: #000;
+  font-size: 1.7rem; }
 
 .cta-white:hover {
   background: #fff;
-  color: orange; }
+  color: #0091dc; }
 
 .cta-in-text {
   color: #553580; }
@@ -861,11 +862,13 @@ ul {
   width: 40%;
   display: inline-block;
   margin-right: 4em;
-  margin-top: 2.75rem; }
+  margin-top: 2.75rem;
+  text-align: left; }
 
 .half-wrap {
   padding-left: 14%;
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem;
+  text-align: center; }
 
 .quarter-wrap {
   display: -ms-flexbox;
@@ -1088,7 +1091,6 @@ ul {
   .AugurCycle__steps-wrapper {
     margin-top: 0 !important; }
   .Benefits {
-    border-top: none !important;
     padding-top: 3rem; }
   .value-prop {
     letter-spacing: 0; }
@@ -1377,8 +1379,7 @@ ul {
 
 .Benefits {
   background-color: #fff;
-  padding-top: 4.875rem;
-  border-top: 10px dotted #ebe8fd; }
+  padding-top: 4.875rem; }
 
 .projects-header {
   text-align: center; }
