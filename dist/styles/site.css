@@ -1008,7 +1008,7 @@ ul {
     font-size: 1.25rem;
     line-height: 4rem; }
   .cta-secondary {
-    width: 70%; }
+    width: 75%; }
   .with-number::before, .AugurCycle__step .step--text > h3::before, .AugurCycle__step--left .step--text > h3::before, .AugurCycle__step--right .step--text > h3::before, .GetStartedSteps__step::before {
     font-size: 6rem;
     left: -1.5rem;
@@ -1491,7 +1491,7 @@ ul {
     width: 50%;
     text-align: center; }
   .landing-top {
-    margin-bottom: 3rem;
+    margin-bottom: 4.5rem;
     padding-top: 2.1rem; }
   .main-grab {
     margin-bottom: .7em; }
@@ -1502,7 +1502,8 @@ ul {
   .sub-grab {
     margin-bottom: .8em; }
   .sub-grab-head {
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 0 !important; }
   .Uses {
     margin-top: 0; }
   .use-case-img {
@@ -1514,7 +1515,7 @@ ul {
   .uses-overview {
     padding: 4rem .4rem 4rem .4rem; }
   .value-prop {
-    letter-spacing: 0; }
+    display: none; }
   .vid-container, .cta-download-link {
     display: none; } }
 

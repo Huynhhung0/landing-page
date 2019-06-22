@@ -639,7 +639,7 @@
   }
 
   .landing-top {
-    margin-bottom: 3rem;
+    margin-bottom: 4.5rem;
     padding-top: 2.1rem;
   }
 
@@ -661,6 +661,7 @@
 
   .sub-grab-head {
     width: 100%;
+    margin-bottom: 0 !important;
   }
 
   .Uses {
@@ -684,7 +685,7 @@
   }
 
   .value-prop {
-    letter-spacing: 0;
+    display: none;
   }
 
   .vid-container, .cta-download-link {
