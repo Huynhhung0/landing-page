@@ -582,8 +582,7 @@ ul {
   font-size: 1.7rem; }
 
 .cta-white:hover {
-  background: #fff;
-  color: #0091dc; }
+  background: #e4e4e4; }
 
 .cta-in-text {
   color: #553580; }
@@ -1099,7 +1098,7 @@ ul {
   margin-top: 8em; }
 
 .uses-overview {
-  background: #000;
+  background: #603994;
   padding: 4rem 0 4rem 0;
   color: #fff; }
 
@@ -1119,10 +1118,10 @@ ul {
 .uses-grab {
   text-align: center;
   letter-spacing: 1.3px;
-  margin-bottom: 2.3rem; }
+  margin-bottom: .3rem; }
 
 .Uses__wrap {
-  background: #000;
+  background: #603994;
   padding-top: 30px;
   max-width: unset; }
 
@@ -1369,7 +1368,8 @@ ul {
   padding-top: 4.875rem; }
 
 .projects-header {
-  text-align: center; }
+  text-align: center;
+  padding-top: 5rem; }
 
 @media only screen and (max-width: 900px) {
   .Benefits {
@@ -1488,8 +1488,11 @@ ul {
   .cycle-header {
     display: none; }
   .half-tile {
+    margin-right: 0;
     width: 50%;
     text-align: center; }
+  .half-wrap {
+    padding-left: 0; }
   .landing-top {
     margin-bottom: 4.5rem;
     padding-top: 2.1rem; }
@@ -1502,20 +1505,22 @@ ul {
   .sub-grab {
     margin-bottom: .8em; }
   .sub-grab-head {
-    width: 100%;
-    margin-bottom: 0 !important; }
+    width: 100%; }
   .Uses {
     margin-top: 0; }
   .use-case-img {
-    margin: 0 .8rem -.4rem 0; }
+    margin: 0;
+    margin-bottom: -.4rem; }
+  .use-case-item {
+    display: block; }
   .uses-grab {
     line-height: 2.6rem; }
   .uses-intro {
     margin-bottom: 0; }
   .uses-overview {
     padding: 4rem .4rem 4rem .4rem; }
-  .value-prop {
-    display: none; }
+  .uses-test {
+    margin-top: 7em; }
   .vid-container, .cta-download-link {
     display: none; } }
 
