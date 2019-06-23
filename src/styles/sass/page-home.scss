@@ -45,7 +45,7 @@
 }
 
 .uses-overview {
-  background: #000;
+  background: #603994;
   padding: 4rem 0 4rem 0;
   color: #fff;
 }
@@ -69,12 +69,12 @@
 .uses-grab {
     text-align: center;  
     letter-spacing: 1.3px;
-    margin-bottom: 2.3rem;
+    margin-bottom: .3rem;
 }
 
 .Uses__wrap {
   @extend .max-width;
-  background: #000;
+  background: #603994;
   padding-top: 30px;
   max-width: unset;
 }
@@ -450,6 +450,7 @@
 
 .projects-header {
   text-align: center;
+  padding-top: 5rem;
 }
 
 
@@ -634,8 +635,13 @@
   }
 
   .half-tile {
+    margin-right: 0;
     width: 50%;
     text-align: center;
+  }
+
+  .half-wrap {
+    padding-left: 0;
   }
 
   .landing-top {
@@ -661,7 +667,6 @@
 
   .sub-grab-head {
     width: 100%;
-    margin-bottom: 0 !important;
   }
 
   .Uses {
@@ -669,7 +674,12 @@
   }
 
   .use-case-img {
-    margin: 0 .8rem -.4rem 0;
+    margin: 0;
+    margin-bottom: -.4rem;
+  }
+
+  .use-case-item {
+    display: block;
   }
 
   .uses-grab { 
@@ -684,8 +694,8 @@
     padding: 4rem .4rem 4rem .4rem;
   }
 
-  .value-prop {
-    display: none;
+  .uses-test {
+    margin-top: 7em;
   }
 
   .vid-container, .cta-download-link {
