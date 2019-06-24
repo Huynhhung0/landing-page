@@ -219,8 +219,7 @@ ul {
 .cta-secondary {
   color: #FFF;
   margin: 0 auto 0 auto;
-  display: block;
-  width: 30%;
+  padding: 0 3rem;
 }
 
 .cta-white {
@@ -231,6 +230,10 @@ ul {
 
 .cta-white:hover {
     background: #e4e4e4;
+}
+
+.cta-wrapper {
+  text-align: center;
 }
 
 .cta-in-text {
@@ -831,10 +834,6 @@ ul {
   .button {
     font-size: 1.25rem;
     line-height: 4rem;
-  }
-
-  .cta-secondary {
-    width: 75%;
   }
 
   .with-number::before {

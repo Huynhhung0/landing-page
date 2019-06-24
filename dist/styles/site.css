@@ -573,8 +573,7 @@ ul {
 .cta-secondary {
   color: #FFF;
   margin: 0 auto 0 auto;
-  display: block;
-  width: 30%; }
+  padding: 0 3rem; }
 
 .cta-white {
   background: #fff;
@@ -583,6 +582,9 @@ ul {
 
 .cta-white:hover {
   background: #e4e4e4; }
+
+.cta-wrapper {
+  text-align: center; }
 
 .cta-in-text {
   color: #553580; }
@@ -1003,8 +1005,6 @@ ul {
   .button, .button--white, .download-links > a.download-link.inverse-button, .download-links.inverse-button > a.download-link, .button--outline, .download-links > a.download-link {
     font-size: 1.25rem;
     line-height: 4rem; }
-  .cta-secondary {
-    width: 75%; }
   .with-number::before, .AugurCycle__step .step--text > h3::before, .AugurCycle__step--left .step--text > h3::before, .AugurCycle__step--right .step--text > h3::before, .GetStartedSteps__step::before {
     font-size: 6rem;
     left: -3.9rem;
