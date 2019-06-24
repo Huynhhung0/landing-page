@@ -1167,7 +1167,9 @@ ul {
     width: 100%; }
     .Uses__use-case > img {
       left: 4rem;
-      top: 3.5rem; } }
+      top: 3.5rem; }
+  .vid-container, .cta-download-link {
+    display: none; } }
 
 @media only screen and (max-width: 700px) {
   .Uses__use-case {
@@ -1521,9 +1523,7 @@ ul {
   .uses-overview {
     padding: 4rem .4rem 4rem .4rem; }
   .uses-test {
-    margin-top: 7em; }
-  .vid-container, .cta-download-link {
-    display: none; } }
+    margin-top: 7em; } }
 
 @media only screen and (min-width: 1100px) {
   .download-links {
