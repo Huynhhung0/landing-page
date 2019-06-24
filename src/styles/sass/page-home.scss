@@ -58,12 +58,10 @@
 
 .use-case-img {
   display: inline-block;
-  margin: 0 .8rem -1.3rem 0;
 }
 
 .use-case-item {
-  display: inline-block;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 
 .uses-grab {
@@ -137,7 +135,7 @@
   }
 
   .Uses__use-cases {
-    padding-top: 4.125rem;
+    padding-top: 1.125rem;
     position: static;
   }
 
@@ -167,7 +165,13 @@
 
 .cycle-header {
   text-align: center;
-  padding-top: 4em;
+  background: #603994;
+  color: white;
+  padding: 1.5em 0;
+}
+
+.cycle-header-text {
+  margin-bottom: 0;
 }
 
 .AugurCycle {
@@ -195,7 +199,7 @@
   }
 
   .step--text {
-    padding: 6rem 2rem 0 2.625rem;
+    padding: 6rem 2rem 0 6.625rem;
     width: 35%;
 
     > h3 {
@@ -257,7 +261,7 @@
 
     > .step--text {
       padding-top: 4rem;
-      padding-left: 2rem;
+      padding-left: 3rem;
     }
   }
 }
@@ -444,13 +448,14 @@
 .Benefits {
   background-color: #fff;
   padding-top: 4.875rem;
+  margin-bottom: 9em;
 }
 
 // Projects 
 
 .projects-header {
   text-align: center;
-  padding-top: 5rem;
+  padding-top: 8rem;
 }
 
 
@@ -620,6 +625,11 @@
 
   .Benefits {
     padding-top: 3rem;
+    margin-bottom: 7.5em;
+  }
+
+  .Connect {
+    padding: 6.5rem 0 0 0;
   }
 
   .Currencies__currency-wrap {
@@ -630,17 +640,13 @@
     margin-bottom: 0;
   }
 
-  .cycle-header {
-    display: none;
-  }
-
-  .half-tile {
+  .use-tile {
     margin-right: 0;
-    width: 50%;
+    width: 47%;
     text-align: center;
   }
 
-  .half-wrap {
+  .use-wrap {
     padding-left: 0;
   }
 
@@ -667,10 +673,6 @@
 
   .sub-grab-head {
     width: 100%;
-  }
-
-  .Uses {
-    margin-top: 0;
   }
 
   .use-case-img {

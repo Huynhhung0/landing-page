@@ -158,7 +158,7 @@ ul {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 4.5rem;
-  padding: 0 3rem;
+  padding: 0 2rem;
   transition: background 0.15s ease, color 0.15s ease;
 
   &:hover {
@@ -218,7 +218,7 @@ ul {
 
 .cta-secondary {
   color: #FFF;
-  margin: 0 auto 3em auto;
+  margin: 0 auto 0 auto;
   display: block;
   width: 30%;
 }
@@ -398,10 +398,10 @@ ul {
     content: '1';
     font-size: 10rem;
     font-weight: 700;
-    left: -2.5rem;
+    left: -5.9rem;
     line-height: 10rem;
     position: absolute;
-    top: -5.75rem;
+    top: -3.5rem;
     z-index: -1;
   }
 
@@ -614,16 +614,13 @@ ul {
 
 // tiles 
 
-.half-tile {
-  width: 40%;
+.use-tile {
   display: inline-block;
-  margin-right: 4em;
+  margin-right: 3.5em;
   margin-top: 2.75rem;
-  text-align: left;
 }
 
-.half-wrap {
-  padding-left: 14%;
+.use-wrap {
   margin-bottom: 4rem;
   text-align: center;
 }
@@ -842,8 +839,8 @@ ul {
 
   .with-number::before {
     font-size: 6rem;
-    left: -1.5rem;
-    top: -4.75rem;
+    left: -3.9rem;
+    top: -3.15rem;
   }
 
   .SubpageIntro {
