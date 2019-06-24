@@ -1180,7 +1180,8 @@ ul {
   text-align: center;
   background: #603994;
   color: white;
-  padding: 1.5em 0; }
+  padding: 1.5em 0;
+  max-width: 100%; }
 
 .cycle-header-text {
   margin-bottom: 0; }
