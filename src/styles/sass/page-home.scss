@@ -77,6 +77,20 @@
   max-width: unset;
 }
 
+.use-tile {
+  display: inline-block;
+  margin: 2.75rem 1.75rem 0 1.75rem;
+}
+
+.use-wrap {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.uses-wrapper {
+  padding: 0;
+}
+
 
 .Uses__use-cases {
   position: relative;
@@ -649,6 +663,7 @@
     margin-right: 0;
     width: 47%;
     text-align: center;
+    margin: 2.75rem 0 0 0;
   }
 
   .use-wrap {
