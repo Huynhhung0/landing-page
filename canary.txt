@@ -1,22 +1,22 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of June 1st, 2019, the Forecast Foundation has not been contacted by any agency anywhere in the world in a way which requires that contact not to be disclosed. 
+As of July 1st, 2019, the Forecast Foundation has not been contacted by any agency anywhere in the world in a way which requires that contact not to be disclosed. 
 
 The Forecast Foundation will publicly disclose any sort of inquiry from government agencies that falls outside the scope of regular business operations.
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE6zArx1tmT3TS8On2Qk4PTUq7u+AFAlzyoWgACgkQQk4PTUq7
-u+ASBRAAl4OBzG1HRQad+ETLRv9SslDv0YB3WUc/dRJN0tmOfGQUmS11esxmuWm8
-aVNiQXSijzVoF0AOfDgI9aGZW7FjFmlH/kNIMHJqeukEhXo9mnQY+81hBbzSlNMK
-6T1qeNTVBxCJYEfnvsSMtKoxjp9WbK9pCljNmA+DliWsSHkQ2fWq4ZrL3HP0nGV4
-d9EKO01DhY9aU6AVLfF7KaiaeT4IujhYd7vESkIaj66XjTEIxk6yx2xxzLVS9TeE
-Cu2nR0XGaW/ZbqnQxdyc46v61SECmnNm59TWAgj8YMmXrOVJ30yBxUs1j2s9NL6I
-8uC4FT1Fsv9IrObUtBEaRoy8g9saEYwnrm4dXjzII8zsiRXIZCP2GLPiL6Ge1rc+
-6tIhkWvCPL1uYzu8CUgRwpdydIxTqexp7O4WlSeAptDT/hVukKjdh/SfUCAL1anw
-09lM7HprelRZRJco3ps16Uhac0MQ20vK9DhCC+OJpTFDRYtPlNQu1u2Z9wGODNkh
-KjbiQ+JEVh9gxF+nGa7ItKSlXxSrXYYZg+zICzTqwj2eMvr0+crL3YlWalAuPVdT
-xI1/KFkF8IFhALOfau5rBMmQ5BN4YwV+1oJi0NFs9fvFHT1d0XPt7B9KyQ2efSrF
-QDY+cxcHJmS3NInFyKl3Rz4xGlaK7PIHORQ+KMOwkKJtjH1iBU8=
-=bAEl
+iQIzBAEBCAAdFiEE6zArx1tmT3TS8On2Qk4PTUq7u+AFAl0aLqcACgkQQk4PTUq7
+u+DyrRAAiEb+VVTeEeLYJP09XMkcxOWLAkTYc+ogg1An4i/9dRij2U4Z/tqqMBKN
+gw9hB2nFVLOA9l6pS+q1mC7l+jNviwzDjRT+cpTS5CGGzIyibQPSuDQKJIU5xsSa
+7khqRCSx8ABg2s6UGl1rWIOxvDFxy+M5u2JSeAuzyYdiuoPjnlt7s56XH2kwZKPB
+vwLMKWR4ZId/6WNo5yb5CYSWBJk8SOcJ6S933AuAq0K7MC2M/WdTrNjufW0f3D1y
+6enpksniY7TguXcaoz2zjCd5y+lhizCq0JkZsS2NZuAY0N1bdeMm8cwyYKkWjR8T
+g8TGBi3fIuAHgGmQjeaEJVtUHSSp2nvjUx2pP5tUCFy0CHP/42+vAqpCKltCIpq3
+URvR/wfC6E5iiunTeLz9HRd+nJdSLG6D2s02Ss4dTJ6gVmHJmcFZJnWPkVsTCnk/
+73M2qIzU0DHfbdb56iKDdtEa4IwnW0caN7nPDs4A3vVxr8R5Vmw3KRf273kSmDaB
+K1CpXYhonoQIh0ds/3E0pw3k8WabT6I/ofHjEXNoKo0TN9KBHChVBACq6G9gDO3h
+isXHUANByFsaxhgW+McJ87MAeICHAJy13fdqwyORuDP/nCKt90Fsq4KmSTaWl/2Y
+7nCp8ApzYk0A8ogAsN9quvZ3QLUs1Lof8uFyGuYY7N8rbcbVKzc=
+=VAqz
 -----END PGP SIGNATURE-----
