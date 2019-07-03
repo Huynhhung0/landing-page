@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-74080255-11', { 'anonymize_ip': true });
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Definitive Guide to the Augur Ecosystem | Augur Prediction Markets</title>
+    <meta content="The Definitive Guide to the Augur Ecosystem | Augur Prediction Markets" property="og:title">
+    <meta content="The Definitive Guide to the Augur Ecosystem | Augur Prediction Markets" property="og:site_name">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AugurProject" />
+    <meta name="twitter:creator" content="@AugurProject">
+    <meta name="twitter:title" content="The Definitive Guide to the Augur Ecosystem | Augur Prediction Markets" />
+    <meta name="twitter:description" content="The Definitive Guide to the Augur Ecosystem" />
+    <meta name="twitter:image" content="https://augur.net/dist/images/meta_logo.png" />
+
+    <meta content="The Definitive Guide to the Augur Ecosystem and What Developers Are Building on it" name="description">
+    <meta content="The Definitive Guide to the Augur Ecosystem and What Developers Are Building on it">
+
+    <meta content="https://www.augur.net/blog/augur-ecosystem" property="og:url">
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.augur.net/blog/augur-ecosystem" />
+
+    <meta content="https://augur.net/dist/images/meta_logo.png" property="og:image">
+
+    <link rel="stylesheet" type="text/css" href="/dist/styles/site.min.css" defer>
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta content="LQMTXnM-70SbbKHdPCf9S9o_w2Au-bA3a6-2Z9kSCOo" name="google-site-verification">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" defer />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" defer></script>
+    <script>
+        window.addEventListener("load", function() {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#553580"
+                    },
+                    "button": {
+                        "background": "#FFF",
+                    }
+                }
+            })
+        });
+    </script>
+
+</head>
+
+<body>
+    <header class="Header">
+        <div class="Header__wrap">
+            <a href="/">
+                <img alt="Start Building on Augur and Join Augur's Ecosystem" src="/dist/images/augur-logo.svg">
+            </a>
+            <div class="Header__nav">
+                <ul>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/bounty/">Bug Bounty</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                    <li><a href="https://medium.com/@AugurProject" target="_blank">Weekly Reports</a></li>
+                </ul>
+                <img alt="FAQ - Frequently Asked Questions" class="Header__nav-mobile-close" src="/dist/images/icon--times.svg">
+            </div>
+            <img alt="FAQ - Frequently Asked Questions" class="Header__nav-mobile-open" src="/dist/images/icon--bars.svg">
+        </div>
+    </header>
+
+    <section class="Hero--wide blog-header">
+        <div class="Hero__wrap">
+            <div>
+                <h1 class="with-line">The Definitive Guide to the Augur Ecosystem</h1>
+                <h4>A Tour of D(Apps) and Tools Built on and for the World’s First Decentralized Prediction Market Protocol</h4>
+                <p style="font-style:italic;font-size:.8em;">author: <a class="author-byline" href="https://twitter.com/Ben_davidow"><b><u>Ben Davidow</u></b></a></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="Faq">
+        <div class="max-width">
+            <div class="FaqAnswers">
+                <div class="FaqAnswer" id="Building-on-augur">
+                    <h3>Building on Augur</h3>
+
+                        <p>Decentralized apps like Augur and 0x are like lego blocks that developers can use to build anything they can imagine. So it’s no surprise that the world of open finance and decentralized tech is seeing a renaissance of developer activity. These are early days for Augur, but enterprising devs and entrepreneurs the world over have already started building all sorts of things on and for the prediction market protocol.</p>
+
+                        <p>This guide will survey many of the D(Apps) and tools built on and for the Augur protocol. It’s intended both for Augur users, as well as anyone thinking of building something on or for the protocol. </p>
+
+                        <p>Despite this early wave of dev activity, builders have likely just scraped the surface of what is possible, and there is much unexplored territory and potential for new projects. So at the end, we’ll point to some resources for any devs interested in joining the Augur ecosystem. </p>
+                </div>
+                <div class="FaqAnswer" id="Overlays">
+
+                    <h3>Overlays</h3>
+
+                    <p>Overlays are public-facing UIs that let people trade in and interact with Augur markets. They are a critical piece of the ecosystem that help make Augur accessible to a wider audience and offer unique trading experiences tailored for different types of users. Overlays can be monetized via market creation profit, market making, customer acquisition and affiliate fees in <a href="https://www.augur.net/blog/augur-v2/" data-href="https://www.augur.net/blog/augur-v2/" target="_blank">Augur v2</a>, or other mechanisms.</p>
+
+                    <h4><a class="eco_img" href="https://guesser.io/" data-href="https://guesser.io/" target="_blank">Guesser</a></h4>
+
+                    <p>Guesser is a simple betting UI with European-style decimal odds. Guesser pools liquidity with Augur, meaning it shares order books with Augur UI. Guesser focuses on listing a small number of quality markets on sports, politics, asset prices, and entertainment. In April 2019, Guesser secured a round of seed founding with Version One, Compound and Boost VC.</p>
+
+                    <h4><a href="https://www.blitzpredict.io/" data-href="https://www.blitzpredict.io/" target="_blank">BlitzPredict</a></h4>
+
+                    <p>Currently in Alpha, BlitzPredict is a decentralized betting exchange that also uses offchain trading with 0x. It features a UI similar to traditional betting exchanges with American style betting odds and a focus on sports and politics. BlitzPredict raised a seed round of funding from BlockWater Management in early 2018.</p>
+
+                    <h4><a href="https://veil.co/" data-href="https://veil.co/"  target="_blank">Veil</a></h4>
+
+                    <p>Veil offers off-chain trading on Augur markets via 0x and offers a simple PredictIt-like UI as well as a more feature-rich, exchange-like “Pro” interface geared toward more serious traders. It has listed markets on a range of topics including crypto prices, politics, and the Oscars and has included both Veil and user-created markets. Keep in mind that at the time of this writing, Veil primarily lists a market that is built on AugurLite, a fork of the Augur protocol that is separate from Augur and more centralized. Veil raised a seed round from Paradigm, 1Confirmation and Sequoia Capital in early 2019.</p>
+
+                    <h4> <a href="https://flux.market/" data-href="https://flux.market/"  target="_blank">Flux</a></h4>
+
+                    <p>Flux offers markets on startup-related outcomes, including product release dates and investment rounds. Currently in Private Alpha, Flux was inspired by several issues with the status quo of startup speculation and investing: it’s generally closed off to all but VCs and Angels, it lacks transparency, and is prone to irrational discrepancies in valuations. Flux aspires to make this realm more transparent and open. </p>
+                </div>
+                <div class="FaqAnswer" id="Explorers-and-analytics">
+
+                    <h3>Explorers &amp; Analytics</h3>
+
+                    <p>Tools that let users browse, explore, visualize, and crunch data on Augur activity have been a prolific area of development. Here are some of them…</p>
+
+                    <h4><a href="https://predictions.global/" data-href="https://predictions.global/"  target="_blank">Predictions.Global</a> </h4>
+
+                    <p>Predictions.Global has been called “<a href="https://medium.com/veil-blog/welcoming-predictions-global-to-veil-3ac2625c190d" data-href="https://medium.com/veil-blog/welcoming-predictions-global-to-veil-3ac2625c190d" target="_blank">the CoinMarketCap for the Augur ecosystem</a>,” since it is a popular and accessible tool for browsing Augur markets. It lets you sort Augur markets by most recently traded, liquidity, volume, money at stake, creation date, and expiration date. For each market, you can see current prices, volume, open interest, fees and much more. Predictions.Global was acquired by Veil in early 2019. </p>
+
+                    <h4><a href="https://exploreaugur.com/" data-href="https://exploreaugur.com/"  target="_blank">Explore Augur</a></h4>
+
+                    <p>This data-rich explorer lets you track markets and sort them by liquidity, last traded, or volume. It also displays the most recent trades and a table with all accounts that have traded on Augur and their winnings (or losses), amount wagered, ROI, and number of trades. </p>
+
+                    <h4><a href="https://www.curiousgiraffe.io/augur/" data-href="https://www.curiousgiraffe.io/augur/"  target="_blank">Augur Analytics</a></h4>
+
+                    <p>This sleek panel created by analytics and data viz agency Curious Giraffe, visualizes Augur markets and usage. You can chart and track everything from the number of markets created and orders filled to levels of REP spent on disputes. <a href="https://dappradar.com/app/673/augur" data-href="https://dappradar.com/app/673/augur" target="_blank">Dappradar</a> features similar data for Augur and other DApps.</p>
+
+                    <h4><a href="http://crystalball.be/stats/" data-href="http://crystalball.be/stats/"  target="_blank">crystalball.be</a></h4>
+
+                    <p>If you love data as much as you love Augur, crystalball.be offers a cornucopia of charts and stats. It includes standard as well as more unique metrics like the rate of Invalid vs. Valid markets over time, the number of yes/no, categorical, and scalar markets and trends in market creation bonds.</p>
+
+                    <h4><a href="https://augurinsider.com/" data-href="https://augurinsider.com/"  target="_blank">Augur Insider</a></h4>
+
+                    <p>Speculating on future crypto prices has been one of Augur’s most popular use cases so far. Augur Insider provides volatility KPIs and pricing and probability data for such markets, displaying deltas, gammas, thetas and other things that will look like Greek to you if you’re new to financial trading.</p>
+
+                    <h4><a href="https://blacktemplar.github.io/augur-market-odds/" data-href="https://blacktemplar.github.io/augur-market-odds/"  target="_blank">Augur Market Odds</a></h4>
+
+                    <p>This simple explorer displays European-style decimal odds and the spread for Augur markets.</p>
+
+                    <h4><a href="https://www.logfile.info/eventlogs.php?dapp=augur" data-href="https://www.logfile.info/eventlogs.php?dapp=augur"  target="_blank">Logfile.info</a></h4>
+
+                    <p>This comprehensive data source offers event logs for pretty much any event on Augur you can imagine, including market creation, trading and market finalization, order creation, disputes, participation token redemptions, forks, universe creation, and much more. It also indexes data for other DApps on Ethereum.</p>
+
+                    <h4><a href="https://mikemcdonald.github.io/augur/leaderboard.html" data-href="https://mikemcdonald.github.io/augur/leaderboard.html"  target="_blank">Augur Leaderboard</a></h4>
+
+                    <p>This leaderboard displays Augur traders (Ethereum addresses) by realized profits and number of trades. It also visualizes the distribution of winnings in a pie chart.</p>
+                </div>
+                <div class="FaqAnswer" id="Calculators">
+                    <h3>Calculators</h3>
+
+                    <p>These calculators let users plug in custom inputs and obtain useful data to inform their Augur usage. </p>
+
+                    <h4><a href="https://musing-jennings-d2c811.netlify.com/" data-href="https://musing-jennings-d2c811.netlify.com/"  target="_blank">Augur Share Price Calculator</a></h4>
+
+                    <p>This resource lets users enter their perceived probability of an event occurring and of the respective Augur market resolving Invalid, and based on these inputs, calculates the maximum price at which they should pay for YES or NO shares. </p>
+
+                    <h4><a href="https://blacktemplar.github.io/augur-fee-windows-info/" data-href="https://blacktemplar.github.io/augur-fee-windows-info/"  target="_blank">Augur Fee Window Calculator</a></h4>
+                        <p>This thorough tool tracks data on reporting fees and staking activity and lets one calculate potential profit from staking REP in the form of participation tokens.</p>
+                </div>
+                <div class="FaqAnswer" id="Miscellaneous">
+                    <h3>Miscellaneous</h3>
+
+                    <h4><a href="https://www.pdotindex.com" data-href="https://www.pdotindex.com"  target="_blank">PdotIndex</a></h4>
+
+                    <p>Pdot Index was <a href="https://medium.com/pdot-blog/why-i-created-pdot-ade71a059435" data-href="https://medium.com/pdot-blog/why-i-created-pdot-ade71a059435" target="_blank">borne out of</a> an unusual question,</p>
+
+                    <blockquote>If we can track the performance of (and invest in) <em>companies</em>, why can’t we do the same for <em>people</em>?”</blockquote><p>Pdot Index creates price-weighted indices that track the success of public figures like Ariana Grande and Lebron James. Each index is composed of Augur markets regarding those figures. For example, if Ariana’s odds of winning an MTV music reward or reaching a higher position on the Billboard charts go up, according to Augur markets, then her index will rise.</p>
+
+                    <h4><a href="https://reporters.chat/" data-href="https://reporters.chat/"  target="_blank">Reporters.Chat</a></h4>
+
+                    <p>Reporters.Chat is a venue to discuss and track the status of Augur markets in reporting. Traders can hash out their views on market outcomes and sign their comments with their Ethereum address for added transparency. Reporting chatter also takes place on the <a href="https://discordapp.com/invite/faud6Fx" data-href="https://discordapp.com/invite/faud6Fx" target="_blank">Augur Discord</a>.</p>
+
+                    <h4><a href="https://discord.gg/gnFcPvk" data-href="https://discord.gg/gnFcPvk"  target="_blank">Unofficial Augur Bot</a></h4>
+
+                    <p>Discord is a popular app in the crypto world. This Discord server has several channels that post whenever new markets are created, reported on, disputed, or resolved.</p>
+
+                    <h4><a href="http://www.augur.today/" data-href="http://www.augur.today/"  target="_blank">Augur.today</a></h4>
+
+                    <p>If you’re looking to use the Augur desktop app, rather than the <a href="https://www.augur.net/ipfs-redirect.html" data-href="https://www.augur.net/ipfs-redirect.html"  target="_blank">web app</a> or an overlay, Augur.today can be a big time-saver, offering a warp sync file that updates every 100 blocks and is ~99% synced at any given time.</p>
+                </div>
+                <div class="FaqAnswer" id="Start-building">
+
+                    <h3>Start Building on Augur</h3>
+
+                    <p>Want to build something on Augur that you don't see here? Check out:</p>
+
+                    <p><a href="http://invite.augur.net/" data-href="http://invite.augur.net/"  target="_blank">Augur Discord</a> for a community of Augur devs and users where you can ask questions, solicit feedback or toss around ideas</p>
+
+                    <p><a href="https://docs.augur.net/" data-href="https://docs.augur.net/"  target="_blank">Documentation </a>for technical info</p>
+
+                    <p><a href="http://github.com/AugurProject." data-href="http://github.com/AugurProject."  target="_blank">Github</a> for Augur’s codebase </p>
+
+                    <p><a href="https://predictions.market/" data-href="https://predictions.market/"  target="_blank">Predictions.market</a> for an Augur node geared toward devs, hosted by Guesser</p>
+                </div>
+
+            </div>
+
+            <div class="FaqIndex">
+                <h5>Table of Contents:</h5>
+                <div class="FaqIndex__question">
+                    <a href="#Building-on-augur">Building on Augur</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#Overlays">Overlays</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#Explorers-and-analytics">Explorers &amp; Analytics</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#Calculators">Calculators</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#Miscellaneous">Miscellaneous</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#Start-building">Start Building on Augur</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="Footer">
+        <div class="max-width">
+            <div class="Footer__main-wrap">
+                <a href="/"><img alt="FAQ - Frequently Asked Questions" src="/dist/images/augur-logo--white.svg"></a>
+                <div class="Footer__nav-wrap">
+                    <ul>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/bounty/">Bug Bounty</a></li>
+                        <li><a href="/faq/" target="_blank">FAQ</a></li>
+                        <li><a href="https://medium.com/@AugurProject" target="_blank">Weekly Reports</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="https://docs.augur.net/" target="_blank">Documentation</a></li>
+                        <li><a href="https://github.com/AugurProject/whitepaper" target="_blank">Whitepaper</a></li>
+                        <li><a href="/disclaimer/">Disclaimer</a></li>
+                        <li><a href="mailto:team@augur.net" target="_blank">Contact</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="https://github.com/AugurProject/augur-core/blob/master/LICENSE" target="_blank">Augur Core License</a></li>
+                        <li><a href="https://github.com/AugurProject/augur/blob/master/LICENSE" target="_blank">Augur UI License</a></li>
+                        <li><a href="https://github.com/AugurProject/augur-node/blob/master/LICENSE" target="_blank">Augur Node License</a></li>
+                        <li><a href="https://github.com/AugurProject/augur-app/blob/master/LICENSE.md" target="_blank">Augur App License</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="/terms-of-service/">Terms of Service</a></li>
+                        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="/cookies-and-related-technologies-notice/">Cookies Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Footer__sub-wrap">
+                <span>Copyright &#64; 2019 Forecast Foundation OU</span>
+                <ul>
+                    <li>
+                        <a href="http://invite.augur.net/" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--discord--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://augur.stackexchange.com/" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--stack-exchange--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/AugurProject/" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--facebook--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/AugurProject" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--twitter--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://reddit.com/r/Augur" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--reddit--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/AugurProject" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--github--white.svg">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="/dist/scripts/site.min.js"></script>
+</body>
+
+</html>
