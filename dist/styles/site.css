@@ -2170,6 +2170,12 @@ ul {
     width: 100%;
     padding-right: 0; } }
 
+.author-byline-p {
+  margin-bottom: .5rem; }
+
+.blog-date {
+  font-size: .8em; }
+
 .blog-header {
   padding-bottom: 0; }
 
