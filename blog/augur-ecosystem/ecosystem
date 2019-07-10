@@ -225,7 +225,7 @@
 
                     <p><a href="https://docs.augur.net/" data-href="https://docs.augur.net/"  target="_blank">Documentation </a>for technical info</p>
 
-                    <p><a href="http://github.com/AugurProject." data-href="http://github.com/AugurProject."  target="_blank">Github</a> for Augur’s codebase </p>
+                    <p><a href="http://github.com/AugurProject" data-href="http://github.com/AugurProject."  target="_blank">Github</a> for Augur’s codebase </p>
 
                     <p><a href="https://predictions.market/" data-href="https://predictions.market/"  target="_blank">Predictions.market</a> for an Augur node geared toward devs, hosted by Guesser</p>
                 </div>
