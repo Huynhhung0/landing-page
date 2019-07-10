@@ -1082,6 +1082,9 @@ ul {
   font-weight: bold;
   letter-spacing: .5px; }
 
+.vid-container {
+  margin-right: 1em; }
+
 .Uses {
   margin-top: 8em; }
 
@@ -1371,7 +1374,7 @@ ul {
 .Benefits {
   background-color: #fff;
   padding-top: 4.875rem;
-  margin-bottom: 9em; }
+  margin-bottom: 7em; }
 
 .projects-header {
   text-align: center;
