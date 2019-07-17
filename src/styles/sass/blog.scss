@@ -1,7 +1,7 @@
 .author-byline-p {
-	margin-bottom: .5rem;
+	margin-bottom: 0;
 	font-style: italic;
-	font-size: 1em;
+	font-size: .8em;
 }
 
 .blog-date {
@@ -10,6 +10,11 @@
 
 .blog-header {
 	padding-bottom: 0;
+}
+
+.blog-header-medium {
+	font-size: 3em; 
+	line-height: 4.025rem;
 }
 
 .blog-header-img {
