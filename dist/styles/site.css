@@ -589,6 +589,12 @@ ul {
 .cta-green:hover {
   background: #039750; }
 
+.cta-guesser {
+  background: #fc1b74; }
+
+.cta-guesser:hover {
+  background: #ec0b44; }
+
 .cta-wrapper {
   text-align: center; }
 
@@ -2182,7 +2188,8 @@ ul {
 .author-byline-p {
   margin-bottom: 0;
   font-style: italic;
-  font-size: .8em; }
+  font-size: .8em;
+  line-height: 1.7em; }
 
 .blog-date {
   font-size: .8em; }
@@ -2215,7 +2222,7 @@ ul {
   .blog-header {
     padding-top: 0; }
   .cta-blog {
-    width: 70%; }
+    width: 85%; }
   .blog-headline {
     font-size: 2.25rem;
     line-height: 3rem; } }
