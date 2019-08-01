@@ -1,22 +1,22 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of July 1st, 2019, the Forecast Foundation has not been contacted by any agency anywhere in the world in a way which requires that contact not to be disclosed. 
+As of August 1st, 2019, the Forecast Foundation has not been contacted by any agency anywhere in the world in a way which requires that contact not to be disclosed. 
 
 The Forecast Foundation will publicly disclose any sort of inquiry from government agencies that falls outside the scope of regular business operations.
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE6zArx1tmT3TS8On2Qk4PTUq7u+AFAl0aLqcACgkQQk4PTUq7
-u+DyrRAAiEb+VVTeEeLYJP09XMkcxOWLAkTYc+ogg1An4i/9dRij2U4Z/tqqMBKN
-gw9hB2nFVLOA9l6pS+q1mC7l+jNviwzDjRT+cpTS5CGGzIyibQPSuDQKJIU5xsSa
-7khqRCSx8ABg2s6UGl1rWIOxvDFxy+M5u2JSeAuzyYdiuoPjnlt7s56XH2kwZKPB
-vwLMKWR4ZId/6WNo5yb5CYSWBJk8SOcJ6S933AuAq0K7MC2M/WdTrNjufW0f3D1y
-6enpksniY7TguXcaoz2zjCd5y+lhizCq0JkZsS2NZuAY0N1bdeMm8cwyYKkWjR8T
-g8TGBi3fIuAHgGmQjeaEJVtUHSSp2nvjUx2pP5tUCFy0CHP/42+vAqpCKltCIpq3
-URvR/wfC6E5iiunTeLz9HRd+nJdSLG6D2s02Ss4dTJ6gVmHJmcFZJnWPkVsTCnk/
-73M2qIzU0DHfbdb56iKDdtEa4IwnW0caN7nPDs4A3vVxr8R5Vmw3KRf273kSmDaB
-K1CpXYhonoQIh0ds/3E0pw3k8WabT6I/ofHjEXNoKo0TN9KBHChVBACq6G9gDO3h
-isXHUANByFsaxhgW+McJ87MAeICHAJy13fdqwyORuDP/nCKt90Fsq4KmSTaWl/2Y
-7nCp8ApzYk0A8ogAsN9quvZ3QLUs1Lof8uFyGuYY7N8rbcbVKzc=
-=VAqz
+iQIzBAEBCAAdFiEE6zArx1tmT3TS8On2Qk4PTUq7u+AFAl1DWr8ACgkQQk4PTUq7
+u+BqJg/9FuwE9lYa5tkVCvfBxOcrDx52z+hG7WdudBdjB8gb2DeOOgGSsOzScBxR
+wBNSmD8lImsOTE5rg2ofZ4I7x/lZ35VWEJUHycLe9yMs/NhulSc3Y/SHysGMK9ih
+doKerXIXLgg4HQhwxrfntWS5i7Asm4Xclv0kFP5qJRexUisHbkJXRV23BfrYU9zN
+C5+nQBt1lrir8f69ELxRY9Bg/V9vg0Zk2ApDS67lElp4i8FA1uGBgq75D3gw5d74
+Slp+VurVMUUMtfyYsGmYmFJXfQpao7dbg5/jXiQHF1Kwxl/HTRfKpee92YKNybES
+Gm+yjCp9refJocWc1HEpRYz2bWZxToIhNLVh5CcUnqizUqpjt6IAaHK4O1oRXCa0
+kDbsAHT7I7hi0tUPx0IWlwbvXLHogDzLB6O1QjDrkBOv3bcoTiapcFI5ST5g+qPM
+j5LKcxBpAbCDIfRfjeB17vL6oKTvPj5VCTkqL3ux/8wrKRZYezMY8Mgi3MkaGhvQ
+/lZ7GZSL6unnAePVRT7j6H9RcClcVIr+Wzsi9300h4SOyhSr6MwliwCbCLvmcxVx
+bKWxqfjSpOm+0KjcGFCAS0zs2l2zI3C62fVhheomTnACsUI5nWQm2u4cwW+xz/0q
+6DuuXR80Nad4fBbUEQ1f+0EMGhOqqdytRW0i4J7Vrmw2MOVvoew=
+=gz01
 -----END PGP SIGNATURE-----
