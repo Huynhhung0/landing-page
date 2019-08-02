@@ -590,7 +590,7 @@ ul {
   background: #039750; }
 
 .cta-guesser {
-  background: #fc1b74; }
+  background: #f82174; }
 
 .cta-guesser:hover {
   background: #ec0b44; }
@@ -2199,6 +2199,10 @@ ul {
 
 .blog-header-medium {
   font-size: 3em;
+  line-height: 4.025rem; }
+
+.blog-header-medium-large {
+  font-size: 3.4em;
   line-height: 4.025rem; }
 
 .blog-header-img {
