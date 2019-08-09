@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-74080255-11', { 'anonymize_ip': true });
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meet Augur v2's Faster Oracle & Market Resolution System | Augur Prediction Markets</title>
+    <meta content="Meet Augur v2's Faster Oracle & Market Resolution | Augur Prediction Markets" property="og:title">
+    <meta content="Meet Augur v2's Faster Oracle & Market Resolution | Augur Prediction Markets" property="og:site_name">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AugurProject" />
+    <meta name="twitter:creator" content="@AugurProject">
+    <meta name="twitter:title" content="Meet Augur v2's Faster Oracle & Market Resolution | Augur Prediction Markets" />
+    <meta name="twitter:description" content="Everything You Need to Know About the New Reporting & Disputing Flow" />
+    <meta name="twitter:image" content="https://augur.net/dist/images/meta_logo.png" />
+
+    <meta content="Everything You Need to Know About the New Reporting & Disputing Flow" name="description">
+    <meta content="Everything You Need to Know About the New Reporting & Disputing Flow">
+
+    <meta content="https://www.augur.net/blog/v2-resolution" property="og:url">
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.augur.net/blog/v2-resolution />
+
+    <meta content="https://augur.net/dist/images/meta_logo.png" property="og:image">
+    <meta property="article:published_time" content="2019-08-09T10:00:00+00:00" />
+    <meta property="article:modified_time" content="2019-08-09T10:00:00+00:00" />
+    <meta property="og:updated_time" content="2019-08-09T10:00:00+00:00" />
+
+    <link rel="stylesheet" type="text/css" href="/dist/styles/site.min.css" defer>
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta content="LQMTXnM-70SbbKHdPCf9S9o_w2Au-bA3a6-2Z9kSCOo" name="google-site-verification">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" defer />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" defer></script>
+    <script>
+        window.addEventListener("load", function() {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#553580"
+                    },
+                    "button": {
+                        "background": "#FFF",
+                    }
+                }
+            })
+        });
+    </script>
+
+</head>
+
+<body>
+    <header class="Header">
+        <div class="Header__wrap">
+            <a href="/">
+                <img alt="Everything You Need to Know About the New Reporting & Disputing Flow" src="/dist/images/augur-logo.svg">
+            </a>
+            <div class="Header__nav">
+                <ul>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/bounty/">Bug Bounty</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                    <li><a href="https://medium.com/@AugurProject" target="_blank">Weekly Reports</a></li>
+                </ul>
+                <img alt="FAQ - Frequently Asked Questions" class="Header__nav-mobile-close" src="/dist/images/icon--times.svg">
+            </div>
+            <img alt="FAQ - Frequently Asked Questions" class="Header__nav-mobile-open" src="/dist/images/icon--bars.svg">
+        </div>
+    </header>
+
+    <section class="Hero--wide blog-header">
+        <div class="Hero__wrap">
+            <div>
+                <h1 class="with-line blog-header-medium">Meet Augur v2's Faster Oracle &amp; Market Resolution System</h1>
+                <h4>Everything You Need to Know About the New Reporting &amp; Disputing Flow</h4>
+                <p class="author-byline-p">authors: <a class="author-byline" href="https://github.com/adrake33"><b><u>Aaron Drake</u></b></a> &amp; <a class="author-byline" href="https://twitter.com/Ben_davidow"><b><u>Ben Davidow</u></b></a></p>
+                <span class="blog-date">August 9th, 2019, 10:00 am</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="Faq">
+        <div class="max-width">
+            <div class="FaqAnswers">
+                <div class="FaqAnswer" id="full-speed-ahead">
+                    <h4>Full Speed Ahead</h4>
+
+                    <p>Augur's v1 oracle has its virtues, but speed is not one of them.</p> 
+
+                    <p>Well, this is about to change, thanks to a suite of improvements in <a href="https://www.augur.net/blog/augur-v2/" target="_blank">v2</a>. The fastest a market can resolve in v1 is ~7 days. In v2, markets can resolve in ~24 hours, and dragged-out disputes are far less likely due to a more efficient process.</p>
+
+                    <p>Today, we’ll walk through these changes to reporting and disputing and then share programmatic info for devs. First, for those new to augur, here’s a quick overview of how markets are finalized on Augur.</p>
+                
+                </div>
+                
+                <div class="FaqAnswer" id="the-basics">
+                    <h4>The Basics</h4>
+
+                    <p>Since Augur has no central operator, it uses a communal system driven by incentives to resolve the outcome of markets </p>
+
+                    <p>Users stake Reputation (REP), Augur’s Native Token, on the outcome they believe to be correct. Users that dispute honestly in favor of a market’s correct outcome, defined as the consensus outcome that the market ends up resolving to, earn additional REP. Those that dispute in favor of an incorrect outcome, any outcome that the market does <em>not</em> end up resolving to, lose REP.</p>
+
+                    <p>This communal, incentivized process is sometimes referred to as the “Augur oracle.” An oracle is any mechanism for bringing real-world information onto a blockchain. In the case of Augur, the oracle tells the blockchain what outcome occurred and thus how a market should resolve. For example, whether it rained in Seattle yesterday or who won the presidential election. </p>
+                
+                </div>
+                
+                <div class="FaqAnswer" id="the-process">
+
+                    <h4>The Process</h4>
+
+                    <p>After a market enters reporting, an Initial Reporter (typically the market creator), selects which outcome occurred. This becomes the “Tentative Winning Outcome.”</p>
+
+                    <p>Users can dispute the Tentative Winning Outcome by staking REP on an alternative outcome that they believe to be correct. An alternative outcome requires a specified threshold of REP, which is called the Dispute Bond, to be staked on it in order to become the new Tentative Winning Outcome.</p>
+
+                    <p>In v2, if you stake REP in favor of an outcome that the market ends up resolving to, you receive a 40% ROI on your staked REP. If you stake on an outcome that the market does <em>not</em> end up resolving to, you lose your entire stake. </p>
+
+                    <p>With each successive dispute round, a higher Dispute Bond is needed to shift the Tentative Winning Outcome. A user may contribute the full Dispute Bond or fill it partially as part of a crowd-sourced fill along with other users.</p>
+
+                    <p>Let’s look at the changes that speed up resolution in v2.</p>
+
+                </div>
+
+                <div class="FaqAnswer" id="initial-reporting-window">
+
+                    <h4>24 Hour Designated Reporting Window</h4>
+
+                    <p>Once a market enters reporting in v2, the Designated Reporter (DR) has <em>24 hours</em> to submit a report on the market’s outcome, as opposed to 72 hours in v1.</p>
+
+                </div>
+
+                <div class="FaqAnswer" id="initial-dispute-window">
+
+                    <h4>24 Hour Initial Dispute Window</h4>
+
+                    <p>Once the Initial Reporting window is complete, users have 24 hours to dispute. If the Dispute Bond is not filled in that window, the market resolves to the initially reported outcome. In v1, there was no 24 hour dispute window. Markets entered 7-day windows right away. </p>
+
+                <div class="FaqAnswer" id="immediate-disputes">
+
+                    <h4>Immediate Disputes</h4>
+
+                    <p>In V2, users can dispute outcomes <em>immediately, </em>rather than having to wait 7+ days as in v1. Markets still must remain undisputed for an entire seven-day window in order to finalize to the Tentative Winning Outcome, but anyone may dispute an outcome at any time, regardless of when it won or when the next window begins.</p>
+
+                    <p>This feature shuts off if a market hits a sufficiently large REP threshold such that it is within 8 rounds of a potential fork, at which time rounds return to a weeklong pace.</p>
+                
+                </div>
+                
+                <div class="FaqAnswer" id="pre-staking">
+
+                    <h4>Pre-Staking</h4>
+
+                    <p>Users can add extra support for a Tentative Winning Outcome by pre-staking REP that will be used to dispute in that outcome’s favor in the event that is no longer the Tentative Winning Outcome. Pre-staking can help accelerate a market’s resolution by advancing to a further round and deterring other users from needlessly disputing. In theory, one could slice months off resolution time by making one large pre-contribution.</p>
+                
+                </div>
+                
+                <div class="FaqAnswer" id="less-ambiguity">
+                    <h4>Less Ambiguity</h4>
+
+                    <p>One of the causes of long disputes in v1 was ambiguous market terms. In v1, markets will likely have stronger terms due to better guidance and a robust template system for market creators, along with stronger incentives to create valid markets. </p>
+                
+                </div>
+                
+                <div class="FaqAnswer" id="instant-settlement">
+                    <h4>Instant Settlement</h4>
+
+                    <p>The good news is that even if a market takes some time to resolve, traders will likely be able to settle their positions at minimal cost via <a href="https://www.augur.net/blog/augur-ecosystem/" target="_blank">overlays</a> or other independent settlement products. <a href="https://stld.exchange" target="_blank">STLD</a>, for example, will offer instant settlement, letting traders cash out their positions as soon as markets enter reporting.</p>
+                </div>
+                
+                <div class="FaqAnswer" id="forking">
+
+                    <h4>Forking</h4>
+
+                    <p>In v2, a maximum of 20 dispute rounds will occur before a fork. 2.5% or more of the total REP supply being filled in a single Dispute Bond will trigger a fork. We’ll cover forking in-depth in another post. </p>
+                </div>
+                
+                <div class="FaqAnswer" id="for-developers">
+
+                    <h4>For Developers</h4>
+
+                        <h6 class="blog-h6">Submitting an Initial Report in Augur v2</h6>
+
+                            <p>To submit the initial report, either the Designated Reporter (or any user, if the Designated Reporter did not report within 24 hours of the market’s end time) will need to call the function <code>Market.doInitialReport</code> with the payout numerators of the outcome. </p>
+
+                            <p>When calling <code>Market.doInitialReport</code>, the initial reporter can optionally specify an amount of REP to escrow for the outcome in anticipation of a dispute. If the outcome is disputed, it will automatically get applied to the outcome. Otherwise, the initial reporter will be able to reclaim the amount once the market is finalized. </p>
+
+                            <p>If the report is submitted by the Designated Reporter and the Designated Reporter is not the owner of the market’s no-show REP bond, the REP bond will be returned to owner, and the Designated Reporter will need to stake the REP to use for the report. Otherwise, the No-show REP Bond is used as stake for report.</p>
+
+                            <p>Calling <code>Market.doInitialReport</code> will fail for any of the following reasons:</p>
+
+                            <ul class="blog-list">
+                                <li>The market has not yet reached its Reporting Start Time</li>
+
+                                <li>The payout numerators are not in a valid format</li>
+
+                                <li>An initial report has already been submitted for the market, or someone who is not the designated reporter tries to report within 24 hours of the market’s end time</li>
+
+                                <li>The universe is forking</li>
+                            </ul>
+
+                            <p>If the call to <code>Market.doInitialReport</code> succeeds, the market’s initial dispute window will be set to 24 hours, and the report will be submitted and logged on the Ethereum blockchain.</p>
+
+                        <h6 class="blog-h6">Disputing an Outcome in Augur v2</h6>
+
+                            <p>If a market has an initial report and its dispute window has not ended, users can call <code>Market.contribute</code> to stake a specified amount of REP in an outcome other than the market’s tentative outcome to dispute it.</p>
+
+                            <p>Calling <code>Market.contribute</code> will fail if any of the following conditions are true:</p>
+
+                            <ul class="blog-list">
+                                <li>Dispute pacing is enabled and the current time falls outside of market’s 7-day dispute window (or the market’s dispute window has not been set).</li>
+
+                                <li>The universe is forking.</li>
+                            </ul>
+
+                            <p>If the call to <code>Market.contribute</code> is successful, the specified quantity of REP will be staked on the outcome, and the transaction will be logged on the blockchain. </p>
+
+                            <p>If the contribution fills the Dispute Bond, the market’s next reporting window will be set to 7 days. The staked REP and additional reporting fees will become redeemable by calling <code>DisputeCrowdsourcer.redeem</code> once the market is finalized, if the outcome is the winning outcome.</p>
+
+                            <p>Similar to <code>Market.contribute</code>, users also can call <code>Market.contributeToTentative</code> to stake a specified amount of REP in a market’s tentative outcome in anticipation of a dispute.</p>
+
+                            <p>Calling <code>Market.contributeToTentative</code> will fail if:</p>
+
+                            <ul class="blog-list">
+                                <li>Dispute pacing is currently enabled</li>
+
+                                <li>The market’s dispute window has ended (or has not been set)</li>
+
+                                <li>The universe is forking</li>
+                                <br>
+                            </ul>
+
+                            <p>Upon success, <code>Market.contributeToTentative</code> will escrow the REP and apply it to the outcome if it becomes disputed. This contribution transaction is also logged on the blockchain. The escrowed REP and additional reporting fees will become redeemable by calling <code>DisputeCrowdsourcer.redeem</code> once the market is finalized, if the outcome is the winning outcome.</p>
+
+                            <a class="button cta-button cta-blog" href="https://augur.net/ipfs-redirect.html" style="text-align:center;margin-top:-.5em;">Start Trading on Augur</a> <br><br><br>
+                </div>
+            </div>
+            </div>
+
+            <div class="FaqIndex">
+                <h5>Table of Contents:</h5>
+                <div class="FaqIndex__question">
+                    <a href="#full-speed-ahead">Full Speed Ahead</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#the-basics">The Basics</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#the-process">The Process</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#initial-reporting-window">24 Hour Designated Reporting Window</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#initial-dispute-window">24 Hour Initial Dispute Window</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#immediate-disputes">Immediate Disputes</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#pre-staking">Pre-staking</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#less-ambiguity">Less Ambiguity</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#instant-settlement">Instant Settlement</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#for-developers">For Developers</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="Footer">
+        <div class="max-width">
+            <div class="Footer__main-wrap">
+                <a href="/"><img alt="FAQ - Frequently Asked Questions" src="/dist/images/augur-logo--white.svg"></a>
+                <div class="Footer__nav-wrap">
+                    <ul>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/bounty/">Bug Bounty</a></li>
+                        <li><a href="/faq/" target="_blank">FAQ</a></li>
+                        <li><a href="https://medium.com/@AugurProject" target="_blank">Weekly Reports</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="https://docs.augur.net/" target="_blank">Documentation</a></li>
+                        <li><a href="https://github.com/AugurProject/whitepaper" target="_blank">Whitepaper</a></li>
+                        <li><a href="/disclaimer/">Disclaimer</a></li>
+                        <li><a href="mailto:team@augur.net" target="_blank">Contact</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="https://github.com/AugurProject/augur-core/blob/master/LICENSE" target="_blank">Augur Core License</a></li>
+                        <li><a href="https://github.com/AugurProject/augur/blob/master/LICENSE" target="_blank">Augur UI License</a></li>
+                        <li><a href="https://github.com/AugurProject/augur-node/blob/master/LICENSE" target="_blank">Augur Node License</a></li>
+                        <li><a href="https://github.com/AugurProject/augur-app/blob/master/LICENSE.md" target="_blank">Augur App License</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="/terms-of-service/">Terms of Service</a></li>
+                        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="/cookies-and-related-technologies-notice/">Cookies Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Footer__sub-wrap">
+                <span>Copyright &#64; 2019 Forecast Foundation OU</span>
+                <ul>
+                    <li>
+                        <a href="http://invite.augur.net/" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--discord--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://augur.stackexchange.com/" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--stack-exchange--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/AugurProject/" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--facebook--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/AugurProject" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--twitter--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://reddit.com/r/Augur" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--reddit--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/AugurProject" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--github--white.svg">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="/dist/scripts/site.min.js"></script>
+</body>
+
+</html>
