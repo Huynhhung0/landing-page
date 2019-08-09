@@ -33,6 +33,17 @@
     line-height: 4rem;
 }
 
+.blog-h6 {
+	line-height: 2.4rem;
+	margin-top: .5em;
+}
+
+.blog-list {
+	list-style: inherit;
+	font-weight: normal;
+	margin-left: 2rem;
+}
+
 .cta-blog { 
 	font-size: 1.3rem;
 	margin-top: .75em !important;
@@ -54,5 +65,9 @@
 	.blog-headline {
 	  font-size: 2.25rem;
       line-height: 3rem;
+	}
+	.blog-header-medium {
+		font-size: 1.5em;
+    	line-height: 2.425rem;
 	}
 }

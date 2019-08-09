@@ -1890,7 +1890,7 @@ ul {
   padding-right: 4rem; }
 
 .FaqAnswer {
-  padding-bottom: 4rem; }
+  padding-bottom: 1.5rem; }
   .FaqAnswer > ul {
     font-size: 1.125rem;
     font-weight: 400;
@@ -2213,6 +2213,15 @@ ul {
   font-size: 3rem;
   line-height: 4rem; }
 
+.blog-h6 {
+  line-height: 2.4rem;
+  margin-top: .5em; }
+
+.blog-list {
+  list-style: inherit;
+  font-weight: normal;
+  margin-left: 2rem; }
+
 .cta-blog {
   font-size: 1.3rem;
   margin-top: .75em !important;
@@ -2229,4 +2238,7 @@ ul {
     width: 85%; }
   .blog-headline {
     font-size: 2.25rem;
-    line-height: 3rem; } }
+    line-height: 3rem; }
+  .blog-header-medium {
+    font-size: 1.5em;
+    line-height: 2.425rem; } }
