@@ -245,7 +245,7 @@
 
                             <p>If the call to <code>Market.contribute</code> is successful, the specified quantity of REP will be staked on the outcome, and the transaction will be logged on the blockchain. </p>
 
-                            <p>If the contribution fills the Dispute Bond, the market’s next reporting window will be set to 7 days. The staked REP and additional reporting fees will become redeemable by calling <code>DisputeCrowdsourcer.redeem</code> once the market is finalized, if the outcome is the winning outcome.</p>
+                            <p>Users that backed the winning outcome can claim their staked and earned REP by calling <code>DisputeCrowsourcer.redeem</code> once the market is finalized.</p>
 
                             <p>Similar to <code>Market.contribute</code>, users also can call <code>Market.contributeToTentative</code> to stake a specified amount of REP in a market’s tentative outcome in anticipation of a dispute.</p>
 
@@ -260,7 +260,7 @@
                                 <br>
                             </ul>
 
-                            <p>Upon success, <code>Market.contributeToTentative</code> will escrow the REP and apply it to the outcome if it becomes disputed. This contribution transaction is also logged on the blockchain. The escrowed REP and additional reporting fees will become redeemable by calling <code>DisputeCrowdsourcer.redeem</code> once the market is finalized, if the outcome is the winning outcome.</p>
+                            <p>Upon success, <code>Market.contributeToTentative</code> will escrow the REP and apply it to the outcome if it becomes disputed. This contribution transaction is also logged on the blockchain.</p>
 
                             <a class="button cta-button cta-blog" href="https://augur.net/ipfs-redirect.html" style="text-align:center;margin-top:-.5em;">Start Trading on Augur</a> <br><br><br>
                 </div>
