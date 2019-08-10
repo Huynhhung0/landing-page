@@ -3,14 +3,33 @@
 
 <head>  
   
-
-    <!-- Anti-flicker snippet (recommended)  -->
+<meta charset="utf-8">
+  
+<!-- Anti-flicker snippet (recommended)  -->
 <style>.async-hide { opacity: 0 !important} </style>
 <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
 h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
 })(window,document.documentElement,'async-hide','dataLayer',4000,
 {'GTM-NVGLSMH':true});</script>
+
+  
+      <link rel="stylesheet preload" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" async defer></script>
+    <script>
+        window.addEventListener('load', function() {
+            window.cookieconsent.initialise({
+                'palette': {
+                    'popup': {
+                        'background': '#553580'
+                    },
+                    'button': {
+                        'background': '#FFF',
+                    }
+                }
+            })
+        })
+    </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
@@ -24,7 +43,7 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
   
 
 
-    <meta charset="utf-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -44,22 +63,6 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
     <link rel="canonical" href="https://www.augur.net/" />
     <meta name="google-site-verification" content="0yoO8otlMdNBBDxuvq_KxlJyoSzIhBc8eK_7FzJ1_qg" />
     
-    <link rel="stylesheet preload" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" async defer></script>
-    <script>
-        window.addEventListener('load', function() {
-            window.cookieconsent.initialise({
-                'palette': {
-                    'popup': {
-                        'background': '#553580'
-                    },
-                    'button': {
-                        'background': '#FFF',
-                    }
-                }
-            })
-        })
-    </script>
 
     <meta content="https://augur.net/dist/images/meta_logo.png" property="og:image">
     <meta content="https://augur.net/dist/images/meta_logo.png" name="twitter:image">
