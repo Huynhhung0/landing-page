@@ -15,9 +15,11 @@
 .main-grab {
   font-size: 2.75rem;
   font-family: MuseoSans;
-  letter-spacing: .5px;
-  color: #232323;
-  margin-bottom: 14px;
+  letter-spacing: .75px;
+  color: #262626;
+  margin-bottom: 1.9rem;
+  line-height: 3.64rem;
+  padding-top: 1.5rem;
 }
 
 .sub-grab {
@@ -565,6 +567,15 @@
       margin-right: 0;
     }
   }
+}
+
+.community-header {
+  margin: 0 auto 2.3rem auto;
+  width: 100%;
+}
+
+.get-started-header {
+  line-height: 2.3rem;
 }
 
 @media only screen and (max-width: 1000px) {
