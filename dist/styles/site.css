@@ -1110,7 +1110,8 @@ ul {
 .uses-header {
   color: #fff;
   font-size: 2.3rem;
-  margin-bottom: 2.4rem; }
+  margin-bottom: 2.4rem;
+  text-align: center; }
 
 .use-case-img {
   display: inline-block; }
@@ -1272,6 +1273,9 @@ ul {
 
 .Currencies {
   background-color: #fff; }
+
+.currencies-header {
+  text-align: center; }
 
 .Currencies__wrap {
   position: relative;
