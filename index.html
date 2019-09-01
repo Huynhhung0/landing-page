@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>  
-  
-<!-- Anti-flicker snippet  -->
-<style>.async-hide { opacity: 0 !important} </style>
-<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-})(window,document.documentElement,'async-hide','dataLayer',4000,
-{'OPT_CONTAINER_ID':true});</script>
+<head>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
@@ -18,10 +10,46 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
-gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip': true});
+gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-M28CXJX'});
+</script>
+  
+<!-- Anti-flicker snippet (recommended)  -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-NVGLSMH':true});</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH'});
+</script>
+  
+<meta charset="utf-8">
+  
+<link rel="stylesheet preload" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" async defer></script>
+<script>
+    window.addEventListener('load', function() {
+        window.cookieconsent.initialise({
+            'palette': {
+                'popup': {
+                    'background': '#553580'
+                },
+                'button': {
+                    'background': '#FFF',
+                }
+            }
+        })
+    })
 </script>
 
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -41,22 +69,6 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
     <link rel="canonical" href="https://www.augur.net/" />
     <meta name="google-site-verification" content="0yoO8otlMdNBBDxuvq_KxlJyoSzIhBc8eK_7FzJ1_qg" />
     
-    <link rel="stylesheet preload" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" async defer></script>
-    <script>
-        window.addEventListener('load', function() {
-            window.cookieconsent.initialise({
-                'palette': {
-                    'popup': {
-                        'background': '#553580'
-                    },
-                    'button': {
-                        'background': '#FFF',
-                    }
-                }
-            })
-        })
-    </script>
 
     <meta content="https://augur.net/dist/images/meta_logo.png" property="og:image">
     <meta content="https://augur.net/dist/images/meta_logo.png" name="twitter:image">
@@ -122,10 +134,8 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
     <section class="Hero landing-top" style="padding-bottom: 0;">
         <div class="Hero__wrap">
             <div>
-                <h1 class="main-grab">Trading, Reinvented</h1>
-                <h4 class="sub-grab-head"><span class="sub-grab">Get exposure to any event or asset in the world for near-zero fees</span><br>
-                <span class="value-prop">No Signup. No Deposits. No Limits.</span></h4>
-                <a class="button cta-button cta-primary" href="https://augur.net/ipfs-redirect.html">Start Trading Now</a>
+                <h1 class="main-grab">No limit betting on anything.</h1>
+                <a class="button cta-button cta-primary" href="https://augur.net/ipfs-redirect.html">Start Betting Now</a>
                 <a class="cta-download-link" href="https://augur.net/download">Advanced: Download Augur</a>
             </div>
             <div class="vid-container">
@@ -145,8 +155,8 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
                 </div>
                 <div class="quarter-tile">
                     <img alt="Why Augur Prediction Markets" src="/dist/images/icon--low-trading-fees-white.svg">
-                    <h6>Low Trading Fees</h6>
-                    <p>There's no third party making money from your trades. Trading fees go directly to market creators &amp; reporters.</p>
+                    <h6>Low Fees</h6>
+                    <p>There's no third party making money from your bets. Fees go directly to market creators &amp; reporters.</p>
                 </div>
                 <div class="quarter-tile">
                     <img alt="Why Augur Prediction Markets" src="/dist/images/icon--automated-payouts-white.svg">
@@ -161,7 +171,7 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
                 </div>
             </div>
             <div class="cta-wrapper">
-                <a align="center" class="button--white download-link cta-button cta-secondary cta-white" href="https://augur.net/ipfs-redirect.html">Trade On Augur Now</a>
+                <a align="center" class="button--white download-link cta-button cta-secondary cta-white" href="https://augur.net/ipfs-redirect.html">Bet On Augur Now</a>
             </div>
         </div>
     </section>
@@ -195,7 +205,7 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
             </div>
              <div class="max-width">
                  <div class="cta-wrapper">
-                    <a align="center" class="button--white download-link cta-button cta-secondary" href="https://augur.net/ipfs-redirect.html">Trade On Augur Now</a>
+                    <a align="center" class="button--white download-link cta-button cta-secondary" href="https://augur.net/ipfs-redirect.html">Bet On Augur Now</a>
                 </div>
             </div>
         </div>
@@ -235,7 +245,7 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
             </div>
             <div class="AugurCycle__step--left final-step">
                 <div class="step--image">
-                    <video alt="Augur Prediction Markets" src="https://www.augur.net/src/videos/flow_one.mov" muted autoplay loop playsinline style="width:100%"></video>
+                    <video alt="Augur Prediction Markets" src="https://www.augur.net/src/videos/flow_one.mov" async muted autoplay loop playsinline style="width:100%"></video>
                 </div>
                 <div class="step--text">
                     <h3 class="step--3">Claim Your Winnings</h3>
@@ -243,7 +253,7 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
                 </div>
             </div>
             <div class="cta-wrapper">
-                <a align="center" class="button--white download-link cta-button cta-secondary" href="https://augur.net/ipfs-redirect.html" style="">Start Trading Now</a>
+                <a align="center" class="button--white download-link cta-button cta-secondary" href="https://augur.net/ipfs-redirect.html" style="">Start Betting Now</a>
             </div>
         </div>
         </div>
@@ -257,7 +267,7 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
                     <div class="Uses__use-cases-wrapper">
                         <div class="Uses__use-case">
                             <h6>Political Forecasting</h6>
-                            <p>Turn political knowledge into predictive power by trading on the outcome of upcoming elections, potential policy decisions, and other political events.</p>
+                            <p>Turn political knowledge into predictive power by betting on the outcome of upcoming elections, potential policy decisions, and other political events.</p>
                             <img alt="Augur Prediction Markets" src="/dist/images/icon--political-forecasting.svg">
                         </div>
                         <div class="Uses__use-case">
@@ -292,7 +302,7 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
                             </div>
                             <img alt="Why Augur Prediction Markets" src="/dist/images/icon--ethereum.svg">
                         </div>
-                        <p>Trading on the Augur protocol is done with Ethereum, the decentralized world computer. As one of the most widely-used cryptocurrencies, Ethereum helps make trading on Augur accessible to all.</p>
+                        <p>Betting on the Augur protocol is done with Ethereum, the decentralized world computer. As one of the most widely-used cryptocurrencies, Ethereum helps make betting on Augur accessible to all.</p>
                     </div>
                     <div class="Currencies__currency">
                         <div class="Currencies__currency-heading-wrap">
@@ -308,7 +318,7 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
             </div>
             <div class="max-width">
                 <div class="cta-wrapper">
-                    <a align="center" class="button--white download-link cta-button cta-secondary" href="https://augur.net/ipfs-redirect.html">Trade On Augur Now</a>
+                    <a align="center" class="button--white download-link cta-button cta-secondary" href="https://augur.net/ipfs-redirect.html">Bet On Augur Now</a>
                 </div>
             </div>
         </section>
@@ -317,14 +327,14 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
             <div class="max-width projects-header">
                 <h2>Join The Augur Ecosystem</h2>
                 <div class="GetStartedSteps__note" style="margin-bottom:0em;">
-                    <h5 style="text-align:center;">Join the growing number of developers, projects and companies building on the Augur protocol. </h5>
+                    <h5 class="get-started-header" style="text-align:center;">Join the growing number of developers, projects and companies building on the Augur protocol. </h5>
                     <br>
                     <div class="quarter-wrap">
                          <div class="quarter-tile">
                             <a href="https://blitzpredict.io"><img alt="Why Augur Prediction Markets" src="/dist/images/eco-blitzpredict.jpg" style="margin-left: auto;margin-right: auto;"></a>
                         </div>
                         <div class="quarter-tile">
-                            <a href="https://guesser.io"><img alt="Why Augur Prediction Markets" src="/dist/images/eco-guesser.png" style="margin-left: auto;margin-right: auto;"></a>
+                            <a href="https://guesser.com"><img alt="Why Augur Prediction Markets" src="/dist/images/eco-guesser.png" style="margin-left: auto;margin-right: auto;"></a>
                         </div>
                         <div class="quarter-tile">
                             <a href="https://predictions.global"><img alt="Why Augur Prediction Markets" src="/dist/images/eco-pg.png" style="margin-left: auto;margin-right: auto;"></a>
@@ -358,7 +368,7 @@ gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH', 'anonymize_ip':
 
         <section class="Connect">
             <div class="Connect__wrap">
-                <h2 style="width:100%">Join the Community</h2>
+                <h2 class="community-header">Join the Community</h2>
                 <div class="Connect__block-wrap-outer">
                     <div class="Connect__block">
                         <img alt="Augur Prediction Markets" src="/dist/images/icon--discord.svg">

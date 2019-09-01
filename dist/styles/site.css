@@ -551,7 +551,7 @@ ul {
 .cta-download-link {
   clear: both;
   float: left;
-  margin: 1.3em 1em 0 3.14em;
+  margin: .8em 1em 0 3.14em;
   text-decoration: underline; }
 
 .cta-button {
@@ -1076,9 +1076,11 @@ ul {
 .main-grab {
   font-size: 2.75rem;
   font-family: MuseoSans;
-  letter-spacing: .5px;
-  color: #232323;
-  margin-bottom: 14px; }
+  letter-spacing: .75px;
+  color: #262626;
+  margin-bottom: 1.9rem;
+  line-height: 3.64rem;
+  padding-top: 1.5rem; }
 
 .sub-grab {
   font-size: 1.43rem;
@@ -1108,7 +1110,8 @@ ul {
 .uses-header {
   color: #fff;
   font-size: 2.3rem;
-  margin-bottom: 2.4rem; }
+  margin-bottom: 2.4rem;
+  text-align: center; }
 
 .use-case-img {
   display: inline-block; }
@@ -1222,6 +1225,8 @@ ul {
   .AugurCycle__step .step--text, .AugurCycle__step--left .step--text, .AugurCycle__step--right .step--text {
     padding: 6rem 2rem 0 6.625rem;
     width: 35%; }
+    .AugurCycle__step .step--text > h3, .AugurCycle__step--left .step--text > h3, .AugurCycle__step--right .step--text > h3 {
+      line-height: 1.1em; }
   .AugurCycle__step > *:first-child, .AugurCycle__step--left > *:first-child, .AugurCycle__step--right > *:first-child {
     margin-right: 3rem; }
 
@@ -1270,6 +1275,9 @@ ul {
 
 .Currencies {
   background-color: #fff; }
+
+.currencies-header {
+  text-align: center; }
 
 .Currencies__wrap {
   position: relative;
@@ -1451,6 +1459,13 @@ ul {
     margin-right: 2.125rem; }
     .Connect__block--around-the-web > ul > li:last-child {
       margin-right: 0; }
+
+.community-header {
+  margin: 0 auto 2.3rem auto;
+  width: 100%; }
+
+.get-started-header {
+  line-height: 2.3rem; }
 
 @media only screen and (max-width: 1000px) {
   .Connect__block-wrap-outer {
@@ -1890,7 +1905,7 @@ ul {
   padding-right: 4rem; }
 
 .FaqAnswer {
-  padding-bottom: 4rem; }
+  padding-bottom: 1.5rem; }
   .FaqAnswer > ul {
     font-size: 1.125rem;
     font-weight: 400;
@@ -2213,6 +2228,15 @@ ul {
   font-size: 3rem;
   line-height: 4rem; }
 
+.blog-h6 {
+  line-height: 2.4rem;
+  margin-top: .5em; }
+
+.blog-list {
+  list-style: inherit;
+  font-weight: normal;
+  margin-left: 2rem; }
+
 .cta-blog {
   font-size: 1.3rem;
   margin-top: .75em !important;
@@ -2229,4 +2253,7 @@ ul {
     width: 85%; }
   .blog-headline {
     font-size: 2.25rem;
-    line-height: 3rem; } }
+    line-height: 3rem; }
+  .blog-header-medium {
+    font-size: 1.5em;
+    line-height: 2.425rem; } }
