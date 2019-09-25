@@ -1,1 +1,283 @@
-<!DOCTYPE html><html><head>    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>    <script>        window.dataLayer = window.dataLayer || [];        function gtag() {            dataLayer.push(arguments);        }        gtag('js', new Date());        gtag('config', 'UA-74080255-11', {            'anonymize_ip': true        });    </script>    <meta charset="utf-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta charset="utf-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Why is Blockchain Infrastructure Important? | Augur Prediction Markets</title>    <meta content="Why is Blockchain Infrastructure Important? | Augur Prediction Markets" property="og:title">    <meta content="Why is Blockchain Infrastructure Important? | Augur Prediction Markets" property="og:site_name">    <meta name="twitter:card" content="summary_large_image" />    <meta name="twitter:site" content="@AugurProject" />    <meta name="twitter:creator" content="@AugurProject">    <meta name="twitter:title" content="Why is Blockchain Infrastructure Important? | Augur Prediction Markets" />    <meta name="twitter:description" content="Today, Augur is a little over a year old on mainnet, with thousands of markets and millions of dollars in open interest resolved. However, things looked very different on launch day." />    <meta name="twitter:image" content="https://augur.net/dist/images/meta_logo.png" />    <meta content="Today, Augur is a little over a year old on mainnet, with thousands of markets and millions of dollars in open interest resolved. However, things looked very different on launch day." name="description">    <meta content="https://www.augur.net/blog/alchemy-augur-infra" property="og:url">    <meta name="robots" content="index, follow" />    <link rel="canonical" href="https://www.augur.net/blog/alchemy-augur-infra" />    <meta content="https://augur.net/dist/images/meta_logo.png" property="og:image">    <meta property="article:published_time" content="2019-09-17T10:00:00+00:00" />    <meta property="article:modified_time" content="2019-09-17T10:00:00+00:00" />    <meta property="og:updated_time" content="2019-09-17T10:00:00+00:00" />    <link rel="stylesheet" type="text/css" href="/dist/styles/site.min.css" defer>    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">    <link rel="manifest" href="/favicon/manifest.json">    <meta name="msapplication-TileColor" content="#ffffff">    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">    <meta name="theme-color" content="#ffffff">    <meta content="LQMTXnM-70SbbKHdPCf9S9o_w2Au-bA3a6-2Z9kSCOo" name="google-site-verification">    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" defer />    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" defer></script>    <script>        window.addEventListener("load", function() {            window.cookieconsent.initialise({                "palette": {                    "popup": {                        "background": "#553580"                    },                    "button": {                        "background": "#FFF",                    }                }            })        });    </script></head><body>    <header class="Header">        <div class="Header__wrap">            <a href="/">                <img alt="Why is Blockchain Infrastructure Important? | Augur Prediction Markets" src="/dist/images/augur-logo.svg">            </a>            <div class="Header__nav">                <ul>                    <li><a href="/blog">Blog</a></li>                    <li><a href="/bounty/">Bug Bounty</a></li>                    <li><a href="/faq/">FAQ</a></li>                    <li><a href="https://medium.com/@AugurProject" target="_blank">Weekly Reports</a></li>                </ul>                <img alt="FAQ - Frequently Asked Questions" class="Header__nav-mobile-close" src="/dist/images/icon--times.svg">            </div>            <img alt="FAQ - Frequently Asked Questions" class="Header__nav-mobile-open" src="/dist/images/icon--bars.svg">        </div>    </header>    <section class="Hero--wide blog-header">        <div class="Hero__wrap">            <div>                <h1 class="with-line blog-header-medium">Why is Blockchain Infrastructure Important?</h1>                <h4>Our learnings after one year of Augur running live on mainnet.</h4>                <span class="blog-date">September 17th, 2019, 02:00 pm</span>            </div>        </div>    </section>    <section class="Faq">        <div class="max-width">            <div class="FaqAnswers">                <p>Today, Augur is a little over a year old on mainnet, with thousands of markets and millions of dollars in open interest resolved. However, things looked <i>very</i> different on launch day. The team had spent years on active development, protocol design, and carefully testing contracts. It was a product that many were excited to see launch. But, surprisingly, hours after said launch, complaints from users that Augur wasn’t working began to flood in. It turns out this happens to many developers and projects; A well-designed protocol or application is deployed, only to find out it doesn’t behave as expected. Why is this?</p>                <p>The answer lies in understanding how blockchain infrastructure affects the application. Blockchain infrastructure is what allows a user to interact with a blockchain and use applications. Great infrastructure enables fast, scalable user experiences. Unfortunately, most developers and applications have unreliable infrastructure. This leads to slow, incorrect, and potentially broken user experiences.</p>                <p>After encountering the aforementioned challenges, the focus shifted towards integrating reliable systems that made the growth and progress of Augur possible. <strong>Ultimately, quality infrastructure is one of the most important factors for great user experiences, real-world adoption, and developer productivity.</strong> However, finding reliable infrastructure solutions is one of the biggest challenges in the space. To benefit the community, we’re open-sourcing the learnings and experiences launching Augur in today’s infrastructure environment.</p>                <br>                <h3 id="user_experiences">Great User Experiences Require Great Blockchain Infrastructure:</h3>                <br>                <p>Blockchain infrastructure is one of the most important components of the user experience. But first, what is blockchain infrastructure? At a high level, it is a key component of the system that enables applications to interact with the blockchain.This can be a user’s own Ethereum node, a third-party node, or an infrastructure platform; an Augur user needs one of these to interact with Augur markets on the blockchain.</p>                <p>Even though the Augur application and smart contracts were working at launch, the infrastructure powering the application wasn’t. This is similar to a house built on a poor foundation. Even when the house is well-designed, if the foundation is not stable, the entire house is at risk. Within minutes of launching, as a result of this shaky foundation, users engulfed the Discord channel and reported that Augur simply did not work. Their experience was the app was slow, incorrect, and crashing often. The launch featured a free third-party node service which ended up being; you guessed it; slow, incorrect, and frequently provided incorrect blockchain data. <strong>The learning was: Most simple solutions for blockchain infrastructure are unreliable.</strong></p>                <p>It was quickly appreciated that great dapp user experiences depend on great blockchain infrastructure. Having explored solutions with all the big players in the space, Augur ultimately landed on Alchemy, which had far and away the best product for users’ needs. Teams should do their own evaluation in deciding which infrastructure provider is best, but these are some tenets to aspire to:</p>                <li>Correct, consistent blockchain data</li>                <li>Reliability and performance</li>                <li>Acceleration of core product development</li>                <li>Helpful customer support</li>                <br>                <br>                <h3 id="correct_data">Correct, Consistent Blockchain Data:</h3>                <br>                <p>This is the biggest gotcha in scaling blockchain infrastructure. When scaling beyond one node, a common strategy is to load-balance across multiple nodes. This is a <i>big</i> mistake; nodes can have different local copies of the blockchain, thus, load-balanced requests will return inconsistent data. The effect is catastrophic. Augur’s original third-party node provider utilized load-balanced nodes, and the inconsistent data would silently corrupt the local database during an initial sync and crash the application. The user would then have to spend hours resyncing from the beginning, at which point many left and never returned, impacting Augur’s early growth prospects. </p>                <p>Inconsistent data can also lead to scary user experiences when broadcasting transactions. For example, users might see their balance decrease after purchasing an asset but not see the asset. Consistency issues were a huge problem and led to multiple user issues every day, costing a lot of both engineering and support resources, slowing the entire team down.</p>                <p>Well-designed infrastructure fixes these issues by providing consistent data at any scale, as if it were a single node. One reason Alchemy was chosen is it does not use load-balanced nodes. Instead, they utilize a sophisticated distributed architecture which provides reliable consistency at scale. Alchemy resolved the consistency issues that had previously reared their head, removing 98% of user complaints and significantly improving Augur’s user experience and adoption.</p>                <br>                <h3 id="reliability">Reliability and Performance:</h3>                <br>                <p>Infrastructure should be reliable, fast, and scalable. At launch, Augur took upwards of eight hours to sync on the original third-party infrastructure service. As one can imagine, many users were not patient enough to wait. Today, leveraging Alchemy’s tech, a user’s application syncs over 3x faster. As a result, users are much more likely to stay. Uptime is also crucial; users won’t use an application that is breaks occasionally. A single node doesn’t fulfill these requirements because it will stop working fairly frequently, doesn’t have a backup, and is slow under load. Teams must weigh whether to invest significant time and resources into building sophisticated systems or to recruit the infrastructure expertise of providers like Alchemy.</p>                <br>                <h3 id="product_development">Accelerates Core Product Development:</h3>                <br>                <p>As AWS has abstracted infrastructure and allowed web2 teams to focus on their products, web3 teams will also begin to consider this tradeoff en masse. Alchemy, in a similar sense, has greatly accelerated Augur’s development timeline because the engineering team can focus on Augur-specific development. Before, the team had spent the better part of 3 months patching up issues caused by inconsistent, unreliable infrastructure and dealing with the subsequent user reports.</p>                <br>                <h3 id="customer_support">Customer Support:</h3>                <br>                <p>Additionally, Ethereum infrastructure requires continuous care due to network forks, maintenance upgrades, and unpredictable live network conditions such as congestion. Another reason to leverage an infrastructure expert is that they have a wealth of experience handling these issues. Augur core developers collaborate directly with Alchemy’s engineers for both live production events and active development issues, and this has saved significant amounts of time.</p>                <br>                <h3 id="our_journey">Leverage Augur’s Infrastructure Journey To Streamline Yours:</h3>                <br>                <p>Ultimately, the team came to the realization that infrastructure is just as important as well-written smart contracts and applications. Most developers will discover that the quality of their infrastructure can make or break their user adoption.</p>                <br>                <h3 id="closing_thoughts">Closing Thoughts:</h3>                <br>                <p>1. Don’t overlook infrastructure. Your product and user engagement will only be as good as the blockchain infrastructure underneath.</p>                <p>2. Recruit the help of experts so that you can focus on and accelerate your own core product development. At the end of the day, the latter is what makes you successful.</p>                <p>Though achieving dependable infrastructure is a hard problem, hopefully by sharing Augur’s growing pains you may reach your infrastructure goals faster, whether you’re working on active development, launching your product, or growing your user base!</p>            </div>            <div class="FaqIndex">                <h5>Why is Blockchain Infrastructure Important?</h5>                <div class="FaqIndex__question">                    <a href="#user_experiences">Great User Experiences Require Great Blockchain Infrastructure</a>                </div>                <div class="FaqIndex__question">                    <a href="#correct_data">Correct, Consistent Blockchain Data</a>                </div>                <div class="FaqIndex__question">                    <a href="#reliability">Reliability and Performance</a>                </div>                <div class="FaqIndex__question">                    <a href="#product_development">Accelerates Core Product Development</a>                </div>                <div class="FaqIndex__question">                    <a href="#customer_support">Customer Support</a>                </div>                <div class="FaqIndex__question">                    <a href="#our_journey">Leverage Augur’s Infrastructure Journey To Streamline Yours</a>                </div>                <div class="FaqIndex__question">                    <a href="#closing_thoughts">Closing Thoughts</a>                </div>            </div>        </div>    </section>    <footer class="Footer">        <div class="max-width">            <div class="Footer__main-wrap">                <a href="/"><img alt="FAQ - Frequently Asked Questions" src="/dist/images/augur-logo--white.svg"></a>                <div class="Footer__nav-wrap">                    <ul>                        <li><a href="/blog">Blog</a></li>                        <li><a href="/bounty/">Bug Bounty</a></li>                        <li><a href="/faq/" target="_blank">FAQ</a></li>                        <li><a href="https://medium.com/@AugurProject" target="_blank">Weekly Reports</a></li>                    </ul>                    <ul>                        <li><a href="https://docs.augur.net/" target="_blank">Documentation</a></li>                        <li><a href="https://github.com/AugurProject/whitepaper" target="_blank">Whitepaper</a></li>                        <li><a href="/disclaimer/">Disclaimer</a></li>                        <li><a href="mailto:team@augur.net" target="_blank">Contact</a></li>                    </ul>                    <ul>                        <li><a href="https://github.com/AugurProject/augur-core/blob/master/LICENSE" target="_blank">Augur Core License</a></li>                        <li><a href="https://github.com/AugurProject/augur/blob/master/LICENSE" target="_blank">Augur UI License</a></li>                        <li><a href="https://github.com/AugurProject/augur-node/blob/master/LICENSE" target="_blank">Augur Node License</a></li>                        <li><a href="https://github.com/AugurProject/augur-app/blob/master/LICENSE.md" target="_blank">Augur App License</a></li>                    </ul>                    <ul>                        <li><a href="/terms-of-service/">Terms of Service</a></li>                        <li><a href="/privacy-policy/">Privacy Policy</a></li>                        <li><a href="/cookies-and-related-technologies-notice/">Cookies Notice</a></li>                    </ul>                </div>            </div>            <div class="Footer__sub-wrap">                <span>Copyright &#64; 2019 Forecast Foundation OU</span>                <ul>                    <li>                        <a href="http://invite.augur.net/" target="_blank">                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--discord--white.svg">                        </a>                    </li>                    <li>                        <a href="https://augur.stackexchange.com/" target="_blank">                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--stack-exchange--white.svg">                        </a>                    </li>                    <li>                        <a href="https://facebook.com/AugurProject/" target="_blank">                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--facebook--white.svg">                        </a>                    </li>                    <li>                        <a href="https://twitter.com/AugurProject" target="_blank">                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--twitter--white.svg">                        </a>                    </li>                    <li>                        <a href="https://reddit.com/r/Augur" target="_blank">                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--reddit--white.svg">                        </a>                    </li>                    <li>                        <a href="https://github.com/AugurProject" target="_blank">                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--github--white.svg">                        </a>                    </li>                </ul>            </div>        </div>    </footer>    <script src="/dist/scripts/site.min.js"></script></body></html>
+<html>
+ 
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+ 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-74080255-11', {
+            'anonymize_ip': true
+        });
+    </script>
+ 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Why is Blockchain Infrastructure Important? | Augur Prediction Markets</title>
+    <meta content="Why is Blockchain Infrastructure Important? | Augur Prediction Markets" property="og:title">
+    <meta content="Why is Blockchain Infrastructure Important? | Augur Prediction Markets" property="og:site_name">
+ 
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AugurProject" />
+    <meta name="twitter:creator" content="@AugurProject">
+    <meta name="twitter:title" content="Why is Blockchain Infrastructure Important? | Augur Prediction Markets" />
+    <meta name="twitter:description" content="Today, Augur is a little over a year old on mainnet, with thousands of markets and millions of dollars in open interest resolved. However, things looked very different on launch day." />
+    <meta name="twitter:image" content="https://augur.net/dist/images/meta_logo.png" />
+ 
+    <meta content="Today, Augur is a little over a year old on mainnet, with thousands of markets and millions of dollars in open interest resolved. However, things looked very different on launch day." name="description">
+ 
+    <meta content="https://www.augur.net/blog/alchemy-augur-infra" property="og:url">
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.augur.net/blog/alchemy-augur-infra" />
+ 
+    <meta content="https://augur.net/dist/images/meta_logo.png" property="og:image">
+    <meta property="article:published_time" content="2019-09-17T10:00:00+00:00" />
+    <meta property="article:modified_time" content="2019-09-17T10:00:00+00:00" />
+    <meta property="og:updated_time" content="2019-09-17T10:00:00+00:00" />
+ 
+    <link rel="stylesheet" type="text/css" href="/dist/styles/site.min.css" defer>
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+ 
+    <meta content="LQMTXnM-70SbbKHdPCf9S9o_w2Au-bA3a6-2Z9kSCOo" name="google-site-verification">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" defer />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" defer></script>
+    <script>
+        window.addEventListener("load", function() {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#553580"
+                    },
+                    "button": {
+                        "background": "#FFF",
+                    }
+                }
+            })
+        });
+    </script>
+ 
+</head>
+ 
+<body>
+    <header class="Header">
+        <div class="Header__wrap">
+            <a href="/">
+                <img alt="Why is Blockchain Infrastructure Important? | Augur Prediction Markets" src="/dist/images/augur-logo.svg">
+            </a>
+            <div class="Header__nav">
+                <ul>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/bounty/">Bug Bounty</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                    <li><a href="https://medium.com/@AugurProject" target="_blank">Weekly Reports</a></li>
+                </ul>
+                <img alt="FAQ - Frequently Asked Questions" class="Header__nav-mobile-close" src="/dist/images/icon--times.svg">
+            </div>
+            <img alt="FAQ - Frequently Asked Questions" class="Header__nav-mobile-open" src="/dist/images/icon--bars.svg">
+        </div>
+    </header>
+ 
+    <section class="Hero--wide blog-header">
+        <div class="Hero__wrap">
+            <div>
+                <h1 class="with-line blog-header-medium">Why is Blockchain Infrastructure Important?</h1>
+                <h4>Our learnings after one year of Augur running live on mainnet.</h4>
+                <span class="blog-date">September 17th, 2019, 02:00 pm</span>
+            </div>
+        </div>
+    </section>
+ 
+    <section class="Faq">
+        <div class="max-width">
+            <div class="FaqAnswers">
+ 
+                <p>Today, Augur is a little over a year old on mainnet, with thousands of markets and millions of dollars in open interest resolved. However, things looked <i>very</i> different on launch day. The team had spent years on active development, protocol design, and carefully testing contracts. It was a product that many were excited to see launch. But, surprisingly, hours after said launch, complaints from users that Augur wasn’t working began to flood in. It turns out this happens to many developers and projects; A well-designed protocol or application is deployed, only to find out it doesn’t behave as expected. Why is this?</p>
+ 
+                <p>The answer lies in understanding how blockchain infrastructure affects the application. Blockchain infrastructure is what allows a user to interact with a blockchain and use applications. Great infrastructure enables fast, scalable user experiences. Unfortunately, most developers and applications have unreliable infrastructure. This leads to slow, incorrect, and potentially broken user experiences.</p>
+ 
+                <p>After encountering the aforementioned challenges, the focus shifted towards integrating reliable systems that made the growth and progress of Augur possible. <strong>Ultimately, quality infrastructure is one of the most important factors for great user experiences, real-world adoption, and developer productivity.</strong> However, finding reliable infrastructure solutions is one of the biggest challenges in the space. To benefit the community, we’re open-sourcing the learnings and experiences launching Augur in today’s infrastructure environment.</p>
+ 
+                <br>
+                <h4 id="user_experiences">Great User Experiences Require Great Blockchain Infrastructure</h4>
+                <br>
+ 
+                <p>Blockchain infrastructure is one of the most important components of the user experience. But first, what is blockchain infrastructure? At a high level, it is a key component of the system that enables applications to interact with the blockchain.This can be a user’s own Ethereum node, a third-party node, or an infrastructure platform; an Augur user needs one of these to interact with Augur markets on the blockchain.</p>
+ 
+                <p>Even though the Augur application and smart contracts were working at launch, the infrastructure powering the application wasn’t. This is similar to a house built on a poor foundation. Even when the house is well-designed, if the foundation is not stable, the entire house is at risk. Within minutes of launching, as a result of this shaky foundation, users engulfed the Discord channel and reported that Augur simply did not work. Their experience was the app was slow, incorrect, and crashing often. The launch featured a free third-party node service which ended up being; you guessed it; slow, incorrect, and frequently provided incorrect blockchain data. <strong>The learning was: Most simple solutions for blockchain infrastructure are unreliable.</strong></p>
+ 
+                <p>It was quickly appreciated that great dapp user experiences depend on great blockchain infrastructure. Having explored solutions with all the big players in the space, Augur ultimately landed on <a href="https://alchemyapi.io/" target="_blank">Alchemy</a>, which had far and away the best product for users’ needs. Teams should do their own evaluation in deciding which infrastructure provider is best, but these are some tenets to aspire to:</p>
+ 
+                <li>Correct, consistent blockchain data</li>
+                <li>Reliability and performance</li>
+                <li>Acceleration of core product development</li>
+                <li>Helpful customer support</li>
+ 
+                <br>
+                <br>
+                <h4 id="correct_data">Correct, Consistent Blockchain Data</h4>
+                <br>
+ 
+                <p>This is the biggest gotcha in scaling blockchain infrastructure. When scaling beyond one node, a common strategy is to load-balance across multiple nodes. This is a <i>big</i> mistake; nodes can have different local copies of the blockchain, thus, load-balanced requests will return inconsistent data. The effect is catastrophic. Augur’s original third-party node provider utilized load-balanced nodes, and the inconsistent data would silently corrupt the local database during an initial sync and crash the application. The user would then have to spend hours resyncing from the beginning, at which point many left and never returned, impacting Augur’s early growth prospects. </p>
+ 
+                <p>Inconsistent data can also lead to scary user experiences when broadcasting transactions. For example, users might see their balance decrease after purchasing an asset but not see the asset. Consistency issues were a huge problem and led to multiple user issues every day, costing a lot of both engineering and support resources, slowing the entire team down.</p>
+ 
+                <p>Well-designed infrastructure fixes these issues by providing consistent data at any scale, as if it were a single node. One reason Alchemy was chosen is it does not use load-balanced nodes. Instead, they utilize a sophisticated distributed architecture which provides reliable consistency at scale. Alchemy resolved the consistency issues that had previously reared their head, removing 98% of user complaints and significantly improving Augur’s user experience and adoption.</p>
+ 
+                <br>
+                <h4 id="reliability">Reliability and Performance</h4>
+                <br>
+ 
+                <p>Infrastructure should be reliable, fast, and scalable. At launch, Augur took upwards of eight hours to sync on the original third-party infrastructure service. As one can imagine, many users were not patient enough to wait. Today, leveraging Alchemy’s tech, a user’s application syncs over 3x faster. As a result, users are much more likely to stay. Uptime is also crucial; users won’t use an application that is breaks occasionally. A single node doesn’t fulfill these requirements because it will stop working fairly frequently, doesn’t have a backup, and is slow under load. Teams must weigh whether to invest significant time and resources into building sophisticated systems or to recruit the infrastructure expertise of providers like Alchemy.</p>
+ 
+                <br>
+                <h4 id="product_development">Accelerates Core Product Development</h4>
+                <br>
+ 
+                <p>As AWS has abstracted infrastructure and allowed web2 teams to focus on their products, web3 teams will also begin to consider this tradeoff en masse. Alchemy, in a similar sense, has greatly accelerated Augur’s development timeline because the engineering team can focus on Augur-specific development. Before, the team had spent the better part of 3 months patching up issues caused by inconsistent, unreliable infrastructure and dealing with the subsequent user reports.</p>
+ 
+                <br>
+                <h4 id="customer_support">Customer Support</h4>
+                <br>
+ 
+                <p>Additionally, Ethereum infrastructure requires continuous care due to network forks, maintenance upgrades, and unpredictable live network conditions such as congestion. Another reason to leverage an infrastructure expert is that they have a wealth of experience handling these issues. Augur core developers collaborate directly with Alchemy’s engineers for both live production events and active development issues, and this has saved significant amounts of time.</p>
+ 
+                <br>
+                <h4 id="our_journey">Leverage Augur’s Infrastructure Journey To Streamline Yours</h4>
+                <br>
+ 
+                <p>Ultimately, the team came to the realization that infrastructure is just as important as well-written smart contracts and applications. Most developers will discover that the quality of their infrastructure can make or break their user adoption.</p>
+ 
+                <br>
+                <h4 id="closing_thoughts">Closing Thoughts</h4>
+                <br>
+ 
+                <p>1. Don’t overlook infrastructure. Your product and user engagement will only be as good as the blockchain infrastructure underneath.</p>
+ 
+                <p>2. Recruit the help of experts so that you can focus on and accelerate your own core product development. At the end of the day, the latter is what makes you successful.</p>
+ 
+                <p>Though achieving dependable infrastructure is a hard problem, hopefully by sharing Augur’s growing pains you may reach your infrastructure goals faster, whether you’re working on active development, launching your product, or growing your user base!</p>
+ 
+            </div>
+ 
+            <div class="FaqIndex">
+                <h5>Why is Blockchain Infrastructure Important?</h5>
+                <div class="FaqIndex__question">
+                    <a href="#user_experiences">Great User Experiences Require Great Blockchain Infrastructure</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#correct_data">Correct, Consistent Blockchain Data</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#reliability">Reliability and Performance</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#product_development">Accelerates Core Product Development</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#customer_support">Customer Support</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#our_journey">Leverage Augur’s Infrastructure Journey To Streamline Yours</a>
+                </div>
+                <div class="FaqIndex__question">
+                    <a href="#closing_thoughts">Closing Thoughts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <footer class="Footer">
+        <div class="max-width">
+            <div class="Footer__main-wrap">
+                <a href="/"><img alt="FAQ - Frequently Asked Questions" src="/dist/images/augur-logo--white.svg"></a>
+                <div class="Footer__nav-wrap">
+                    <ul>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/bounty/">Bug Bounty</a></li>
+                        <li><a href="/faq/" target="_blank">FAQ</a></li>
+                        <li><a href="https://medium.com/@AugurProject" target="_blank">Weekly Reports</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="https://docs.augur.net/" target="_blank">Documentation</a></li>
+                        <li><a href="https://github.com/AugurProject/whitepaper" target="_blank">Whitepaper</a></li>
+                        <li><a href="/disclaimer/">Disclaimer</a></li>
+                        <li><a href="mailto:team@augur.net" target="_blank">Contact</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="https://github.com/AugurProject/augur-core/blob/master/LICENSE" target="_blank">Augur Core License</a></li>
+                        <li><a href="https://github.com/AugurProject/augur/blob/master/LICENSE" target="_blank">Augur UI License</a></li>
+                        <li><a href="https://github.com/AugurProject/augur-node/blob/master/LICENSE" target="_blank">Augur Node License</a></li>
+                        <li><a href="https://github.com/AugurProject/augur-app/blob/master/LICENSE.md" target="_blank">Augur App License</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="/terms-of-service/">Terms of Service</a></li>
+                        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="/cookies-and-related-technologies-notice/">Cookies Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Footer__sub-wrap">
+                <span>Copyright &#64; 2019 Forecast Foundation OU</span>
+                <ul>
+                    <li>
+                        <a href="http://invite.augur.net/" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--discord--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://augur.stackexchange.com/" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--stack-exchange--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/AugurProject/" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--facebook--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/AugurProject" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--twitter--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://reddit.com/r/Augur" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--reddit--white.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/AugurProject" target="_blank">
+                            <img alt="FAQ - Frequently Asked Questions" src="/dist/images/icon--github--white.svg">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="/dist/scripts/site.min.js"></script>
+</body>
+ 
+</html>
