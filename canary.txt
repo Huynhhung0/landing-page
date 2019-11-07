@@ -1,22 +1,22 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of September 1st, 2019, the Forecast Foundation has not been contacted by any agency anywhere in the world in a way which requires that contact not to be disclosed. 
+As of October 1st, 2019, the Forecast Foundation has not been contacted by any agency anywhere in the world in a way which requires that contact not to be disclosed. 
 
 The Forecast Foundation will publicly disclose any sort of inquiry from government agencies that falls outside the scope of regular business operations.
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE6zArx1tmT3TS8On2Qk4PTUq7u+AFAl1r+zQACgkQQk4PTUq7
-u+CQlw/9HkXfdCnh2qLCCuouWl0VRFHj8ZgqbeYtLsn5+l8rk6t5iFrZXLtSVU80
-RWn+aVm+3g4DiHLITPwdF25gZRLfQEvDWfJ7pvAbO6kamgXkCwk20qdEvKlpFgeB
-zRh0aTfASL8CEryC4B5CxxNrf/VDON69tQ0vI9ZWh8TpVsddvG13czDb9/NKXU2P
-JMmAUOSSLdje4KXCTyl+kW4a6NWoy3G2AdekfBOgAJpuW7ZVNKF5NNpnxgFUEE3y
-2vrx+xFB0pZcaWFLIiVMmJf2Knrubf6IVlPooNBY2yi05deBJrQN0edaHw4CKOkl
-srYqLu2qdSgsYvIR3N2AEWras5EMGlGWEhvyZdgaQG4wdERXfIT61ukYuz9nCRmF
-sJDDvI2Q+vrsLa7qkkvKjKsF/VDcJ5F68f4D07BgJNwIHLpMcGQzLiHYq1RFarUr
-W3gwbqlGPUgiZSUm5DkpI69urSfRk6NCPATLy7r2WqaK57WjytkFMd9PJW4MD6dx
-Y8FgusGkcWeS6dn0mZrW+dk+DRyRPEoTGDvl+cVHxjF4XgfMiPWkLu3w22crMlbJ
-i3BiyITrrmzdbUMKNuLqjeeJnwCcbbvfeDTYjvMH+CTnTmDHgG3Rffu5t67YR9Cn
-5AEQ9t3Bg8B+e+E0mAIJsWx2NHTGlFv8JuImg83b5dImtpVl9O4=
-=p9WY
+iQIzBAEBCAAdFiEE6zArx1tmT3TS8On2Qk4PTUq7u+AFAl2TxrAACgkQQk4PTUq7
+u+AZmBAAkim3+7h1P/rOovPM+lAP2ICHpojH+SwKfez3LbRIrT49y+sT2dZDKGWL
+ZDyxvJ6sVdyfORITU++wmo/QhU0oU4+6EtMZlAGT9hnZY0jLChv/3L5Ogrs00pKj
+ha6gUOIPZ5oqJuupHFmQmD7LoR0UyQzhrcIlSkzmM+RrfG/AuBZTbJNf+mR+t67e
+M/ojzTfGFiDU98P38esyXgzvdnfjNIkZq/NPKjWFWEDZTMDBOiF6HB5Qo1Xl9dGK
+Xwxsn/ve5veumUpwEa0tEu1abdmJnQZkTTX4+pwHBxtRTDUZTKCeOUrnr/YFFpA0
+bKylIT17IT9I+PQy9euQjbTsHQeqt3u74n3RRueijZB1BdJ5kVERIW+h1QHtRg84
+AE/L1h7afh99u0IHJGzCWNFEIvSP2ViHfTpjNSWGBlLdxWW4etsEinDBewi5JajX
+PcafVNyKngV5MPThRymDcy1sQHYicPNACo8w8lvEnPft+a5HlOGYNfu8+iexj2+t
+TVEUi1Z/1SJiJp79ulkorZ+EnHLll7jnd4JLNEasvOeZX/zAY78a2wEMbPBBeCKo
+6pK3Xtre66a2L13izHoqGeWG3A1pWLYVxEBQit/LKSjaQo7cXzVFIXW/rFrrWypA
+Id1+3BeuHmUL3RrMIUlT9NDileipgiLrJlpXBzZbd5/5XannhGo=
+=lryv
 -----END PGP SIGNATURE-----
