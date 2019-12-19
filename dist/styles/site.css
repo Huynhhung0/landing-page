@@ -1064,6 +1064,17 @@ ul {
       .Footer__sub-wrap > ul > li > a > img {
         width: 1.25rem; } }
 
+/* Example usage:
+
+.container {
+  padding: 0 15px;
+
+  @include sm {
+      padding: 0 20px;
+  }
+}
+
+ */
 .cta-download-link {
   font-size: 13px; }
 
@@ -1576,6 +1587,7 @@ ul {
   padding: 4.75rem 0;
   text-align: center; }
   .prerelease-headline > div > h1 {
+    color: #262429;
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 3rem;
@@ -1596,57 +1608,109 @@ ul {
   .prerelease-clean-text > div {
     padding: 0 18.5rem; }
     .prerelease-clean-text > div > h2 {
+      color: #262429;
       font-size: 2.25rem;
       font-weight: 700;
       line-height: 2.625rem;
       margin-bottom: 1rem; }
     .prerelease-clean-text > div > p {
+      color: #555;
       font-size: 1.125rem; }
+  @media (max-width: 993px) {
+    .prerelease-clean-text > div {
+      padding: 0 12.5rem; } }
+  @media (max-width: 768px) {
+    .prerelease-clean-text {
+      padding: 3.5rem 0; }
+      .prerelease-clean-text > div {
+        padding: 0 6.25rem; } }
+  @media (max-width: 576px) {
+    .prerelease-clean-text > div {
+      padding: 0 1.5rem; } }
 
-.prerelease-primary-sign-up-box > div {
-  display: -ms-flexbox;
-  display: flex;
-  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
-  padding: 3.5rem 3rem 3.25rem;
-  background-image: url("../../../src/images/smartphone-and-laptop.png");
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: right bottom; }
-  .prerelease-primary-sign-up-box > div > div {
-    width: 40%; }
-    .prerelease-primary-sign-up-box > div > div > h2 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      line-height: 2rem;
-      margin-bottom: 1rem; }
-    .prerelease-primary-sign-up-box > div > div > p {
-      font-size: 1.125rem;
-      margin-bottom: 2.125rem; }
-    .prerelease-primary-sign-up-box > div > div > form > h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.625rem; }
-    .prerelease-primary-sign-up-box > div > div > form > input[type='text'] {
-      display: block;
-      background: #FFFFFF;
-      border: 2px solid #C9C9C9;
-      box-sizing: border-box;
-      border-radius: 4px;
-      height: 2.75rem;
-      width: 90%;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem; }
-    .prerelease-primary-sign-up-box > div > div > form > input[type='submit'] {
-      border-radius: 24px;
-      font-size: 1.125rem;
-      font-weight: 700;
-      line-height: 1.3125rem;
-      padding: 0.75rem 2.75rem; }
+.prerelease-primary-sign-up-box {
+  padding: 0 1.5rem; }
+  .prerelease-primary-sign-up-box > div {
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    padding: 3.5rem 3rem 3.25rem;
+    background-image: url("../../../src/images/smartphone-and-laptop.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right bottom; }
+    .prerelease-primary-sign-up-box > div > div {
+      width: 40%; }
+      .prerelease-primary-sign-up-box > div > div > h2 {
+        color: #262429;
+        font-size: 1.75rem;
+        font-weight: 700;
+        line-height: 2rem;
+        margin-bottom: 1rem; }
+      .prerelease-primary-sign-up-box > div > div > p {
+        color: #555;
+        font-size: 1.125rem;
+        margin-bottom: 2.125rem; }
+      .prerelease-primary-sign-up-box > div > div > img {
+        display: none; }
+      .prerelease-primary-sign-up-box > div > div > form > h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.625rem; }
+      .prerelease-primary-sign-up-box > div > div > form > input[type='text'] {
+        display: block;
+        background: #FFFFFF;
+        border: 2px solid #C9C9C9;
+        box-sizing: border-box;
+        border-radius: 4px;
+        height: 2.75rem;
+        width: 90%;
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem; }
+        .prerelease-primary-sign-up-box > div > div > form > input[type='text']:-ms-input-placeholder {
+          color: #828282; }
+        .prerelease-primary-sign-up-box > div > div > form > input[type='text']::placeholder {
+          color: #828282; }
+      .prerelease-primary-sign-up-box > div > div > form > input[type='submit'] {
+        border-radius: 24px;
+        font-size: 1.125rem;
+        font-weight: 700;
+        line-height: 1.3125rem;
+        padding: 0.75rem 2.75rem; }
+  @media (max-width: 993px) {
+    .prerelease-primary-sign-up-box > div {
+      background-image: none; }
+      .prerelease-primary-sign-up-box > div > div {
+        width: 100%;
+        text-align: center; }
+        .prerelease-primary-sign-up-box > div > div > h2 {
+          margin-bottom: 2.125rem; }
+        .prerelease-primary-sign-up-box > div > div > img {
+          display: block;
+          margin: 0 auto 2.125rem;
+          padding: 0 0.875rem;
+          width: 100%;
+          box-sizing: border-box; }
+        .prerelease-primary-sign-up-box > div > div > form {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-direction: column;
+              flex-direction: column;
+          -ms-flex-align: center;
+              align-items: center; } }
+  @media (max-width: 768px) {
+    .prerelease-primary-sign-up-box {
+      padding: 0 0.5rem; }
+      .prerelease-primary-sign-up-box > div {
+        padding: 2rem 1rem; }
+        .prerelease-primary-sign-up-box > div > div > form {
+          padding: 0 0.25rem; }
+          .prerelease-primary-sign-up-box > div > div > form > input[type='text'] {
+            width: 100%; } }
 
 .prerelease-secondary-sign-up-box {
   padding: 4.75rem 0 12.5rem; }
   .prerelease-secondary-sign-up-box > div > h2 {
+    color: #262429;
     font-size: 1.75rem;
     font-weight: 700;
     line-height: 2rem;
@@ -1668,12 +1732,19 @@ ul {
       width: 63%;
       padding: 0.75rem 1rem;
       margin-bottom: 1.5rem; }
+      .prerelease-secondary-sign-up-box > div > form > input[type='text']:-ms-input-placeholder {
+        color: #828282; }
+      .prerelease-secondary-sign-up-box > div > form > input[type='text']::placeholder {
+        color: #828282; }
     .prerelease-secondary-sign-up-box > div > form > input[type='submit'] {
       border-radius: 24px;
       font-size: 1.125rem;
       font-weight: 700;
       line-height: 1.3125rem;
       padding: 0.75rem 2.75rem; }
+  @media (max-width: 768px) {
+    .prerelease-secondary-sign-up-box > div > form > input[type='text'] {
+      width: 100%; } }
 
 .Scope {
   background-color: #F5F5F5;

@@ -1,4 +1,4 @@
-@import 'colors', 'sizes';
+@import 'colors', 'sizes', 'responsive';
 
 // Main
 
@@ -770,6 +770,7 @@
 
   > div {
     > h1 {
+      color: $primary-text;
       font-size: $size-40;
       font-weight: 700;
       line-height: $size-48;
@@ -799,6 +800,7 @@
     padding: 0 $size-296;
 
     > h2 {
+      color: $primary-text;
       font-size: $size-36;
       font-weight: 700;
       line-height: $size-42;
@@ -806,14 +808,36 @@
     }
 
     > p {
+      color: $secondary-text;
       font-size: $size-18;
+    }
+  }
+
+  @include lg {
+    > div {
+      padding: 0 $size-200;
+    }
+  }
+
+  @include md {
+    padding: $size-56 0;
+
+    > div {
+      padding: 0 $size-100;
+    }
+  }
+
+  @include sm {
+    > div {
+      padding: 0 $size-24;
     }
   }
 }
 
 .prerelease-primary-sign-up-box {
+  padding: 0 $size-24;
+
   > div {
-    display: flex;
     box-shadow: 0 $size-2 $size-10 rgba(0, 0, 0, 0.15);
     border-radius: $size-4;
     padding: $size-56 $size-48 $size-52;
@@ -826,6 +850,7 @@
       width: 40%;
 
       > h2 {
+        color: $primary-text;
         font-size: $size-28;
         font-weight: 700;
         line-height: $size-32;
@@ -833,8 +858,13 @@
       }
 
       > p {
+        color: $secondary-text;
         font-size: $size-18;
         margin-bottom: $size-34;
+      }
+
+      > img {
+        display: none;
       }
 
       > form {
@@ -854,6 +884,9 @@
           width: 90%;
           padding: $size-12 $size-16;
           margin-bottom: $size-16;
+          &::placeholder {
+            color: $placeholder-text;
+          }
         }
 
         > input[type='submit'] {
@@ -866,13 +899,61 @@
       }
     }
   }
+
+  @include lg {
+    > div {
+      background-image: none;
+
+      > div {
+        width: 100%;
+        text-align: center;
+
+        > h2 {
+          margin-bottom: $size-34;
+        }
+
+        > img {
+          display: block;
+          margin: 0 auto $size-34;
+          padding: 0 $size-14;
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        > form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  @include md {
+    padding: 0 $size-8;
+
+    > div {
+      padding: $size-32 $size-16;
+
+      > div {
+        > form {
+          padding: 0 $size-4;
+
+          > input[type='text'] {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 }
 
 .prerelease-secondary-sign-up-box {
   padding: $size-76 0 $size-200;
-  
+
   > div {
     > h2 {
+      color: $primary-text;
       font-size: $size-28;
       font-weight: 700;
       line-height: $size-32;
@@ -894,6 +975,9 @@
         width: 63%;
         padding: $size-12 $size-16;
         margin-bottom: $size-24;
+        &::placeholder {
+          color: $placeholder-text;
+        }
       }
 
       > input[type='submit'] {
@@ -902,6 +986,16 @@
         font-weight: 700;
         line-height: $size-21;
         padding: $size-12 $size-44;
+      }
+    }
+  }
+
+  @include md {
+    > div {
+      > form {
+        > input[type='text'] {
+          width: 100%;
+        }
       }
     }
   }
