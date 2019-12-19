@@ -1,3 +1,5 @@
+@import 'colors', 'sizes';
+
 // Main
 
 .cta-download-link {
@@ -759,5 +761,148 @@
 .download-links.inverse-button > a {
   &.download-link {
     @extend .button--white;
+  }
+}
+
+.prerelease-headline {
+  padding: $size-76 0;
+  text-align: center;
+
+  > div {
+    > h1 {
+      font-size: $size-40;
+      font-weight: 700;
+      line-height: $size-48;
+      margin-bottom: $size-16;
+    }
+
+    > a {
+      display: inline-block;
+      font-weight: bold;
+      font-size: $size-20;
+      color: $primary-text-link;
+      &:active, &:focus {
+        color: $primary-text-link;
+      }
+      &:hover {
+        color: $primary-text-link-hover;
+      }
+    }
+  }
+}
+
+.prerelease-clean-text {
+  padding: $size-76 0;
+  text-align: center;
+
+  > div {
+    padding: 0 $size-296;
+
+    > h2 {
+      font-size: $size-36;
+      font-weight: 700;
+      line-height: $size-42;
+      margin-bottom: $size-16;
+    }
+
+    > p {
+      font-size: $size-18;
+    }
+  }
+}
+
+.prerelease-primary-sign-up-box {
+  > div {
+    display: flex;
+    box-shadow: 0 $size-2 $size-10 rgba(0, 0, 0, 0.15);
+    border-radius: $size-4;
+    padding: $size-56 $size-48 $size-52;
+    background-image: url('../../../src/images/smartphone-and-laptop.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+    > div {
+      width: 40%;
+
+      > h2 {
+        font-size: $size-28;
+        font-weight: 700;
+        line-height: $size-32;
+        margin-bottom: $size-16;
+      }
+
+      > p {
+        font-size: $size-18;
+        margin-bottom: $size-34;
+      }
+
+      > form {
+        > h3 {
+          font-size: $size-16;
+          font-weight: 700;
+          margin-bottom: $size-10;
+        }
+
+        > input[type='text'] {
+          display: block;
+          background: #FFFFFF;
+          border: 2px solid #C9C9C9;
+          box-sizing: border-box;
+          border-radius: 4px;
+          height: $size-44;
+          width: 90%;
+          padding: $size-12 $size-16;
+          margin-bottom: $size-16;
+        }
+
+        > input[type='submit'] {
+          border-radius: 24px;
+          font-size: $size-18;
+          font-weight: 700;
+          line-height: $size-21;
+          padding: $size-12 $size-44;
+        }
+      }
+    }
+  }
+}
+
+.prerelease-secondary-sign-up-box {
+  padding: $size-76 0 $size-200;
+  
+  > div {
+    > h2 {
+      font-size: $size-28;
+      font-weight: 700;
+      line-height: $size-32;
+      margin-bottom: $size-24;
+    }
+
+    > form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      > input[type='text'] {
+        display: block;
+        background: #FFFFFF;
+        border: 2px solid #C9C9C9;
+        box-sizing: border-box;
+        border-radius: 4px;
+        height: $size-44;
+        width: 63%;
+        padding: $size-12 $size-16;
+        margin-bottom: $size-24;
+      }
+
+      > input[type='submit'] {
+        border-radius: 24px;
+        font-size: $size-18;
+        font-weight: 700;
+        line-height: $size-21;
+        padding: $size-12 $size-44;
+      }
+    }
   }
 }

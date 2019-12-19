@@ -1572,6 +1572,109 @@ ul {
     .download-links-section:first-child div {
       margin-bottom: 1rem; } }
 
+.prerelease-headline {
+  padding: 4.75rem 0;
+  text-align: center; }
+  .prerelease-headline > div > h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 3rem;
+    margin-bottom: 1rem; }
+  .prerelease-headline > div > a {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #E86A65; }
+    .prerelease-headline > div > a:active, .prerelease-headline > div > a:focus {
+      color: #E86A65; }
+    .prerelease-headline > div > a:hover {
+      color: #E65757; }
+
+.prerelease-clean-text {
+  padding: 4.75rem 0;
+  text-align: center; }
+  .prerelease-clean-text > div {
+    padding: 0 18.5rem; }
+    .prerelease-clean-text > div > h2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 2.625rem;
+      margin-bottom: 1rem; }
+    .prerelease-clean-text > div > p {
+      font-size: 1.125rem; }
+
+.prerelease-primary-sign-up-box > div {
+  display: -ms-flexbox;
+  display: flex;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  padding: 3.5rem 3rem 3.25rem;
+  background-image: url("../../../src/images/smartphone-and-laptop.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: right bottom; }
+  .prerelease-primary-sign-up-box > div > div {
+    width: 40%; }
+    .prerelease-primary-sign-up-box > div > div > h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 2rem;
+      margin-bottom: 1rem; }
+    .prerelease-primary-sign-up-box > div > div > p {
+      font-size: 1.125rem;
+      margin-bottom: 2.125rem; }
+    .prerelease-primary-sign-up-box > div > div > form > h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.625rem; }
+    .prerelease-primary-sign-up-box > div > div > form > input[type='text'] {
+      display: block;
+      background: #FFFFFF;
+      border: 2px solid #C9C9C9;
+      box-sizing: border-box;
+      border-radius: 4px;
+      height: 2.75rem;
+      width: 90%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem; }
+    .prerelease-primary-sign-up-box > div > div > form > input[type='submit'] {
+      border-radius: 24px;
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.3125rem;
+      padding: 0.75rem 2.75rem; }
+
+.prerelease-secondary-sign-up-box {
+  padding: 4.75rem 0 12.5rem; }
+  .prerelease-secondary-sign-up-box > div > h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 2rem;
+    margin-bottom: 1.5rem; }
+  .prerelease-secondary-sign-up-box > div > form {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center; }
+    .prerelease-secondary-sign-up-box > div > form > input[type='text'] {
+      display: block;
+      background: #FFFFFF;
+      border: 2px solid #C9C9C9;
+      box-sizing: border-box;
+      border-radius: 4px;
+      height: 2.75rem;
+      width: 63%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.5rem; }
+    .prerelease-secondary-sign-up-box > div > form > input[type='submit'] {
+      border-radius: 24px;
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.3125rem;
+      padding: 0.75rem 2.75rem; }
+
 .Scope {
   background-color: #F5F5F5;
   padding: 6.5rem 0 2.125rem; }
@@ -1888,7 +1991,7 @@ ul {
     width: 100%; } }
 
 .Faq {
-  padding-top: 1.5rem; }
+  padding-top: 3.5rem; }
   .Faq > .max-width, .Faq > .max-width--wide, .Faq > .AugurCycle__steps-wrapper, .Faq > .Header__wrap, .Faq > .Hero__wrap, .Faq > .Uses__wrap, .Faq > .Currencies__wrap, .Faq > .Technology__wrap, .Faq > .Connect__wrap, .Faq > .Scope__wrap, .Faq > .OtherBounties__bounties, .Faq > .Wallets__wrap, .Faq > .Developers__wrap, .Faq > .SubmitToFAQ__wrap {
     display: -ms-flexbox;
     display: flex;
@@ -1905,7 +2008,7 @@ ul {
   padding-right: 4rem; }
 
 .FaqAnswer {
-  padding-bottom: 3rem; }
+  padding-bottom: 1.5rem; }
   .FaqAnswer > ul {
     font-size: 1.125rem;
     font-weight: 400;
@@ -1914,7 +2017,7 @@ ul {
     .FaqAnswer > ul > li {
       margin-bottom: 2rem; }
   .FaqAnswer > h5 {
-    margin-bottom: 3rem; }
+    margin-bottom: 2.5rem; }
     .FaqAnswer > h5::after {
       bottom: -1.25rem; }
 
