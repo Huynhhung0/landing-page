@@ -789,6 +789,28 @@
         color: $primary-text-link-hover;
       }
     }
+
+    > span {
+      display: inline-block;
+      font-size: $size-18;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: $size-16;
+      color: $primary-text-link;
+    }
+  }
+}
+
+.prerelease-headline.betting-pages {
+  > div {
+    > h1 {
+      font-weight: 400;
+      margin-bottom: 0;
+
+      > span {
+        font-weight: 700;
+      }
+    }
   }
 }
 
@@ -891,6 +913,7 @@
 
         > input[type='submit'] {
           border-radius: 24px;
+          float: none;
           font-size: $size-18;
           font-weight: 700;
           line-height: $size-21;
@@ -982,6 +1005,7 @@
 
       > input[type='submit'] {
         border-radius: 24px;
+        float: none;
         font-size: $size-18;
         font-weight: 700;
         line-height: $size-21;

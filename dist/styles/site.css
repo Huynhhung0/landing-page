@@ -1601,6 +1601,19 @@ ul {
       color: #E86A65; }
     .prerelease-headline > div > a:hover {
       color: #E65757; }
+  .prerelease-headline > div > span {
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: #E86A65; }
+
+.prerelease-headline.betting-pages > div > h1 {
+  font-weight: 400;
+  margin-bottom: 0; }
+  .prerelease-headline.betting-pages > div > h1 > span {
+    font-weight: 700; }
 
 .prerelease-clean-text {
   padding: 4.75rem 0;
@@ -1672,6 +1685,7 @@ ul {
           color: #828282; }
       .prerelease-primary-sign-up-box > div > div > form > input[type='submit'] {
         border-radius: 24px;
+        float: none;
         font-size: 1.125rem;
         font-weight: 700;
         line-height: 1.3125rem;
@@ -1738,6 +1752,7 @@ ul {
         color: #828282; }
     .prerelease-secondary-sign-up-box > div > form > input[type='submit'] {
       border-radius: 24px;
+      float: none;
       font-size: 1.125rem;
       font-weight: 700;
       line-height: 1.3125rem;
