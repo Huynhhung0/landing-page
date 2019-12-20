@@ -1021,7 +1021,6 @@
 .prerelease-primary-sign-up-box.political-betting-landing-page {
   > div {
     background-image: url('../../../src/images/politics.png');
-    padding: $size-32 0;
 
     > div {
       > h2 {
@@ -1043,6 +1042,7 @@
 
     @include lg {
       background-image: none;
+      padding: $size-32 0;
     }
   }
 }

@@ -1750,8 +1750,7 @@ ul {
       background-image: none; } }
 
 .prerelease-primary-sign-up-box.political-betting-landing-page > div {
-  background-image: url("../../../src/images/politics.png");
-  padding: 2rem 0; }
+  background-image: url("../../../src/images/politics.png"); }
   .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > h2 {
     padding: 0 1rem; }
   .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > img {
@@ -1762,7 +1761,8 @@ ul {
     padding: 0 1.25rem; }
   @media (max-width: 993px) {
     .prerelease-primary-sign-up-box.political-betting-landing-page > div {
-      background-image: none; } }
+      background-image: none;
+      padding: 2rem 0; } }
 
 .prerelease-secondary-sign-up-box {
   padding: 4.75rem 0 12.5rem; }
