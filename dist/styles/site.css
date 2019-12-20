@@ -1804,6 +1804,28 @@ ul {
     .prerelease-secondary-sign-up-box > div > form > input[type='text'] {
       width: 100%; } }
 
+.prerelease-crypto-coins {
+  padding: 4.75rem 0; }
+  .prerelease-crypto-coins > div .seven-col-wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[7];
+        grid-template-columns: repeat(7, 1fr);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    margin: 0 2rem; }
+    .prerelease-crypto-coins > div .seven-col-wrapper > div > img {
+      margin: auto; }
+  @media (max-width: 768px) {
+    .prerelease-crypto-coins > div .seven-col-wrapper {
+      -ms-grid-columns: (1fr)[3];
+          grid-template-columns: repeat(3, 1fr);
+      -ms-grid-rows: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+      grid-row-gap: 1.5rem; }
+      .prerelease-crypto-coins > div .seven-col-wrapper > div:last-child {
+        display: none; } }
+
 .Scope {
   background-color: #F5F5F5;
   padding: 6.5rem 0 2.125rem; }

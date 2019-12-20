@@ -1100,3 +1100,36 @@
     }
   }
 }
+
+.prerelease-crypto-coins {
+  padding: $size-76 0;
+
+  > div {
+    .seven-col-wrapper {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: 1fr;
+      margin: 0 $size-32;
+
+      > div {
+        > img {
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  @include md {
+    > div {
+      .seven-col-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: $size-24;
+
+        > div:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+}
