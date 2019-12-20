@@ -1641,6 +1641,28 @@ ul {
     .prerelease-clean-text > div {
       padding: 0 1.5rem; } }
 
+.prerelease-clean-text.political-betting-ui-images > div img {
+  margin: auto;
+  width: 100%; }
+
+.prerelease-clean-text.political-betting-ui-images > div img:first-of-type {
+  display: block; }
+
+.prerelease-clean-text.political-betting-ui-images > div img:nth-of-type(2) {
+  display: none; }
+
+@media (max-width: 993px) {
+  .prerelease-clean-text.political-betting-ui-images > div {
+    padding: 0 1.5rem; } }
+
+@media (max-width: 768px) {
+  .prerelease-clean-text.political-betting-ui-images > div {
+    padding: 0 2.625rem; }
+    .prerelease-clean-text.political-betting-ui-images > div img:first-of-type {
+      display: none; }
+    .prerelease-clean-text.political-betting-ui-images > div img:nth-of-type(2) {
+      display: block; } }
+
 .prerelease-primary-sign-up-box {
   padding: 0 1.5rem; }
   .prerelease-primary-sign-up-box > div {
@@ -1720,6 +1742,27 @@ ul {
           padding: 0 0.25rem; }
           .prerelease-primary-sign-up-box > div > div > form > input[type='text'] {
             width: 100%; } }
+
+.prerelease-primary-sign-up-box.crypto-betting-landing-page > div {
+  background-image: url("../../../src/images/smartphone-and-laptop-crypto-markets.png"); }
+  @media (max-width: 993px) {
+    .prerelease-primary-sign-up-box.crypto-betting-landing-page > div {
+      background-image: none; } }
+
+.prerelease-primary-sign-up-box.political-betting-landing-page > div {
+  background-image: url("../../../src/images/politics.png");
+  padding: 2rem 0; }
+  .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > h2 {
+    padding: 0 1rem; }
+  .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > img {
+    padding: 0 0.125rem; }
+  .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > p {
+    padding: 0 1rem; }
+  .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > form {
+    padding: 0 1.25rem; }
+  @media (max-width: 993px) {
+    .prerelease-primary-sign-up-box.political-betting-landing-page > div {
+      background-image: none; } }
 
 .prerelease-secondary-sign-up-box {
   padding: 4.75rem 0 12.5rem; }
