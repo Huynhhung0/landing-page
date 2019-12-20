@@ -1669,7 +1669,7 @@ ul {
     box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
     padding: 3.5rem 3rem 3.25rem;
-    background-image: url("../../../src/images/smartphone-and-laptop.png");
+    background-image: url("../../../dist/images/smartphone-and-laptop.png");
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: right bottom; }
@@ -1744,13 +1744,13 @@ ul {
             width: 100%; } }
 
 .prerelease-primary-sign-up-box.crypto-betting-landing-page > div {
-  background-image: url("../../../src/images/smartphone-and-laptop-crypto-markets.png"); }
+  background-image: url("../../../dist/images/smartphone-and-laptop-crypto-markets.png"); }
   @media (max-width: 993px) {
     .prerelease-primary-sign-up-box.crypto-betting-landing-page > div {
       background-image: none; } }
 
 .prerelease-primary-sign-up-box.political-betting-landing-page > div {
-  background-image: url("../../../src/images/politics.png"); }
+  background-image: url("../../../dist/images/politics.png"); }
   .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > h2 {
     padding: 0 1rem; }
   .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > img {
