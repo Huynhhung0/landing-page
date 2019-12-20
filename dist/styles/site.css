@@ -1664,7 +1664,7 @@ ul {
       display: block; } }
 
 .prerelease-primary-sign-up-box {
-  padding: 0 1.5rem; }
+  padding: 0 1.5rem 4.75rem; }
   .prerelease-primary-sign-up-box > div {
     box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
