@@ -846,6 +846,10 @@
 
     > div {
       padding: 0 $size-100;
+
+      > p {
+        font-size: $size-20;
+      }
     }
   }
 
@@ -858,6 +862,8 @@
 
 .prerelease-clean-text.political-betting-ui-images {
   > div {
+    padding: 0 $size-24;
+
     img {
       margin: auto;
       width: 100%;
@@ -934,6 +940,7 @@
         }
 
         > input[type='text'] {
+          font-size: $size-18;
           display: block;
           background: #FFFFFF;
           border: 2px solid #C9C9C9;
@@ -990,14 +997,22 @@
   }
 
   @include md {
-    padding: 0 $size-8;
+    padding: 0 $size-8 $size-76;
 
     > div {
       padding: $size-32 $size-16;
 
       > div {
+        > p {
+          font-size: $size-20;
+        }
+
         > form {
           padding: 0 $size-4;
+
+          > h3 {
+            font-size: $size-18;
+          }
 
           > input[type='text'] {
             width: 100%;
@@ -1021,6 +1036,8 @@
 .prerelease-primary-sign-up-box.political-betting-landing-page {
   > div {
     background-image: url('../../../dist/images/politics.png');
+    background-position: right center;
+    background-size: contain;
 
     > div {
       > h2 {
@@ -1038,6 +1055,10 @@
       > form {
         padding: 0 $size-20;
       }
+    }
+
+    @include xl {
+      background-size: 55%;
     }
 
     @include lg {
@@ -1065,6 +1086,7 @@
       align-items: center;
 
       > input[type='text'] {
+        font-size: $size-18;
         display: block;
         background: #FFFFFF;
         border: 2px solid #C9C9C9;

@@ -1636,20 +1636,22 @@ ul {
     .prerelease-clean-text {
       padding: 3.5rem 0; }
       .prerelease-clean-text > div {
-        padding: 0 6.25rem; } }
+        padding: 0 6.25rem; }
+        .prerelease-clean-text > div > p {
+          font-size: 1.25rem; } }
   @media (max-width: 576px) {
     .prerelease-clean-text > div {
       padding: 0 1.5rem; } }
 
-.prerelease-clean-text.political-betting-ui-images > div img {
-  margin: auto;
-  width: 100%; }
-
-.prerelease-clean-text.political-betting-ui-images > div img:first-of-type {
-  display: block; }
-
-.prerelease-clean-text.political-betting-ui-images > div img:nth-of-type(2) {
-  display: none; }
+.prerelease-clean-text.political-betting-ui-images > div {
+  padding: 0 1.5rem; }
+  .prerelease-clean-text.political-betting-ui-images > div img {
+    margin: auto;
+    width: 100%; }
+  .prerelease-clean-text.political-betting-ui-images > div img:first-of-type {
+    display: block; }
+  .prerelease-clean-text.political-betting-ui-images > div img:nth-of-type(2) {
+    display: none; }
 
 @media (max-width: 993px) {
   .prerelease-clean-text.political-betting-ui-images > div {
@@ -1692,6 +1694,7 @@ ul {
         font-weight: 700;
         margin-bottom: 0.625rem; }
       .prerelease-primary-sign-up-box > div > div > form > input[type='text'] {
+        font-size: 1.125rem;
         display: block;
         background: #FFFFFF;
         border: 2px solid #C9C9C9;
@@ -1735,11 +1738,15 @@ ul {
               align-items: center; } }
   @media (max-width: 768px) {
     .prerelease-primary-sign-up-box {
-      padding: 0 0.5rem; }
+      padding: 0 0.5rem 4.75rem; }
       .prerelease-primary-sign-up-box > div {
         padding: 2rem 1rem; }
+        .prerelease-primary-sign-up-box > div > div > p {
+          font-size: 1.25rem; }
         .prerelease-primary-sign-up-box > div > div > form {
           padding: 0 0.25rem; }
+          .prerelease-primary-sign-up-box > div > div > form > h3 {
+            font-size: 1.125rem; }
           .prerelease-primary-sign-up-box > div > div > form > input[type='text'] {
             width: 100%; } }
 
@@ -1750,7 +1757,9 @@ ul {
       background-image: none; } }
 
 .prerelease-primary-sign-up-box.political-betting-landing-page > div {
-  background-image: url("../../../dist/images/politics.png"); }
+  background-image: url("../../../dist/images/politics.png");
+  background-position: right center;
+  background-size: contain; }
   .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > h2 {
     padding: 0 1rem; }
   .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > img {
@@ -1759,6 +1768,9 @@ ul {
     padding: 0 1rem; }
   .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > form {
     padding: 0 1.25rem; }
+  @media (max-width: 1200px) {
+    .prerelease-primary-sign-up-box.political-betting-landing-page > div {
+      background-size: 55%; } }
   @media (max-width: 993px) {
     .prerelease-primary-sign-up-box.political-betting-landing-page > div {
       background-image: none;
@@ -1780,6 +1792,7 @@ ul {
     -ms-flex-align: center;
         align-items: center; }
     .prerelease-secondary-sign-up-box > div > form > input[type='text'] {
+      font-size: 1.125rem;
       display: block;
       background: #FFFFFF;
       border: 2px solid #C9C9C9;
