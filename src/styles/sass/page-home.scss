@@ -907,7 +907,7 @@
     border-radius: $size-4;
     padding: $size-56 $size-48 $size-52;
     background-image: url('../../../dist/images/smartphone-and-laptop.png');
-    background-size: 50%;
+    background-size: 640px;
     background-repeat: no-repeat;
     background-position: right bottom;
 
@@ -963,6 +963,16 @@
           line-height: $size-21;
           padding: $size-12 $size-44;
         }
+      }
+    }
+  }
+
+  @include xl {
+    > div {
+      background-position: 140% bottom;
+
+      > div {
+        width: 45%;
       }
     }
   }
@@ -1056,12 +1066,20 @@
         padding: 0 $size-20;
       }
     }
+  }
 
-    @include xl {
+  @include xl {
+    > div {
       background-size: 55%;
-    }
 
-    @include lg {
+      > div {
+        width: 40%;
+      }
+    }
+  }
+
+  @include lg {
+    > div {
       background-image: none;
       padding: $size-32 0;
     }
