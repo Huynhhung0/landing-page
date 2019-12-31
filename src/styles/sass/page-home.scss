@@ -1,3 +1,5 @@
+@import 'colors', 'sizes', 'responsive';
+
 // Main
 
 .cta-download-link {
@@ -759,5 +761,441 @@
 .download-links.inverse-button > a {
   &.download-link {
     @extend .button--white;
+  }
+}
+
+.prerelease-headline {
+  padding: $size-76 0;
+  text-align: center;
+
+  > div {
+    > h1 {
+      color: $primary-text;
+      font-size: $size-40;
+      font-weight: 700;
+      line-height: $size-48;
+      margin-bottom: $size-16;
+    }
+
+    > a {
+      display: inline-block;
+      font-weight: bold;
+      font-size: $size-20;
+      color: $primary-text-link;
+      &:active, &:focus {
+        color: $primary-text-link;
+      }
+      &:hover {
+        color: $primary-text-link-hover;
+      }
+    }
+
+    > span {
+      display: inline-block;
+      font-size: $size-18;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: $size-16;
+      color: $primary-text-link;
+    }
+  }
+
+  @include md {
+    > div {
+      > h1 {
+        font-size: $size-34;
+      }
+    }
+  }
+}
+
+.prerelease-headline.betting-pages {
+  > div {
+    > h1 {
+      font-weight: 400;
+      margin-bottom: 0;
+
+      > span {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.prerelease-clean-text {
+  padding: $size-76 0;
+  text-align: center;
+
+  > div {
+    padding: 0 $size-296;
+
+    > h2 {
+      color: $primary-text;
+      font-size: $size-36;
+      font-weight: 700;
+      line-height: $size-42;
+      margin-bottom: $size-16;
+    }
+
+    > p {
+      color: $secondary-text;
+      font-size: $size-18;
+    }
+  }
+
+  @include lg {
+    > div {
+      padding: 0 $size-200;
+    }
+  }
+
+  @include md {
+    padding: $size-56 0;
+
+    > div {
+      padding: 0 $size-100;
+
+      > h2 {
+        font-size: $size-28;
+      }
+
+      > p {
+        font-size: $size-20;
+      }
+    }
+  }
+
+  @include sm {
+    > div {
+      padding: 0 $size-24;
+    }
+  }
+}
+
+.prerelease-clean-text.political-betting-ui-images {
+  > div {
+    padding: 0 $size-80;
+
+    img {
+      margin: auto;
+      width: 100%;
+    }
+
+    img:first-of-type {
+      display: block;
+    }
+
+    img:nth-of-type(2) {
+      display: none;
+    }
+  }
+
+  @include lg {
+    > div {
+      padding: 0 $size-24;
+    }
+  }
+
+  @include md {
+    > div {
+      padding: 0 $size-160;
+
+      img:first-of-type {
+        display: none;
+      }
+
+      img:nth-of-type(2) {
+        display: block;
+      }
+    }
+  }
+
+  @include sm {
+    > div {
+      padding: 0 $size-24;
+    }
+  }
+}
+
+.prerelease-primary-sign-up-box {
+  padding: 0 $size-24 $size-76;
+
+  > div {
+    box-shadow: 0 $size-2 $size-10 rgba(0, 0, 0, 0.15);
+    border-radius: $size-4;
+    padding: $size-56 $size-48 $size-52;
+    background-image: url('../../../dist/images/smartphone-and-laptop.png');
+    background-size: 640px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+    > div {
+      width: 40%;
+
+      > h2 {
+        color: $primary-text;
+        font-size: $size-28;
+        font-weight: 700;
+        line-height: $size-32;
+        margin-bottom: $size-16;
+      }
+
+      > p {
+        color: $secondary-text;
+        font-size: $size-18;
+        margin-bottom: $size-34;
+      }
+
+      > img {
+        display: none;
+      }
+
+      > form {
+        > h3 {
+          font-size: $size-16;
+          font-weight: 700;
+          margin-bottom: $size-10;
+        }
+
+        > input[type='text'] {
+          font-size: $size-18;
+          display: block;
+          background: #FFFFFF;
+          border: 2px solid #C9C9C9;
+          box-sizing: border-box;
+          border-radius: 4px;
+          height: $size-44;
+          width: 90%;
+          padding: $size-12 $size-16;
+          margin-bottom: $size-16;
+          &::placeholder {
+            color: $placeholder-text;
+          }
+        }
+
+        > input[type='submit'] {
+          border-radius: 24px;
+          float: none;
+          font-size: $size-18;
+          font-weight: 700;
+          line-height: $size-21;
+          padding: $size-12 $size-44;
+        }
+      }
+    }
+  }
+
+  @include xl {
+    > div {
+      background-position: 140% bottom;
+
+      > div {
+        width: 45%;
+      }
+    }
+  }
+
+  @include lg {
+    > div {
+      background-image: none;
+
+      > div {
+        width: 100%;
+        text-align: center;
+
+        > h2 {
+          margin-bottom: $size-34;
+        }
+
+        > img {
+          display: block;
+          margin: 0 auto $size-34;
+          padding: 0 $size-14;
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        > form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  @include md {
+    padding: 0 $size-8 $size-76;
+
+    > div {
+      padding: $size-32 $size-16;
+
+      > div {
+        > h2 {
+          font-size: $size-28;
+        }
+
+        > p {
+          font-size: $size-20;
+        }
+
+        > form {
+          padding: 0 $size-4;
+
+          > h3 {
+            font-size: $size-18;
+          }
+
+          > input[type='text'] {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.prerelease-primary-sign-up-box.crypto-betting-landing-page {
+  > div {
+    background-image: url('../../../dist/images/smartphone-and-laptop-crypto-markets.png');
+
+    @include lg {
+      background-image: none;
+    }
+  }
+}
+
+.prerelease-primary-sign-up-box.political-betting-landing-page {
+  > div {
+    background-image: url('../../../dist/images/politics.jpg');
+    background-position: right center;
+    background-size: contain;
+
+    > div {
+      > h2 {
+        padding: 0 $size-16;
+      }
+
+      > img {
+        padding: 0 $size-2;
+      }
+
+      > p {
+        padding: 0 $size-16;
+      }
+
+      > form {
+        padding: 0 $size-20;
+      }
+    }
+  }
+
+  @include xl {
+    > div {
+      background-size: 55%;
+
+      > div {
+        width: 40%;
+      }
+    }
+  }
+
+  @include lg {
+    > div {
+      background-image: none;
+      padding: $size-32 0;
+
+      > div {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.prerelease-secondary-sign-up-box {
+  padding: $size-76 0 $size-200;
+
+  > div {
+    > h2 {
+      color: $primary-text;
+      font-size: $size-28;
+      font-weight: 700;
+      line-height: $size-32;
+      margin-bottom: $size-24;
+    }
+
+    > form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      > input[type='text'] {
+        font-size: $size-18;
+        display: block;
+        background: #FFFFFF;
+        border: 2px solid #C9C9C9;
+        box-sizing: border-box;
+        border-radius: 4px;
+        height: $size-44;
+        width: 63%;
+        padding: $size-12 $size-16;
+        margin-bottom: $size-24;
+        &::placeholder {
+          color: $placeholder-text;
+        }
+      }
+
+      > input[type='submit'] {
+        border-radius: 24px;
+        float: none;
+        font-size: $size-18;
+        font-weight: 700;
+        line-height: $size-21;
+        padding: $size-12 $size-44;
+      }
+    }
+  }
+
+  @include md {
+    > div {
+      > form {
+        > input[type='text'] {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.prerelease-crypto-coins {
+  padding: $size-76 0;
+
+  > div {
+    .seven-col-wrapper {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: 1fr;
+      margin: 0 $size-32;
+
+      > div {
+        > img {
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  @include md {
+    > div {
+      .seven-col-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: $size-24;
+
+        > div:last-child {
+          display: none;
+        }
+      }
+    }
   }
 }
