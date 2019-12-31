@@ -1588,7 +1588,7 @@ ul {
   text-align: center; }
   .prerelease-headline > div > h1 {
     color: #262429;
-    font-size: 2.125rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 3rem;
     margin-bottom: 1rem; }
@@ -1608,6 +1608,9 @@ ul {
     text-transform: uppercase;
     margin-bottom: 1rem;
     color: #E86A65; }
+  @media (max-width: 768px) {
+    .prerelease-headline > div > h1 {
+      font-size: 2.125rem; } }
 
 .prerelease-headline.betting-pages > div > h1 {
   font-weight: 400;
@@ -1637,6 +1640,8 @@ ul {
       padding: 3.5rem 0; }
       .prerelease-clean-text > div {
         padding: 0 6.25rem; }
+        .prerelease-clean-text > div > h2 {
+          font-size: 1.75rem; }
         .prerelease-clean-text > div > p {
           font-size: 1.25rem; } }
   @media (max-width: 576px) {
@@ -1750,6 +1755,8 @@ ul {
       padding: 0 0.5rem 4.75rem; }
       .prerelease-primary-sign-up-box > div {
         padding: 2rem 1rem; }
+        .prerelease-primary-sign-up-box > div > div > h2 {
+          font-size: 1.75rem; }
         .prerelease-primary-sign-up-box > div > div > p {
           font-size: 1.25rem; }
         .prerelease-primary-sign-up-box > div > div > form {

@@ -771,7 +771,7 @@
   > div {
     > h1 {
       color: $primary-text;
-      font-size: $size-34;
+      font-size: $size-40;
       font-weight: 700;
       line-height: $size-48;
       margin-bottom: $size-16;
@@ -797,6 +797,14 @@
       text-transform: uppercase;
       margin-bottom: $size-16;
       color: $primary-text-link;
+    }
+  }
+
+  @include md {
+    > div {
+      > h1 {
+        font-size: $size-34;
+      }
     }
   }
 }
@@ -846,6 +854,10 @@
 
     > div {
       padding: 0 $size-100;
+
+      > h2 {
+        font-size: $size-28;
+      }
 
       > p {
         font-size: $size-20;
@@ -1019,6 +1031,10 @@
       padding: $size-32 $size-16;
 
       > div {
+        > h2 {
+          font-size: $size-28;
+        }
+
         > p {
           font-size: $size-20;
         }
