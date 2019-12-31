@@ -1064,17 +1064,6 @@ ul {
       .Footer__sub-wrap > ul > li > a > img {
         width: 1.25rem; } }
 
-/* Example usage:
-
-.container {
-  padding: 0 15px;
-
-  @include sm {
-      padding: 0 20px;
-  }
-}
-
- */
 .cta-download-link {
   font-size: 13px; }
 
@@ -1583,284 +1572,6 @@ ul {
     .download-links-section:first-child div {
       margin-bottom: 1rem; } }
 
-.prerelease-headline {
-  padding: 4.75rem 0;
-  text-align: center; }
-  .prerelease-headline > div > h1 {
-    color: #262429;
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 3rem;
-    margin-bottom: 1rem; }
-  .prerelease-headline > div > a {
-    display: inline-block;
-    font-weight: bold;
-    font-size: 1.25rem;
-    color: #E86A65; }
-    .prerelease-headline > div > a:active, .prerelease-headline > div > a:focus {
-      color: #E86A65; }
-    .prerelease-headline > div > a:hover {
-      color: #E65757; }
-  .prerelease-headline > div > span {
-    display: inline-block;
-    font-size: 1.125rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    color: #E86A65; }
-  @media (max-width: 768px) {
-    .prerelease-headline > div > h1 {
-      font-size: 2.125rem; } }
-
-.prerelease-headline.betting-pages > div > h1 {
-  font-weight: 400;
-  margin-bottom: 0; }
-  .prerelease-headline.betting-pages > div > h1 > span {
-    font-weight: 700; }
-
-.prerelease-clean-text {
-  padding: 4.75rem 0;
-  text-align: center; }
-  .prerelease-clean-text > div {
-    padding: 0 18.5rem; }
-    .prerelease-clean-text > div > h2 {
-      color: #262429;
-      font-size: 2.25rem;
-      font-weight: 700;
-      line-height: 2.625rem;
-      margin-bottom: 1rem; }
-    .prerelease-clean-text > div > p {
-      color: #555;
-      font-size: 1.125rem; }
-  @media (max-width: 993px) {
-    .prerelease-clean-text > div {
-      padding: 0 12.5rem; } }
-  @media (max-width: 768px) {
-    .prerelease-clean-text {
-      padding: 3.5rem 0; }
-      .prerelease-clean-text > div {
-        padding: 0 6.25rem; }
-        .prerelease-clean-text > div > h2 {
-          font-size: 1.75rem; }
-        .prerelease-clean-text > div > p {
-          font-size: 1.25rem; } }
-  @media (max-width: 576px) {
-    .prerelease-clean-text > div {
-      padding: 0 1.5rem; } }
-
-.prerelease-clean-text.political-betting-ui-images > div {
-  padding: 0 5rem; }
-  .prerelease-clean-text.political-betting-ui-images > div img {
-    margin: auto;
-    width: 100%; }
-  .prerelease-clean-text.political-betting-ui-images > div img:first-of-type {
-    display: block; }
-  .prerelease-clean-text.political-betting-ui-images > div img:nth-of-type(2) {
-    display: none; }
-
-@media (max-width: 993px) {
-  .prerelease-clean-text.political-betting-ui-images > div {
-    padding: 0 1.5rem; } }
-
-@media (max-width: 768px) {
-  .prerelease-clean-text.political-betting-ui-images > div {
-    padding: 0 10rem; }
-    .prerelease-clean-text.political-betting-ui-images > div img:first-of-type {
-      display: none; }
-    .prerelease-clean-text.political-betting-ui-images > div img:nth-of-type(2) {
-      display: block; } }
-
-@media (max-width: 576px) {
-  .prerelease-clean-text.political-betting-ui-images > div {
-    padding: 0 1.5rem; } }
-
-.prerelease-primary-sign-up-box {
-  padding: 0 1.5rem 4.75rem; }
-  .prerelease-primary-sign-up-box > div {
-    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.15);
-    border-radius: 0.25rem;
-    padding: 3.5rem 3rem 3.25rem;
-    background-image: url("../../../dist/images/smartphone-and-laptop.png");
-    background-size: 640px;
-    background-repeat: no-repeat;
-    background-position: right bottom; }
-    .prerelease-primary-sign-up-box > div > div {
-      width: 40%; }
-      .prerelease-primary-sign-up-box > div > div > h2 {
-        color: #262429;
-        font-size: 1.75rem;
-        font-weight: 700;
-        line-height: 2rem;
-        margin-bottom: 1rem; }
-      .prerelease-primary-sign-up-box > div > div > p {
-        color: #555;
-        font-size: 1.125rem;
-        margin-bottom: 2.125rem; }
-      .prerelease-primary-sign-up-box > div > div > img {
-        display: none; }
-      .prerelease-primary-sign-up-box > div > div > form > h3 {
-        font-size: 1rem;
-        font-weight: 700;
-        margin-bottom: 0.625rem; }
-      .prerelease-primary-sign-up-box > div > div > form > input[type='text'] {
-        font-size: 1.125rem;
-        display: block;
-        background: #FFFFFF;
-        border: 2px solid #C9C9C9;
-        box-sizing: border-box;
-        border-radius: 4px;
-        height: 2.75rem;
-        width: 90%;
-        padding: 0.75rem 1rem;
-        margin-bottom: 1rem; }
-        .prerelease-primary-sign-up-box > div > div > form > input[type='text']:-ms-input-placeholder {
-          color: #828282; }
-        .prerelease-primary-sign-up-box > div > div > form > input[type='text']::placeholder {
-          color: #828282; }
-      .prerelease-primary-sign-up-box > div > div > form > input[type='submit'] {
-        border-radius: 24px;
-        float: none;
-        font-size: 1.125rem;
-        font-weight: 700;
-        line-height: 1.3125rem;
-        padding: 0.75rem 2.75rem; }
-  @media (max-width: 1200px) {
-    .prerelease-primary-sign-up-box > div {
-      background-position: 140% bottom; }
-      .prerelease-primary-sign-up-box > div > div {
-        width: 45%; } }
-  @media (max-width: 993px) {
-    .prerelease-primary-sign-up-box > div {
-      background-image: none; }
-      .prerelease-primary-sign-up-box > div > div {
-        width: 100%;
-        text-align: center; }
-        .prerelease-primary-sign-up-box > div > div > h2 {
-          margin-bottom: 2.125rem; }
-        .prerelease-primary-sign-up-box > div > div > img {
-          display: block;
-          margin: 0 auto 2.125rem;
-          padding: 0 0.875rem;
-          width: 100%;
-          box-sizing: border-box; }
-        .prerelease-primary-sign-up-box > div > div > form {
-          display: -ms-flexbox;
-          display: flex;
-          -ms-flex-direction: column;
-              flex-direction: column;
-          -ms-flex-align: center;
-              align-items: center; } }
-  @media (max-width: 768px) {
-    .prerelease-primary-sign-up-box {
-      padding: 0 0.5rem 4.75rem; }
-      .prerelease-primary-sign-up-box > div {
-        padding: 2rem 1rem; }
-        .prerelease-primary-sign-up-box > div > div > h2 {
-          font-size: 1.75rem; }
-        .prerelease-primary-sign-up-box > div > div > p {
-          font-size: 1.25rem; }
-        .prerelease-primary-sign-up-box > div > div > form {
-          padding: 0 0.25rem; }
-          .prerelease-primary-sign-up-box > div > div > form > h3 {
-            font-size: 1.125rem; }
-          .prerelease-primary-sign-up-box > div > div > form > input[type='text'] {
-            width: 100%; } }
-
-.prerelease-primary-sign-up-box.crypto-betting-landing-page > div {
-  background-image: url("../../../dist/images/smartphone-and-laptop-crypto-markets.png"); }
-  @media (max-width: 993px) {
-    .prerelease-primary-sign-up-box.crypto-betting-landing-page > div {
-      background-image: none; } }
-
-.prerelease-primary-sign-up-box.political-betting-landing-page > div {
-  background-image: url("../../../dist/images/politics.jpg");
-  background-position: right center;
-  background-size: contain; }
-  .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > h2 {
-    padding: 0 1rem; }
-  .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > img {
-    padding: 0 0.125rem; }
-  .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > p {
-    padding: 0 1rem; }
-  .prerelease-primary-sign-up-box.political-betting-landing-page > div > div > form {
-    padding: 0 1.25rem; }
-
-@media (max-width: 1200px) {
-  .prerelease-primary-sign-up-box.political-betting-landing-page > div {
-    background-size: 55%; }
-    .prerelease-primary-sign-up-box.political-betting-landing-page > div > div {
-      width: 40%; } }
-
-@media (max-width: 993px) {
-  .prerelease-primary-sign-up-box.political-betting-landing-page > div {
-    background-image: none;
-    padding: 2rem 0; }
-    .prerelease-primary-sign-up-box.political-betting-landing-page > div > div {
-      width: 100%; } }
-
-.prerelease-secondary-sign-up-box {
-  padding: 4.75rem 0 12.5rem; }
-  .prerelease-secondary-sign-up-box > div > h2 {
-    color: #262429;
-    font-size: 1.75rem;
-    font-weight: 700;
-    line-height: 2rem;
-    margin-bottom: 1.5rem; }
-  .prerelease-secondary-sign-up-box > div > form {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-align: center;
-        align-items: center; }
-    .prerelease-secondary-sign-up-box > div > form > input[type='text'] {
-      font-size: 1.125rem;
-      display: block;
-      background: #FFFFFF;
-      border: 2px solid #C9C9C9;
-      box-sizing: border-box;
-      border-radius: 4px;
-      height: 2.75rem;
-      width: 63%;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1.5rem; }
-      .prerelease-secondary-sign-up-box > div > form > input[type='text']:-ms-input-placeholder {
-        color: #828282; }
-      .prerelease-secondary-sign-up-box > div > form > input[type='text']::placeholder {
-        color: #828282; }
-    .prerelease-secondary-sign-up-box > div > form > input[type='submit'] {
-      border-radius: 24px;
-      float: none;
-      font-size: 1.125rem;
-      font-weight: 700;
-      line-height: 1.3125rem;
-      padding: 0.75rem 2.75rem; }
-  @media (max-width: 768px) {
-    .prerelease-secondary-sign-up-box > div > form > input[type='text'] {
-      width: 100%; } }
-
-.prerelease-crypto-coins {
-  padding: 4.75rem 0; }
-  .prerelease-crypto-coins > div .seven-col-wrapper {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[7];
-        grid-template-columns: repeat(7, 1fr);
-    -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-    margin: 0 2rem; }
-    .prerelease-crypto-coins > div .seven-col-wrapper > div > img {
-      margin: auto; }
-  @media (max-width: 768px) {
-    .prerelease-crypto-coins > div .seven-col-wrapper {
-      -ms-grid-columns: (1fr)[3];
-          grid-template-columns: repeat(3, 1fr);
-      -ms-grid-rows: 1fr 1fr;
-          grid-template-rows: 1fr 1fr;
-      grid-row-gap: 1.5rem; }
-      .prerelease-crypto-coins > div .seven-col-wrapper > div:last-child {
-        display: none; } }
-
 .Scope {
   background-color: #F5F5F5;
   padding: 6.5rem 0 2.125rem; }
@@ -2177,7 +1888,7 @@ ul {
     width: 100%; } }
 
 .Faq {
-  padding-top: 3.5rem; }
+  padding-top: 1.5rem; }
   .Faq > .max-width, .Faq > .max-width--wide, .Faq > .AugurCycle__steps-wrapper, .Faq > .Header__wrap, .Faq > .Hero__wrap, .Faq > .Uses__wrap, .Faq > .Currencies__wrap, .Faq > .Technology__wrap, .Faq > .Connect__wrap, .Faq > .Scope__wrap, .Faq > .OtherBounties__bounties, .Faq > .Wallets__wrap, .Faq > .Developers__wrap, .Faq > .SubmitToFAQ__wrap {
     display: -ms-flexbox;
     display: flex;
@@ -2194,7 +1905,7 @@ ul {
   padding-right: 4rem; }
 
 .FaqAnswer {
-  padding-bottom: 1.5rem; }
+  padding-bottom: 3rem; }
   .FaqAnswer > ul {
     font-size: 1.125rem;
     font-weight: 400;
@@ -2203,7 +1914,7 @@ ul {
     .FaqAnswer > ul > li {
       margin-bottom: 2rem; }
   .FaqAnswer > h5 {
-    margin-bottom: 2.5rem; }
+    margin-bottom: 3rem; }
     .FaqAnswer > h5::after {
       bottom: -1.25rem; }
 
