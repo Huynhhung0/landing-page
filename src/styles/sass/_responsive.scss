@@ -1,0 +1,44 @@
+/* Example usage:
+
+.container {
+  padding: 0 15px;
+
+  @include sm {
+      padding: 0 20px;
+  }
+}
+
+ */
+
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 993px;
+$screen-xl-min: 1200px;
+
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (max-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (max-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
