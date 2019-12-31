@@ -1082,6 +1082,10 @@
     > div {
       background-image: none;
       padding: $size-32 0;
+
+      > div {
+        width: 100%;
+      }
     }
   }
 }

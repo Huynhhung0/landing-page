@@ -1783,7 +1783,9 @@ ul {
 @media (max-width: 993px) {
   .prerelease-primary-sign-up-box.political-betting-landing-page > div {
     background-image: none;
-    padding: 2rem 0; } }
+    padding: 2rem 0; }
+    .prerelease-primary-sign-up-box.political-betting-landing-page > div > div {
+      width: 100%; } }
 
 .prerelease-secondary-sign-up-box {
   padding: 4.75rem 0 12.5rem; }
