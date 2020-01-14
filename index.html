@@ -15,32 +15,6 @@
     })(window,document.documentElement,'async-hide','dataLayer',4000,
         {'GTM-NVGLSMH':true});</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
-    <script>
-        function createFunctionWithTimeout(callback, opt_timeout = 1000) {
-            var called = false;
-            function fn() {
-                if (!called) {
-                    called = true;
-                    callback();
-                }
-            }
-            setTimeout(fn, opt_timeout);
-            return fn;
-        }
-
-        var form = document.getElementById('signup-form');
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            gtag('event', 'home_signup_form', {
-                'event_callback': {
-                    createFunctionWithTimeout(function() {
-                        form.submit();
-                    })
-        }
-        });
-        });
-    </script>
     <meta charset="utf-8">
     <link rel="stylesheet preload" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" async defer></script>
@@ -280,6 +254,33 @@
 </footer>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/dist/scripts/site.min.js"></script>
 <script type="application/javascript">
+</script>
+<script>
+    function createFunctionWithTimeout(callback, opt_timeout = 1000) {
+        var called = false;
+        function fn() {
+            if (!called) {
+                called = true;
+                callback();
+            }
+        }
+        setTimeout(fn, opt_timeout);
+        return fn;
+    }
+
+    var form = document.getElementById('signup-form');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        gtag('event', 'home_signup_form', {
+            'event_callback':
+                createFunctionWithTimeout(function() {
+                    console.log('signup done from index');
+                    form.submit();
+                })
+
+        });
+    });
 </script>
 </body>
 </html>
