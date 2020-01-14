@@ -2,31 +2,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
-<script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
+    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
+        gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH'});
     </script>
-<style>.async-hide { opacity: 0 !important} </style>
-<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+    <style>.async-hide { opacity: 0 !important} </style>
+    <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
         h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
     })(window,document.documentElement,'async-hide','dataLayer',4000,
         {'GTM-NVGLSMH':true});</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
-<script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
+    <script>
+        function createFunctionWithTimeout(callback, opt_timeout = 1000) {
+            var called = false;
+            function fn() {
+                if (!called) {
+                    called = true;
+                    callback();
+                }
+            }
+            setTimeout(fn, opt_timeout);
+            return fn;
+        }
 
-        gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH'});
+        var form = document.getElementById('signup-form');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            gtag('event', 'crypto_signup_form', {
+                'event_callback': {
+                    createFunctionWithTimeout(function() {
+                        form.submit();
+                    })
+        }
+        });
+        });
     </script>
-<meta charset="utf-8">
-<link rel="stylesheet preload" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" async defer></script>
-<script>
+    <meta charset="utf-8">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" rel="stylesheet preload" type="text/css" />
+    <script async defer src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
         window.addEventListener('load', function() {
             window.cookieconsent.initialise({
                 'palette': {
@@ -40,45 +59,45 @@
             })
         })
     </script>
- <script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"f4be6fc7a9c3b5636b20d0fab","lid":"a6f6303120","uniqueMethods":true}) })</script>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Augur Crypto Betting - The World's Most Accessible, No-Limit Betting Platform</title>
-<meta content="Augur - Crypto Betting | The World's Most Accessible, No-Limit Betting Platform" property="og:title">
-<meta content="Augur - Crypto Betting | The World's Most Accessible, No-Limit Betting Platform" property="og:site_name">
-<meta content="Augur - Crypto Betting | The World's Most Accessible, No-Limit Betting Platform" name="twitter:card">
-<meta content="Augur - Crypto Betting | The World's Most Accessible, No-Limit Betting Platform" name="twitter:title">
-<meta content="Augur Crypto Betting" name="twitter:domain">
-<meta content="Augur is a decentralized oracle and prediction market protocol built on the Ethereum blockchain. Forecast events and be rewarded for predicting them correctly." name="description">
-<meta content="Augur is a decentralized oracle and prediction market protocol built on the Ethereum blockchain. Forecast events and be rewarded for predicting them correctly." property="og:description">
-<meta content="Augur is a decentralized oracle and prediction market protocol built on the Ethereum blockchain. Forecast events and be rewarded for predicting them correctly." name="twitter:description">
-<meta content="https://www.augur.net/" property="og:url">
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://www.augur.net/" />
-<meta name="google-site-verification" content="0yoO8otlMdNBBDxuvq_KxlJyoSzIhBc8eK_7FzJ1_qg" />
-<meta content="https://augur.net/dist/images/meta_logo.png" property="og:image">
-<meta content="https://augur.net/dist/images/meta_logo.png" name="twitter:image">
-<meta content="https://augur.net/dist/images/meta_logo.png" name="twitter:image:src">
-<link rel="stylesheet preload" type="text/css" href="/dist/styles/site.min.css" async defer>
-<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-<meta content="LQMTXnM-70SbbKHdPCf9S9o_w2Au-bA3a6-2Z9kSCOo" name="google-site-verification">
-<script type="text/javascript">
+    <script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"f4be6fc7a9c3b5636b20d0fab","lid":"a6f6303120","uniqueMethods":true}) })</script>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Augur Crypto Betting - The World's Most Accessible, No-Limit Betting Platform</title>
+    <meta content="Augur - Crypto Betting | The World's Most Accessible, No-Limit Betting Platform" property="og:title">
+    <meta content="Augur - Crypto Betting | The World's Most Accessible, No-Limit Betting Platform" property="og:site_name">
+    <meta content="Augur - Crypto Betting | The World's Most Accessible, No-Limit Betting Platform" name="twitter:card">
+    <meta content="Augur - Crypto Betting | The World's Most Accessible, No-Limit Betting Platform" name="twitter:title">
+    <meta content="Augur Crypto Betting" name="twitter:domain">
+    <meta content="Augur is a decentralized oracle and prediction market protocol built on the Ethereum blockchain. Forecast events and be rewarded for predicting them correctly." name="description">
+    <meta content="Augur is a decentralized oracle and prediction market protocol built on the Ethereum blockchain. Forecast events and be rewarded for predicting them correctly." property="og:description">
+    <meta content="Augur is a decentralized oracle and prediction market protocol built on the Ethereum blockchain. Forecast events and be rewarded for predicting them correctly." name="twitter:description">
+    <meta content="https://www.augur.net/" property="og:url">
+    <meta content="index, follow" name="robots" />
+    <link href="https://www.augur.net/" rel="canonical" />
+    <meta content="0yoO8otlMdNBBDxuvq_KxlJyoSzIhBc8eK_7FzJ1_qg" name="google-site-verification" />
+    <meta content="https://augur.net/dist/images/meta_logo.png" property="og:image">
+    <meta content="https://augur.net/dist/images/meta_logo.png" name="twitter:image">
+    <meta content="https://augur.net/dist/images/meta_logo.png" name="twitter:image:src">
+    <link async defer href="/dist/styles/site.min.css" rel="stylesheet preload" type="text/css">
+    <link href="/favicon/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+    <link href="/favicon/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+    <link href="/favicon/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="/favicon/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+    <link href="/favicon/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="/favicon/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+    <link href="/favicon/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="/favicon/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+    <link href="/favicon/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="/favicon/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
+    <link href="/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+    <link href="/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="/favicon/manifest.json" rel="manifest">
+    <meta content="#ffffff" name="msapplication-TileColor">
+    <meta content="/favicon/ms-icon-144x144.png" name="msapplication-TileImage">
+    <meta content="#ffffff" name="theme-color">
+    <meta content="LQMTXnM-70SbbKHdPCf9S9o_w2Au-bA3a6-2Z9kSCOo" name="google-site-verification">
+    <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: "en",
@@ -87,8 +106,8 @@
             }, "google_translate_element");
         }
     </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
-<script>
+    <script async defer src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+    <script>
         window.addEventListener('load', async() => {
             let video = document.querySelector('video[muted][autoplay]');
             try {await video.play();} catch (err) {video.controls = true;}});
@@ -96,124 +115,124 @@
 </head>
 <body>
 <header class="Header">
-<div class="Header__wrap">
-<a href="/">
-<img alt="Augur Prediction Markets" src="/dist/images/augur-logo.svg">
-</a>
-<div class="Header__nav">
-<ul>
-<li><a href="https://augur.substack.com/" target="_blank">Weekly Reports</a></li>
-</ul>
-<img alt="Augur Prediction Markets" class="Header__nav-mobile-close" src="/dist/images/icon--times.svg">
-</div>
-<img alt="Augur Prediction Markets" class="Header__nav-mobile-open" src="/dist/images/icon--bars.svg">
-</div>
+    <div class="Header__wrap">
+        <a href="/">
+            <img alt="Augur Prediction Markets" src="/dist/images/augur-logo.svg">
+        </a>
+        <div class="Header__nav">
+            <ul>
+                <li><a href="https://augur.substack.com/" target="_blank">Weekly Reports</a></li>
+            </ul>
+            <img alt="Augur Prediction Markets" class="Header__nav-mobile-close" src="/dist/images/icon--times.svg">
+        </div>
+        <img alt="Augur Prediction Markets" class="Header__nav-mobile-open" src="/dist/images/icon--bars.svg">
+    </div>
 </header>
 <section class="prerelease-headline betting-pages">
-<div class="max-width">
-<span>LAUNCHING SOON</span>
-<h1>The world’s most accessible, no-limit <br />betting platform on <span>crypto prices</span>.</h1>
-</div>
+    <div class="max-width">
+        <span>LAUNCHING SOON</span>
+        <h1>The world’s most accessible, no-limit <br />betting platform on <span>crypto prices</span>.</h1>
+    </div>
 </section>
 <section class="prerelease-primary-sign-up-box crypto-betting-landing-page">
-<div class="max-width">
-<div>
-<h2>Bet on the price of ETH/BTC/LTC.</h2>
-<img src="../src/images/smartphone-crypto-markets.png" alt="Smartphone with the Augur website opened.">
-<p>Augur V2 is nearly here. Bet how much you want, from anywhere in the world, on the price of ETH, BTC, LTC, REP and many more.</p>
-<form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
-<h3>Sign up to receive updates</h3>
-<input type="text" placeholder="Email address" name="email" required />
+    <div class="max-width">
+        <div>
+            <h2>Bet on the price of ETH/BTC/LTC.</h2>
+            <img alt="Smartphone with the Augur website opened." src="../src/images/smartphone-crypto-markets.png">
+            <p>Augur V2 is nearly here. Bet how much you want, from anywhere in the world, on the price of ETH, BTC, LTC, REP and many more.</p>
+            <form accept-charset="utf-8" action="https://app.getresponse.com/add_subscriber.html" method="post" id="signup-form">
+                <h3>Sign up to receive updates</h3>
+                <input name="email" placeholder="Email address" required type="text" />
 
-<input type="hidden" name="campaign_token" value="BnJyx" />
+                <input name="campaign_token" type="hidden" value="BnJyx" />
 
-<input type="hidden" name="thankyou_url" value="https://twitter.com/AugurProject"/>
+                <input name="thankyou_url" type="hidden" value="https://twitter.com/AugurProject"/>
 
-<input type="hidden" name="start_day" value="0" />
+                <input name="start_day" type="hidden" value="0" />
 
-<input type="submit" value="Sign up" class="button cta-button cta-primary" />
-</form>
-</div>
-</div>
+                <input class="button cta-button cta-primary" type="submit" value="Sign up" />
+            </form>
+        </div>
+    </div>
 </section>
 <section class="prerelease-crypto-coins">
-<div class="max-width">
-<div class="seven-col-wrapper">
-<div>
-<img src="../dist/images/crypto-coins/bitcoin.jpg" alt="Bitcoin crypto coin">
-</div>
-<div>
-<img src="../dist/images/crypto-coins/ethereum.jpg" alt="Ethereum crypto coin">
-</div>
-<div>
-<img src="../dist/images/crypto-coins/litecoin.jpg" alt="Litecoin crypto coin">
-</div>
-<div>
-<img src="../dist/images/crypto-coins/ripple.jpg" alt="Ripple crypto coin">
-</div>
-<div>
-<img src="../dist/images/crypto-coins/augur.jpg" alt="Augur crypto coin">
-</div>
-<div>
-<img src="../dist/images/crypto-coins/monero.jpg" alt="Monero crypto coin">
-</div>
-<div>
-<img src="../dist/images/crypto-coins/dash.jpg" alt="Dash crypto coin">
-</div>
-</div>
-</div>
+    <div class="max-width">
+        <div class="seven-col-wrapper">
+            <div>
+                <img alt="Bitcoin crypto coin" src="../dist/images/crypto-coins/bitcoin.jpg">
+            </div>
+            <div>
+                <img alt="Ethereum crypto coin" src="../dist/images/crypto-coins/ethereum.jpg">
+            </div>
+            <div>
+                <img alt="Litecoin crypto coin" src="../dist/images/crypto-coins/litecoin.jpg">
+            </div>
+            <div>
+                <img alt="Ripple crypto coin" src="../dist/images/crypto-coins/ripple.jpg">
+            </div>
+            <div>
+                <img alt="Augur crypto coin" src="../dist/images/crypto-coins/augur.jpg">
+            </div>
+            <div>
+                <img alt="Monero crypto coin" src="../dist/images/crypto-coins/monero.jpg">
+            </div>
+            <div>
+                <img alt="Dash crypto coin" src="../dist/images/crypto-coins/dash.jpg">
+            </div>
+        </div>
+    </div>
 </section>
 <section class="prerelease-clean-text">
-<div class="max-width">
-<h2>No-limit crypto betting.</h2>
-<p>No maximum on the amount you can wager, or on how much you can win. No overall caps or limitations on the platform in its entirety. Your limits can’t and won’t change based on your performance.</p>
-</div>
+    <div class="max-width">
+        <h2>No-limit crypto betting.</h2>
+        <p>No maximum on the amount you can wager, or on how much you can win. No overall caps or limitations on the platform in its entirety. Your limits can’t and won’t change based on your performance.</p>
+    </div>
 </section>
 <section class="prerelease-clean-text">
-<div class="max-width">
-<h2>Best odds & lowest fees.</h2>
-<p>Keep what you earn. Augur trading fees are the lowest available (~1%) with no fees at withdrawal. Augur doesn’t take a cut.</p>
-</div>
+    <div class="max-width">
+        <h2>Best odds & lowest fees.</h2>
+        <p>Keep what you earn. Augur trading fees are the lowest available (~1%) with no fees at withdrawal. Augur doesn’t take a cut.</p>
+    </div>
 </section>
 <section class="prerelease-clean-text">
-<div class="max-width">
-<h2>Crypto markets on anything.</h2>
-<p>Create or bet on whatever crypto market you can imagine -- from Bitcoin’s opening price to Ethereum's weekly trading range.</p>
-</div>
+    <div class="max-width">
+        <h2>Crypto markets on anything.</h2>
+        <p>Create or bet on whatever crypto market you can imagine -- from Bitcoin’s opening price to Ethereum's weekly trading range.</p>
+    </div>
 </section>
 <section class="prerelease-clean-text">
-<div class="max-width">
-<h2>Universal access.</h2>
-<p>No matter who you are, how much you win, or where you are; you will always be able to access Augur on the Ethereum blockchain.</p>
-</div>
+    <div class="max-width">
+        <h2>Universal access.</h2>
+        <p>No matter who you are, how much you win, or where you are; you will always be able to access Augur on the Ethereum blockchain.</p>
+    </div>
 </section>
 <section class="prerelease-clean-text">
-<div class="max-width">
-<h2>Community discussion.</h2>
-<p>Augur v2 is a social experience, with site-wide chat and comments on a per market basis. Augur is run and owned by its own community of users.</p>
-</div>
+    <div class="max-width">
+        <h2>Community discussion.</h2>
+        <p>Augur v2 is a social experience, with site-wide chat and comments on a per market basis. Augur is run and owned by its own community of users.</p>
+    </div>
 </section>
 <section class="prerelease-clean-text">
-<div class="max-width">
-<h2>Faster, much faster.</h2>
-<p>The new Augur is much faster -- you can now trade in <b>seconds</b>. Users used to have to synchronize all the data from the blockchain which took hours, now we’re doing that differently and it all happens in a few seconds right in your browser.</p>
-</div>
+    <div class="max-width">
+        <h2>Faster, much faster.</h2>
+        <p>The new Augur is much faster -- you can now trade in <b>seconds</b>. Users used to have to synchronize all the data from the blockchain which took hours, now we’re doing that differently and it all happens in a few seconds right in your browser.</p>
+    </div>
 </section>
 <section class="prerelease-clean-text prerelease-secondary-sign-up-box">
-<div class="max-width">
-<h2>Receive V2 launch updates.</h2>
-<form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
-<input type="text" placeholder="Email address" name="email" required />
+    <div class="max-width">
+        <h2>Receive V2 launch updates.</h2>
+        <form accept-charset="utf-8" action="https://app.getresponse.com/add_subscriber.html" method="post">
+            <input name="email" placeholder="Email address" required type="text" />
 
-<input type="hidden" name="campaign_token" value="BnJyx" />
+            <input name="campaign_token" type="hidden" value="BnJyx" />
 
-<input type="hidden" name="thankyou_url" value="https://twitter.com/AugurProject"/>
+            <input name="thankyou_url" type="hidden" value="https://twitter.com/AugurProject"/>
 
-<input type="hidden" name="start_day" value="0" />
+            <input name="start_day" type="hidden" value="0" />
 
-<input type="submit" value="Sign up" class="button cta-button cta-primary" />
-</form>
-</div>
+            <input class="button cta-button cta-primary" type="submit" value="Sign up" />
+        </form>
+    </div>
 </section>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/dist/scripts/site.min.js"></script>
 <script type="application/javascript">

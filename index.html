@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +6,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
+        gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH'});
     </script>
     <style>.async-hide { opacity: 0 !important} </style>
     <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
@@ -17,11 +16,30 @@
         {'GTM-NVGLSMH':true});</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74080255-11"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        function createFunctionWithTimeout(callback, opt_timeout = 1000) {
+            var called = false;
+            function fn() {
+                if (!called) {
+                    called = true;
+                    callback();
+                }
+            }
+            setTimeout(fn, opt_timeout);
+            return fn;
+        }
 
-        gtag('config', 'UA-74080255-11', { 'optimize_id': 'GTM-NVGLSMH'});
+        var form = document.getElementById('signup-form');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            gtag('event', 'home_signup_form', {
+                'event_callback': {
+                    createFunctionWithTimeout(function() {
+                        form.submit();
+                    })
+        }
+        });
+        });
     </script>
     <meta charset="utf-8">
     <link rel="stylesheet preload" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
@@ -40,12 +58,12 @@
             })
         })
     </script>
-<!--     <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
- -->    <script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"f4be6fc7a9c3b5636b20d0fab","lid":"a6f6303120","uniqueMethods":true}) })</script>
+    <!--     <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+     -->    <script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"f4be6fc7a9c3b5636b20d0fab","lid":"a6f6303120","uniqueMethods":true}) })</script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Augur - The World's Most Accessible, No-Limit Betting Platform</title>
-     <meta content="Augur - Prediction Markets | The World's Most Accessible, No-Limit Betting Platform" property="og:title">
+    <meta content="Augur - Prediction Markets | The World's Most Accessible, No-Limit Betting Platform" property="og:title">
     <meta content="Augur - Prediction Markets | The World's Most Accessible, No-Limit Betting Platform" property="og:site_name">
     <meta content="Augur - Prediction Markets | The World's Most Accessible, No-Limit Betting Platform" name="twitter:card">
     <meta content="Augur - Prediction Markets | The World's Most Accessible, No-Limit Betting Platform" name="twitter:title">
@@ -104,7 +122,7 @@
         <div class="Header__nav">
             <ul>
                 <li><a href="https://augur.substack.com/" target="_blank">Weekly Reports</a></li>
-		<li><a href="https://discordapp.com/invite/cX8tcCy">Discord Chat</a></li>
+                <li><a href="https://discordapp.com/invite/cX8tcCy">Discord Chat</a></li>
                 <li><a href="/faq/">FAQ</a></li>
                 <li><a href="/blog">Blog</a></li>
             </ul>
@@ -125,12 +143,12 @@
             <h2>Augur V2. Launching soon.</h2>
             <img src="dist/images/smartphone.png" alt="Smartphone with the Augur website opened.">
             <p>Redesigned from the ground up. Bet how much you want, from anywhere in the world, on sports, politics, finance and more.</p>
-            <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+            <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post" id="signup-form">
                 <h3>Sign up to receive launch updates</h3>
                 <input type="text" placeholder="Email address" name="email" required />
                 <!-- Get the token at: https://app.getresponse.com/campaign_list.html -->
                 <input type="hidden" name="campaign_token" value="BnJyx" />
-<input type="hidden" name="thankyou_url" value="https://twitter.com/AugurProject"/>
+                <input type="hidden" name="thankyou_url" value="https://twitter.com/AugurProject"/>
                 <!-- Add subscriber to the follow-up sequence with a specified day (optional) -->
                 <input type="hidden" name="start_day" value="0" />
                 <!-- Subscriber button -->
@@ -182,7 +200,7 @@
             <input type="text" placeholder="Email address" name="email" required />
             <!-- Get the token at: https://app.getresponse.com/campaign_list.html -->
             <input type="hidden" name="campaign_token" value="BnJyx" />
-<input type="hidden" name="thankyou_url" value="https://twitter.com/AugurProject"/>
+            <input type="hidden" name="thankyou_url" value="https://twitter.com/AugurProject"/>
             <input type="hidden" name="start_day" value="0" />
             <!-- Subscriber button -->
             <input type="submit" value="Sign up" class="button cta-button cta-primary" />
