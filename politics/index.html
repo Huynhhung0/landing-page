@@ -194,6 +194,8 @@
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         gtag('event', 'politics_signup_form', {
+            'event_label': 'Signed up via Politics page',
+            'event_category': 'engagement',
             'event_callback':
                 createFunctionWithTimeout(function() {
                     form.submit();

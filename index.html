@@ -273,6 +273,8 @@
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         gtag('event', 'home_signup_form', {
+            'event_label': 'Signed up via Home page',
+            'event_category': 'engagement',
             'event_callback':
                 createFunctionWithTimeout(function() {
                     console.log('signup done from index');
