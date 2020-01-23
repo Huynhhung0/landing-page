@@ -64,10 +64,12 @@
 </script>
 
 <script>
-    var hash = "QmNfLoMNWu9ndzVydKh4rCs4pdnWki9Wox8MWrSANmYk73";
-    var redirectUrl = "https://cloudflare-ipfs.com/ipfs/"+hash+"/?ethereum_node_http=https%3a%2f%2feth-mainnet.alchemyapi.io%2fjsonrpc%2fi8mIDcVDx1yqG2OLTnT9XmfyhxRx1EH6&augur_node=wss%3a%2f%2fpredictions.market:9002#!/markets";
+    var ethNode = encodeURIComponent("https://cloudflare-eth.com");
+    var augurNode = encodeURIComponent("wss://predictions.market:9002");
     var timeoutMilliseconds = 5000;
-    setTimeout("location.href = redirectUrl;", timeoutMilliseconds);
+    setTimeout(function() {
+      location.href = ["https://cloudflare-ipfs.com/ipfs/", hash, "/?ethereum_node_http=", ethNode, "&augur_node=", augurNode].join("");
+    }, timeoutMilliseconds);
 </script>
 
 <style>
