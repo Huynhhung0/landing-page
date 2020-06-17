@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/reporting/IUniverse.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/reporting/</a> IUniverse.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/0</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+&nbsp;
+import 'ROOT/reporting/IV2ReputationToken.sol';
+import 'ROOT/reporting/IDisputeWindow.sol';
+import 'ROOT/reporting/IMarket.sol';
+import 'ROOT/reporting/IDisputeWindow.sol';
+import 'ROOT/reporting/IReportingParticipant.sol';
+import 'ROOT/reporting/IShareToken.sol';
+import 'ROOT/uniswap/interfaces/IUniswapV2Pair.sol';
+&nbsp;
+&nbsp;
+contract IUniverse {
+    function creationTime() external view returns (uint256);
+    function marketBalance(address) external view returns (uint256);
+&nbsp;
+    function fork() public returns (bool);
+    function updateForkValues() public returns (bool);
+    function getParentUniverse() public view returns (IUniverse);
+    function createChildUniverse(uint256[] memory _parentPayoutNumerators) public returns (IUniverse);
+    function getChildUniverse(bytes32 _parentPayoutDistributionHash) public view returns (IUniverse);
+    function getReputationToken() public view returns (IV2ReputationToken);
+    function getForkingMarket() public view returns (IMarket);
+    function getForkEndTime() public view returns (uint256);
+    function getForkReputationGoal() public view returns (uint256);
+    function getParentPayoutDistributionHash() public view returns (bytes32);
+    function getDisputeRoundDurationInSeconds(bool _initial) public view returns (uint256);
+    function getOrCreateDisputeWindowByTimestamp(uint256 _timestamp, bool _initial) public returns (IDisputeWindow);
+    function getOrCreateCurrentDisputeWindow(bool _initial) public returns (IDisputeWindow);
+    function getOrCreateNextDisputeWindow(bool _initial) public returns (IDisputeWindow);
+    function getOrCreatePreviousDisputeWindow(bool _initial) public returns (IDisputeWindow);
+    function getOpenInterestInAttoCash() public view returns (uint256);
+    function getTargetRepMarketCapInAttoCash() public view returns (uint256);
+    function getOrCacheValidityBond() public returns (uint256);
+    function getOrCacheDesignatedReportStake() public returns (uint256);
+    function getOrCacheDesignatedReportNoShowBond() public returns (uint256);
+    function getOrCacheMarketRepBond() public returns (uint256);
+    function getOrCacheReportingFeeDivisor() public returns (uint256);
+    function getDisputeThresholdForFork() public view returns (uint256);
+    function getDisputeThresholdForDisputePacing() public view returns (uint256);
+    function getInitialReportMinValue() public view returns (uint256);
+    function getPayoutNumerators() public view returns (uint256[] memory);
+    function getReportingFeeDivisor() public view returns (uint256);
+    function getPayoutNumerator(uint256 _outcome) public view returns (uint256);
+    function getWinningChildPayoutNumerator(uint256 _outcome) public view returns (uint256);
+    function isOpenInterestCash(address) public view returns (bool);
+    function isForkingMarket() public view returns (bool);
+    function getCurrentDisputeWindow(bool _initial) public view returns (IDisputeWindow);
+    function getDisputeWindowStartTimeAndDuration(uint256 _timestamp, bool _initial) public view returns (uint256, uint256);
+    function isParentOf(IUniverse _shadyChild) public view returns (bool);
+    function updateTentativeWinningChildUniverse(bytes32 _parentPayoutDistributionHash) public returns (bool);
+    function isContainerForDisputeWindow(IDisputeWindow _shadyTarget) public view returns (bool);
+    function isContainerForMarket(IMarket _shadyTarget) public view returns (bool);
+    function isContainerForReportingParticipant(IReportingParticipant _reportingParticipant) public view returns (bool);
+    function migrateMarketOut(IUniverse _destinationUniverse) public returns (bool);
+    function migrateMarketIn(IMarket _market, uint256 _cashBalance, uint256 _marketOI) public returns (bool);
+    function decrementOpenInterest(uint256 _amount) public returns (bool);
+    function decrementOpenInterestFromMarket(IMarket _market) public returns (bool);
+    function incrementOpenInterest(uint256 _amount) public returns (bool);
+    function getWinningChildUniverse() public view returns (IUniverse);
+    function isForking() public view returns (bool);
+    function deposit(address _sender, uint256 _amount, address _market) public returns (bool);
+    function withdraw(address _recipient, uint256 _amount, address _market) public returns (bool);
+    function createScalarMarket(uint256 _endTime, uint256 _feePerCashInAttoCash, IAffiliateValidator _affiliateValidator, uint256 _affiliateFeeDivisor, address _designatedReporterAddress, int256[] memory _prices, uint256 _numTicks, string memory _extraInfo) public returns (IMarket _newMarket);
+    function sweepInterest() public returns (bool);
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

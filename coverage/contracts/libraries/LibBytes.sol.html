@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/libraries/LibBytes.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/libraries/</a> LibBytes.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">45.45% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>10/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">31.25% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>5/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>12/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">843×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">728×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">728×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">364×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">364×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">364×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">364×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">364×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">364×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">364×</span>
+<span class="cline-any cline-yes">364×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">364×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+&nbsp;
+&nbsp;
+library LibBytes {
+&nbsp;
+    using LibBytes for bytes;
+&nbsp;
+    /// @dev Tests equality of two byte arrays.
+    /// @param lhs First byte array to compare.
+    /// @param rhs Second byte array to compare.
+    /// @return True if arrays are the same. False otherwise.
+    function equals(
+        bytes memory lhs,
+        bytes memory rhs
+    )
+        internal
+        pure
+        returns (bool equal)
+    {
+        // Keccak gas cost is 30 + numWords * 6. This is a cheap way to compare.
+        // We early exit on unequal lengths, but keccak would also correctly
+        // handle this.
+        return lhs.length == rhs.length &amp;&amp; keccak256(lhs) == keccak256(rhs);
+    }
+&nbsp;
+    /// @dev Gets the memory address for the contents of a byte array.
+    /// @param input Byte array to lookup.
+    /// @return memoryAddress Memory address of the contents of the byte array.
+    function contentAddress(bytes memory input)
+        internal
+        pure
+        returns (uint256 memoryAddress)
+    {
+        assembly {
+            memoryAddress := add(input, 32)
+        }
+        return memoryAddress;
+    }
+&nbsp;
+    /// @dev Copies `length` bytes from memory location `source` to `dest`.
+    /// @param dest memory address to copy bytes to.
+    /// @param source memory address to copy bytes from.
+    /// @param length number of bytes to copy.
+    function memCopy(
+        uint256 dest,
+        uint256 source,
+        uint256 length
+    )
+        internal
+        pure
+    {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (length &lt; 32) {
+            // Handle a partial word by reading destination and masking
+            // off the bits we are interested in.
+            // This correctly handles overlap, zero lengths and source == dest
+            assembly {
+                let mask := sub(exp(256, sub(32, length)), 1)
+                let s := and(mload(source), not(mask))
+                let d := and(mload(dest), mask)
+                mstore(dest, or(s, d))
+            }
+        } else {
+            // Skip the O(length) loop when source == dest.
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (source == dest) {
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            }
+&nbsp;
+            // For large copies we copy whole words at a time. The final
+            // word is aligned to the end of the range (instead of after the
+            // previous) to handle partial words. So a copy will look like this:
+            //
+            //  ####
+            //      ####
+            //          ####
+            //            ####
+            //
+            // We handle overlap in the source and destination range by
+            // changing the copying direction. This prevents us from
+            // overwriting parts of source that we still need to copy.
+            //
+            // This correctly handles source == dest
+            //
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (source &gt; dest) {
+                assembly {
+                    // We subtract 32 from `sEnd` and `dEnd` because it
+                    // is easier to compare with in the loop, and these
+                    // are also the addresses we need for copying the
+                    // last bytes.
+                    length := sub(length, 32)
+                    let sEnd := add(source, length)
+                    let dEnd := add(dest, length)
+&nbsp;
+                    // Remember the last 32 bytes of source
+                    // This needs to be done here and not after the loop
+                    // because we may have overwritten the last bytes in
+                    // source already due to overlap.
+                    let last := mload(sEnd)
+&nbsp;
+                    // Copy whole words front to back
+                    // Note: the first check is always true,
+                    // this could have been a do-while loop.
+                    // solhint-disable-next-line no-empty-blocks
+                    for {} lt(source, sEnd) {} {
+                        mstore(dest, mload(source))
+                        source := add(source, 32)
+                        dest := add(dest, 32)
+                    }
+&nbsp;
+                    // Write the last 32 bytes
+                    mstore(dEnd, last)
+                }
+            } else {
+                assembly {
+                    // We subtract 32 from `sEnd` and `dEnd` because those
+                    // are the starting points when copying a word at the end.
+                    length := sub(length, 32)
+                    let sEnd := add(source, length)
+                    let dEnd := add(dest, length)
+&nbsp;
+                    // Remember the first 32 bytes of source
+                    // This needs to be done here and not after the loop
+                    // because we may have overwritten the first bytes in
+                    // source already due to overlap.
+                    let first := mload(source)
+&nbsp;
+                    // Copy whole words back to front
+                    // We use a signed comparisson here to allow dEnd to become
+                    // negative (happens when source and dest &lt; 32). Valid
+                    // addresses in local memory will never be larger than
+                    // 2**255, so they can be safely re-interpreted as signed.
+                    // Note: the first check is always true,
+                    // this could have been a do-while loop.
+                    // solhint-disable-next-line no-empty-blocks
+                    for {} slt(dest, dEnd) {} {
+                        mstore(dEnd, mload(sEnd))
+                        sEnd := sub(sEnd, 32)
+                        dEnd := sub(dEnd, 32)
+                    }
+&nbsp;
+                    // Write the first 32 bytes
+                    mstore(dest, first)
+                }
+            }
+        }
+    }
+&nbsp;
+    /// @dev Returns a slices from a byte array.
+    /// @param b The byte array to take a slice from.
+    /// @param from The starting index for the slice (inclusive).
+    /// @param to The final index for the slice (exclusive).
+    /// @return result The slice containing bytes at indices [from, to)
+    function slice(
+        bytes memory b,
+        uint256 from,
+        uint256 to
+    )
+        internal
+        pure
+        returns (bytes memory result)
+    {
+        // Ensure that the from and to positions are valid positions for a slice within
+        // the byte array that is being used.
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (from &gt; to) {
+<span class="cstat-no" title="statement not covered" >            revert()</span>;
+        }
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (to &gt; b.length) {
+<span class="cstat-no" title="statement not covered" >            revert()</span>;
+        }
+&nbsp;
+        // Create a new bytes structure and copy contents
+        result = new bytes(to - from);
+        memCopy(
+            result.contentAddress(),
+            b.contentAddress() + from,
+            result.length
+        );
+        return result;
+    }
+&nbsp;
+    /// @dev Returns a slice from a byte array without preserving the input.
+    /// @param b The byte array to take a slice from. Will be destroyed in the process.
+    /// @param from The starting index for the slice (inclusive).
+    /// @param to The final index for the slice (exclusive).
+    /// @return result The slice containing bytes at indices [from, to)
+    /// @dev When `from == 0`, the original array will match the slice. In other cases its state will be corrupted.
+<span class="fstat-no" title="function not covered" >    function sliceDestructive(</span>
+        bytes memory b,
+        uint256 from,
+        uint256 to
+    )
+        internal
+        pure
+        returns (bytes memory result)
+    {
+        // Ensure that the from and to positions are valid positions for a slice within
+        // the byte array that is being used.
+<span class="cstat-no" title="statement not covered" >        if (from &gt; to) {</span>
+<span class="cstat-no" title="statement not covered" >            revert()</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        if (to &gt; b.length) {</span>
+<span class="cstat-no" title="statement not covered" >            revert()</span>;
+        }
+&nbsp;
+        // Create a new bytes structure around [from, to) in-place.
+        assembly {
+            result := add(b, from)
+            mstore(result, sub(to, from))
+        }
+<span class="cstat-no" title="statement not covered" >        return result;</span>
+    }
+&nbsp;
+    /// @dev Pops the last byte off of a byte array by modifying its length.
+    /// @param b Byte array that will be modified.
+    /// @return The byte that was popped off.
+<span class="fstat-no" title="function not covered" >    function popLastByte(bytes memory b)</span>
+        internal
+        pure
+        returns (bytes1 result)
+    {
+<span class="cstat-no" title="statement not covered" >        if (b.length == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            revert()</span>;
+        }
+&nbsp;
+        // Store last byte.
+<span class="cstat-no" title="statement not covered" >        result = b[b.length - 1]</span>;
+&nbsp;
+        assembly {
+            // Decrement length of byte array.
+            let newLen := sub(mload(b), 1)
+            mstore(b, newLen)
+        }
+<span class="cstat-no" title="statement not covered" >        return result;</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

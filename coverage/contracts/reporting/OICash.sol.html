@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/reporting/OICash.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/reporting/</a> OICash.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.97% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>32/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>5/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.97% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>32/33</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+&nbsp;
+import 'ROOT/IAugur.sol';
+import 'ROOT/libraries/Initializable.sol';
+import 'ROOT/libraries/token/VariableSupplyToken.sol';
+import 'ROOT/reporting/IOICash.sol';
+&nbsp;
+&nbsp;
+/**
+ * @title OI Cash
+ * @dev A Wrapper contract for the deployed Cash contract which Augur considers OI. Cash can be deposited and will count toward OI for reporting fee calculations and will extract a reporting fee on withdrawl
+ */
+contract OICash is VariableSupplyToken, Initializable, IOICash {
+    using SafeMathUint256 for uint256;
+&nbsp;
+    IAugur public augur;
+    IERC20 public cash;
+    IUniverse public universe;
+    IShareToken public shareToken;
+    uint256 public feesPaid;
+&nbsp;
+    uint256 private constant MAX_APPROVAL_AMOUNT = 2 ** 256 - 1;
+&nbsp;
+    function initialize(IAugur _augur, IUniverse _universe) external beforeInitialized {
+        endInitialization();
+        augur = _augur;
+        cash = ICash(_augur.lookup("Cash"));
+        shareToken = IShareToken(_augur.lookup("ShareToken"));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(shareToken != IShareToken(0));
+        universe = _universe;
+&nbsp;
+        cash.approve(address(_augur), MAX_APPROVAL_AMOUNT);
+    }
+&nbsp;
+    function deposit(uint256 _amount) external returns (bool) {
+        universe.deposit(msg.sender, _amount, address(0));
+        mint(msg.sender, _amount);
+        return true;
+    }
+&nbsp;
+    function withdraw(uint256 _amount) external returns (bool) {
+        burn(msg.sender, _amount);
+&nbsp;
+        // Withdraw cash to this contract
+        universe.withdraw(address(this), _amount, address(0));
+&nbsp;
+        uint256 _payout = _amount;
+        uint256 _reportingFeeDivisor = universe.getOrCacheReportingFeeDivisor();
+        uint256 _feesOwed = _amount / _reportingFeeDivisor;
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (feesPaid &gt; _feesOwed) {
+<span class="cstat-no" title="statement not covered" >            feesPaid = feesPaid.sub(_feesOwed)</span>;
+        } else {
+            _feesOwed = _feesOwed.sub(feesPaid);
+            feesPaid = 0;
+            _payout = _payout.sub(_feesOwed);
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(cash.transfer(address(universe.getOrCreateNextDisputeWindow(false)), _feesOwed));
+        }
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(cash.transfer(msg.sender, _payout));
+&nbsp;
+        return true;
+    }
+&nbsp;
+    function payFees(uint256 _feeAmount) external returns (bool) {
+        burn(msg.sender, _feeAmount);
+        universe.withdraw(address(universe.getOrCreateNextDisputeWindow(false)), _feeAmount, address(0));
+        feesPaid = feesPaid.add(_feeAmount);
+        return true;
+    }
+&nbsp;
+    function buyCompleteSets(IMarket _market, uint256 _amount) external returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(universe.isContainerForMarket(_market), "Market does not belong to universe");
+        uint256 _cost = _amount.mul(_market.getNumTicks());
+        burn(msg.sender, _cost);
+        universe.withdraw(address(this), _cost, address(0));
+        shareToken.buyCompleteSets(_market, msg.sender, _amount);
+        return true;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function onTokenTransfer(address _from, address _to, uint256 _value) interna</span>l {
+    }
+&nbsp;
+    function onMint(address _target, uint256 _amount) internal {
+    }
+&nbsp;
+    function onBurn(address _target, uint256 _amount) internal {
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

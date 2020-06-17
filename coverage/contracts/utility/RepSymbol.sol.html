@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/utility/RepSymbol.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/utility/</a> RepSymbol.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.46% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>23/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">64.29% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>9/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.46% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>23/26</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+&nbsp;
+import 'ROOT/IAugur.sol';
+import 'ROOT/IAugurMarketDataGetter.sol';
+import 'ROOT/reporting/IUniverse.sol';
+import 'ROOT/libraries/math/UintToString.sol';
+import 'ROOT/libraries/BytesToString.sol';
+import 'ROOT/utility/IRepSymbol.sol';
+&nbsp;
+&nbsp;
+/**
+ * @title Rep Symbol
+ * @notice A Utility contract used to retrieve the symbol for a REP token. We extract this out to reduce REP token contract size.
+ */
+contract RepSymbol is IRepSymbol {
+    using UintToString for uint;
+    using BytesToString for bytes32;
+&nbsp;
+    function getRepSymbol(address _augurAddress, address _universeAddress) external view returns (string memory) {
+        IAugur _augur = IAugur(_augurAddress);
+        IUniverse _universe = IUniverse(_universeAddress);
+        IUniverse _parentUniverse = _universe.getParentUniverse();
+&nbsp;
+        if (_parentUniverse != IUniverse(0)) {
+            uint256 _forkIndex = _augur.getUniverseForkIndex(_parentUniverse);
+            IMarket _forkingMarket = _parentUniverse.getForkingMarket();
+            uint256 _numTicks = _forkingMarket.getNumTicks();
+            uint256[] memory _payoutNumerators = _universe.getPayoutNumerators();
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (_payoutNumerators[0] != 0) {
+<span class="cstat-no" title="statement not covered" >                return string(abi.encodePacked("REPv2", "_", _payoutNumerators[0] == _numTicks ? "INVALID" : "MALFORMED", "_", _forkIndex.uint2str()));</span>
+            }
+            IMarket.MarketType _marketType = IAugurMarketDataGetter(_augurAddress).getMarketType(_forkingMarket);
+            string memory _outcome = "YES";
+            if (_marketType == IMarket.MarketType.YES_NO) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (_payoutNumerators[1] == _numTicks) {
+                    _outcome = "NO";
+                } else <span class="cstat-no" title="statement not covered" >if (_payoutNumerators[1] != _numTicks) {</span>
+<span class="cstat-no" title="statement not covered" >                    _outcome = "MALFORMED"</span>;
+                }
+            } else if (_marketType == IMarket.MarketType.CATEGORICAL) {
+                uint256 _numOutcomes = _forkingMarket.getNumberOfOutcomes();
+                bytes32[] memory _outcomes = IAugurMarketDataGetter(_augurAddress).getMarketOutcomes(_forkingMarket);
+                for (uint256 _i = 1; _i &lt; _numOutcomes; _i++) {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (_payoutNumerators[_i] == 0) {
+                        continue;
+                    }
+                    _outcome = _payoutNumerators[_i] != _numTicks ? "MALFORMED" : _outcomes[_i - 1].bytes32ToString();
+                    break;
+                }
+            } else {
+                _outcome = _payoutNumerators[2].uint2str();
+            }
+&nbsp;
+            return string(abi.encodePacked("REPv2", "_", _outcome, "_", _forkIndex.uint2str()));
+        }
+        return "REPv2";
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

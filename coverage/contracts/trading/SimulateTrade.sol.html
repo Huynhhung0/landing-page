@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/trading/SimulateTrade.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/trading/</a> SimulateTrade.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.29% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>81/85</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">76.92% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>20/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.45% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>84/88</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-yes">64×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64×</span>
+<span class="cline-any cline-yes">64×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Copyright (C) 2015 Forecast Foundation OU, full GPL notice in LICENSE
+&nbsp;
+pragma solidity 0.5.15;
+pragma experimental ABIEncoderV2;
+&nbsp;
+&nbsp;
+import 'ROOT/IAugur.sol';
+import 'ROOT/libraries/ReentrancyGuard.sol';
+import 'ROOT/trading/Order.sol';
+import 'ROOT/reporting/IMarket.sol';
+import 'ROOT/trading/ICreateOrder.sol';
+import 'ROOT/trading/IOrders.sol';
+import 'ROOT/trading/IFillOrder.sol';
+import 'ROOT/libraries/Initializable.sol';
+import 'ROOT/libraries/token/IERC20.sol';
+import "ROOT/external/IExchange.sol";
+import "ROOT/trading/IZeroXTrade.sol";
+import 'ROOT/trading/IAugurTrading.sol';
+&nbsp;
+&nbsp;
+/**
+ * @title Simulate Trade
+ * @notice Provides a function to simulate a trade with the current orderbook in order to estimate the cost and the resulting position
+ */
+contract SimulateTrade is Initializable {
+    using SafeMathUint256 for uint256;
+&nbsp;
+    struct SimulationData {
+        Order.Types orderType;
+        Order.TradeDirections direction;
+        IMarket market;
+        uint256 outcome;
+        uint256 amount;
+        uint256 price;
+        uint256 numTicks;
+        uint256 availableShares;
+        bytes32 orderId;
+        uint256 orderAmount;
+        uint256 orderPrice;
+        uint256 orderShares;
+        address orderCreator;
+        uint256 fillAmount;
+        uint256 sharesUsedInFill;
+    }
+&nbsp;
+    IAugur public augur;
+    IAugurTrading public augurTrading;
+    IOrders public orders;
+    IZeroXTrade public zeroXTrade;
+    IShareToken public shareToken;
+&nbsp;
+    address private constant NULL_ADDRESS = address(0);
+    uint256 private constant GAS_BUFFER = 50000;
+&nbsp;
+    function initialize(IAugur _augur, IAugurTrading _augurTrading) public beforeInitialized {
+        endInitialization();
+        augur = _augur;
+        shareToken = IShareToken(augur.lookup("ShareToken"));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(shareToken != IShareToken(0));
+&nbsp;
+        augurTrading = _augurTrading;
+        orders = IOrders(_augurTrading.lookup("Orders"));
+        zeroXTrade = IZeroXTrade(_augurTrading.lookup("ZeroXTrade"));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(orders != IOrders(0));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(zeroXTrade != IZeroXTrade(0));
+    }
+&nbsp;
+    function create(Order.TradeDirections _direction, IMarket _market, uint256 _outcome, uint256 _amount, uint256 _price, address _sender) internal view returns (SimulationData memory) {
+        Order.Types _type = Order.getOrderTradingTypeFromFillerDirection(_direction);
+        bytes32 _orderId = orders.getBestOrderId(_type, _market, _outcome);
+&nbsp;
+        return SimulationData({
+            orderType: _type,
+            direction: _direction,
+            market: _market,
+            outcome: _outcome,
+            amount: _amount,
+            price: _price,
+            numTicks: _market.getNumTicks(),
+            availableShares: getNumberOfAvaialableShares(_direction, _market, _outcome, _sender),
+            orderId: _orderId,
+            orderAmount: orders.getAmount(_orderId),
+            orderPrice: orders.getPrice(_orderId),
+            orderShares: orders.getOrderSharesEscrowed(_orderId),
+            orderCreator: orders.getOrderCreator(_orderId),
+            fillAmount: 0,
+            sharesUsedInFill: 0
+        });
+    }
+&nbsp;
+    function createFromSignedOrders(IExchange.Order memory _order, uint256 _amount, address _sender) internal view returns (SimulationData memory) {
+        IZeroXTrade.AugurOrderData memory _augurOrderData = zeroXTrade.parseOrderData(_order);
+        Order.Types _type = Order.Types(_augurOrderData.orderType);
+        Order.TradeDirections _direction = _type == Order.Types.Bid ? Order.TradeDirections.Short : Order.TradeDirections.Long;
+        IMarket _market = IMarket(_augurOrderData.marketAddress);
+&nbsp;
+        return SimulationData({
+            orderType: _type,
+            direction: _direction,
+            market: _market,
+            outcome: _augurOrderData.outcome,
+            amount: _amount,
+            price: _augurOrderData.price,
+            numTicks: _market.getNumTicks(),
+            availableShares: getNumberOfAvaialableShares(_direction, _market, _augurOrderData.outcome, _sender),
+            orderId: bytes32(0),
+            orderAmount: _order.makerAssetAmount,
+            orderPrice: _augurOrderData.price,
+            orderShares: getNumberOfAvaialableShares(_direction == Order.TradeDirections.Long ? Order.TradeDirections.Short : Order.TradeDirections.Long, _market, _augurOrderData.outcome, _order.makerAddress),
+            orderCreator: _order.makerAddress,
+            fillAmount: 0,
+            sharesUsedInFill: 0
+        });
+    }
+&nbsp;
+    /**
+     * @notice Simulate performing a trade
+     * @param _direction The trade direction of order. Either LONG==0, or SHORT==1
+     * @param _market The associated market
+     * @param _outcome The associated outcome of the market
+     * @param _amount The number of attoShares desired
+     * @param _price The price in attoCash. Must be within the market range (1 to numTicks-1)
+     * @param _fillOnly Boolean indicating whether to only fill existing orders or to also create an order if an amount remains
+     * @return uint256_sharesFilled: The amount taken from existing orders, uint256 _tokensDepleted: The amount of Cash tokens used, uint256 _sharesDepleted: The amount of Share tokens used, uint256 _settlementFees: The totals fees taken from settlement that occurred, _numFills: The number of orders filled/partially filled
+     */
+    function simulateTrade(Order.TradeDirections _direction, IMarket _market, uint256 _outcome, uint256 _amount, uint256 _price, bool _fillOnly) public view returns (uint256 _sharesFilled, uint256 _tokensDepleted, uint256 _sharesDepleted, uint256 _settlementFees, uint256 _numFills) {
+        SimulationData memory _simulationData = create(_direction, _market, _outcome, _amount, _price, msg.sender);
+        while (_simulationData.orderId != 0 &amp;&amp; _simulationData.amount &gt; 0 &amp;&amp; gasleft() &gt; GAS_BUFFER &amp;&amp; isMatch(_simulationData)) {
+            _simulationData.fillAmount = _simulationData.amount.min(_simulationData.orderAmount);
+            _simulationData.sharesUsedInFill = _simulationData.fillAmount.min(_simulationData.availableShares);
+            _simulationData.availableShares = _simulationData.availableShares.sub(_simulationData.sharesUsedInFill);
+&nbsp;
+            if (_simulationData.orderCreator != msg.sender) {
+                _sharesDepleted += _simulationData.sharesUsedInFill;
+                _tokensDepleted += (_simulationData.fillAmount - _simulationData.sharesUsedInFill) * (_direction == Order.TradeDirections.Long ? _simulationData.orderPrice : _simulationData.numTicks - _simulationData.orderPrice);
+            }
+&nbsp;
+            _sharesFilled += _simulationData.fillAmount;
+            _settlementFees += getSettlementFees(_simulationData, _simulationData.sharesUsedInFill);
+&nbsp;
+            _simulationData.amount -= _simulationData.fillAmount;
+&nbsp;
+            _simulationData.orderId = orders.getWorseOrderId(_simulationData.orderId);
+            _simulationData.orderAmount = orders.getAmount(_simulationData.orderId);
+            _simulationData.orderPrice = orders.getPrice(_simulationData.orderId);
+            _simulationData.orderShares = orders.getOrderSharesEscrowed(_simulationData.orderId);
+            _simulationData.orderCreator = orders.getOrderCreator(_simulationData.orderId);
+            _numFills += 1;
+        }
+&nbsp;
+        if (_simulationData.amount &gt; 0 &amp;&amp; !_fillOnly) {
+            uint256 _sharesUsedInCreate = _simulationData.amount.min(_simulationData.availableShares);
+            _sharesDepleted += _sharesUsedInCreate;
+            _tokensDepleted += (_simulationData.amount - _sharesUsedInCreate) * (_direction == Order.TradeDirections.Long ? _simulationData.price : _simulationData.numTicks - _simulationData.price);
+        }
+&nbsp;
+        uint256 _shareSaleProfit = _sharesDepleted * (_direction == Order.TradeDirections.Short ? _simulationData.price : _simulationData.numTicks - _simulationData.price);
+        _tokensDepleted = _shareSaleProfit &gt;= _tokensDepleted ? 0 : _tokensDepleted.sub(_shareSaleProfit);
+    }
+&nbsp;
+    function simulateZeroXTrade(IExchange.Order[] memory _orders, uint256 _amount, bool _fillOnly) public view returns (uint256 _sharesFilled, uint256 _tokensDepleted, uint256 _sharesDepleted, uint256 _settlementFees, uint256 _numFills) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_orders.length &gt; 0, "Must provide orders to simulate zeroX trade");
+        SimulationData memory _simulationData = createFromSignedOrders(_orders[0], _amount, msg.sender);
+        uint256 _orderIndex = 0;
+        while (_orderIndex &lt; _orders.length &amp;&amp; _simulationData.amount &gt; 0 &amp;&amp; gasleft() &gt; GAS_BUFFER) {
+            if (_simulationData.orderCreator != msg.sender) {
+                _simulationData.fillAmount = _simulationData.amount.min(_simulationData.orderAmount);
+                _simulationData.sharesUsedInFill = _simulationData.fillAmount.min(_simulationData.availableShares);
+                _simulationData.availableShares = _simulationData.availableShares.sub(_simulationData.sharesUsedInFill);
+&nbsp;
+                _sharesDepleted += _simulationData.sharesUsedInFill;
+                _tokensDepleted += (_simulationData.fillAmount - _simulationData.sharesUsedInFill) * (_simulationData.direction == Order.TradeDirections.Long ? _simulationData.orderPrice : _simulationData.numTicks - _simulationData.orderPrice);
+&nbsp;
+                _sharesFilled += _simulationData.fillAmount;
+                _settlementFees += getSettlementFees(_simulationData, _simulationData.sharesUsedInFill);
+&nbsp;
+                _simulationData.amount -= _simulationData.fillAmount;
+                _numFills += 1;
+            }
+&nbsp;
+            _orderIndex += 1;
+            if (_orderIndex &gt;= _orders.length) {
+                break;
+            }
+            IZeroXTrade.AugurOrderData memory _augurOrderData = zeroXTrade.parseOrderData(_orders[_orderIndex]);
+            _simulationData.orderAmount = _orders[_orderIndex].makerAssetAmount;
+            _simulationData.orderPrice = _augurOrderData.price;
+            _simulationData.orderCreator = _orders[_orderIndex].makerAddress;
+            _simulationData.orderShares = getNumberOfAvaialableShares(_simulationData.direction == Order.TradeDirections.Long ? Order.TradeDirections.Short : Order.TradeDirections.Long, _simulationData.market, _simulationData.outcome, _simulationData.orderCreator);
+        }
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_simulationData.amount &gt; 0 &amp;&amp; !_fillOnly) {
+<span class="cstat-no" title="statement not covered" >            uint256 _sharesUsedInCreate = _simulationData.amount.min(_simulationData.availableShares);</span>
+<span class="cstat-no" title="statement not covered" >            _sharesDepleted += _sharesUsedInCreate</span>;
+<span class="cstat-no" title="statement not covered" >            _tokensDepleted += (_simulationData.amount - _sharesUsedInCreate) * (_simulationData.direction == Order.TradeDirections.Long ? _simulationData.price : _simulationData.numTicks - _simulationData.price)</span>;
+        }
+&nbsp;
+        uint256 _shareSaleProfit = _sharesDepleted * (_simulationData.direction == Order.TradeDirections.Short ? _simulationData.price : _simulationData.numTicks - _simulationData.price);
+        _tokensDepleted = _shareSaleProfit &gt;= _tokensDepleted ? 0 : _tokensDepleted.sub(_shareSaleProfit);
+    }
+&nbsp;
+    function getSettlementFees(SimulationData memory _simulationData, uint256 _sharesUsedInFill) private view returns (uint256) {
+        uint256 _completeSetsSold = _sharesUsedInFill.min(_simulationData.orderShares);
+        if (_completeSetsSold &lt; 1) {
+            return 0;
+        }
+        uint256 _payout = _sharesUsedInFill * (_simulationData.direction == Order.TradeDirections.Short ? _simulationData.orderPrice : _simulationData.numTicks - _simulationData.orderPrice);
+        uint256 _reportingFeeDivisor = _simulationData.market.getUniverse().getReportingFeeDivisor();
+        return _simulationData.market.deriveMarketCreatorFeeAmount(_payout) + _payout.div(_reportingFeeDivisor);
+    }
+&nbsp;
+    function getNumberOfAvaialableShares(Order.TradeDirections _direction, IMarket _market, uint256 _outcome, address _sender) public view returns (uint256) {
+        if (_direction == Order.TradeDirections.Short) {
+            return shareToken.balanceOfMarketOutcome(_market, _outcome, _sender);
+        } else {
+            uint256 _numberOfOutcomes = _market.getNumberOfOutcomes();
+            uint256[] memory _shortOutcomes = new uint256[](_numberOfOutcomes - 1);
+            uint256 _indexOutcome = 0;
+            for (uint256 _i = 0; _i &lt; _numberOfOutcomes - 1; _i++) {
+                if (_i == _outcome) {
+                    _indexOutcome++;
+                }
+                _shortOutcomes[_i] = _indexOutcome;
+                _indexOutcome++;
+            }
+            return shareToken.lowestBalanceOfMarketOutcomes(_market, _shortOutcomes, _sender);
+        }
+    }
+&nbsp;
+    function isMatch(SimulationData memory _simulationData) private pure returns (bool) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_simulationData.orderId == 0) {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+        return _simulationData.orderType == Order.Types.Bid ? _simulationData.orderPrice &gt;= _simulationData.price : _simulationData.orderPrice &lt;= _simulationData.price;
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

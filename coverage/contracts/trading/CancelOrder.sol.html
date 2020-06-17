@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/trading/CancelOrder.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/trading/</a> CancelOrder.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>46/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>13/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.96% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>48/49</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Copyright (C) 2015 Forecast Foundation OU, full GPL notice in LICENSE
+ */
+&nbsp;
+pragma solidity 0.5.15;
+&nbsp;
+&nbsp;
+import 'ROOT/trading/ICancelOrder.sol';
+import 'ROOT/libraries/ReentrancyGuard.sol';
+import 'ROOT/trading/Order.sol';
+import 'ROOT/reporting/IMarket.sol';
+import 'ROOT/ICash.sol';
+import 'ROOT/trading/IOrders.sol';
+import 'ROOT/libraries/Initializable.sol';
+import 'ROOT/IAugur.sol';
+import 'ROOT/trading/IProfitLoss.sol';
+import 'ROOT/trading/IAugurTrading.sol';
+import 'ROOT/libraries/TokenId.sol';
+&nbsp;
+&nbsp;
+/**
+ * @title Cancel Order
+ * @notice This allows you to cancel orders on the book.
+ */
+contract CancelOrder is Initializable, ReentrancyGuard, ICancelOrder {
+&nbsp;
+    IAugur public augur;
+    IAugurTrading public augurTrading;
+    IOrders public orders;
+    ICash public cash;
+    IShareToken public shareToken;
+    IProfitLoss public profitLoss;
+&nbsp;
+    function initialize(IAugur _augur, IAugurTrading _augurTrading) public beforeInitialized {
+        endInitialization();
+        augur = _augur;
+        cash = ICash(_augur.lookup("Cash"));
+        shareToken = IShareToken(_augur.lookup("ShareToken"));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(shareToken != IShareToken(0));
+&nbsp;
+        augurTrading = _augurTrading;
+        orders = IOrders(_augurTrading.lookup("Orders"));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(orders != IOrders(0));
+        profitLoss = IProfitLoss(_augurTrading.lookup("ProfitLoss"));
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(profitLoss != IProfitLoss(0));
+    }
+&nbsp;
+    /**
+     * @notice Cancels an order and refunds escrowed assets
+     * @param _orderId The id of the order to cancel
+     * @return Bool True
+     */
+    function cancelOrder(bytes32 _orderId) external nonReentrant returns (bool) {
+        return cancelOrderInternal(msg.sender, _orderId);
+    }
+&nbsp;
+    /**
+     * @notice Cancels multiple orders and refunds escrowed assets
+     * @param _orderIds Array of order ids to cancel
+     * @return Bool True
+     */
+    function cancelOrders(bytes32[] calldata _orderIds) external nonReentrant returns (bool) {
+        for (uint256 i = 0; i &lt; _orderIds.length; i++) {
+            cancelOrderInternal(msg.sender, _orderIds[i]);
+        }
+        return true;
+    }
+&nbsp;
+    function cancelOrderInternal(address _sender, bytes32 _orderId) internal returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_orderId != bytes32(0), "CancelOrder.cancelOrderInternal: Order id is 0x0");
+&nbsp;
+        IOrders _orders = orders;
+        // Look up the order the sender wants to cancel
+        uint256 _moneyEscrowed;
+        uint256 _sharesEscrowed;
+        Order.Types _type;
+        IMarket _market;
+        uint256 _outcome;
+        // Check creator in inner scope to reduce stack depth
+        {
+            /* solium-disable indentation */
+            address _creator;
+            (_moneyEscrowed, _sharesEscrowed, _type, _market, _outcome, _creator) = _orders.getOrderDataForCancel(_orderId);
+            // Check that the order ID is correct and that the sender owns the order
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(_sender == _creator, "CancelOrder.cancelOrderInternal: sender is not order owner");
+            /* solium-enable indentation */
+        }
+&nbsp;
+        // Clear the order first
+        _orders.removeOrder(_orderId);
+&nbsp;
+        refundOrder(_sender, _type, _sharesEscrowed, _moneyEscrowed, _market, _outcome);
+&nbsp;
+        IUniverse _universe = _market.getUniverse();
+        augurTrading.logOrderCanceled(_universe, _market, _sender, _moneyEscrowed, _sharesEscrowed, _orderId);
+        profitLoss.recordFrozenFundChange(_universe, _market, _sender, _outcome, -int256(_moneyEscrowed));
+        return true;
+    }
+&nbsp;
+    function refundOrder(address _sender, Order.Types _type, uint256 _sharesEscrowed, uint256 _moneyEscrowed, IMarket _market, uint256 _outcome) private returns (bool) {
+        if (_sharesEscrowed &gt; 0) {
+            // Return to user sharesEscrowed that weren't filled yet for all outcomes except the order outcome
+            if (_type == Order.Types.Bid) {
+                uint256 _numberOfOutcomes = _market.getNumberOfOutcomes();
+                uint256[] memory _shortOutcomes = new uint256[](_numberOfOutcomes - 1);
+                uint256[] memory _values = new uint256[](_numberOfOutcomes - 1);
+                uint256 _indexOutcome = 0;
+                for (uint256 _i = 0; _i &lt; _numberOfOutcomes - 1; _i++) {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (_i == _outcome) {
+                        _indexOutcome++;
+                    }
+                    _shortOutcomes[_i] = _indexOutcome;
+                    _values[_i] = _sharesEscrowed;
+                    _indexOutcome++;
+                }
+                uint256[] memory _tokenIds = TokenId.getTokenIds(_market, _shortOutcomes);
+                shareToken.unsafeBatchTransferFrom(address(augurTrading), _sender, _tokenIds, _values);
+            } else {
+                shareToken.unsafeTransferFrom(address(augurTrading), _sender, TokenId.getTokenId(_market, _outcome), _sharesEscrowed);
+            }
+        }
+&nbsp;
+        // Return to user moneyEscrowed that wasn't filled yet
+        if (_moneyEscrowed &gt; 0) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(cash.transferFrom(address(augurTrading), _sender, _moneyEscrowed));
+        }
+&nbsp;
+        return true;
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

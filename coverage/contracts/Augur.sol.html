@@ -1,0 +1,1859 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/Augur.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Augur.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>245/250</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">52.21% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>71/136</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.97% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>64/66</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.98% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>243/248</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">99×</span>
+<span class="cline-any cline-yes">99×</span>
+<span class="cline-any cline-yes">99×</span>
+<span class="cline-any cline-yes">99×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">99×</span>
+<span class="cline-any cline-yes">99×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4649×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6385×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1117×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">420×</span>
+<span class="cline-any cline-yes">420×</span>
+<span class="cline-any cline-yes">420×</span>
+<span class="cline-any cline-yes">420×</span>
+<span class="cline-any cline-yes">420×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">117×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">387×</span>
+<span class="cline-any cline-yes">387×</span>
+<span class="cline-any cline-yes">387×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">653×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8286×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1026×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2085×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2085×</span>
+<span class="cline-any cline-yes">2085×</span>
+<span class="cline-any cline-yes">2085×</span>
+<span class="cline-any cline-yes">6407×</span>
+<span class="cline-any cline-yes">6407×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2085×</span>
+<span class="cline-any cline-yes">2085×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">242×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">123×</span>
+<span class="cline-any cline-yes">123×</span>
+<span class="cline-any cline-yes">123×</span>
+<span class="cline-any cline-yes">123×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">428×</span>
+<span class="cline-any cline-yes">428×</span>
+<span class="cline-any cline-yes">428×</span>
+<span class="cline-any cline-yes">428×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">414×</span>
+<span class="cline-any cline-yes">414×</span>
+<span class="cline-any cline-yes">414×</span>
+<span class="cline-any cline-yes">414×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">345×</span>
+<span class="cline-any cline-yes">345×</span>
+<span class="cline-any cline-yes">345×</span>
+<span class="cline-any cline-yes">345×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">337×</span>
+<span class="cline-any cline-yes">337×</span>
+<span class="cline-any cline-yes">337×</span>
+<span class="cline-any cline-yes">337×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">129×</span>
+<span class="cline-any cline-yes">129×</span>
+<span class="cline-any cline-yes">129×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">380×</span>
+<span class="cline-any cline-yes">380×</span>
+<span class="cline-any cline-yes">380×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">77×</span>
+<span class="cline-any cline-yes">77×</span>
+<span class="cline-any cline-yes">77×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1152×</span>
+<span class="cline-any cline-yes">1152×</span>
+<span class="cline-any cline-yes">1152×</span>
+<span class="cline-any cline-yes">1152×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">386×</span>
+<span class="cline-any cline-yes">386×</span>
+<span class="cline-any cline-yes">386×</span>
+<span class="cline-any cline-yes">386×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">731×</span>
+<span class="cline-any cline-yes">731×</span>
+<span class="cline-any cline-yes">731×</span>
+<span class="cline-any cline-yes">731×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1871×</span>
+<span class="cline-any cline-yes">1871×</span>
+<span class="cline-any cline-yes">1871×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">345×</span>
+<span class="cline-any cline-yes">345×</span>
+<span class="cline-any cline-yes">345×</span>
+<span class="cline-any cline-yes">345×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">426×</span>
+<span class="cline-any cline-yes">426×</span>
+<span class="cline-any cline-yes">426×</span>
+<span class="cline-any cline-yes">426×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">774×</span>
+<span class="cline-any cline-yes">774×</span>
+<span class="cline-any cline-yes">774×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">869×</span>
+<span class="cline-any cline-yes">869×</span>
+<span class="cline-any cline-yes">869×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1153×</span>
+<span class="cline-any cline-yes">1153×</span>
+<span class="cline-any cline-yes">1153×</span>
+<span class="cline-any cline-yes">1153×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">736×</span>
+<span class="cline-any cline-yes">736×</span>
+<span class="cline-any cline-yes">736×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1163×</span>
+<span class="cline-any cline-yes">1163×</span>
+<span class="cline-any cline-yes">1163×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">114×</span>
+<span class="cline-any cline-yes">114×</span>
+<span class="cline-any cline-yes">114×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">114×</span>
+<span class="cline-any cline-yes">114×</span>
+<span class="cline-any cline-yes">114×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">531×</span>
+<span class="cline-any cline-yes">531×</span>
+<span class="cline-any cline-yes">531×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+pragma experimental ABIEncoderV2;
+&nbsp;
+import 'ROOT/IAugur.sol';
+import 'ROOT/IAugurCreationDataGetter.sol';
+import 'ROOT/libraries/token/IERC20.sol';
+import 'ROOT/libraries/math/SafeMathUint256.sol';
+import 'ROOT/factories/IUniverseFactory.sol';
+import 'ROOT/reporting/IUniverse.sol';
+import 'ROOT/reporting/IMarket.sol';
+import 'ROOT/reporting/IDisputeWindow.sol';
+import 'ROOT/reporting/IReputationToken.sol';
+import 'ROOT/reporting/IReportingParticipant.sol';
+import 'ROOT/reporting/IDisputeCrowdsourcer.sol';
+import 'ROOT/reporting/IShareToken.sol';
+import 'ROOT/trading/IOrders.sol';
+import 'ROOT/trading/Order.sol';
+import 'ROOT/reporting/Reporting.sol';
+import 'ROOT/libraries/ContractExists.sol';
+import 'ROOT/ITime.sol';
+import 'ROOT/reporting/IAffiliates.sol';
+import 'ROOT/ICash.sol';
+import 'ROOT/external/IDaiVat.sol';
+&nbsp;
+&nbsp;
+// Centralized approval authority and event emissions
+&nbsp;
+/**
+ * @title Augur
+ * @notice The core global contract of the Augur platform. Provides a contract registry and and authority on which contracts should be trusted.
+ */
+contract Augur is IAugur, IAugurCreationDataGetter {
+    using SafeMathUint256 for uint256;
+    using ContractExists for address;
+&nbsp;
+    enum TokenType {
+        ReputationToken,
+        DisputeCrowdsourcer,
+        ParticipationToken
+    }
+&nbsp;
+    event MarketCreated(IUniverse indexed universe, uint256 endTime, string extraInfo, IMarket market, address indexed marketCreator, address designatedReporter, uint256 feePerCashInAttoCash, int256[] prices, IMarket.MarketType marketType, uint256 numTicks, bytes32[] outcomes, uint256 noShowBond, uint256 timestamp);
+    event InitialReportSubmitted(address indexed universe, address indexed reporter, address indexed market, address initialReporter, uint256 amountStaked, bool isDesignatedReporter, uint256[] payoutNumerators, string description, uint256 nextWindowStartTime, uint256 nextWindowEndTime, uint256 timestamp);
+    event DisputeCrowdsourcerCreated(address indexed universe, address indexed market, address disputeCrowdsourcer, uint256[] payoutNumerators, uint256 size, uint256 disputeRound);
+    event DisputeCrowdsourcerContribution(address indexed universe, address indexed reporter, address indexed market, address disputeCrowdsourcer, uint256 amountStaked, string description, uint256[] payoutNumerators, uint256 currentStake, uint256 stakeRemaining, uint256 disputeRound, uint256 timestamp);
+    event DisputeCrowdsourcerCompleted(address indexed universe, address indexed market, address disputeCrowdsourcer, uint256[] payoutNumerators, uint256 nextWindowStartTime, uint256 nextWindowEndTime, bool pacingOn, uint256 totalRepStakedInPayout, uint256 totalRepStakedInMarket, uint256 disputeRound, uint256 timestamp);
+    event InitialReporterRedeemed(address indexed universe, address indexed reporter, address indexed market, address initialReporter, uint256 amountRedeemed, uint256 repReceived, uint256[] payoutNumerators, uint256 timestamp);
+    event DisputeCrowdsourcerRedeemed(address indexed universe, address indexed reporter, address indexed market, address disputeCrowdsourcer, uint256 amountRedeemed, uint256 repReceived, uint256[] payoutNumerators, uint256 timestamp);
+    event ReportingParticipantDisavowed(address indexed universe, address indexed market, address reportingParticipant);
+    event MarketParticipantsDisavowed(address indexed universe, address indexed market);
+    event MarketFinalized(address indexed universe, address indexed market, uint256 timestamp, uint256[] winningPayoutNumerators);
+    event MarketMigrated(address indexed market, address indexed originalUniverse, address indexed newUniverse);
+    event UniverseForked(address indexed universe, IMarket forkingMarket);
+    event UniverseCreated(address indexed parentUniverse, address indexed childUniverse, uint256[] payoutNumerators, uint256 creationTimestamp);
+    event CompleteSetsPurchased(address indexed universe, address indexed market, address indexed account, uint256 numCompleteSets, uint256 timestamp);
+    event CompleteSetsSold(address indexed universe, address indexed market, address indexed account, uint256 numCompleteSets, uint256 fees, uint256 timestamp);
+    event TradingProceedsClaimed(address indexed universe, address indexed sender, address market, uint256 outcome, uint256 numShares, uint256 numPayoutTokens, uint256 fees, uint256 timestamp);
+    event TokensTransferred(address indexed universe, address token, address indexed from, address indexed to, uint256 value, TokenType tokenType, address market);
+    event TokensMinted(address indexed universe, address indexed token, address indexed target, uint256 amount, TokenType tokenType, address market, uint256 totalSupply);
+    event TokensBurned(address indexed universe, address indexed token, address indexed target, uint256 amount, TokenType tokenType, address market, uint256 totalSupply);
+    event TokenBalanceChanged(address indexed universe, address indexed owner, address token, TokenType tokenType, address market, uint256 balance, uint256 outcome);
+    event DisputeWindowCreated(address indexed universe, address disputeWindow, uint256 startTime, uint256 endTime, uint256 id, bool initial);
+    event InitialReporterTransferred(address indexed universe, address indexed market, address from, address to);
+    event MarketTransferred(address indexed universe, address indexed market, address from, address to);
+    event MarketOIChanged(address indexed universe, address indexed market, uint256 marketOI);
+    event ParticipationTokensRedeemed(address indexed universe, address indexed disputeWindow, address indexed account, uint256 attoParticipationTokens, uint256 feePayoutShare, uint256 timestamp);
+    event TimestampSet(uint256 newTimestamp);
+    event ValidityBondChanged(address indexed universe, uint256 validityBond);
+    event DesignatedReportStakeChanged(address indexed universe, uint256 designatedReportStake);
+    event NoShowBondChanged(address indexed universe, uint256 noShowBond);
+    event ReportingFeeChanged(address indexed universe, uint256 reportingFee);
+    event ShareTokenBalanceChanged(address indexed universe, address indexed account, address indexed market, uint256 outcome, uint256 balance);
+    event MarketRepBondTransferred(address indexed universe, address market, address from, address to);
+    event WarpSyncDataUpdated(address indexed universe, uint256 warpSyncHash, uint256 marketEndTime);
+&nbsp;
+    event RegisterContract(address contractAddress, bytes32 key);
+    event FinishDeployment();
+&nbsp;
+    mapping(address =&gt; bool) private markets;
+    mapping(address =&gt; bool) private universes;
+    mapping(address =&gt; bool) private crowdsourcers;
+    mapping(address =&gt; bool) private trustedSender;
+&nbsp;
+    mapping(address =&gt; MarketCreationData) private marketCreationData;
+&nbsp;
+    address public uploader;
+    mapping(bytes32 =&gt; address) private registry;
+&nbsp;
+    ITime public time;
+    IUniverse public genesisUniverse;
+&nbsp;
+    uint256 public forkCounter;
+    mapping (address =&gt; uint256) universeForkIndex;
+&nbsp;
+    uint256 public upgradeTimestamp = Reporting.getInitialUpgradeTimestamp();
+&nbsp;
+    int256 private constant DEFAULT_MIN_PRICE = 0;
+    int256 private constant DEFAULT_MAX_PRICE = 1 ether;
+&nbsp;
+    uint256 constant public TRADE_INTERVAL_VALUE = 10 ** 19; // Trade value of 10 DAI
+    uint256 constant public MIN_TRADE_INTERVAL = 10**14; // We ignore "dust" portions of the min interval and for huge scalars have a larger min value
+    uint256 constant public DEFAULT_RECOMMENDED_TRADE_INTERVAL = 10**17;
+    uint256 private constant MAX_NUM_TICKS = 2 ** 256 - 2;
+&nbsp;
+    ICash public cash;
+    IDaiVat public vat;
+&nbsp;
+    modifier onlyUploader() {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == uploader);
+        _;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor() publi</span>c {
+<span class="cstat-no" title="statement not covered" >        uploader = msg.sender</span>;
+    }
+&nbsp;
+    //
+    // Registry
+    //
+&nbsp;
+    function registerContract(bytes32 _key, address _address) public onlyUploader returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(registry[_key] == address(0), "Augur.registerContract: key has already been used in registry");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_address.exists());
+        registry[_key] = _address;
+        if (_key == "ShareToken" || _key == "MarketFactory" || _key == "EthExchange") {
+            trustedSender[_address] = true;
+        } else if (_key == "Time") {
+            time = ITime(_address);
+        } else if (_key == "DaiVat") {
+            vat = IDaiVat(_address);
+        } else if (_key == "Cash") {
+            cash = ICash(_address);
+        }
+        emit RegisterContract(_address, _key);
+        return true;
+    }
+&nbsp;
+    /**
+     * @notice Find the contract address for a particular key
+     * @param _key The key to lookup
+     * @return the address of the registered contract if one exists for the given key
+     */
+    function lookup(bytes32 _key) public view returns (address) {
+        return registry[_key];
+    }
+&nbsp;
+    function finishDeployment() public onlyUploader returns (bool) {
+        uploader = address(1);
+        emit FinishDeployment();
+        return true;
+    }
+&nbsp;
+    //
+    // Universe
+    //
+&nbsp;
+    function createGenesisUniverse() public onlyUploader returns (IUniverse) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(genesisUniverse == IUniverse(0));
+        genesisUniverse = createUniverse(IUniverse(0), bytes32(0), new uint256[](0));
+        return genesisUniverse;
+    }
+&nbsp;
+    function createChildUniverse(bytes32 _parentPayoutDistributionHash, uint256[] memory _parentPayoutNumerators) public returns (IUniverse) {
+        IUniverse _parentUniverse = getAndValidateUniverse(msg.sender);
+        return createUniverse(_parentUniverse, _parentPayoutDistributionHash, _parentPayoutNumerators);
+    }
+&nbsp;
+    function createUniverse(IUniverse _parentUniverse, bytes32 _parentPayoutDistributionHash, uint256[] memory _parentPayoutNumerators) private returns (IUniverse) {
+        IUniverseFactory _universeFactory = IUniverseFactory(registry["UniverseFactory"]);
+        IUniverse _newUniverse = _universeFactory.createUniverse(_parentUniverse, _parentPayoutDistributionHash, _parentPayoutNumerators);
+        universes[address(_newUniverse)] = true;
+        trustedSender[address(_newUniverse)] = true;
+        emit UniverseCreated(address(_parentUniverse), address(_newUniverse), _parentPayoutNumerators, getTimestamp());
+        return _newUniverse;
+    }
+&nbsp;
+    function isKnownUniverse(IUniverse _universe) public view returns (bool) {
+        return universes[address(_universe)];
+    }
+&nbsp;
+    function getUniverseForkIndex(IUniverse _universe) public view returns (uint256) {
+        return universeForkIndex[address(_universe)];
+    }
+&nbsp;
+    //
+    // Crowdsourcers
+    //
+&nbsp;
+    function isKnownCrowdsourcer(IDisputeCrowdsourcer _crowdsourcer) public view returns (bool) {
+        return crowdsourcers[address(_crowdsourcer)];
+    }
+&nbsp;
+    function disputeCrowdsourcerCreated(IUniverse _universe, address _market, address _disputeCrowdsourcer, uint256[] memory _payoutNumerators, uint256 _size, uint256 _disputeRound) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForMarket(IMarket(msg.sender)));
+        crowdsourcers[_disputeCrowdsourcer] = true;
+        emit DisputeCrowdsourcerCreated(address(_universe), _market, _disputeCrowdsourcer, _payoutNumerators, _size, _disputeRound);
+        return true;
+    }
+&nbsp;
+    function isKnownFeeSender(address _feeSender) public view returns (bool) {
+        return _feeSender == registry["ShareToken"] || markets[_feeSender];
+    }
+&nbsp;
+    //
+    // Transfer
+    //
+&nbsp;
+    function trustedCashTransfer(address _from, address _to, uint256 _amount) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(trustedSender[msg.sender]);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(cash.transferFrom(_from, _to, _amount));
+        return true;
+    }
+&nbsp;
+    function isTrustedSender(address _address) public returns (bool) {
+        return trustedSender[_address];
+    }
+&nbsp;
+    //
+    // Time
+    //
+&nbsp;
+    /// @notice Returns Augur’s internal Unix timestamp.
+    /// @return (uint256) Augur’s internal Unix timestamp
+    function getTimestamp() public view returns (uint256) {
+        return time.getTimestamp();
+    }
+&nbsp;
+    //
+    // Markets
+    //
+&nbsp;
+    function isKnownMarket(IMarket _market) public view returns (bool) {
+        return markets[address(_market)];
+    }
+&nbsp;
+    function getMaximumMarketEndDate() public returns (uint256) {
+        uint256 _now = getTimestamp();
+        while (_now &gt; upgradeTimestamp) {
+            upgradeTimestamp = upgradeTimestamp.add(Reporting.getUpgradeCadence());
+        }
+        uint256 _upgradeCadenceDurationEndTime = upgradeTimestamp;
+        uint256 _baseDurationEndTime = _now + Reporting.getBaseMarketDurationMaximum();
+        return _baseDurationEndTime.max(_upgradeCadenceDurationEndTime);
+    }
+&nbsp;
+    function derivePayoutDistributionHash(uint256[] memory _payoutNumerators, uint256 _numTicks, uint256 _numOutcomes) public view returns (bytes32) {
+        uint256 _sum = 0;
+        // This is to force an Invalid report to be entirely payed out to Invalid
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_payoutNumerators[0] == 0 || _payoutNumerators[0] == _numTicks);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_payoutNumerators.length == _numOutcomes, "Augur.derivePayoutDistributionHash: Malformed payout length");
+        for (uint256 i = 0; i &lt; _payoutNumerators.length; i++) {
+            uint256 _value = _payoutNumerators[i];
+            _sum = _sum.add(_value);
+        }
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_sum == _numTicks, "Augur.derivePayoutDistributionHash: Malformed payout sum");
+        return keccak256(abi.encodePacked(_payoutNumerators));
+    }
+&nbsp;
+    function getMarketCreationData(IMarket _market) public view returns (MarketCreationData memory) {
+        return marketCreationData[address(_market)];
+    }
+&nbsp;
+    function getMarketType(IMarket _market) public view returns (IMarket.MarketType _marketType) {
+        return marketCreationData[address(_market)].marketType;
+    }
+&nbsp;
+    function getMarketOutcomes(IMarket _market) public view returns (bytes32[] memory _outcomes) {
+        return marketCreationData[address(_market)].outcomes;
+    }
+&nbsp;
+    function getMarketRecommendedTradeInterval(IMarket _market) public view returns (uint256) {
+        return marketCreationData[address(_market)].recommendedTradeInterval;
+    }
+&nbsp;
+    //
+    // Logging
+    //
+&nbsp;
+    function onCategoricalMarketCreated(uint256 _endTime, string memory _extraInfo, IMarket _market, address _marketCreator, address _designatedReporter, uint256 _feePerCashInAttoCash, bytes32[] memory _outcomes) public returns (bool) {
+        IUniverse _universe = getAndValidateUniverse(msg.sender);
+        markets[address(_market)] = true;
+        int256[] memory _prices = new int256[](2);
+        _prices[0] = DEFAULT_MIN_PRICE;
+        _prices[1] = DEFAULT_MAX_PRICE;
+        marketCreationData[address(_market)].extraInfo = _extraInfo;
+        marketCreationData[address(_market)].marketCreator = _marketCreator;
+        marketCreationData[address(_market)].outcomes = _outcomes;
+        marketCreationData[address(_market)].marketType = IMarket.MarketType.CATEGORICAL;
+        marketCreationData[address(_market)].recommendedTradeInterval = DEFAULT_RECOMMENDED_TRADE_INTERVAL;
+        emit MarketCreated(_universe, _endTime, _extraInfo, _market, _marketCreator, _designatedReporter, _feePerCashInAttoCash, _prices, IMarket.MarketType.CATEGORICAL, 100, _outcomes, _universe.getOrCacheMarketRepBond(), getTimestamp());
+        return true;
+    }
+&nbsp;
+    function onYesNoMarketCreated(uint256 _endTime, string memory _extraInfo, IMarket _market, address _marketCreator, address _designatedReporter, uint256 _feePerCashInAttoCash) public returns (bool) {
+        IUniverse _universe = getAndValidateUniverse(msg.sender);
+        markets[address(_market)] = true;
+        int256[] memory _prices = new int256[](2);
+        _prices[0] = DEFAULT_MIN_PRICE;
+        _prices[1] = DEFAULT_MAX_PRICE;
+        marketCreationData[address(_market)].extraInfo = _extraInfo;
+        marketCreationData[address(_market)].marketCreator = _marketCreator;
+        marketCreationData[address(_market)].marketType = IMarket.MarketType.YES_NO;
+        marketCreationData[address(_market)].recommendedTradeInterval = DEFAULT_RECOMMENDED_TRADE_INTERVAL;
+        emit MarketCreated(_universe, _endTime, _extraInfo, _market, _marketCreator, _designatedReporter, _feePerCashInAttoCash, _prices, IMarket.MarketType.YES_NO, 100, new bytes32[](0), _universe.getOrCacheMarketRepBond(), getTimestamp());
+        return true;
+    }
+&nbsp;
+    function onScalarMarketCreated(uint256 _endTime, string memory _extraInfo, IMarket _market, address _marketCreator, address _designatedReporter, uint256 _feePerCashInAttoCash, int256[] memory _prices, uint256 _numTicks)  public returns (bool) {
+        IUniverse _universe = getAndValidateUniverse(msg.sender);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_prices.length == 2);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_prices[0] &lt; _prices[1]);
+        uint256 _priceRange = uint256(_prices[1] - _prices[0]);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_priceRange &gt; _numTicks);
+        markets[address(_market)] = true;
+        marketCreationData[address(_market)].extraInfo = _extraInfo;
+        marketCreationData[address(_market)].marketCreator = _marketCreator;
+        marketCreationData[address(_market)].displayPrices = _prices;
+        marketCreationData[address(_market)].marketType = IMarket.MarketType.SCALAR;
+        marketCreationData[address(_market)].recommendedTradeInterval = getTradeInterval(_priceRange, _numTicks);
+        emit MarketCreated(_universe, _endTime, _extraInfo, _market, _marketCreator, _designatedReporter, _feePerCashInAttoCash, _prices, IMarket.MarketType.SCALAR, _numTicks, new bytes32[](0), _universe.getOrCacheMarketRepBond(), getTimestamp());
+        return true;
+    }
+&nbsp;
+    function getTradeInterval(uint256 _displayRange, uint256 _numTicks) public pure returns (uint256) {
+        // Handle Warp Sync Market
+        if (_numTicks == MAX_NUM_TICKS) {
+            return MIN_TRADE_INTERVAL;
+        }
+        uint256 _displayAmount = TRADE_INTERVAL_VALUE.mul(10**18).div(_displayRange);
+        uint256 _displayInterval = MIN_TRADE_INTERVAL;
+        while (_displayInterval &lt; _displayAmount) {
+            _displayInterval = _displayInterval.mul(10);
+        }
+        _displayAmount = _displayInterval;
+        return _displayInterval.mul(_displayRange).div(_numTicks).div(10**18);
+    }
+&nbsp;
+    function logInitialReportSubmitted(IUniverse _universe, address _reporter, address _market, address _initialReporter, uint256 _amountStaked, bool _isDesignatedReporter, uint256[] memory _payoutNumerators, string memory _description, uint256 _nextWindowStartTime, uint256 _nextWindowEndTime) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForMarket(IMarket(msg.sender)));
+        emit InitialReportSubmitted(address(_universe), _reporter, _market, _initialReporter, _amountStaked, _isDesignatedReporter, _payoutNumerators, _description, _nextWindowStartTime, _nextWindowEndTime, getTimestamp());
+        return true;
+    }
+&nbsp;
+    function logDisputeCrowdsourcerContribution(IUniverse _universe, address _reporter, address _market, address _disputeCrowdsourcer, uint256 _amountStaked, string memory _description, uint256[] memory _payoutNumerators, uint256 _currentStake, uint256 _stakeRemaining, uint256 _disputeRound) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForMarket(IMarket(msg.sender)));
+        emit DisputeCrowdsourcerContribution(address(_universe), _reporter, _market, _disputeCrowdsourcer, _amountStaked, _description, _payoutNumerators, _currentStake, _stakeRemaining, _disputeRound, getTimestamp());
+        return true;
+    }
+&nbsp;
+    function logDisputeCrowdsourcerCompleted(IUniverse _universe, address _market, address _disputeCrowdsourcer, uint256[] memory _payoutNumerators, uint256 _nextWindowStartTime, uint256 _nextWindowEndTime, bool _pacingOn, uint256 _totalRepStakedInPayout, uint256 _totalRepStakedInMarket, uint256 _disputeRound) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForMarket(IMarket(msg.sender)));
+        emit DisputeCrowdsourcerCompleted(address(_universe), _market, _disputeCrowdsourcer, _payoutNumerators, _nextWindowStartTime, _nextWindowEndTime, _pacingOn, _totalRepStakedInPayout, _totalRepStakedInMarket, _disputeRound, getTimestamp());
+        return true;
+    }
+&nbsp;
+    function logInitialReporterRedeemed(IUniverse _universe, address _reporter, address _market, uint256 _amountRedeemed, uint256 _repReceived, uint256[] memory _payoutNumerators) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForReportingParticipant(IReportingParticipant(msg.sender)));
+        emit InitialReporterRedeemed(address(_universe), _reporter, _market, msg.sender, _amountRedeemed, _repReceived, _payoutNumerators, getTimestamp());
+        return true;
+    }
+&nbsp;
+    function logDisputeCrowdsourcerRedeemed(IUniverse _universe, address _reporter, address _market, uint256 _amountRedeemed, uint256 _repReceived, uint256[] memory _payoutNumerators) public returns (bool) {
+        IDisputeCrowdsourcer _disputeCrowdsourcer = IDisputeCrowdsourcer(msg.sender);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownCrowdsourcer(_disputeCrowdsourcer));
+        emit DisputeCrowdsourcerRedeemed(address(_universe), _reporter, _market, address(_disputeCrowdsourcer), _amountRedeemed, _repReceived, _payoutNumerators, getTimestamp());
+        return true;
+    }
+&nbsp;
+    function logReportingParticipantDisavowed(IUniverse _universe, IMarket _market) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForReportingParticipant(IReportingParticipant(msg.sender)));
+        emit ReportingParticipantDisavowed(address(_universe), address(_market), msg.sender);
+        return true;
+    }
+&nbsp;
+    function logMarketParticipantsDisavowed(IUniverse _universe) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        IMarket _market = IMarket(msg.sender);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForMarket(_market));
+        emit MarketParticipantsDisavowed(address(_universe), address(_market));
+        return true;
+    }
+&nbsp;
+    function logMarketFinalized(IUniverse _universe, uint256[] memory _winningPayoutNumerators) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        IMarket _market = IMarket(msg.sender);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForMarket(_market));
+        emit MarketFinalized(address(_universe), address(_market), getTimestamp(), _winningPayoutNumerators);
+        return true;
+    }
+&nbsp;
+    function logMarketMigrated(IMarket _market, IUniverse _originalUniverse) public returns (bool) {
+        IUniverse _newUniverse = IUniverse(msg.sender);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_newUniverse));
+        emit MarketMigrated(address(_market), address(_originalUniverse), address(_newUniverse));
+        return true;
+    }
+&nbsp;
+    function logCompleteSetsPurchased(IUniverse _universe, IMarket _market, address _account, uint256 _numCompleteSets) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == registry["ShareToken"] || (isKnownUniverse(_universe) &amp;&amp; _universe.isOpenInterestCash(msg.sender)));
+        emit CompleteSetsPurchased(address(_universe), address(_market), _account, _numCompleteSets, getTimestamp());
+        return true;
+    }
+&nbsp;
+    function logCompleteSetsSold(IUniverse _universe, IMarket _market, address _account, uint256 _numCompleteSets, uint256 _fees) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == registry["ShareToken"]);
+        emit CompleteSetsSold(address(_universe), address(_market), _account, _numCompleteSets, _fees, getTimestamp());
+        return true;
+    }
+&nbsp;
+    function logMarketOIChanged(IUniverse _universe, IMarket _market) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == registry["ShareToken"]);
+        emit MarketOIChanged(address(_universe), address(_market), _market.getOpenInterest());
+        return true;
+    }
+&nbsp;
+    function logTradingProceedsClaimed(IUniverse _universe, address _sender, address _market, uint256 _outcome, uint256 _numShares, uint256 _numPayoutTokens, uint256 _fees) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == registry["ShareToken"]);
+        emit TradingProceedsClaimed(address(_universe), _sender, _market, _outcome, _numShares, _numPayoutTokens, _fees, getTimestamp());
+        return true;
+    }
+&nbsp;
+    function logUniverseForked(IMarket _forkingMarket) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(IUniverse(msg.sender)));
+        forkCounter += 1;
+        universeForkIndex[msg.sender] = forkCounter;
+        emit UniverseForked(msg.sender, _forkingMarket);
+        return true;
+    }
+&nbsp;
+    function logReputationTokensTransferred(IUniverse _universe, address _from, address _to, uint256 _value, uint256 _fromBalance, uint256 _toBalance) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.getReputationToken() == IReputationToken(msg.sender));
+        logTokensTransferred(address(_universe), msg.sender, _from, _to, _value, TokenType.ReputationToken, address(0), _fromBalance, _toBalance, 0);
+        return true;
+    }
+&nbsp;
+    function logDisputeCrowdsourcerTokensTransferred(IUniverse _universe, address _from, address _to, uint256 _value, uint256 _fromBalance, uint256 _toBalance) public returns (bool) {
+        IDisputeCrowdsourcer _disputeCrowdsourcer = IDisputeCrowdsourcer(msg.sender);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownCrowdsourcer(_disputeCrowdsourcer));
+        logTokensTransferred(address(_universe), msg.sender, _from, _to, _value, TokenType.DisputeCrowdsourcer, address(_disputeCrowdsourcer.getMarket()), _fromBalance, _toBalance, 0);
+        return true;
+    }
+&nbsp;
+    function logReputationTokensBurned(IUniverse _universe, address _target, uint256 _amount, uint256 _totalSupply, uint256 _balance) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.getReputationToken() == IReputationToken(msg.sender));
+        logTokensBurned(address(_universe), msg.sender, _target, _amount, TokenType.ReputationToken, address(0), _totalSupply, _balance, 0);
+        return true;
+    }
+&nbsp;
+    function logReputationTokensMinted(IUniverse _universe, address _target, uint256 _amount, uint256 _totalSupply, uint256 _balance) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.getReputationToken() == IReputationToken(msg.sender));
+        logTokensMinted(address(_universe), msg.sender, _target, _amount, TokenType.ReputationToken, address(0), _totalSupply, _balance, 0);
+        return true;
+    }
+&nbsp;
+    function logShareTokensBalanceChanged(address _account, IMarket _market, uint256 _outcome, uint256 _balance) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == registry["ShareToken"]);
+        emit ShareTokenBalanceChanged(address(_market.getUniverse()), _account, address(_market), _outcome, _balance);
+        return true;
+    }
+&nbsp;
+    function logDisputeCrowdsourcerTokensBurned(IUniverse _universe, address _target, uint256 _amount, uint256 _totalSupply, uint256 _balance) public returns (bool) {
+        IDisputeCrowdsourcer _disputeCrowdsourcer = IDisputeCrowdsourcer(msg.sender);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownCrowdsourcer(_disputeCrowdsourcer));
+        logTokensBurned(address(_universe), msg.sender, _target, _amount, TokenType.DisputeCrowdsourcer, address(_disputeCrowdsourcer.getMarket()), _totalSupply, _balance, 0);
+        return true;
+    }
+&nbsp;
+    function logDisputeCrowdsourcerTokensMinted(IUniverse _universe, address _target, uint256 _amount, uint256 _totalSupply, uint256 _balance) public returns (bool) {
+        IDisputeCrowdsourcer _disputeCrowdsourcer = IDisputeCrowdsourcer(msg.sender);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownCrowdsourcer(_disputeCrowdsourcer));
+        logTokensMinted(address(_universe), msg.sender, _target, _amount, TokenType.DisputeCrowdsourcer, address(_disputeCrowdsourcer.getMarket()), _totalSupply, _balance, 0);
+        return true;
+    }
+&nbsp;
+    function logDisputeWindowCreated(IDisputeWindow _disputeWindow, uint256 _id, bool _initial) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(IUniverse(msg.sender)));
+        emit DisputeWindowCreated(msg.sender, address(_disputeWindow), _disputeWindow.getStartTime(), _disputeWindow.getEndTime(), _id, _initial);
+        return true;
+    }
+&nbsp;
+    function logParticipationTokensRedeemed(IUniverse _universe, address _account, uint256 _attoParticipationTokens, uint256 _feePayoutShare) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForDisputeWindow(IDisputeWindow(msg.sender)));
+        emit ParticipationTokensRedeemed(address(_universe), msg.sender, _account, _attoParticipationTokens, _feePayoutShare, getTimestamp());
+        return true;
+    }
+&nbsp;
+    function logTimestampSet(uint256 _newTimestamp) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == registry["Time"]);
+        emit TimestampSet(_newTimestamp);
+        return true;
+    }
+&nbsp;
+    function logInitialReporterTransferred(IUniverse _universe, IMarket _market, address _from, address _to) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForMarket(_market));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == address(_market.getInitialReporter()));
+        emit InitialReporterTransferred(address(_universe), address(_market), _from, _to);
+        return true;
+    }
+&nbsp;
+    function logMarketTransferred(IUniverse _universe, address _from, address _to) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        IMarket _market = IMarket(msg.sender);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForMarket(_market));
+        emit MarketTransferred(address(_universe), address(_market), _from, _to);
+        return true;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function logParticipationTokensTransferred(IUniverse _universe, address _from, address _to, uint256 _value, uint256 _fromBalance, uint256 _toBalance) public returns (bool</span>) {
+<span class="cstat-no" title="statement not covered" >        require(isKnownUniverse(_universe))</span>;
+<span class="cstat-no" title="statement not covered" >        require(_universe.isContainerForDisputeWindow(IDisputeWindow(msg.sender)))</span>;
+<span class="cstat-no" title="statement not covered" >        logTokensTransferred(address(_universe), msg.sender, _from, _to, _value, TokenType.ParticipationToken, address(0), _fromBalance, _toBalance, 0)</span>;
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+    }
+&nbsp;
+    function logParticipationTokensBurned(IUniverse _universe, address _target, uint256 _amount, uint256 _totalSupply, uint256 _balance) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForDisputeWindow(IDisputeWindow(msg.sender)));
+        logTokensBurned(address(_universe), msg.sender, _target, _amount, TokenType.ParticipationToken, address(0), _totalSupply, _balance, 0);
+        return true;
+    }
+&nbsp;
+    function logParticipationTokensMinted(IUniverse _universe, address _target, uint256 _amount, uint256 _totalSupply, uint256 _balance) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_universe.isContainerForDisputeWindow(IDisputeWindow(msg.sender)));
+        logTokensMinted(address(_universe), msg.sender, _target, _amount, TokenType.ParticipationToken, address(0), _totalSupply, _balance, 0);
+        return true;
+    }
+&nbsp;
+    function logTokensTransferred(address _universe, address _token, address _from, address _to, uint256 _amount, TokenType _tokenType, address _market, uint256 _fromBalance, uint256 _toBalance, uint256 _outcome) private returns (bool) {
+        emit TokensTransferred(_universe, _token, _from, _to, _amount, _tokenType, _market);
+        emit TokenBalanceChanged(_universe, _from, _token, _tokenType, _market, _fromBalance, _outcome);
+        emit TokenBalanceChanged(_universe, _to, _token, _tokenType, _market, _toBalance, _outcome);
+        return true;
+    }
+&nbsp;
+    function logTokensBurned(address _universe, address _token, address _target, uint256 _amount, TokenType _tokenType, address _market, uint256 _totalSupply, uint256 _balance, uint256 _outcome) private returns (bool) {
+        emit TokensBurned(_universe, _token, _target, _amount, _tokenType, _market, _totalSupply);
+        emit TokenBalanceChanged(_universe, _target, _token, _tokenType, _market, _balance, _outcome);
+        return true;
+    }
+&nbsp;
+    function logTokensMinted(address _universe, address _token, address _target, uint256 _amount, TokenType _tokenType, address _market, uint256 _totalSupply, uint256 _balance, uint256 _outcome) private returns (bool) {
+        emit TokensMinted(_universe, _token, _target, _amount, _tokenType, _market, _totalSupply);
+        emit TokenBalanceChanged(_universe, _target, _token, _tokenType, _market, _balance, _outcome);
+        return true;
+    }
+&nbsp;
+    function logValidityBondChanged(uint256 _validityBond) public returns (bool) {
+        IUniverse _universe = getAndValidateUniverse(msg.sender);
+        emit ValidityBondChanged(address(_universe), _validityBond);
+        return true;
+    }
+&nbsp;
+    function logDesignatedReportStakeChanged(uint256 _designatedReportStake) public returns (bool) {
+        IUniverse _universe = getAndValidateUniverse(msg.sender);
+        emit DesignatedReportStakeChanged(address(_universe), _designatedReportStake);
+        return true;
+    }
+&nbsp;
+    function logNoShowBondChanged(uint256 _noShowBond) public returns (bool) {
+        IUniverse _universe = getAndValidateUniverse(msg.sender);
+        emit NoShowBondChanged(address(_universe), _noShowBond);
+        return true;
+    }
+&nbsp;
+    function logReportingFeeChanged(uint256 _reportingFee) public returns (bool) {
+        IUniverse _universe = getAndValidateUniverse(msg.sender);
+        emit ReportingFeeChanged(address(_universe), _reportingFee);
+        return true;
+    }
+&nbsp;
+    function logMarketRepBondTransferred(address _universe, address _from, address _to) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownMarket(IMarket(msg.sender)));
+        emit MarketRepBondTransferred(_universe, msg.sender, _from, _to);
+    }
+&nbsp;
+    function logWarpSyncDataUpdated(address _universe, uint256 _warpSyncHash, uint256 _marketEndTime) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == registry["WarpSync"]);
+        emit WarpSyncDataUpdated(_universe, _warpSyncHash, _marketEndTime);
+    }
+&nbsp;
+    function getAndValidateUniverse(address _untrustedUniverse) internal view returns (IUniverse) {
+        IUniverse _universe = IUniverse(_untrustedUniverse);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isKnownUniverse(_universe));
+        return _universe;
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

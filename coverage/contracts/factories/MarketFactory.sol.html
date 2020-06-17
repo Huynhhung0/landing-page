@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/factories/MarketFactory.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/factories/</a> MarketFactory.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">53.85% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>14/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/18</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+&nbsp;
+&nbsp;
+import 'ROOT/libraries/CloneFactory.sol';
+import 'ROOT/reporting/IMarket.sol';
+import 'ROOT/reporting/IReputationToken.sol';
+import 'ROOT/reporting/IAffiliateValidator.sol';
+import 'ROOT/ICash.sol';
+import 'ROOT/factories/IMarketFactory.sol';
+import 'ROOT/libraries/math/SafeMathUint256.sol';
+import 'ROOT/IAugur.sol';
+&nbsp;
+&nbsp;
+/**
+ * @title Market Factory
+ * @notice A Factory contract to create Market delegate contracts
+ * @dev This factory is a trusted Augur contract which means it has REP transfer privileges. The additional validation logic that occurs here and not in the Market contract itself is to reduce the Market contract's size as each require error message adds an additional ~100 bytes
+ */
+contract MarketFactory is CloneFactory, IMarketFactory {
+    using SafeMathUint256 for uint256;
+&nbsp;
+    uint256 private constant MAX_FEE_PER_CASH_IN_ATTOCASH = 15 * 10**16; // 15%
+    address private constant NULL_ADDRESS = address(0);
+    uint256 private constant MIN_OUTCOMES = 2; // Does not Include Invalid
+    uint256 private constant MAX_OUTCOMES = 7; // Does not Include Invalid
+&nbsp;
+    function createMarket(IAugur _augur, uint256 _endTime, uint256 _feePerCashInAttoCash, IAffiliateValidator _affiliateValidator, uint256 _affiliateFeeDivisor, address _designatedReporterAddress, address _sender, uint256 _numOutcomes, uint256 _numTicks) public returns (IMarket _market) {
+        _market = IMarket(createClone(_augur.lookup("Market")));
+        IUniverse _universe = IUniverse(msg.sender);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_augur.isKnownUniverse(_universe), "MarketFactory: Universe specified is unrecognized by Augur");
+        IReputationToken _reputationToken = _universe.getReputationToken();
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_reputationToken.transfer(address(_market), _reputationToken.balanceOf(address(this))));
+        if (_sender != _augur.lookup("WarpSync")) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(_augur.trustedCashTransfer(_sender, address(_market), _universe.getOrCacheValidityBond()));
+        }
+&nbsp;
+        // Market param validation
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_numTicks.isMultipleOf(2), "MarketFactory.createMarket: numTicks must be multiple of 2");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(MIN_OUTCOMES &lt;= _numOutcomes &amp;&amp; _numOutcomes &lt;= MAX_OUTCOMES, "MarketFactory.createMarket: numOutcomes out of range");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_designatedReporterAddress != NULL_ADDRESS, "MarketFactory.createMarket: designated reporter address is 0x0");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_numTicks &gt;= _numOutcomes, "MarketFactory.createMarket: numTicks lower than numOutcomes");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_feePerCashInAttoCash &lt;= MAX_FEE_PER_CASH_IN_ATTOCASH, "MarketFactory.createMarket: market creator fee too high");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_sender != NULL_ADDRESS, "MarketFactory.createMarket: market creator address is 0x0");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_augur.getTimestamp() &lt; _endTime, "MarketFactory.createMarket: endTime before current time");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_endTime &lt; _augur.getMaximumMarketEndDate(), "MarketFactory.createMarket: endTime too far ahead");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(!_universe.isForking(), "MarketFactory.createMarket: Universe is forking");
+&nbsp;
+        _market.initialize(_augur, _universe, _endTime, _feePerCashInAttoCash, _affiliateValidator, _affiliateFeeDivisor, _designatedReporterAddress, _sender, _numOutcomes, _numTicks);
+        return _market;
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

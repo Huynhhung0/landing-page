@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/trading/Order.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/trading/</a> Order.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>28/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.14% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>28/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">368×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">368×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">81×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Copyright (C) 2015 Forecast Foundation OU, full GPL notice in LICENSE
+&nbsp;
+// Bid / Ask actions: puts orders on the book
+// price is denominated by the specific market's numTicks
+// amount is the number of attoshares the order is for (either to buy or to sell).
+// price is the exact price you want to buy/sell at [which may not be the cost, for example to short a yesNo market it'll cost numTicks-price, to go long it'll cost price]
+&nbsp;
+pragma solidity 0.5.15;
+&nbsp;
+&nbsp;
+import 'ROOT/IAugur.sol';
+import 'ROOT/libraries/math/SafeMathUint256.sol';
+import 'ROOT/reporting/IMarket.sol';
+import 'ROOT/trading/IAugurTrading.sol';
+import 'ROOT/trading/IOrders.sol';
+import 'ROOT/reporting/IShareToken.sol';
+import 'ROOT/libraries/token/IERC20.sol';
+&nbsp;
+&nbsp;
+// CONSIDER: Is `price` the most appropriate name for the value being used? It does correspond 1:1 with the attoCASH per share, but the range might be considered unusual?
+library Order {
+    using SafeMathUint256 for uint256;
+&nbsp;
+    enum Types {
+        Bid, Ask
+    }
+&nbsp;
+    enum TradeDirections {
+        Long, Short
+    }
+&nbsp;
+    struct Data {
+        // Contracts
+        IMarket market;
+        IAugur augur;
+        IAugurTrading augurTrading;
+        IShareToken shareToken;
+        ICash cash;
+&nbsp;
+        // Order
+        bytes32 id;
+        address creator;
+        uint256 outcome;
+        Order.Types orderType;
+        uint256 amount;
+        uint256 price;
+        uint256 sharesEscrowed;
+        uint256 moneyEscrowed;
+        bytes32 betterOrderId;
+        bytes32 worseOrderId;
+    }
+&nbsp;
+    function create(IAugur _augur, IAugurTrading _augurTrading, address _creator, uint256 _outcome, Order.Types _type, uint256 _attoshares, uint256 _price, IMarket _market, bytes32 _betterOrderId, bytes32 _worseOrderId) internal view returns (Data memory) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_outcome &lt; _market.getNumberOfOutcomes(), "Order.create: Outcome is not within market range");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_price != 0, "Order.create: Price may not be 0");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_price &lt; _market.getNumTicks(), "Order.create: Price is outside of market range");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_attoshares &gt; 0, "Order.create: Cannot use amount of 0");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_creator != address(0), "Order.create: Creator is 0x0");
+&nbsp;
+        IShareToken _shareToken = IShareToken(_augur.lookup("ShareToken"));
+&nbsp;
+        return Data({
+            market: _market,
+            augur: _augur,
+            augurTrading: _augurTrading,
+            shareToken: _shareToken,
+            cash: ICash(_augur.lookup("Cash")),
+            id: 0,
+            creator: _creator,
+            outcome: _outcome,
+            orderType: _type,
+            amount: _attoshares,
+            price: _price,
+            sharesEscrowed: 0,
+            moneyEscrowed: 0,
+            betterOrderId: _betterOrderId,
+            worseOrderId: _worseOrderId
+        });
+    }
+&nbsp;
+    //
+    // "public" functions
+    //
+&nbsp;
+    function getOrderId(Order.Data memory _orderData, IOrders _orders) internal view returns (bytes32) {
+        if (_orderData.id == bytes32(0)) {
+            bytes32 _orderId = calculateOrderId(_orderData.orderType, _orderData.market, _orderData.amount, _orderData.price, _orderData.creator, block.number, _orderData.outcome, _orderData.moneyEscrowed, _orderData.sharesEscrowed);
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(_orders.getAmount(_orderId) == 0, "Order.getOrderId: New order had amount. This should not be possible");
+            _orderData.id = _orderId;
+        }
+        return _orderData.id;
+    }
+&nbsp;
+    function calculateOrderId(Order.Types _type, IMarket _market, uint256 _amount, uint256 _price, address _sender, uint256 _blockNumber, uint256 _outcome, uint256 _moneyEscrowed, uint256 _sharesEscrowed) internal pure returns (bytes32) {
+        return sha256(abi.encodePacked(_type, _market, _amount, _price, _sender, _blockNumber, _outcome, _moneyEscrowed, _sharesEscrowed));
+    }
+&nbsp;
+    function getOrderTradingTypeFromMakerDirection(Order.TradeDirections _creatorDirection) internal pure returns (Order.Types) {
+        return (_creatorDirection == Order.TradeDirections.Long) ? Order.Types.Bid : Order.Types.Ask;
+    }
+&nbsp;
+    function getOrderTradingTypeFromFillerDirection(Order.TradeDirections _fillerDirection) internal pure returns (Order.Types) {
+        return (_fillerDirection == Order.TradeDirections.Long) ? Order.Types.Ask : Order.Types.Bid;
+    }
+&nbsp;
+    function saveOrder(Order.Data memory _orderData, bytes32 _tradeGroupId, IOrders _orders) internal returns (bytes32) {
+        getOrderId(_orderData, _orders);
+        uint256[] memory _uints = new uint256[](5);
+        _uints[0] = _orderData.amount;
+        _uints[1] = _orderData.price;
+        _uints[2] = _orderData.outcome;
+        _uints[3] = _orderData.moneyEscrowed;
+        _uints[4] = _orderData.sharesEscrowed;
+        bytes32[] memory _bytes32s = new bytes32[](4);
+        _bytes32s[0] = _orderData.betterOrderId;
+        _bytes32s[1] = _orderData.worseOrderId;
+        _bytes32s[2] = _tradeGroupId;
+        _bytes32s[3] = _orderData.id;
+        return _orders.saveOrder(_uints, _bytes32s, _orderData.orderType, _orderData.market, _orderData.creator);
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/reporting/ReputationToken.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/reporting/</a> ReputationToken.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.45% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>63/66</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">52.63% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>20/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>19/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.38% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>62/65</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">341×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">337×</span>
+<span class="cline-any cline-yes">337×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">337×</span>
+<span class="cline-any cline-yes">337×</span>
+<span class="cline-any cline-yes">337×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">426×</span>
+<span class="cline-any cline-yes">426×</span>
+<span class="cline-any cline-yes">426×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">85×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">748×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1037×</span>
+<span class="cline-any cline-yes">1037×</span>
+<span class="cline-any cline-yes">846×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">84×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1152×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">731×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">386×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+&nbsp;
+import 'ROOT/reporting/IV2ReputationToken.sol';
+import 'ROOT/libraries/ITyped.sol';
+import 'ROOT/libraries/token/VariableSupplyToken.sol';
+import 'ROOT/libraries/token/IERC20.sol';
+import 'ROOT/reporting/IUniverse.sol';
+import 'ROOT/reporting/IMarket.sol';
+import 'ROOT/reporting/Reporting.sol';
+import 'ROOT/reporting/IDisputeWindow.sol';
+import 'ROOT/reporting/IDisputeCrowdsourcer.sol';
+import 'ROOT/libraries/math/SafeMathUint256.sol';
+import 'ROOT/utility/IRepSymbol.sol';
+&nbsp;
+&nbsp;
+/**
+ * @title Reputation Token
+ * @notice The Reputation Token for a particular universe
+ */
+contract ReputationToken is VariableSupplyToken, IV2ReputationToken {
+    using SafeMathUint256 for uint256;
+&nbsp;
+    string constant public name = "Reputation";
+    IUniverse internal universe;
+    IUniverse public parentUniverse;
+    uint256 internal totalMigrated;
+    IERC20 public legacyRepToken;
+    IAugur public augur;
+    address public warpSync;
+&nbsp;
+    constructor(IAugur _augur, IUniverse _universe, IUniverse _parentUniverse) public {
+        augur = _augur;
+        universe = _universe;
+        parentUniverse = _parentUniverse;
+        warpSync = _augur.lookup("WarpSync");
+        legacyRepToken = IERC20(_augur.lookup("LegacyReputationToken"));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(warpSync != address(0));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(legacyRepToken != IERC20(0));
+    }
+&nbsp;
+    function symbol() public view returns (string memory) {
+        return IRepSymbol(augur.lookup("RepSymbol")).getRepSymbol(address(augur), address(universe));
+    }
+&nbsp;
+    /**
+     * @notice Migrate to a Child Universe by indicating the Market payout associated with it
+     * @param _payoutNumerators The array of payouts for the market associated with the desired universe
+     * @param _attotokens The amount of tokens to migrate
+     * @return Bool True
+     */
+    function migrateOutByPayout(uint256[] memory _payoutNumerators, uint256 _attotokens) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_attotokens &gt; 0);
+        IUniverse _destinationUniverse = universe.createChildUniverse(_payoutNumerators);
+        IReputationToken _destination = _destinationUniverse.getReputationToken();
+        burn(msg.sender, _attotokens);
+        _destination.migrateIn(msg.sender, _attotokens);
+        return true;
+    }
+&nbsp;
+    function migrateIn(address _reporter, uint256 _attotokens) public returns (bool) {
+        IUniverse _parentUniverse = parentUniverse;
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(ReputationToken(msg.sender) == _parentUniverse.getReputationToken());
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(augur.getTimestamp() &lt; _parentUniverse.getForkEndTime());
+        mint(_reporter, _attotokens);
+        totalMigrated += _attotokens;
+        // Update the fork tentative winner and finalize if we can
+        if (!_parentUniverse.getForkingMarket().isFinalized()) {
+            _parentUniverse.updateTentativeWinningChildUniverse(universe.getParentPayoutDistributionHash());
+        }
+        return true;
+    }
+&nbsp;
+    function mintForReportingParticipant(uint256 _amountMigrated) public returns (bool) {
+        IReportingParticipant _reportingParticipant = IReportingParticipant(msg.sender);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(parentUniverse.isContainerForReportingParticipant(_reportingParticipant));
+        // simulate a 40% ROI which would have occured during a normal dispute had this participant's outcome won the dispute
+        uint256 _bonus = _amountMigrated.mul(2) / 5;
+        mint(address(_reportingParticipant), _bonus);
+        return true;
+    }
+&nbsp;
+    function mintForWarpSync(uint256 _amountToMint, address _target) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(warpSync == msg.sender);
+        mint(_target, _amountToMint);
+        universe.updateForkValues();
+        return true;
+    }
+&nbsp;
+    function burnForMarket(uint256 _amountToBurn) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(universe.isContainerForMarket(IMarket(msg.sender)));
+        burn(msg.sender, _amountToBurn);
+        return true;
+    }
+&nbsp;
+    function trustedUniverseTransfer(address _source, address _destination, uint256 _attotokens) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(IUniverse(msg.sender) == universe);
+        _transfer(_source, _destination, _attotokens);
+        return true;
+    }
+&nbsp;
+    function trustedMarketTransfer(address _source, address _destination, uint256 _attotokens) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(universe.isContainerForMarket(IMarket(msg.sender)));
+        _transfer(_source, _destination, _attotokens);
+        return true;
+    }
+&nbsp;
+    function trustedReportingParticipantTransfer(address _source, address _destination, uint256 _attotokens) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(universe.isContainerForReportingParticipant(IReportingParticipant(msg.sender)));
+        _transfer(_source, _destination, _attotokens);
+        return true;
+    }
+&nbsp;
+    function trustedDisputeWindowTransfer(address _source, address _destination, uint256 _attotokens) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(universe.isContainerForDisputeWindow(IDisputeWindow(msg.sender)));
+        _transfer(_source, _destination, _attotokens);
+        return true;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function assertReputationTokenIsLegitChild(IReputationToken _shadyReputationToken) private vie</span>w {
+<span class="cstat-no" title="statement not covered" >        IUniverse _universe = _shadyReputationToken.getUniverse();</span>
+<span class="cstat-no" title="statement not covered" >        require(universe.isParentOf(_universe))</span>;
+<span class="cstat-no" title="statement not covered" >        require(_universe.getReputationToken() == _shadyReputationToken)</span>;
+    }
+&nbsp;
+    /**
+     * @return The universe associated with this Reputation Token
+     */
+    function getUniverse() public view returns (IUniverse) {
+        return universe;
+    }
+&nbsp;
+    /**
+     * @return The total amount of parent REP migrated into this version of REP
+     */
+    function getTotalMigrated() public view returns (uint256) {
+        return totalMigrated;
+    }
+&nbsp;
+    /**
+     * @return The V1 Rep token
+     */
+    function getLegacyRepToken() public view returns (IERC20) {
+        return legacyRepToken;
+    }
+&nbsp;
+    /**
+     * @return The maximum possible total supply for this version of REP.
+     */
+    function getTotalTheoreticalSupply() public view returns (uint256) {
+        uint256 _totalSupply = totalSupply;
+        if (parentUniverse == IUniverse(0)) {
+            return _totalSupply.add(legacyRepToken.totalSupply()).sub(legacyRepToken.balanceOf(address(1))).sub(legacyRepToken.balanceOf(address(0)));
+        } else if (augur.getTimestamp() &gt;= parentUniverse.getForkEndTime()) {
+            return _totalSupply;
+        } else {
+            return _totalSupply + parentUniverse.getReputationToken().getTotalTheoreticalSupply();
+        }
+    }
+&nbsp;
+    function onTokenTransfer(address _from, address _to, uint256 _value) internal {
+        augur.logReputationTokensTransferred(universe, _from, _to, _value, balances[_from], balances[_to]);
+    }
+&nbsp;
+    function onMint(address _target, uint256 _amount) internal {
+        augur.logReputationTokensMinted(universe, _target, _amount, totalSupply, balances[_target]);
+    }
+&nbsp;
+    function onBurn(address _target, uint256 _amount) internal {
+        augur.logReputationTokensBurned(universe, _target, _amount, totalSupply, balances[_target]);
+    }
+&nbsp;
+    /**
+     * @notice Migrate V1 REP to V2
+     * @dev This can only be done for the Genesis Universe in V2. If a fork occurs and the window ends V1 REP is stuck in V1 forever
+     * @return Bool True
+     */
+    function migrateFromLegacyReputationToken() public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(parentUniverse == IUniverse(0));
+        uint256 _legacyBalance = legacyRepToken.balanceOf(msg.sender);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(legacyRepToken.transferFrom(msg.sender, address(1), _legacyBalance));
+        mint(msg.sender, _legacyBalance);
+        return true;
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

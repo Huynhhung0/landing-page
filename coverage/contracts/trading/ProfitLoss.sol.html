@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/trading/ProfitLoss.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/trading/</a> ProfitLoss.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.72% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>77/78</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.86% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>19/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.91% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.72% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>77/78</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">212×</span>
+<span class="cline-any cline-yes">212×</span>
+<span class="cline-any cline-yes">212×</span>
+<span class="cline-any cline-yes">212×</span>
+<span class="cline-any cline-yes">212×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">238×</span>
+<span class="cline-any cline-yes">238×</span>
+<span class="cline-any cline-yes">238×</span>
+<span class="cline-any cline-yes">238×</span>
+<span class="cline-any cline-yes">238×</span>
+<span class="cline-any cline-yes">238×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">238×</span>
+<span class="cline-any cline-yes">238×</span>
+<span class="cline-any cline-yes">238×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">476×</span>
+<span class="cline-any cline-yes">476×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">476×</span>
+<span class="cline-any cline-yes">476×</span>
+<span class="cline-any cline-yes">79×</span>
+<span class="cline-any cline-yes">79×</span>
+<span class="cline-any cline-yes">79×</span>
+<span class="cline-any cline-yes">79×</span>
+<span class="cline-any cline-yes">79×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">79×</span>
+<span class="cline-any cline-yes">79×</span>
+<span class="cline-any cline-yes">79×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">397×</span>
+<span class="cline-any cline-yes">397×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">476×</span>
+<span class="cline-any cline-yes">476×</span>
+<span class="cline-any cline-yes">476×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">397×</span>
+<span class="cline-any cline-yes">397×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">476×</span>
+<span class="cline-any cline-yes">476×</span>
+<span class="cline-any cline-yes">476×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">83×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">83×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">83×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">87×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+&nbsp;
+import 'ROOT/IAugur.sol';
+import 'ROOT/trading/IOrders.sol';
+import 'ROOT/libraries/Initializable.sol';
+import 'ROOT/libraries/math/SafeMathUint256.sol';
+import 'ROOT/libraries/math/SafeMathInt256.sol';
+import 'ROOT/trading/IAugurTrading.sol';
+&nbsp;
+&nbsp;
+/**
+ * @title Profit Loss
+ * @notice Storage of Profit Loss data.
+ */
+contract ProfitLoss is Initializable {
+    using SafeMathUint256 for uint256;
+    using SafeMathInt256 for int256;
+&nbsp;
+    IAugur public augur;
+    IAugurTrading public augurTrading;
+    IOrders public orders;
+    address public shareToken;
+    address public createOrder;
+    address public cancelOrder;
+    address public fillOrder;
+&nbsp;
+    struct OutcomeData {
+        int256 netPosition;
+        int256 avgPrice; // Cannot actually be negative. Typed for code convenience
+        int256 realizedProfit;
+        int256 frozenFunds;
+        int256 realizedCost; // Also cannot be negative.
+    }
+&nbsp;
+    // User =&gt; Market =&gt; Outcome =&gt; Data
+    mapping (address =&gt; mapping(address =&gt; mapping(uint256 =&gt; OutcomeData))) private profitLossData;
+&nbsp;
+    function initialize(IAugur _augur, IAugurTrading _augurTrading) public beforeInitialized {
+        endInitialization();
+        shareToken = _augur.lookup("ShareToken");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(shareToken != address(0));
+&nbsp;
+        augur = _augur;
+        augurTrading = _augurTrading;
+        createOrder = _augurTrading.lookup("CreateOrder");
+        cancelOrder = _augurTrading.lookup("CancelOrder");
+        fillOrder = _augurTrading.lookup("FillOrder");
+        orders = IOrders(_augurTrading.lookup("Orders"));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(createOrder != address(0));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(fillOrder != address(0));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(cancelOrder != address(0));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(orders != IOrders(0));
+    }
+&nbsp;
+    function recordFrozenFundChange(IUniverse _universe, IMarket _market, address _account, uint256 _outcome, int256 _frozenFundDelta) external returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == createOrder || msg.sender == cancelOrder || msg.sender == address(orders) || msg.sender == fillOrder);
+        OutcomeData storage _outcomeData = profitLossData[_account][address(_market)][_outcome];
+        _outcomeData.frozenFunds += _frozenFundDelta.mul(10**18);
+        augurTrading.logProfitLossChanged(_market, _account, _outcome, _outcomeData.netPosition, uint256(_outcomeData.avgPrice), _outcomeData.realizedProfit, _outcomeData.frozenFunds,  _outcomeData.realizedCost);
+        return true;
+    }
+&nbsp;
+    function adjustTraderProfitForFees(IMarket _market, address _trader, uint256 _outcome, uint256 _fees) external returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == fillOrder);
+        profitLossData[_trader][address(_market)][_outcome].realizedProfit -= int256(_fees.mul(10**18));
+        return true;
+    }
+&nbsp;
+    function recordTrade(IUniverse _universe, IMarket _market, address _longAddress, address _shortAddress, uint256 _outcome, int256 _amount, int256 _price, uint256 _numLongTokens, uint256 _numShortTokens, uint256 _numLongShares, uint256 _numShortShares) external returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == fillOrder);
+        int256 _numTicks = int256(_market.getNumTicks()).mul(10**18);
+        _price = _price.mul(10**18);
+        {
+            int256  _shortFrozenTokenDelta = int256(_numShortTokens * 10**18).sub(int256(_numShortShares).mul(_price));
+            adjustForTrader(_universe, _market, _numTicks, _shortAddress, _outcome, -_amount, _price, _shortFrozenTokenDelta);
+        }
+        int256  _longFrozenTokenDelta = int256(_numLongTokens * 10**18).sub(int256(_numLongShares).mul(_numTicks.sub(_price)));
+        adjustForTrader(_universe, _market, _numTicks, _longAddress, _outcome, _amount, _price, _longFrozenTokenDelta);
+        return true;
+    }
+&nbsp;
+    function adjustForTrader(IUniverse _universe, IMarket _market, int256 _adjustedNumTicks, address _address, uint256 _outcome, int256 _amount, int256 _price, int256 _frozenTokenDelta) internal returns (bool) {
+        OutcomeData storage _outcomeData = profitLossData[_address][address(_market)][_outcome];
+        OutcomeData memory _tmpOutcomeData = profitLossData[_address][address(_market)][_outcome];
+&nbsp;
+        bool _sold = _tmpOutcomeData.netPosition &lt; 0 &amp;&amp;  _amount &gt; 0 || _tmpOutcomeData.netPosition &gt; 0 &amp;&amp;  _amount &lt; 0;
+        if (_tmpOutcomeData.netPosition != 0 &amp;&amp; _sold) {
+            int256 _amountSold = _tmpOutcomeData.netPosition.abs().min(_amount.abs());
+            int256 _profit = (_tmpOutcomeData.netPosition &lt; 0 ? _tmpOutcomeData.avgPrice.sub(_price) : _price.sub(_tmpOutcomeData.avgPrice)).mul(_amountSold);
+            _tmpOutcomeData.realizedProfit += _profit;
+            _tmpOutcomeData.realizedCost += (_tmpOutcomeData.netPosition &lt; 0 ? _adjustedNumTicks.sub(_tmpOutcomeData.avgPrice) : _tmpOutcomeData.avgPrice).mul(_amountSold);
+            _tmpOutcomeData.frozenFunds += _profit + _frozenTokenDelta;
+&nbsp;
+            _outcomeData.realizedProfit = _tmpOutcomeData.realizedProfit;
+            _outcomeData.realizedCost = _tmpOutcomeData.realizedCost;
+            _outcomeData.frozenFunds = _tmpOutcomeData.frozenFunds;
+        } else {
+            _tmpOutcomeData.frozenFunds += _frozenTokenDelta;
+            _outcomeData.frozenFunds = _tmpOutcomeData.frozenFunds;
+        }
+&nbsp;
+        int256 _newNetPosition = _tmpOutcomeData.netPosition.add(_amount);
+        bool _reversed = _tmpOutcomeData.netPosition &lt; 0 &amp;&amp; _newNetPosition &gt; 0 || _tmpOutcomeData.netPosition &gt; 0 &amp;&amp; _newNetPosition &lt; 0;
+        if (_newNetPosition == 0) {
+            _tmpOutcomeData.avgPrice = 0;
+            _outcomeData.avgPrice = _tmpOutcomeData.avgPrice;
+        } else if (_reversed) {
+            _tmpOutcomeData.avgPrice = _price;
+            _outcomeData.avgPrice = _tmpOutcomeData.avgPrice;
+        } else if (!_sold) {
+            _tmpOutcomeData.avgPrice = _tmpOutcomeData.netPosition.abs().mul(_tmpOutcomeData.avgPrice).add(_amount.abs().mul(_price)).div(_newNetPosition.abs());
+            _outcomeData.avgPrice = _tmpOutcomeData.avgPrice;
+        }
+&nbsp;
+        _outcomeData.netPosition = _newNetPosition;
+        augurTrading.logProfitLossChanged(_market, _address, _outcome, _outcomeData.netPosition, uint256(_tmpOutcomeData.avgPrice), _tmpOutcomeData.realizedProfit, _tmpOutcomeData.frozenFunds,  _tmpOutcomeData.realizedCost);
+        return true;
+    }
+&nbsp;
+    function recordClaim(IMarket _market, address _account, uint256[] memory _outcomeFees) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == address(augurTrading));
+        uint256 _numOutcomes = _market.getNumberOfOutcomes();
+        IUniverse _universe = _market.getUniverse();
+        for (uint256 _outcome = 0; _outcome &lt; _numOutcomes; _outcome++) {
+            OutcomeData storage _outcomeData = profitLossData[_account][address(_market)][_outcome];
+            if (_outcomeData.netPosition == 0) {
+                continue;
+            }
+            int256 _salePrice = int256(_market.getWinningPayoutNumerator(_outcome).mul(10**18));
+            int256 _amount = _outcomeData.netPosition.abs();
+            _outcomeData.realizedProfit += (_outcomeData.netPosition &lt; 0 ? _outcomeData.avgPrice.sub(_salePrice) : _salePrice.sub(_outcomeData.avgPrice)).mul(_amount);
+            _outcomeData.realizedProfit -= int256(_outcomeFees[_outcome]);
+            _outcomeData.realizedCost += (_outcomeData.netPosition &lt; 0 ? int256(_market.getNumTicks()).sub(_outcomeData.avgPrice) : _outcomeData.avgPrice).mul(_amount);
+            _outcomeData.avgPrice = 0;
+            _outcomeData.frozenFunds = 0;
+            _outcomeData.netPosition = 0;
+            augurTrading.logProfitLossChanged(_market, _account, _outcome, 0, 0, _outcomeData.realizedProfit, 0, _outcomeData.realizedCost);
+        }
+        return true;
+    }
+&nbsp;
+    function getNetPosition(address _market, address _account, uint256 _outcome) external view returns (int256) {
+        return profitLossData[_account][_market][_outcome].netPosition;
+    }
+&nbsp;
+    function getAvgPrice(address _market, address _account, uint256 _outcome) external view returns (int256) {
+        return profitLossData[_account][_market][_outcome].avgPrice;
+    }
+&nbsp;
+    function getRealizedProfit(address _market, address _account, uint256 _outcome) external view returns (int256) {
+        return profitLossData[_account][_market][_outcome].realizedProfit;
+    }
+&nbsp;
+    function getFrozenFunds(address _market, address _account, uint256 _outcome) external view returns (int256) {
+        return profitLossData[_account][_market][_outcome].frozenFunds;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getRealizedCost(address _market, address _account, uint256 _outcome) external view returns (int256</span>) {
+<span class="cstat-no" title="statement not covered" >        return profitLossData[_account][_market][_outcome].realizedCost;</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

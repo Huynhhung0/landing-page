@@ -1,0 +1,1214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/libraries/token/ERC1155.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/libraries/token/</a> ERC1155.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80.26% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>61/76</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.23% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>23/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>15/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80.26% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>61/76</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5496×</span>
+<span class="cline-any cline-yes">5496×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1166×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">202×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">156×</span>
+<span class="cline-any cline-yes">156×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">156×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">206×</span>
+<span class="cline-any cline-yes">206×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">206×</span>
+<span class="cline-any cline-yes">206×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">206×</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">114×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">137×</span>
+<span class="cline-any cline-yes">137×</span>
+<span class="cline-any cline-yes">114×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">290×</span>
+<span class="cline-any cline-yes">290×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">290×</span>
+<span class="cline-any cline-yes">850×</span>
+<span class="cline-any cline-yes">850×</span>
+<span class="cline-any cline-yes">850×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">290×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">290×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">77×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">77×</span>
+<span class="cline-any cline-yes">77×</span>
+<span class="cline-any cline-yes">77×</span>
+<span class="cline-any cline-yes">77×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">77×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">90×</span>
+<span class="cline-any cline-yes">90×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">90×</span>
+<span class="cline-any cline-yes">284×</span>
+<span class="cline-any cline-yes">284×</span>
+<span class="cline-any cline-yes">284×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">90×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">90×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+&nbsp;
+import "ROOT/libraries/token/IERC1155.sol";
+import "ROOT/libraries/token/IERC1155Receiver.sol";
+import "ROOT/libraries/math/SafeMathUint256.sol";
+import "ROOT/libraries/ContractExists.sol";
+import "ROOT/libraries/ERC165.sol";
+&nbsp;
+&nbsp;
+/**
+ * @title Standard ERC1155 token
+ *
+ * @dev Implementation of the basic standard multi-token.
+ * See https://eips.ethereum.org/EIPS/eip-1155
+ * Originally based on code by Enjin: https://github.com/enjin/erc-1155
+ */
+contract ERC1155 is ERC165, IERC1155 {
+    using SafeMathUint256 for uint256;
+    using ContractExists for address;
+&nbsp;
+    // Mapping from token ID to account balances
+    mapping (uint256 =&gt; mapping(address =&gt; uint256)) public _balances;
+&nbsp;
+    // Mapping from token ID to total supply
+    mapping (uint256 =&gt; uint256) public _supplys;
+&nbsp;
+    // Mapping from account to operator approvals
+    mapping (address =&gt; mapping(address =&gt; bool)) public _operatorApprovals;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor()</span>
+        public
+    {
+<span class="cstat-no" title="statement not covered" >        _registerInterface(</span>
+            ERC1155(0).safeTransferFrom.selector ^
+            ERC1155(0).safeBatchTransferFrom.selector ^
+            ERC1155(0).balanceOf.selector ^
+            ERC1155(0).balanceOfBatch.selector ^
+            ERC1155(0).setApprovalForAll.selector ^
+            ERC1155(0).isApprovedForAll.selector
+        );
+    }
+&nbsp;
+    /**
+        @dev Get the specified address' balance for token with specified ID.
+&nbsp;
+        Attempting to query the zero account for a balance will result in a revert.
+&nbsp;
+        @param account The address of the token holder
+        @param id ID of the token
+        @return The account's balance of the token type requested
+     */
+    function balanceOf(address account, uint256 id) public view returns (uint256) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(account != address(0), "ERC1155: balance query for the zero address");
+        return _balances[id][account];
+    }
+&nbsp;
+    function totalSupply(uint256 id) public view returns (uint256) {
+        return _supplys[id];
+    }
+&nbsp;
+    /**
+        @dev Get the balance of multiple account/token pairs.
+&nbsp;
+        If any of the query accounts is the zero account, this query will revert.
+&nbsp;
+        @param accounts The addresses of the token holders
+        @param ids IDs of the tokens
+        @return Balances for each account and token id pair
+     */
+<span class="fstat-no" title="function not covered" >    function balanceOfBatch(</span>
+        address[] memory accounts,
+        uint256[] memory ids
+    )
+        public
+        view
+        returns (uint256[] memory)
+    {
+<span class="cstat-no" title="statement not covered" >        require(accounts.length == ids.length, "ERC1155: accounts and IDs must have same lengths")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256[] memory batchBalances = new uint256[](accounts.length);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; accounts.length; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >            require(accounts[i] != address(0), "ERC1155: some address in batch balance query is zero")</span>;
+<span class="cstat-no" title="statement not covered" >            batchBalances[i] = _balances[ids[i]][accounts[i]]</span>;
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return batchBalances;</span>
+    }
+&nbsp;
+    /**
+     * @dev Sets or unsets the approval of a given operator.
+     *
+     * An operator is allowed to transfer all tokens of the sender on their behalf.
+     *
+     * Because an account already has operator privileges for itself, this function will revert
+     * if the account attempts to set the approval status for itself.
+     *
+     * @param operator address to set the approval
+     * @param approved representing the status of the approval to be set
+     */
+    function setApprovalForAll(address operator, bool approved) external {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender != operator, "ERC1155: cannot set approval status for self");
+        _operatorApprovals[msg.sender][operator] = approved;
+        emit ApprovalForAll(msg.sender, operator, approved);
+    }
+&nbsp;
+    /**
+        @notice Queries the approval status of an operator for a given account.
+        @param account   The account of the Tokens
+        @param operator  Address of authorized operator
+        @return           True if the operator is approved, false if not
+    */
+    function isApprovedForAll(address account, address operator) public view returns (bool) {
+        return operator == address(this) || _operatorApprovals[account][operator];
+    }
+&nbsp;
+    /**
+        @dev Transfers `value` amount of an `id` from the `from` address to the `to` address specified.
+        Caller must be approved to manage the tokens being transferred out of the `from` account.
+        If `to` is a smart contract, will call `onERC1155Received` on `to` and act appropriately.
+        @param from Source address
+        @param to Target address
+        @param id ID of the token type
+        @param value Transfer amount
+        @param data Data forwarded to `onERC1155Received` if `to` is a contract receiver
+    */
+    function safeTransferFrom(
+        address from,
+        address to,
+        uint256 id,
+        uint256 value,
+        bytes calldata data
+    )
+        external
+    {
+        _transferFrom(from, to, id, value, data, true);
+    }
+&nbsp;
+    function _transferFrom(
+        address from,
+        address to,
+        uint256 id,
+        uint256 value,
+        bytes memory data,
+        bool doAcceptanceCheck
+    )
+        internal
+    {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(to != address(0), "ERC1155: target address must be non-zero");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(
+            from == msg.sender || isApprovedForAll(from, msg.sender) == true,
+            "ERC1155: need operator approval for 3rd party transfers"
+        );
+&nbsp;
+        _internalTransferFrom(from, to, id, value, data, doAcceptanceCheck);
+    }
+&nbsp;
+    function _internalTransferFrom(
+        address from,
+        address to,
+        uint256 id,
+        uint256 value,
+        bytes memory data,
+        bool doAcceptanceCheck
+    )
+        internal
+    {
+        _balances[id][from] = _balances[id][from].sub(value);
+        _balances[id][to] = _balances[id][to].add(value);
+&nbsp;
+        onTokenTransfer(id, from, to, value);
+        emit TransferSingle(msg.sender, from, to, id, value);
+&nbsp;
+        if (doAcceptanceCheck) {
+            _doSafeTransferAcceptanceCheck(msg.sender, from, to, id, value, data);
+        }
+    }
+&nbsp;
+    /**
+        @dev Transfers `values` amount(s) of `ids` from the `from` address to the
+        `to` address specified. Caller must be approved to manage the tokens being
+        transferred out of the `from` account. If `to` is a smart contract, will
+        call `onERC1155BatchReceived` on `to` and act appropriately.
+        @param from Source address
+        @param to Target address
+        @param ids IDs of each token type
+        @param values Transfer amounts per token type
+        @param data Data forwarded to `onERC1155Received` if `to` is a contract receiver
+    */
+    function safeBatchTransferFrom(
+        address from,
+        address to,
+        uint256[] calldata ids,
+        uint256[] calldata values,
+        bytes calldata data
+    )
+        external
+    {
+        _batchTransferFrom(from, to, ids, values, data, true);
+    }
+&nbsp;
+    function _batchTransferFrom(
+        address from,
+        address to,
+        uint256[] memory ids,
+        uint256[] memory values,
+        bytes memory data,
+        bool doAcceptanceCheck
+    )
+        internal
+    {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(ids.length == values.length, "ERC1155: IDs and values must have same lengths");
+        if (ids.length == 0) {
+            return;
+        }
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(to != address(0), "ERC1155: target address must be non-zero");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(
+            from == msg.sender || isApprovedForAll(from, msg.sender) == true,
+            "ERC1155: need operator approval for 3rd party transfers"
+        );
+&nbsp;
+        _internalBatchTransferFrom(from, to, ids, values, data, doAcceptanceCheck);
+    }
+&nbsp;
+    function _internalBatchTransferFrom(
+        address from,
+        address to,
+        uint256[] memory ids,
+        uint256[] memory values,
+        bytes memory data,
+        bool doAcceptanceCheck
+    )
+        internal
+    {
+        for (uint256 i = 0; i &lt; ids.length; ++i) {
+            uint256 id = ids[i];
+            uint256 value = values[i];
+&nbsp;
+            _balances[id][from] = _balances[id][from].sub(value);
+            _balances[id][to] = _balances[id][to].add(value);
+            onTokenTransfer(id, from, to, value);
+        }
+&nbsp;
+        emit TransferBatch(msg.sender, from, to, ids, values);
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (doAcceptanceCheck) {
+<span class="cstat-no" title="statement not covered" >            _doSafeBatchTransferAcceptanceCheck(msg.sender, from, to, ids, values, data)</span>;
+        }
+    }
+&nbsp;
+    /**
+     * @dev Internal function to mint an amount of a token with the given ID
+     * @param to The address that will own the minted token
+     * @param id ID of the token to be minted
+     * @param value Amount of the token to be minted
+     * @param data Data forwarded to `onERC1155Received` if `to` is a contract receiver
+     */
+    function _mint(address to, uint256 id, uint256 value, bytes memory data, bool doAcceptanceCheck) internal {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(to != address(0), "ERC1155: mint to the zero address");
+&nbsp;
+        _balances[id][to] = _balances[id][to].add(value);
+        _supplys[id] = _supplys[id].add(value);
+&nbsp;
+        onMint(id, to, value);
+        emit TransferSingle(msg.sender, address(0), to, id, value);
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (doAcceptanceCheck) {
+<span class="cstat-no" title="statement not covered" >            _doSafeTransferAcceptanceCheck(msg.sender, address(0), to, id, value, data)</span>;
+        }
+    }
+&nbsp;
+    /**
+     * @dev Internal function to batch mint amounts of tokens with the given IDs
+     * @param to The address that will own the minted token
+     * @param ids IDs of the tokens to be minted
+     * @param values Amounts of the tokens to be minted
+     * @param data Data forwarded to `onERC1155Received` if `to` is a contract receiver
+     */
+    function _mintBatch(address to, uint256[] memory ids, uint256[] memory values, bytes memory data, bool doAcceptanceCheck) internal {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(to != address(0), "ERC1155: batch mint to the zero address");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(ids.length == values.length, "ERC1155: minted IDs and values must have same lengths");
+&nbsp;
+        for (uint i = 0; i &lt; ids.length; i++) {
+            _balances[ids[i]][to] = values[i].add(_balances[ids[i]][to]);
+            _supplys[ids[i]] = _supplys[ids[i]].add(values[i]);
+            onMint(ids[i], to, values[i]);
+        }
+&nbsp;
+        emit TransferBatch(msg.sender, address(0), to, ids, values);
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (doAcceptanceCheck) {
+<span class="cstat-no" title="statement not covered" >            _doSafeBatchTransferAcceptanceCheck(msg.sender, address(0), to, ids, values, data)</span>;
+        }
+    }
+&nbsp;
+    /**
+     * @dev Internal function to burn an amount of a token with the given ID
+     * @param account Account which owns the token to be burnt
+     * @param id ID of the token to be burnt
+     * @param value Amount of the token to be burnt
+     */
+    function _burn(address account, uint256 id, uint256 value, bytes memory data, bool doAcceptanceCheck) internal {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(account != address(0), "ERC1155: attempting to burn tokens on zero account");
+&nbsp;
+        _balances[id][account] = _balances[id][account].sub(value);
+        _supplys[id] = _supplys[id].sub(value);
+        onBurn(id, account, value);
+        emit TransferSingle(msg.sender, account, address(0), id, value);
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (doAcceptanceCheck) {
+<span class="cstat-no" title="statement not covered" >            _doSafeTransferAcceptanceCheck(msg.sender, account, address(0), id, value, data)</span>;
+        }
+    }
+&nbsp;
+    /**
+     * @dev Internal function to batch burn an amounts of tokens with the given IDs
+     * @param account Account which owns the token to be burnt
+     * @param ids IDs of the tokens to be burnt
+     * @param values Amounts of the tokens to be burnt
+     */
+    function _burnBatch(address account, uint256[] memory ids, uint256[] memory values, bytes memory data, bool doAcceptanceCheck) internal {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(account != address(0), "ERC1155: attempting to burn batch of tokens on zero account");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(ids.length == values.length, "ERC1155: burnt IDs and values must have same lengths");
+&nbsp;
+        for (uint i = 0; i &lt; ids.length; i++) {
+            _balances[ids[i]][account] = _balances[ids[i]][account].sub(values[i]);
+            _supplys[ids[i]] = _supplys[ids[i]].sub(values[i]);
+            onBurn(ids[i], account, values[i]);
+        }
+&nbsp;
+        emit TransferBatch(msg.sender, account, address(0), ids, values);
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (doAcceptanceCheck) {
+<span class="cstat-no" title="statement not covered" >            _doSafeBatchTransferAcceptanceCheck(msg.sender, account, address(0), ids, values, data)</span>;
+        }
+    }
+&nbsp;
+    function _doSafeTransferAcceptanceCheck(
+        address operator,
+        address from,
+        address to,
+        uint256 id,
+        uint256 value,
+        bytes memory data
+    )
+        internal
+    {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (to.exists()) {
+<span class="cstat-no" title="statement not covered" >            require(</span>
+                IERC1155Receiver(to).onERC1155Received(operator, from, id, value, data) ==
+                    IERC1155Receiver(to).onERC1155Received.selector,
+                "ERC1155: got unknown value from onERC1155Received"
+            );
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function _doSafeBatchTransferAcceptanceCheck(</span>
+        address operator,
+        address from,
+        address to,
+        uint256[] memory ids,
+        uint256[] memory values,
+        bytes memory data
+    )
+        internal
+    {
+<span class="cstat-no" title="statement not covered" >        if (to.exists()) {</span>
+<span class="cstat-no" title="statement not covered" >            require(</span>
+                IERC1155Receiver(to).onERC1155BatchReceived(operator, from, ids, values, data) ==
+                    IERC1155Receiver(to).onERC1155BatchReceived.selector,
+                "ERC1155: got unknown value from onERC1155BatchReceived"
+            );
+        }
+    }
+&nbsp;
+    // Subclasses of this token generally want to send additional logs through the centralized Augur log emitter contract
+    function onTokenTransfer(uint256 _tokenId, address _from, address _to, uint256 _value) internal;
+&nbsp;
+    // Subclasses of this token may want to send additional logs through the centralized Augur log emitter contract
+    function onMint(uint256 _tokenId, address _target, uint256 _amount) internal;
+&nbsp;
+    // Subclasses of this token may want to send additional logs through the centralized Augur log emitter contract
+    function onBurn(uint256 _tokenId, address _target, uint256 _amount) internal;
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/AugurWalletRegistry.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> AugurWalletRegistry.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.32% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>25/95</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.82% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.32% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>25/95</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+&nbsp;
+import 'ROOT/gsn/v1/RLPReader.sol';
+import 'ROOT/gsn/v1/GSNRecipient.sol';
+import 'ROOT/gsn/v1/IRelayHub.sol';
+import 'ROOT/IAugur.sol';
+import 'ROOT/IAugurWallet.sol';
+import 'ROOT/AugurWallet.sol';
+import 'ROOT/IAugurWalletFactory.sol';
+import 'ROOT/trading/IAugurTrading.sol';
+import 'ROOT/libraries/Initializable.sol';
+import 'ROOT/libraries/token/IERC1155.sol';
+import 'ROOT/reporting/IAffiliates.sol';
+import 'ROOT/libraries/math/SafeMathUint256.sol';
+import 'ROOT/libraries/LibBytes.sol';
+import 'ROOT/libraries/ContractExists.sol';
+import 'ROOT/uniswap/interfaces/IUniswapV2Factory.sol';
+import 'ROOT/uniswap/interfaces/IUniswapV2Pair.sol';
+import 'ROOT/uniswap/interfaces/IWETH.sol';
+&nbsp;
+&nbsp;
+contract AugurWalletRegistry is Initializable, GSNRecipient {
+    using LibBytes for bytes;
+    using ContractExists for address;
+&nbsp;
+    using SafeMathUint256  for uint256;
+&nbsp;
+    enum GSNRecipientERC20FeeErrorCodes {
+        OK,
+        TX_COST_TOO_HIGH,
+        INSUFFICIENT_BALANCE
+    }
+&nbsp;
+    event ExecuteTransactionStatus(bool success, bool fundingSuccess);
+&nbsp;
+    IAugur public augur;
+    IAugurTrading public augurTrading;
+&nbsp;
+    IERC20 public cash;
+    address public affiliates;
+    address public shareToken;
+    address public createOrder;
+    address public fillOrder;
+    address public zeroXTrade;
+    address public augurWalletRegistryV2;
+&nbsp;
+    IUniswapV2Pair public ethExchange;
+    IWETH public WETH;
+    bool public token0IsCash;
+&nbsp;
+    uint256 private constant MAX_APPROVAL_AMOUNT = 2 ** 256 - 1;
+&nbsp;
+    uint256 private constant MAX_TX_FEE_IN_ETH = 10**17;
+&nbsp;
+    function initialize(IAugur _augur, IAugurTrading _augurTrading) public payable beforeInitialized returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.value &gt;= MAX_TX_FEE_IN_ETH, "Must provide initial Max TX Fee Deposit");
+        endInitialization();
+        augur = _augur;
+        cash = IERC20(_augur.lookup("Cash"));
+        affiliates = augur.lookup("Affiliates");
+        shareToken = augur.lookup("ShareToken");
+&nbsp;
+        augurTrading = _augurTrading;
+        createOrder = _augurTrading.lookup("CreateOrder");
+        fillOrder = _augurTrading.lookup("FillOrder");
+        zeroXTrade = _augurTrading.lookup("ZeroXTrade");
+        WETH = IWETH(_augurTrading.lookup("WETH9"));
+        augurWalletRegistryV2 = _augurTrading.lookup("AugurWalletRegistryV2");
+        IUniswapV2Factory _uniswapFactory = IUniswapV2Factory(_augur.lookup("UniswapV2Factory"));
+        address _ethExchangeAddress = _uniswapFactory.getPair(address(WETH), address(cash));
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_ethExchangeAddress == address(0)) {
+<span class="cstat-no" title="statement not covered" >            _ethExchangeAddress = _uniswapFactory.createPair(address(WETH), address(cash))</span>;
+        }
+        ethExchange = IUniswapV2Pair(_ethExchangeAddress);
+        token0IsCash = ethExchange.token0() == address(cash);
+&nbsp;
+        IRelayHub(getHubAddr()).depositFor.value(address(this).balance)(address(this));
+        return true;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function acceptRelayedCall(</span>
+        address,
+        address _from,
+        bytes calldata _encodedFunction,
+        uint256,
+        uint256,
+        uint256,
+        uint256,
+        bytes calldata,
+        uint256 _maxPossibleCharge
+    )
+        external
+        view
+        returns (uint256 _reason, bytes memory _context)
+    {
+        // executeWalletTransaction is the only encodedFunction that can succesfully be called through the relayHub
+<span class="cstat-no" title="statement not covered" >        uint256 _payment = getPaymentFromEncodedFunction(_encodedFunction);</span>
+<span class="cstat-no" title="statement not covered" >        GSNRecipientERC20FeeErrorCodes _code = getAcceptRelayCallStatus(_from, _payment, _maxPossibleCharge);</span>
+<span class="cstat-no" title="statement not covered" >        if (_code != GSNRecipientERC20FeeErrorCodes.OK) {</span>
+<span class="cstat-no" title="statement not covered" >            return _rejectRelayedCall(uint256(_code));</span>
+        }
+<span class="cstat-no" title="statement not covered" >        uint256 _initialEth = address(this).balance;</span>
+<span class="cstat-no" title="statement not covered" >        return _approveRelayedCall(abi.encode(_from, _initialEth));</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getPaymentFromEncodedFunction(bytes memory _encodedFunction) private pure returns (uint256</span>) {
+<span class="cstat-no" title="statement not covered" >        bytes memory _encodedFunctionParams = _encodedFunction.sliceDestructive(4, _encodedFunction.length);</span>
+<span class="cstat-no" title="statement not covered" >        (address _to, bytes memory _data, uint256 _value, uint256 _payment, address _affilate, bytes32 _fingerprint) = abi.decode(_encodedFunctionParams, (address, bytes, uint256, uint256, address, bytes32));</span>
+<span class="cstat-no" title="statement not covered" >        return _payment;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getAcceptRelayCallStatus(address _from, uint256 _payment, uint256 _maxPossibleCharge) private view returns (GSNRecipientERC20FeeErrorCodes _code</span>) {
+<span class="cstat-no" title="statement not covered" >        (uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast) = ethExchange.getReserves();</span>
+<span class="cstat-no" title="statement not covered" >        uint256 _maxDaiNeeded = getAmountIn(_maxPossibleCharge, token0IsCash ? _reserve0 : _reserve1, token0IsCash ? _reserve1 : _reserve0);</span>
+<span class="cstat-no" title="statement not covered" >        if (_maxDaiNeeded &gt; _payment) {</span>
+<span class="cstat-no" title="statement not covered" >            return GSNRecipientERC20FeeErrorCodes.TX_COST_TOO_HIGH;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (cash.balanceOf(getCreate2WalletAddress(_from)) &lt; _payment) {</span>
+<span class="cstat-no" title="statement not covered" >            return GSNRecipientERC20FeeErrorCodes.INSUFFICIENT_BALANCE;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return GSNRecipientERC20FeeErrorCodes.OK;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function _preRelayedCall(bytes memory _context) internal returns (bytes32</span>) { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function _postRelayedCall(bytes memory _context, bool, uint256 _actualCharge, bytes32) interna</span>l {
+<span class="cstat-no" title="statement not covered" >        (address _from, uint256 _initialEth) = abi.decode(_context, (address, uint256));</span>
+&nbsp;
+        // Refund any excess ETH paid back to the wallet
+<span class="cstat-no" title="statement not covered" >        uint256 _ethPaid = address(this).balance.sub(_initialEth);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 _ethRefund = _ethPaid.sub(_actualCharge);</span>
+<span class="cstat-no" title="statement not covered" >        (bool _success,) = address(_from).call.value(_ethRefund)("");</span>
+<span class="cstat-no" title="statement not covered" >        require(_success)</span>;
+&nbsp;
+        // Top off Relay Hub balance with whatever ETH we have
+<span class="cstat-no" title="statement not covered" >        uint256 _depositAmount = address(this).balance;</span>
+<span class="cstat-no" title="statement not covered" >        _depositAmount = _depositAmount.min(2 ether)</span>; // This is the maximum single RelayHub deposit
+<span class="cstat-no" title="statement not covered" >        IRelayHub(getHubAddr()).depositFor.value(_depositAmount)</span>(address(this));
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getEthFromWallet(IAugurWallet _wallet, uint256 _cashAmount) privat</span>e {
+<span class="cstat-no" title="statement not covered" >        (uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast) = ethExchange.getReserves();</span>
+<span class="cstat-no" title="statement not covered" >        uint256 _ethAmount = getAmountOut(_cashAmount, token0IsCash ? _reserve0 : _reserve1, token0IsCash ? _reserve1 : _reserve0);</span>
+<span class="cstat-no" title="statement not covered" >        _wallet.transferCash(address(ethExchange), _cashAmount)</span>;
+<span class="cstat-no" title="statement not covered" >        ethExchange.swap(token0IsCash ? 0 : _ethAmount, token0IsCash ? _ethAmount : 0, address(this), "")</span>;
+<span class="cstat-no" title="statement not covered" >        WETH.withdraw(_ethAmount)</span>;
+    }
+&nbsp;
+    // Returns whether the signer eth balance was funded as desired
+<span class="fstat-no" title="function not covered" >    function fundMsgSender(uint256 _desiredSignerBalance, uint256 _maxExchangeRateInDai) private returns (bool</span>) {
+<span class="cstat-no" title="statement not covered" >        address _msgSender = address(_msgSender());</span>
+<span class="cstat-no" title="statement not covered" >        IAugurWallet _wallet = getWallet(_msgSender);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 _msgSenderBalance = _msgSender.balance;</span>
+<span class="cstat-no" title="statement not covered" >        if (_msgSenderBalance &gt;= _desiredSignerBalance) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        uint256 _ethDelta = _desiredSignerBalance - _msgSenderBalance;</span>
+<span class="cstat-no" title="statement not covered" >        (uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast) = ethExchange.getReserves();</span>
+<span class="cstat-no" title="statement not covered" >        uint256 _cashAmount = getAmountIn(_ethDelta, token0IsCash ? _reserve0 : _reserve1, token0IsCash ? _reserve1 : _reserve0);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 _exchangeRate = _cashAmount.mul(10**18).div(_ethDelta);</span>
+<span class="cstat-no" title="statement not covered" >        if (_maxExchangeRateInDai &lt; _exchangeRate) {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        _wallet.transferCash(address(ethExchange), _cashAmount)</span>;
+<span class="cstat-no" title="statement not covered" >        ethExchange.swap(token0IsCash ? 0 : _ethDelta, token0IsCash ? _ethDelta : 0, address(this), "")</span>;
+<span class="cstat-no" title="statement not covered" >        WETH.withdraw(_ethDelta)</span>;
+<span class="cstat-no" title="statement not covered" >        (bool _success,) = _msgSender.call.value(_ethDelta)("");</span>
+<span class="cstat-no" title="statement not covered" >        return _success;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getAmountOut(uint amountIn, uint reserveIn, uint reserveOut) public pure returns (uint amountOut</span>) {
+<span class="cstat-no" title="statement not covered" >        require(amountIn &gt; 0)</span>;
+<span class="cstat-no" title="statement not covered" >        require(reserveIn &gt; 0 &amp;&amp; reserveOut &gt; 0)</span>;
+<span class="cstat-no" title="statement not covered" >        uint amountInWithFee = amountIn.mul(997);</span>
+<span class="cstat-no" title="statement not covered" >        uint numerator = amountInWithFee.mul(reserveOut);</span>
+<span class="cstat-no" title="statement not covered" >        uint denominator = reserveIn.mul(1000).add(amountInWithFee);</span>
+<span class="cstat-no" title="statement not covered" >        amountOut = numerator / denominator</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getAmountIn(uint amountOut, uint reserveIn, uint reserveOut) public pure returns (uint amountIn</span>) {
+<span class="cstat-no" title="statement not covered" >        require(amountOut &gt; 0)</span>;
+<span class="cstat-no" title="statement not covered" >        require(reserveIn &gt; 0 &amp;&amp; reserveOut &gt; 0)</span>;
+<span class="cstat-no" title="statement not covered" >        uint numerator = reserveIn.mul(amountOut).mul(1000);</span>
+<span class="cstat-no" title="statement not covered" >        uint denominator = reserveOut.sub(amountOut).mul(997);</span>
+<span class="cstat-no" title="statement not covered" >        amountIn = (numerator / denominator).add(1)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function createAugurWallet(address _referralAddress, bytes32 _fingerprint) private returns (IAugurWallet</span>) {
+<span class="cstat-no" title="statement not covered" >        return IAugurWalletFactory(augurWalletRegistryV2).trustedCreateAugurWallet(_msgSender(), _referralAddress, _fingerprint);</span>
+    }
+&nbsp;
+    function getCreate2WalletAddress(address _owner) public view returns (address) {
+        return IAugurWalletFactory(augurWalletRegistryV2).getCreate2WalletAddress(_owner);
+    }
+&nbsp;
+/**
+     * @notice Get the Wallet for the given account
+     * @param _account The account to look up
+     * @return IAugurWallet for the account or 0x if none exists
+     */
+    function getWallet(address _account) public view returns (IAugurWallet) {
+        address _walletAddress = getCreate2WalletAddress(_account);
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!_walletAddress.exists()) {
+            return IAugurWallet(0);
+        }
+<span class="cstat-no" title="statement not covered" >        return IAugurWallet(_walletAddress);</span>
+    }
+&nbsp;
+    // 1. Create a user's wallet if it does not exist
+    // 2. Get funds from the wallet to compensate this contract for paying the relayer
+    // 3. Execute the transaction and return success status, or revert if appropriate
+    // 4. Fund the signer with ETH as specified
+<span class="fstat-no" title="function not covered" >    function executeWalletTransaction(address _to, bytes calldata _data, uint256 _value, uint256 _payment, address _referralAddress, bytes32 _fingerprint, uint256 _desiredSignerBalance, uint256 _maxExchangeRateInDai, bool _revertOnFailure) externa</span>l {
+<span class="cstat-no" title="statement not covered" >        address _user = _msgSender();</span>
+<span class="cstat-no" title="statement not covered" >        IAugurWallet _wallet = getWallet(_user);</span>
+<span class="cstat-no" title="statement not covered" >        if (_wallet == IAugurWallet(0)) {</span>
+<span class="cstat-no" title="statement not covered" >            _wallet = createAugurWallet(_referralAddress, _fingerprint)</span>;
+        }
+        // If the user is having this sent via relay we need to reimburse this contract for paying the relayer. We do the payment here to avoid hard coded gas stipend problems in GSN V1
+<span class="cstat-no" title="statement not covered" >        if (_user != msg.sender) {</span>
+<span class="cstat-no" title="statement not covered" >            getEthFromWallet(_wallet, _payment)</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        bool _success = _wallet.executeTransaction(_to, _data, _value);</span>
+        // We need to be able to fail in order to get accurate gas estimates. We only allow this however when not using the relayhub since otherwise funds could be drained this way
+<span class="cstat-no" title="statement not covered" >        if (_user == msg.sender &amp;&amp; _revertOnFailure) {</span>
+<span class="cstat-no" title="statement not covered" >            require(_success, "Transaction Execution Failed")</span>;
+        }
+        // We keep the signing account's ETH balance funded up to an offchain provided value so it can send txs itself without the use of a relay
+<span class="cstat-no" title="statement not covered" >        bool _fundingSuccess = fundMsgSender(_desiredSignerBalance, _maxExchangeRateInDai);</span>
+<span class="cstat-no" title="statement not covered" >        emit ExecuteTransactionStatus(_success, _fundingSuccess);</span>
+    }
+&nbsp;
+    function getRelayMessageHash(
+        address relay,
+        address from,
+        address to,
+        bytes memory encodedFunction,
+        uint256 transactionFee,
+        uint256 gasPrice,
+        uint256 gasLimit,
+        uint256 nonce) public view returns (bytes32) {
+        bytes memory packed = abi.encodePacked("rlx:", from, to, encodedFunction, transactionFee, gasPrice, gasLimit, nonce, getHubAddr());
+        return keccak256(abi.encodePacked(packed, relay));
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function () external payabl</span>e {}
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

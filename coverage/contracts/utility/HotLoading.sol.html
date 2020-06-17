@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/utility/HotLoading.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/utility/</a> HotLoading.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.59% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>65/68</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>17/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.59% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>65/68</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+pragma experimental ABIEncoderV2;
+&nbsp;
+import 'ROOT/IAugur.sol';
+import 'ROOT/IAugurCreationDataGetter.sol';
+import 'ROOT/reporting/IMarket.sol';
+import 'ROOT/libraries/token/IERC20.sol';
+import 'ROOT/libraries/math/SafeMathUint256.sol';
+import 'ROOT/reporting/IReportingParticipant.sol';
+import 'ROOT/reporting/IDisputeWindow.sol';
+import 'ROOT/trading/IFillOrder.sol';
+import 'ROOT/trading/IOrders.sol';
+&nbsp;
+&nbsp;
+/**
+ * @title Hot Loading
+ * @notice A Utility contract for pulling market data in a single call intended for fast rendering of market presentation before full platform data can be accessed
+ */
+contract HotLoading {
+    using SafeMathUint256 for uint256;
+&nbsp;
+    enum ReportingState {
+        PreReporting,
+        DesignatedReporting,
+        OpenReporting,
+        CrowdsourcingDispute,
+        AwaitingNextWindow,
+        AwaitingFinalization,
+        Finalized,
+        Forking,
+        AwaitingForkMigration
+    }
+&nbsp;
+    struct DisputeWindowData {
+        address disputeWindow;
+        uint256 startTime;
+        uint256 endTime;
+        uint256 purchased;
+        uint256 fees;
+    }
+&nbsp;
+    struct MarketData {
+        string extraInfo;
+        address marketCreator;
+        address owner;
+        bytes32[] outcomes;
+        IMarket.MarketType marketType;
+        int256[] displayPrices;
+        address designatedReporter;
+        ReportingState reportingState;
+        uint256 disputeRound;
+        uint256[] winningPayout;
+        uint256 volume;
+        uint256 openInterest;
+        uint256[] lastTradedPrices;
+        address universe;
+        uint256 numTicks;
+        uint256 feeDivisor;
+        uint256 affiliateFeeDivisor;
+        uint256 endTime;
+        uint256 numOutcomes;
+        uint256 validityBond;
+        uint256 reportingFeeDivisor;
+        uint256[] outcomeVolumes;
+    }
+&nbsp;
+    function getMarketData(IAugur _augur, IMarket _market, IFillOrder _fillOrder, IOrders _orders) public view returns (MarketData memory _marketData) {
+        IAugurCreationDataGetter.MarketCreationData memory _marketCreationData = IAugurCreationDataGetter(address(_augur)).getMarketCreationData(_market);
+        _marketData.extraInfo = _marketCreationData.extraInfo;
+        _marketData.marketCreator = _marketCreationData.marketCreator;
+        _marketData.outcomes = _marketCreationData.outcomes;
+        _marketData.displayPrices = _marketCreationData.displayPrices;
+        _marketData.marketType = _marketCreationData.marketType;
+        _marketData.owner = _market.getOwner();
+        _marketData.validityBond = _market.getValidityBondAttoCash();
+        _marketData.numOutcomes = _market.getNumberOfOutcomes();
+        _marketData.endTime = _market.getEndTime();
+        _marketData.affiliateFeeDivisor = _market.affiliateFeeDivisor();
+        _marketData.feeDivisor = _market.getMarketCreatorSettlementFeeDivisor();
+        _marketData.numTicks = _market.getNumTicks();
+        _marketData.universe = address(_market.getUniverse());
+        _marketData.disputeRound = _market.getNumParticipants() - 1;
+        IInitialReporter _initialReporter = _market.getInitialReporter();
+        _marketData.designatedReporter = _initialReporter.getDesignatedReporter();
+        _marketData.openInterest = _market.getOpenInterest();
+        _marketData.volume = _fillOrder.getMarketVolume(_market);
+        _marketData.lastTradedPrices = getLastTradedPrices(_market, _marketData.numOutcomes, _orders);
+        _marketData.reportingState = getReportingState(_augur, _market);
+        _marketData.reportingFeeDivisor = _market.getUniverse().getReportingFeeDivisor();
+        _marketData.outcomeVolumes = _fillOrder.getMarketOutcomeValues(_market);
+        if (_marketData.reportingState == ReportingState.Finalized) {
+            IReportingParticipant _winningReportingParticipant = _market.getWinningReportingParticipant();
+            _marketData.winningPayout = _winningReportingParticipant.getPayoutNumerators();
+        }
+    }
+&nbsp;
+    function getMarketsData(IAugur _augur, IMarket[] calldata _markets, IFillOrder _fillOrder, IOrders _orders) external view returns (MarketData[] memory _marketsData) {
+        uint256 _numMarkets = _markets.length;
+&nbsp;
+        _marketsData = new MarketData[](_numMarkets);
+&nbsp;
+        for (uint256 _marketIndex = 0; _marketIndex &lt; _numMarkets; _marketIndex++) {
+            _marketsData[_marketIndex] = getMarketData(_augur, _markets[_marketIndex], _fillOrder, _orders);
+        }
+    }
+&nbsp;
+    function getLastTradedPrices(IMarket _market, uint256 _numOutcomes, IOrders _orders) public view returns (uint256[] memory _lastTradedPrices) {
+        _lastTradedPrices = new uint256[](_numOutcomes);
+        for (uint256 _outcome = 0; _outcome &lt; _numOutcomes; _outcome++) {
+            _lastTradedPrices[_outcome] = _orders.getLastOutcomePrice(_market, _outcome);
+        }
+    }
+&nbsp;
+    function getReportingState(IAugur _augur, IMarket _market) public view returns (ReportingState) {
+        if (_market.isFinalized()) {
+            return ReportingState.Finalized;
+        }
+&nbsp;
+        IUniverse _universe = _market.getUniverse();
+        IMarket _forkingMarket = _universe.getForkingMarket();
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_forkingMarket != IMarket(0)) {
+<span class="cstat-no" title="statement not covered" >            if (_forkingMarket == _market) {</span>
+<span class="cstat-no" title="statement not covered" >                return ReportingState.Forking;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            return ReportingState.AwaitingForkMigration;</span>
+        }
+&nbsp;
+        IDisputeWindow _disputeWindow = _market.getDisputeWindow();
+        uint256 _curTime = _augur.getTimestamp();
+&nbsp;
+        if (_disputeWindow != IDisputeWindow(0)) {
+            if (_curTime &gt; _disputeWindow.getEndTime()) {
+                return ReportingState.AwaitingFinalization;
+            }
+            if (_market.getDisputePacingOn() &amp;&amp; _curTime &lt; _disputeWindow.getStartTime()) {
+                return ReportingState.AwaitingNextWindow;
+            }
+            return ReportingState.CrowdsourcingDispute;
+        }
+&nbsp;
+        if (_curTime &gt; _market.getDesignatedReportingEndTime()) {
+            return ReportingState.OpenReporting;
+        }
+&nbsp;
+        if (_curTime &gt; _market.getEndTime()) {
+            return ReportingState.DesignatedReporting;
+        }
+&nbsp;
+        return ReportingState.PreReporting;
+    }
+&nbsp;
+    function getCurrentDisputeWindowData(IAugur _augur, IUniverse _universe) external view returns (DisputeWindowData memory _disputeWindowData) {
+        IDisputeWindow _disputeWindow = _universe.getCurrentDisputeWindow(false);
+        if (_disputeWindow == IDisputeWindow(0)) {
+            (uint256 _startTime, uint256 _duration) = _universe.getDisputeWindowStartTimeAndDuration(_augur.getTimestamp(), false);
+            _disputeWindowData.startTime = _startTime;
+            _disputeWindowData.endTime = _startTime + _duration;
+            return _disputeWindowData;
+        }
+        _disputeWindowData.disputeWindow = address(_disputeWindow);
+        _disputeWindowData.startTime = _disputeWindow.getStartTime();
+        _disputeWindowData.endTime = _disputeWindow.getEndTime();
+        _disputeWindowData.purchased = _disputeWindow.totalSupply();
+        _disputeWindowData.fees = IERC20(_augur.lookup('Cash')).balanceOf(address(_disputeWindow));
+    }
+&nbsp;
+    function getTotalValidityBonds(IMarket[] calldata _markets) external view returns (uint256 _totalValidityBonds) {
+        for (uint256 _i = 0; _i &lt; _markets.length; _i++) {
+            IMarket _market = _markets[_i];
+            _totalValidityBonds += _market.getValidityBondAttoCash();
+        }
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

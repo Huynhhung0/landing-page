@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/CashFaucet.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> CashFaucet.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/20</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+&nbsp;
+import 'ROOT/IAugur.sol';
+import 'ROOT/ICashFaucet.sol';
+import 'ROOT/libraries/math/SafeMathUint256.sol';
+import 'ROOT/libraries/token/IERC20.sol';
+import 'ROOT/external/IDaiJoin.sol';
+import 'ROOT/external/IDaiVat.sol';
+import 'ROOT/external/IDaiFaucet.sol';
+import 'ROOT/CashFaucetProxy.sol';
+&nbsp;
+&nbsp;
+/**
+ * @title Cash Faucet
+ * @dev Faucet contract for Tesnet CASH (Dai)
+ */
+contract CashFaucet is ICashFaucet {
+    IDaiVat public vat;
+    IDaiJoin public daiJoin;
+    IERC20 public col;
+    IDaiJoin public colJoin;
+    bytes32 public colIlk;
+    IDaiFaucet public mcdFaucet;
+    IERC20 public dai;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor(IAugur _augur) publi</span>c {
+<span class="cstat-no" title="statement not covered" >        vat = IDaiVat(_augur.lookup("DaiVat"))</span>;
+<span class="cstat-no" title="statement not covered" >        mcdFaucet = IDaiFaucet(_augur.lookup("MCDFaucet"))</span>;
+<span class="cstat-no" title="statement not covered" >        col = IERC20(_augur.lookup("MCDCol"))</span>;
+<span class="cstat-no" title="statement not covered" >        colJoin = IDaiJoin(_augur.lookup("MCDColJoin"))</span>;
+<span class="cstat-no" title="statement not covered" >        daiJoin = IDaiJoin(_augur.lookup("DaiJoin"))</span>;
+<span class="cstat-no" title="statement not covered" >        dai = IERC20(_augur.lookup("Cash"))</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        colIlk = bytes32("REP-A")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        col.approve(address(colJoin), 2**256 - 1)</span>;
+<span class="cstat-no" title="statement not covered" >        dai.approve(address(daiJoin), 2**256 - 1)</span>;
+<span class="cstat-no" title="statement not covered" >        col.approve(address(vat), 2**256 - 1)</span>;
+<span class="cstat-no" title="statement not covered" >        dai.approve(address(vat), 2**256 - 1)</span>;
+<span class="cstat-no" title="statement not covered" >        vat.hope(address(daiJoin))</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function faucet(uint256) public returns (bool</span>) {
+        // generate collateral by creating a proxy that will faucet for us. We do this because the MCD faucet only allows one use per address
+<span class="cstat-no" title="statement not covered" >        new CashFaucetProxy(mcdFaucet, col)</span>;
+&nbsp;
+        // get balance of collateral
+<span class="cstat-no" title="statement not covered" >        uint256 balance = col.balanceOf(address(this));</span>
+&nbsp;
+        // Deposit collateral
+<span class="cstat-no" title="statement not covered" >        colJoin.join(address(this), balance)</span>;
+&nbsp;
+        // Open a CDP and issue max DAI
+<span class="cstat-no" title="statement not covered" >        (uint256 art, uint256 rate, uint256 spot, uint256 line, uint256 dust) = vat.ilks(colIlk);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 daiReceived = spot * balance / 10**27 - 10**18;</span>
+<span class="cstat-no" title="statement not covered" >        vat.frob(colIlk, address(this), address(this),address(this), int256(balance), int256(daiReceived))</span>;
+&nbsp;
+        // Mint DAI for the sender
+<span class="cstat-no" title="statement not covered" >        daiJoin.exit(msg.sender, daiReceived)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

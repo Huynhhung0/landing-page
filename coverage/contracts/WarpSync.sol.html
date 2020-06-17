@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/WarpSync.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> WarpSync.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>45/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>45/45</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-yes">99×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+&nbsp;
+import 'ROOT/IWarpSync.sol';
+import 'ROOT/reporting/IUniverse.sol';
+import 'ROOT/reporting/IMarket.sol';
+import 'ROOT/reporting/IV2ReputationToken.sol';
+import 'ROOT/reporting/IAffiliateValidator.sol';
+import 'ROOT/libraries/Initializable.sol';
+import 'ROOT/libraries/math/SafeMathUint256.sol';
+&nbsp;
+/**
+ * @title Warp Sync
+ * @notice A contract that control the recurring creation of a market which exists to report on warp sync data for Augur
+ */
+contract WarpSync is IWarpSync, Initializable {
+    using SafeMathUint256 for uint256;
+&nbsp;
+    struct Data {
+        uint256 warpSyncHash;
+        uint256 timestamp;
+    }
+&nbsp;
+    IAugur public augur;
+    mapping(address =&gt; address) public markets;
+    mapping(address =&gt; Data) public data;
+&nbsp;
+    uint256 public lastSweepTime;
+&nbsp;
+    uint256 private constant MIN_TIME_BETWEEN_INTEREST_SWEEPS = 7 days;
+&nbsp;
+    uint256 private constant MARKET_LENGTH = 1 days;
+    uint256 private constant MAX_NUM_TICKS = 2 ** 256 - 2;
+    int256 private INT256_MIN = int256(2**255);
+    int256 private INT256_MAX = int256(2**255 - 1);
+    int256[] private PRICES = [INT256_MIN, INT256_MAX];
+    string private constant EXTRA_INFO = '{"description":"What will the next Augur Warp Sync hash be?","longDescription":"What will the Augur SDK warp sync hash be for the last block with a timestamp less than the reporting start timestamp for this market? At least 30 blocks should be mined after this block before attempting to generate a hash in order to account for possible rollbacks."}';
+    uint256 private constant MAX_REWARD_GROWTH_TIME = 7 days;
+&nbsp;
+    function initialize(IAugur _augur) public beforeInitialized returns (bool) {
+        endInitialization();
+        augur = _augur;
+        lastSweepTime = block.timestamp;
+        return true;
+    }
+&nbsp;
+    /**
+     * @notice Do the initial report for the warp sync market.
+     * @param _universe The universe whose warp sync market to report on
+     * @param _payoutNumerators An array indicating the payout for each market outcome
+     * @param _description Any additional information or justification for this report
+     * @return Bool True
+     */
+    function doInitialReport(IUniverse _universe, uint256[] memory _payoutNumerators, string memory _description) public returns (bool) {
+        IMarket _market = IMarket(markets[address(_universe)]);
+        _market.doInitialReport(_payoutNumerators, _description, 0);
+        _market.getInitialReporter().transferOwnership(msg.sender);
+        return true;
+    }
+&nbsp;
+    /**
+     * @notice Create the initial warp sync market. The creator will be rewarded with REP
+     * @param _universe The universe to create a warp sync market in
+     */
+    function initializeUniverse(IUniverse _universe) public {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(augur.isKnownUniverse(_universe));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(markets[address(_universe)] == address(0));
+        awardRep(_universe, getCreationReward(_universe));
+        createMarket(_universe);
+    }
+&nbsp;
+    function notifyMarketFinalized() public {
+        IMarket _market = IMarket(msg.sender);
+        IUniverse _universe = _market.getUniverse();
+&nbsp;
+        // NOTE: This validates that the market is legitimate. A malicious market has no way of modifying this mapping to pass here.
+        if (markets[address(_universe)] != address(_market)) {
+            return;
+        }
+&nbsp;
+        // In order to periodically sweep interest we do so here which will result in a sweep at least on recurring basis where the sweeper is compensated.
+        uint256 _timestamp = block.timestamp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (lastSweepTime - _timestamp &gt;= MIN_TIME_BETWEEN_INTEREST_SWEEPS) {
+            _universe.sweepInterest();
+            lastSweepTime = _timestamp;
+        }
+&nbsp;
+        recordMarketFinalized(_market, _universe);
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!_universe.isForking()) {
+            createMarket(_universe);
+        }
+    }
+&nbsp;
+    function recordMarketFinalized(IMarket _market, IUniverse _universe) private {
+        awardRep(_universe, getFinalizationReward(_market));
+        uint256 _warpSyncHash = _market.getWinningPayoutNumerator(2);
+        uint256 _endTime = _market.getEndTime();
+        data[address(_universe)].warpSyncHash = _warpSyncHash;
+        data[address(_universe)].timestamp = _endTime;
+        augur.logWarpSyncDataUpdated(address(_universe), _warpSyncHash, _endTime);
+    }
+&nbsp;
+    /**
+     * @notice Get the REP reward for finalizing the warp sync market
+     * @param _market The market to finalize. (Should be a warp sync market)
+     */
+    function getFinalizationReward(IMarket _market) public view returns (uint256) {
+        return getRepReward(_market.getDisputeWindow().getEndTime());
+    }
+&nbsp;
+    /**
+     * @notice Get the REP reward for initializing a universe and creating the Warp Sync Market
+     * @param _universe the universe to initialize
+     */
+    function getCreationReward(IUniverse _universe) public view returns (uint256) {
+        return getRepReward(_universe.creationTime());
+    }
+&nbsp;
+    function getRepReward(uint256 _theoreticalTime) private view returns (uint256) {
+        uint256 _currentTime = augur.getTimestamp();
+        uint256 _timeSinceTheoreticalCreationInSeconds = _currentTime.sub(_theoreticalTime);
+        if (_timeSinceTheoreticalCreationInSeconds &gt; MAX_REWARD_GROWTH_TIME) {
+            _timeSinceTheoreticalCreationInSeconds = MAX_REWARD_GROWTH_TIME;
+        }
+        // Cannot overflow in any reasonable timeline of the universe
+        return (_timeSinceTheoreticalCreationInSeconds ** 3).mul(1000);
+    }
+&nbsp;
+    function awardRep(IUniverse _universe, uint256 _amount) private returns (bool) {
+        IV2ReputationToken _reputationToken = _universe.getReputationToken();
+        // Whoever was responsible for this tx occuring gets REP.
+        // solium-disable-next-line security/no-tx-origin
+        _reputationToken.mintForWarpSync(_amount, tx.origin);
+        return true;
+    }
+&nbsp;
+    function createMarket(IUniverse _universe) private {
+        IV2ReputationToken _reputationToken = _universe.getReputationToken();
+        uint256 _repBond = _universe.getOrCacheMarketRepBond();
+        _reputationToken.mintForWarpSync(_repBond, address(this));
+        uint256 _endTime = augur.getTimestamp().add(MARKET_LENGTH);
+        IMarket _market = _universe.createScalarMarket(_endTime, 0, IAffiliateValidator(0), 0, address(this), PRICES, MAX_NUM_TICKS, EXTRA_INFO);
+        markets[address(_universe)] = address(_market);
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

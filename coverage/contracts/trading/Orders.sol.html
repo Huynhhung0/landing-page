@@ -1,0 +1,1562 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/trading/Orders.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/trading/</a> Orders.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">99.53% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>211/212</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.07% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>89/114</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>36/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">99.51% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>205/206</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">487×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">654×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">526×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">266×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">264×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">87×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">375×</span>
+<span class="cline-any cline-yes">375×</span>
+<span class="cline-any cline-yes">375×</span>
+<span class="cline-any cline-yes">375×</span>
+<span class="cline-any cline-yes">375×</span>
+<span class="cline-any cline-yes">375×</span>
+<span class="cline-any cline-yes">375×</span>
+<span class="cline-any cline-yes">375×</span>
+<span class="cline-any cline-yes">375×</span>
+<span class="cline-any cline-yes">375×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">167×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">547×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">105×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">58×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">145×</span>
+<span class="cline-any cline-yes">65×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">80×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">182×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">195×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-yes">119×</span>
+<span class="cline-any cline-yes">119×</span>
+<span class="cline-any cline-yes">119×</span>
+<span class="cline-any cline-yes">119×</span>
+<span class="cline-any cline-yes">119×</span>
+<span class="cline-any cline-yes">119×</span>
+<span class="cline-any cline-yes">119×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">128×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">135×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">121×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-yes">84×</span>
+<span class="cline-any cline-yes">84×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">504×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">67×</span>
+<span class="cline-any cline-yes">67×</span>
+<span class="cline-any cline-yes">67×</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">67×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">50×</span>
+<span class="cline-any cline-yes">50×</span>
+<span class="cline-any cline-yes">88×</span>
+<span class="cline-any cline-yes">88×</span>
+<span class="cline-any cline-yes">88×</span>
+<span class="cline-any cline-yes">75×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">50×</span>
+<span class="cline-any cline-yes">50×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">186×</span>
+<span class="cline-any cline-yes">156×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.15;
+&nbsp;
+&nbsp;
+import 'ROOT/trading/IOrders.sol';
+import 'ROOT/libraries/math/SafeMathUint256.sol';
+import 'ROOT/libraries/math/SafeMathInt256.sol';
+import 'ROOT/trading/Order.sol';
+import 'ROOT/reporting/IMarket.sol';
+import 'ROOT/libraries/Initializable.sol';
+import 'ROOT/libraries/token/IERC20.sol';
+import 'ROOT/trading/IAugurTrading.sol';
+import 'ROOT/trading/IProfitLoss.sol';
+&nbsp;
+&nbsp;
+/**
+ * @title Orders
+ * @notice Storage of all data associated with orders
+ */
+contract Orders is IOrders, Initializable {
+    using Order for Order.Data;
+    using SafeMathUint256 for uint256;
+&nbsp;
+    struct MarketOrders {
+        uint256 totalEscrowed;
+        mapping(uint256 =&gt; uint256) prices;
+    }
+&nbsp;
+    mapping(bytes32 =&gt; Order.Data) private orders;
+    mapping(address =&gt; MarketOrders) private marketOrderData;
+    mapping(bytes32 =&gt; bytes32) private bestOrder;
+    mapping(bytes32 =&gt; bytes32) private worstOrder;
+&nbsp;
+    IAugur public augur;
+    IAugurTrading public augurTrading;
+    ICash public cash;
+    address public trade;
+    address public fillOrder;
+    address public cancelOrder;
+    address public createOrder;
+    IProfitLoss public profitLoss;
+&nbsp;
+    function initialize(IAugur _augur, IAugurTrading _augurTrading) public beforeInitialized {
+        endInitialization();
+        cash = ICash(_augur.lookup("Cash"));
+&nbsp;
+        augur = _augur;
+        augurTrading = _augurTrading;
+        createOrder = _augurTrading.lookup("CreateOrder");
+        fillOrder = _augurTrading.lookup("FillOrder");
+        cancelOrder = _augurTrading.lookup("CancelOrder");
+        trade = _augurTrading.lookup("Trade");
+        profitLoss = IProfitLoss(_augurTrading.lookup("ProfitLoss"));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(createOrder != address(0));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(fillOrder != address(0));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(cancelOrder != address(0));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(trade != address(0));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(profitLoss != IProfitLoss(0));
+    }
+&nbsp;
+    /**
+     * @param _orderId The id of the order
+     * @return The market associated with the order id
+     */
+    function getMarket(bytes32 _orderId) public view returns (IMarket) {
+        return orders[_orderId].market;
+    }
+&nbsp;
+    /**
+     * @param _orderId The id of the order
+     * @return The order type (BID==0,ASK==1) associated with the order
+     */
+    function getOrderType(bytes32 _orderId) public view returns (Order.Types) {
+        return orders[_orderId].orderType;
+    }
+&nbsp;
+    /**
+     * @param _orderId The id of the order
+     * @return The outcome associated with the order
+     */
+    function getOutcome(bytes32 _orderId) public view returns (uint256) {
+        return orders[_orderId].outcome;
+    }
+&nbsp;
+    /**
+     * @param _orderId The id of the order
+     * @return The remaining amount of the order
+     */
+    function getAmount(bytes32 _orderId) public view returns (uint256) {
+        return orders[_orderId].amount;
+    }
+&nbsp;
+    /**
+     * @param _orderId The id of the order
+     * @return The price of the order
+     */
+    function getPrice(bytes32 _orderId) public view returns (uint256) {
+        return orders[_orderId].price;
+    }
+&nbsp;
+    /**
+     * @param _orderId The id of the order
+     * @return The creator of the order
+     */
+    function getOrderCreator(bytes32 _orderId) public view returns (address) {
+        return orders[_orderId].creator;
+    }
+&nbsp;
+    /**
+     * @param _orderId The id of the order
+     * @return The remaining shares escrowed in the order
+     */
+    function getOrderSharesEscrowed(bytes32 _orderId) public view returns (uint256) {
+        return orders[_orderId].sharesEscrowed;
+    }
+&nbsp;
+    /**
+     * @param _orderId The id of the order
+     * @return The remaining Cash tokens escrowed in the order
+     */
+    function getOrderMoneyEscrowed(bytes32 _orderId) public view returns (uint256) {
+        return orders[_orderId].moneyEscrowed;
+    }
+&nbsp;
+    function getOrderDataForCancel(bytes32 _orderId) public view returns (uint256 _moneyEscrowed, uint256 _sharesEscrowed, Order.Types _type, IMarket _market, uint256 _outcome, address _creator) {
+        Order.Data storage _order = orders[_orderId];
+        _moneyEscrowed = _order.moneyEscrowed;
+        _sharesEscrowed = _order.sharesEscrowed;
+        _type = _order.orderType;
+        _market = _order.market;
+        _outcome = _order.outcome;
+        _creator = _order.creator;
+    }
+&nbsp;
+    function getOrderDataForLogs(bytes32 _orderId) public view returns (Order.Types _type, address[] memory _addressData, uint256[] memory _uint256Data) {
+        Order.Data storage _order = orders[_orderId];
+        _addressData = new address[](2);
+        _uint256Data = new uint256[](10);
+        _addressData[0] = _order.creator;
+        _uint256Data[0] = _order.price;
+        _uint256Data[1] = _order.amount;
+        _uint256Data[2] = _order.outcome;
+        _uint256Data[8] = _order.sharesEscrowed;
+        _uint256Data[9] = _order.moneyEscrowed;
+        return (_order.orderType, _addressData, _uint256Data);
+    }
+&nbsp;
+    /**
+     * @param _market The address of the market
+     * @return The amount of Cash escrowed for all orders for the specified market
+     */
+    function getTotalEscrowed(IMarket _market) public view returns (uint256) {
+        return marketOrderData[address(_market)].totalEscrowed;
+    }
+&nbsp;
+    /**
+     * @param _market The address of the market
+     * @param _outcome The outcome number
+     * @return The price for the last completed trade for the specified market and outcome
+     */
+    function getLastOutcomePrice(IMarket _market, uint256 _outcome) public view returns (uint256) {
+        return marketOrderData[address(_market)].prices[_outcome];
+    }
+&nbsp;
+    /**
+     * @param _orderId The id of the order
+     * @return The id (if there is one) of the next order better than the provided one
+     */
+    function getBetterOrderId(bytes32 _orderId) public view returns (bytes32) {
+        return orders[_orderId].betterOrderId;
+    }
+&nbsp;
+    /**
+     * @param _orderId The id of the order
+     * @return The id (if there is one) of the next order worse than the provided one
+     */
+    function getWorseOrderId(bytes32 _orderId) public view returns (bytes32) {
+        return orders[_orderId].worseOrderId;
+    }
+&nbsp;
+    /**
+     * @param _type The type of order. Either BID==0, or ASK==1
+     * @param _market The market of the order
+     * @param _outcome The outcome of the order
+     * @return The id (if there is one) of the best order that satisfies the given parameters
+     */
+    function getBestOrderId(Order.Types _type, IMarket _market, uint256 _outcome) public view returns (bytes32) {
+        return bestOrder[getBestOrderWorstOrderHash(_market, _outcome, _type)];
+    }
+&nbsp;
+    /**
+     * @param _type The type of order. Either BID==0, or ASK==1
+     * @param _market The market of the order
+     * @param _outcome The outcome of the order
+     * @return The id (if there is one) of the worst order that satisfies the given parameters
+     */
+    function getWorstOrderId(Order.Types _type, IMarket _market, uint256 _outcome) public view returns (bytes32) {
+        return worstOrder[getBestOrderWorstOrderHash(_market, _outcome, _type)];
+    }
+&nbsp;
+    /**
+     * @param _type The type of order. Either BID==0, or ASK==1
+     * @param _market The market of the order
+     * @param _amount The amount of the order
+     * @param _price The price of the order
+     * @param _sender The creator of the order
+     * @param _blockNumber The blockNumber which the order was created in
+     * @param _outcome The outcome of the order
+     * @param _moneyEscrowed The amount of Cash tokens escrowed in the order
+     * @param _sharesEscrowed The outcome Share tokens escrowed in the order
+     * @return The order id that satisfies the given parameters
+     */
+    function getOrderId(Order.Types _type, IMarket _market, uint256 _amount, uint256 _price, address _sender, uint256 _blockNumber, uint256 _outcome, uint256 _moneyEscrowed, uint256 _sharesEscrowed) public pure returns (bytes32) {
+        return Order.calculateOrderId(_type, _market, _amount, _price, _sender, _blockNumber, _outcome, _moneyEscrowed, _sharesEscrowed);
+    }
+&nbsp;
+    function isBetterPrice(Order.Types _type, uint256 _price, bytes32 _orderId) public view returns (bool) {
+        if (_type == Order.Types.Bid) {
+            return (_price &gt; orders[_orderId].price);
+        } else <span class="missing-if-branch" title="else path not taken" >E</span>if (_type == Order.Types.Ask) {
+            return (_price &lt; orders[_orderId].price);
+        }
+    }
+&nbsp;
+    function isWorsePrice(Order.Types _type, uint256 _price, bytes32 _orderId) public view returns (bool) {
+        if (_type == Order.Types.Bid) {
+            return (_price &lt;= orders[_orderId].price);
+        } else {
+            return (_price &gt;= orders[_orderId].price);
+        }
+    }
+&nbsp;
+    function assertIsNotBetterPrice(Order.Types _type, uint256 _price, bytes32 _betterOrderId) public view returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(!isBetterPrice(_type, _price, _betterOrderId), "Orders.assertIsNotBetterPrice: Is better price");
+        return true;
+    }
+&nbsp;
+    function assertIsNotWorsePrice(Order.Types _type, uint256 _price, bytes32 _worseOrderId) public returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(!isWorsePrice(_type, _price, _worseOrderId), "Orders.assertIsNotWorsePrice: Is worse price");
+        return true;
+    }
+&nbsp;
+    function insertOrderIntoList(Order.Data storage _order, bytes32 _betterOrderId, bytes32 _worseOrderId) private returns (bool) {
+        bytes32 _bestOrderWorstOrderHash = getBestOrderWorstOrderHash(_order.market, _order.outcome, _order.orderType);
+        bytes32 _bestOrderId = bestOrder[_bestOrderWorstOrderHash];
+        bytes32 _worstOrderId = worstOrder[_bestOrderWorstOrderHash];
+        (_betterOrderId, _worseOrderId) = findBoundingOrders(_order.orderType, _order.price, _bestOrderId, _worstOrderId, _betterOrderId, _worseOrderId);
+        if (_order.orderType == Order.Types.Bid) {
+            _bestOrderId = updateBestBidOrder(_order.id, _order.price, _order.outcome, _bestOrderWorstOrderHash, _bestOrderId);
+            _worstOrderId = updateWorstBidOrder(_order.id, _order.price, _order.outcome, _bestOrderWorstOrderHash, _worstOrderId);
+        } else {
+            _bestOrderId = updateBestAskOrder(_order.id, _order.price, _order.outcome, _bestOrderWorstOrderHash, _bestOrderId);
+            _worstOrderId = updateWorstAskOrder(_order.id, _order.price, _order.outcome, _bestOrderWorstOrderHash, _worstOrderId);
+        }
+        if (_bestOrderId == _order.id) {
+            _betterOrderId = bytes32(0);
+        }
+        if (_worstOrderId == _order.id) {
+            _worseOrderId = bytes32(0);
+        }
+        if (_betterOrderId != bytes32(0)) {
+            orders[_betterOrderId].worseOrderId = _order.id;
+            _order.betterOrderId = _betterOrderId;
+        }
+        if (_worseOrderId != bytes32(0)) {
+            orders[_worseOrderId].betterOrderId = _order.id;
+            _order.worseOrderId = _worseOrderId;
+        }
+        return true;
+    }
+&nbsp;
+    // _amount = _uints[0]
+    // _price = _uints[1]
+    // _outcome = _uints[2]
+    // _moneyEscrowed = _uints[3]
+    // _sharesEscrowed = _uints[4]
+    // _betterOrderId = _bytes32s[0]
+    // _worseOrderId = _bytes32s[1]
+    // _tradeGroupId = _bytes32s[2]
+    // _orderId = _bytes32s[3]
+    function saveOrder(uint256[] calldata _uints, bytes32[] calldata _bytes32s, Order.Types _type, IMarket _market, address _sender) external returns (bytes32 _orderId) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == createOrder || msg.sender == address(this));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_uints[2] &lt; _market.getNumberOfOutcomes(), "Orders.saveOrder: Outcome not in market range");
+        _orderId = _bytes32s[3];
+        Order.Data storage _order = orders[_orderId];
+        _order.market = _market;
+        _order.id = _orderId;
+        _order.orderType = _type;
+        _order.outcome = _uints[2];
+        _order.price = _uints[1];
+        _order.amount = _uints[0];
+        _order.creator = _sender;
+        _order.moneyEscrowed = _uints[3];
+        marketOrderData[address(_market)].totalEscrowed += _uints[3];
+        _order.sharesEscrowed = _uints[4];
+        insertOrderIntoList(_order, _bytes32s[0], _bytes32s[1]);
+        augurTrading.logOrderCreated(_order.market.getUniverse(), _orderId, _bytes32s[2]);
+        return _orderId;
+    }
+&nbsp;
+    function removeOrder(bytes32 _orderId) external returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == cancelOrder || msg.sender == address(this));
+        removeOrderFromList(_orderId);
+        Order.Data storage _order = orders[_orderId];
+        marketOrderData[address(_order.market)].totalEscrowed -= _order.moneyEscrowed;
+        delete orders[_orderId];
+        return true;
+    }
+&nbsp;
+    function recordFillOrder(bytes32 _orderId, uint256 _sharesFilled, uint256 _tokensFilled, uint256 _fill) external returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == fillOrder || msg.sender == address(this));
+        Order.Data storage _order = orders[_orderId];
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_order.outcome &lt; _order.market.getNumberOfOutcomes(), "Orders.recordFillOrder: Outcome is not in market range");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_orderId != bytes32(0), "Orders.recordFillOrder: orderId is 0x0");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_sharesFilled &lt;= _order.sharesEscrowed, "Orders.recordFillOrder: shares filled higher than order amount");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_tokensFilled &lt;= _order.moneyEscrowed, "Orders.recordFillOrder: tokens filled higher than order amount");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_order.price &lt;= _order.market.getNumTicks(), "Orders.recordFillOrder: Price outside of market range");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_fill &lt;= _order.amount, "Orders.recordFillOrder: Fill higher than order amount");
+        _order.amount -= _fill;
+        _order.moneyEscrowed -= _tokensFilled;
+        marketOrderData[address(_order.market)].totalEscrowed -= _tokensFilled;
+        _order.sharesEscrowed -= _sharesFilled;
+        if (_order.amount == 0) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(_order.moneyEscrowed == 0, "Orders.recordFillOrder: Money left in filled order");
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(_order.sharesEscrowed == 0, "Orders.recordFillOrder: Shares left in filled order");
+            removeOrderFromList(_orderId);
+            _order.price = 0;
+            _order.creator = address(0);
+            _order.betterOrderId = bytes32(0);
+            _order.worseOrderId = bytes32(0);
+        }
+        return true;
+    }
+&nbsp;
+    function setPrice(IMarket _market, uint256 _outcome, uint256 _price) external returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == trade);
+        marketOrderData[address(_market)].prices[_outcome] = _price;
+        return true;
+    }
+&nbsp;
+    function removeOrderFromList(bytes32 _orderId) private returns (bool) {
+        Order.Data storage _order = orders[_orderId];
+        bytes32 _betterOrderId = _order.betterOrderId;
+        bytes32 _worseOrderId = _order.worseOrderId;
+        bytes32 _bestOrderWorstOrderHash = getBestOrderWorstOrderHash(_order.market, _order.outcome, _order.orderType);
+        if (bestOrder[_bestOrderWorstOrderHash] == _orderId) {
+            bestOrder[_bestOrderWorstOrderHash] = _worseOrderId;
+        }
+        if (worstOrder[_bestOrderWorstOrderHash] == _orderId) {
+            worstOrder[_bestOrderWorstOrderHash] = _betterOrderId;
+        }
+        if (_betterOrderId != bytes32(0)) {
+            orders[_betterOrderId].worseOrderId = _worseOrderId;
+        }
+        if (_worseOrderId != bytes32(0)) {
+            orders[_worseOrderId].betterOrderId = _betterOrderId;
+        }
+        _order.betterOrderId = bytes32(0);
+        _order.worseOrderId = bytes32(0);
+        return true;
+    }
+&nbsp;
+    /**
+     * @dev If best bid is not set or price higher than best bid price, this order is the new best bid.
+     */
+    function updateBestBidOrder(bytes32 _orderId, uint256 _price, uint256 _outcome, bytes32 _bestOrderWorstOrderHash, bytes32 _bestBidOrderId) private returns (bytes32) {
+        if (_bestBidOrderId == bytes32(0) || _price &gt; orders[_bestBidOrderId].price) {
+            bestOrder[_bestOrderWorstOrderHash] = _orderId;
+            return _orderId;
+        } else {
+            return _bestBidOrderId;
+        }
+    }
+&nbsp;
+    /**
+     * @dev If worst bid is not set or price lower than worst bid price, this order is the new worst bid.
+     */
+    function updateWorstBidOrder(bytes32 _orderId, uint256 _price, uint256 _outcome, bytes32 _bestOrderWorstOrderHash, bytes32 _worstBidOrderId) private returns (bytes32) {
+        if (_worstBidOrderId == bytes32(0) || _price &lt;= orders[_worstBidOrderId].price) {
+            worstOrder[_bestOrderWorstOrderHash] = _orderId;
+            return _orderId;
+        } else {
+            return _worstBidOrderId;
+        }
+    }
+&nbsp;
+    /**
+     * @dev If best ask is not set or price lower than best ask price, this order is the new best ask.
+     */
+    function updateBestAskOrder(bytes32 _orderId, uint256 _price, uint256 _outcome, bytes32 _bestOrderWorstOrderHash, bytes32 _bestAskOrderId) private returns (bytes32) {
+        if (_bestAskOrderId == bytes32(0) || _price &lt; orders[_bestAskOrderId].price) {
+            bestOrder[_bestOrderWorstOrderHash] = _orderId;
+            return _orderId;
+        } else {
+            return _bestAskOrderId;
+        }
+    }
+&nbsp;
+    /**
+     * @dev If worst ask is not set or price higher than worst ask price, this order is the new worst ask.
+     */
+    function updateWorstAskOrder(bytes32 _orderId, uint256 _price, uint256 _outcome, bytes32 _bestOrderWorstOrderHash, bytes32 _worstAskOrderId) private returns (bytes32) {
+        if (_worstAskOrderId == bytes32(0) || _price &gt;= orders[_worstAskOrderId].price) {
+            worstOrder[_bestOrderWorstOrderHash] = _orderId;
+            return _orderId;
+        } else {
+            return _worstAskOrderId;
+        }
+    }
+&nbsp;
+    function getBestOrderWorstOrderHash(IMarket _market, uint256 _outcome, Order.Types _type) private pure returns (bytes32) {
+        return sha256(abi.encodePacked(_market, _outcome, _type));
+    }
+&nbsp;
+    function ascendOrderList(Order.Types _type, uint256 _price, bytes32 _lowestOrderId) public view returns (bytes32 _betterOrderId, bytes32 _worseOrderId) {
+        _worseOrderId = _lowestOrderId;
+        bool _isWorstPrice;
+        if (_type == Order.Types.Bid) {
+            _isWorstPrice = _price &lt;= getPrice(_worseOrderId);
+        } else <span class="missing-if-branch" title="else path not taken" >E</span>if (_type == Order.Types.Ask) {
+            _isWorstPrice = _price &gt;= getPrice(_worseOrderId);
+        }
+        if (_isWorstPrice) {
+            return (_worseOrderId, getWorseOrderId(_worseOrderId));
+        }
+        bool _isBetterPrice = isBetterPrice(_type, _price, _worseOrderId);
+        while (_isBetterPrice &amp;&amp; getBetterOrderId(_worseOrderId) != 0 &amp;&amp; _price != getPrice(getBetterOrderId(_worseOrderId))) {
+            _betterOrderId = getBetterOrderId(_worseOrderId);
+            _isBetterPrice = isBetterPrice(_type, _price, _betterOrderId);
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (_isBetterPrice) {
+                _worseOrderId = getBetterOrderId(_worseOrderId);
+            }
+        }
+        _betterOrderId = getBetterOrderId(_worseOrderId);
+        return (_betterOrderId, _worseOrderId);
+    }
+&nbsp;
+    function descendOrderList(Order.Types _type, uint256 _price, bytes32 _highestOrderId) public view returns (bytes32 _betterOrderId, bytes32 _worseOrderId) {
+        _betterOrderId = _highestOrderId;
+        bool _isBestPrice;
+        if (_type == Order.Types.Bid) {
+            _isBestPrice = _price &gt; getPrice(_betterOrderId);
+        } else <span class="missing-if-branch" title="else path not taken" >E</span>if (_type == Order.Types.Ask) {
+            _isBestPrice = _price &lt; getPrice(_betterOrderId);
+        }
+        if (_isBestPrice) {
+            return (0, _betterOrderId);
+        }
+        bool _isWorsePrice = isWorsePrice(_type, _price, _betterOrderId);
+        while (_isWorsePrice &amp;&amp; getWorseOrderId(_betterOrderId) != 0) {
+            _worseOrderId = getWorseOrderId(_betterOrderId);
+            _isWorsePrice = isWorsePrice(_type, _price, _worseOrderId);
+            if (_isWorsePrice || _price == getPrice(getWorseOrderId(_betterOrderId))) {
+                _betterOrderId = getWorseOrderId(_betterOrderId);
+            }
+        }
+        _worseOrderId = getWorseOrderId(_betterOrderId);
+        return (_betterOrderId, _worseOrderId);
+    }
+&nbsp;
+    function findBoundingOrders(Order.Types _type, uint256 _price, bytes32 _bestOrderId, bytes32 _worstOrderId, bytes32 _betterOrderId, bytes32 _worseOrderId) public returns (bytes32 betterOrderId, bytes32 worseOrderId) {
+        if (_bestOrderId == _worstOrderId) {
+            if (_bestOrderId == bytes32(0)) {
+                return (bytes32(0), bytes32(0));
+            } else if (isBetterPrice(_type, _price, _bestOrderId)) {
+                return (bytes32(0), _bestOrderId);
+            } else {
+                return (_bestOrderId, bytes32(0));
+            }
+        }
+        if (_betterOrderId != bytes32(0)) {
+            if (getPrice(_betterOrderId) == 0) {
+                _betterOrderId = bytes32(0);
+            } else {
+                assertIsNotBetterPrice(_type, _price, _betterOrderId);
+            }
+        }
+        if (_worseOrderId != bytes32(0)) {
+            if (getPrice(_worseOrderId) == 0) {
+                _worseOrderId = bytes32(0);
+            } else {
+                assertIsNotWorsePrice(_type, _price, _worseOrderId);
+            }
+        }
+        if (_betterOrderId == bytes32(0) &amp;&amp; _worseOrderId == bytes32(0)) {
+            return (descendOrderList(_type, _price, _bestOrderId));
+        } else if (_betterOrderId == bytes32(0)) {
+            return (ascendOrderList(_type, _price, _worseOrderId));
+        } else if (_worseOrderId == bytes32(0)) {
+            return (descendOrderList(_type, _price, _betterOrderId));
+        }
+        if (getWorseOrderId(_betterOrderId) != _worseOrderId) {
+            return (descendOrderList(_type, _price, _betterOrderId));
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (getBetterOrderId(_worseOrderId) != _betterOrderId) {
+            // Coverage: This condition is likely unreachable or at least seems to be. Rather than remove it I'm keeping it for now just to be paranoid
+<span class="cstat-no" title="statement not covered" >            return (ascendOrderList(_type, _price, _worseOrderId));</span>
+        }
+        return (_betterOrderId, _worseOrderId);
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 16 2020 12:04:17 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
